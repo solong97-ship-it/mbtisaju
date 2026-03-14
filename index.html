@@ -106,6 +106,8 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 .res-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 16px 0}
 .btn-back{width:36px;height:36px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;box-shadow:var(--sh)}
 .btn-share{display:flex;align-items:center;gap:5px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:8px 14px;border:none;border-radius:20px;cursor:pointer}
+.btn-img{display:flex;align-items:center;justify-content:center;gap:7px;width:calc(100% - 32px);margin:10px 16px 0;background:linear-gradient(135deg,var(--lav),var(--rose));color:#fff;font-family:'Jua',sans-serif;font-size:15px;font-weight:700;padding:14px;border:none;border-radius:var(--r-lg);cursor:pointer;box-shadow:0 4px 20px rgba(182,143,232,.3);transition:.15s}
+.btn-img:active{transform:scale(.97)}
 
 /* ── 결과: 히어로 ── */
 .res-hero{margin:14px 16px 0;background:linear-gradient(135deg,var(--lav) 0%,#D4A0F0 40%,var(--rose) 100%);border-radius:24px;padding:22px 20px;color:#fff;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(182,143,232,.35)}
@@ -470,6 +472,9 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
     <div id="r-charline" style="margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.15);border-radius:14px;font-size:13px;font-weight:700;line-height:1.5;text-align:center"></div>
   </div>
 
+  <!-- 이미지 저장 -->
+  <button class="btn-img" id="btn-save-img" onclick="saveImage()">📷 이미지 저장</button>
+
   <!-- 특이사항 (계절쏠림/결핍) -->
   <div id="r-special" style="margin:8px 16px 0;display:none"></div>
 
@@ -540,7 +545,7 @@ ko:{
   // 로딩
   ldTitle:'냥별이가 분석 중이다냥 ✨',ld1:'🪐 사주 패턴 계산 중',ld2:'🔮 월주 십성 분석 중',ld3:'✨ 일주 기질 매칭 중',
   // 결과
-  share:'🔗 공유',tagBorn:'🌙 타고난 기질',tagPre:'🌙 태어날 때부터 품고 온 기질 — ',
+  share:'🔗 공유',saveImg:'📷 이미지 저장',imgSaved:'이미지 저장 완료 📷',tagBorn:'🌙 타고난 기질',tagPre:'🌙 태어날 때부터 품고 온 기질 — ',
   sipBadge:'월주 십성',sipRank:'MBTI 산출 1순위',sipWhy:'💡 MBTI 영향: ',
   flowDw:'🌊 지금 내 흐름',flowSw:'☀️ {0} 올해 에너지',flowSwSub:'{0}년 {1}년',
   swStemL:'{0}',swBranchL:'{1}',
@@ -616,7 +621,7 @@ ja:{
   btnStart:'にゃんぼしのエネルギー分析開始 🔮',
   footP:'四柱命式に刻まれた生まれつきの気質 × MBTI表現<br>環境が作った自分ではなく、<strong style="color:var(--g2)">生まれた時からの自分</strong>に出会おう 🌸',
   ldTitle:'にゃんぼしが分析中だにゃん ✨',ld1:'🪐 四柱パターン計算中',ld2:'🔮 月柱十神分析中',ld3:'✨ 日柱気質マッチング中',
-  share:'🔗 共有',tagBorn:'🌙 生まれつきの気質',tagPre:'🌙 生まれた時から持っている気質 — ',
+  share:'🔗 共有',saveImg:'📷 画像を保存',imgSaved:'画像を保存しました 📷',tagBorn:'🌙 生まれつきの気質',tagPre:'🌙 生まれた時から持っている気質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTIへの影響: ',
   flowDw:'🌊 今の流れ',flowSw:'☀️ 2026年のエネルギー',flowSwSub:'丙午年',
   swStemL:'丙(火)',swBranchL:'午(馬)',
@@ -690,7 +695,7 @@ en:{
   btnStart:'Start Nyangbyeol\'s Energy Reading 🔮',
   footP:'Innate temperament from your birth chart × MBTI expression<br>Meet the <strong style="color:var(--g2)">you that existed from day one</strong> 🌸',
   ldTitle:'Nyangbyeol is analyzing meow ✨',ld1:'🪐 Calculating birth patterns',ld2:'🔮 Analyzing month pillar energy',ld3:'✨ Matching day pillar temperament',
-  share:'🔗 Share',tagBorn:'🌙 Innate Type',tagPre:'🌙 The temperament you were born with — ',
+  share:'🔗 Share',saveImg:'📷 Save Image',imgSaved:'Image saved! 📷',tagBorn:'🌙 Innate Type',tagPre:'🌙 The temperament you were born with — ',
   sipBadge:'Month Pillar Star',sipRank:'MBTI Factor #1',sipWhy:'💡 MBTI Impact: ',
   flowDw:'🌊 Current Life Phase',flowSw:'☀️ 2026 Energy',flowSwSub:'Fire-Horse Year',
   swStemL:'Bing (Fire)',swBranchL:'Wu (Horse)',
@@ -764,7 +769,7 @@ en:{
   btnStart:'喵星的能量分析開始 🔮',
   footP:'四柱命盤中的先天氣質 × MBTI表達<br>遇見<strong style="color:var(--g2)">從出生那天就存在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 計算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱氣質',
-  share:'🔗 分享',tagBorn:'🌙 天生氣質',tagPre:'🌙 與生俱來的氣質 — ',
+  share:'🔗 分享',saveImg:'📷 儲存圖片',imgSaved:'圖片已儲存 📷',tagBorn:'🌙 天生氣質',tagPre:'🌙 與生俱來的氣質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTI影響：',
   flowDw:'🌊 目前的運勢',flowSw:'☀️ 2026年能量',flowSwSub:'丙午年',
   swStemL:'丙（火）',swBranchL:'午（馬）',
@@ -838,7 +843,7 @@ en:{
   btnStart:'喵星的能量分析开始 🔮',
   footP:'四柱命盘中的先天气质 × MBTI表达<br>遇见<strong style="color:var(--g2)">从出生那天就存在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 计算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱气质',
-  share:'🔗 分享',tagBorn:'🌙 天生气质',tagPre:'🌙 与生俱来的气质 — ',
+  share:'🔗 分享',saveImg:'📷 保存图片',imgSaved:'图片已保存 📷',tagBorn:'🌙 天生气质',tagPre:'🌙 与生俱来的气质 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1优先',sipWhy:'💡 MBTI影响：',
   flowDw:'🌊 目前的运势',flowSw:'☀️ 2026年能量',flowSwSub:'丙午年',
   swStemL:'丙（火）',swBranchL:'午（马）',
@@ -1130,6 +1135,7 @@ function applyLang(){
   if(s('.btn-secondary')) s('.btn-secondary').textContent=t('btnAgain');
   // 결과 상단
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
+  if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
 }
 // 초기 언어 로드
 try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}
@@ -2326,6 +2332,117 @@ function makeSection(color,icon,title,summary,content){
     '<span class="sec-chevron">▼</span></button>'+
     '<div class="sec-detail"><div class="sec-detail-inner">'+content+'</div></div>'+
     '</div></div>';
+}
+
+/* 이미지 저장 */
+function _roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
+function _wrapText(ctx,text,x,y,maxW,lineH,maxL,align){
+  align=align||'left';ctx.textAlign=align;
+  const words=text.split(/\s+/);let line='',lines=0;
+  for(let i=0;i<words.length;i++){
+    const test=line+words[i]+' ';
+    if(ctx.measureText(test).width>maxW&&i>0){ctx.fillText(line.trim(),x,y);line=words[i]+' ';y+=lineH;lines++;if(maxL&&lines>=maxL-1)break;}
+    else line=test;
+  }
+  if(line.trim())ctx.fillText(line.trim(),x,y);
+}
+function _drawMascot(ctx,x,y,size){
+  return new Promise(r=>{
+    const sym=document.getElementById('mascot');
+    if(!sym){r();return;}
+    const svgStr='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="'+size+'" height="'+size+'">'+sym.innerHTML+'</svg>';
+    const blob=new Blob([svgStr],{type:'image/svg+xml'});
+    const url=URL.createObjectURL(blob);
+    const img=new Image();
+    img.onload=()=>{ctx.drawImage(img,x,y,size,size);URL.revokeObjectURL(url);r();};
+    img.onerror=()=>{URL.revokeObjectURL(url);r();};
+    img.src=url;
+  });
+}
+async function saveImage(){
+  const W=360,H=580;
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  const cv=document.createElement('canvas');
+  cv.width=W*dpr;cv.height=H*dpr;
+  const ctx=cv.getContext('2d');
+  ctx.scale(dpr,dpr);
+
+  // 배경 그라데이션 (res-hero 색상 재현)
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#B68FE8');bg.addColorStop(.4,'#D4A0F0');bg.addColorStop(1,'#FF8FAB');
+  _roundRect(ctx,0,0,W,H,0);ctx.fillStyle=bg;ctx.fill();
+
+  // 장식 원형 (res-hero ::before/::after 재현)
+  ctx.save();ctx.globalAlpha=.10;
+  ctx.beginPath();ctx.arc(W+30,-30,130,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+  ctx.beginPath();ctx.arc(20,H+20,80,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+  ctx.restore();
+
+  // 마스코트
+  await _drawMascot(ctx,W-126,30,120);
+
+  // 앱 이름 pill
+  ctx.save();
+  ctx.fillStyle='rgba(255,255,255,.22)';
+  _roundRect(ctx,16,18,108,28,14);ctx.fill();
+  ctx.fillStyle='#fff';ctx.font='bold 13px Jua,sans-serif';ctx.textAlign='left';
+  ctx.fillText('Birth MBTI 🌙',26,37);
+  ctx.restore();
+
+  // btags (생일 태그)
+  const btags=[...document.querySelectorAll('#r-btags .btag')].map(b=>b.textContent.trim());
+  let tx=16;
+  ctx.save();ctx.font='600 11px Nunito,sans-serif';
+  btags.slice(0,4).forEach(tag=>{
+    const tw=ctx.measureText(tag).width+20;
+    ctx.fillStyle='rgba(255,255,255,.22)';_roundRect(ctx,tx,54,tw,22,11);ctx.fill();
+    ctx.fillStyle='#fff';ctx.textAlign='left';ctx.fillText(tag,tx+10,68);
+    tx+=tw+6;
+  });
+  ctx.restore();
+
+  // MBTI 큰 글자
+  const mbti=document.getElementById('r-mbti').textContent||'';
+  ctx.save();
+  ctx.font='900 64px Nunito,sans-serif';ctx.textAlign='left';
+  ctx.fillStyle='rgba(255,255,255,.18)';ctx.fillText(mbti,22,188);// 그림자
+  ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.10)';ctx.shadowBlur=12;
+  ctx.fillText(mbti,22,185);
+  ctx.restore();
+
+  // 타입명
+  const typename=document.getElementById('r-typename').textContent||'';
+  ctx.save();ctx.font='bold 20px Jua,sans-serif';ctx.textAlign='left';
+  ctx.fillStyle='rgba(255,255,255,.95)';ctx.fillText(typename,24,215);ctx.restore();
+
+  // 태그라인
+  const tagline=document.getElementById('r-tagline').textContent||'';
+  ctx.save();ctx.font='13px "Gowun Dodum",sans-serif';ctx.fillStyle='rgba(255,255,255,.82)';
+  _wrapText(ctx,tagline,24,242,W-140,19,3,'left');ctx.restore();
+
+  // 캐릭터 설명 박스
+  const charline=document.getElementById('r-charline').textContent||'';
+  if(charline.trim()){
+    ctx.save();
+    ctx.fillStyle='rgba(255,255,255,.16)';_roundRect(ctx,16,290,W-32,90,14);ctx.fill();
+    ctx.font='12px "Gowun Dodum",sans-serif';ctx.fillStyle='rgba(255,255,255,.92)';
+    _wrapText(ctx,charline,W/2,316,W-52,18,4,'center');
+    ctx.restore();
+  }
+
+  // 브랜딩
+  ctx.save();ctx.font='11px sans-serif';ctx.fillStyle='rgba(255,255,255,.45)';
+  ctx.textAlign='center';ctx.fillText('birthmbi.web.app',W/2,H-14);ctx.restore();
+
+  // 다운로드
+  cv.toBlob(blob=>{
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download='birthmbi_'+(mbti||'result')+'_'+curBirth+'.png';
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    showToast(t('imgSaved'));
+  },'image/png');
 }
 
 /* 공유 */
