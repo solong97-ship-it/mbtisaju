@@ -46,7 +46,7 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 
 /* ── 입력 카드 ── */
 .inp-card{margin:14px 16px 0;background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-lg);padding:20px 18px;border:1.5px solid var(--border)}
-.inp-label{font-size:11px;font-weight:700;color:var(--g2);letter-spacing:.05em;margin-bottom:8px;display:block}
+.inp-label, .inp-label-set{font-size:11px;font-weight:700;color:var(--g2);letter-spacing:.05em;margin-bottom:8px;display:block}
 .birth-inp{width:100%;background:var(--g4);border:2px solid transparent;border-radius:var(--r-md);font-family:'Nunito',sans-serif;font-size:30px;font-weight:800;letter-spacing:.14em;text-align:center;color:var(--ink);padding:13px 12px;outline:none;transition:.25s;-webkit-appearance:none}
 .birth-inp:focus{background:#fff;border-color:var(--lav);box-shadow:0 0 0 4px rgba(182,143,232,.15)}
 .birth-inp::placeholder{color:var(--g3);font-size:18px}
