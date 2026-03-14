@@ -70,6 +70,7 @@ ko:{
   disc3:'이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!',
   btnAgain:'← 다시 분석하기',copied:'🔗 링크가 복사됐어요!',
   flAbout:'서비스 소개',flTerms:'이용약관',flPrivacy:'개인정보처리방침',flContact:'문의',
+  privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
   age:'세',male:'♂ 남성',female:'♀ 여성',
   // 십성 이름
   ss_비견:'독립 전사(비견)',ss_겁재:'도전하는 승부사(겁재)',ss_식신:'감성 크리에이터(식신)',ss_상관:'규칙을 깨는 천재(상관)',
@@ -149,6 +150,7 @@ ja:{
   disc3:'これはエンターテイメントと自己探索の目的です 🌟 運命は決まっていません！',
   btnAgain:'← もう一度分析する',copied:'🔗 リンクがコピーされました！',
   flAbout:'サービス紹介',flTerms:'利用規約',flPrivacy:'プライバシーポリシー',flContact:'お問い合わせ',
+  privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
   age:'歳',male:'♂ 男性',female:'♀ 女性',
   ss_비견:'独立戦士',ss_겁재:'挑戦する勝負師',ss_식신:'感性クリエイター',ss_상관:'ルールを破る天才',
   ss_편재:'万能エンターテイナー',ss_정재:'着実な成長者',ss_편관:'カリスマリーダー',ss_정관:'原則の守護者',
@@ -226,6 +228,7 @@ en:{
   disc3:'This is for fun and self-discovery 🌟 Destiny is not fixed!',
   btnAgain:'← Analyze Again',copied:'🔗 Link copied!',
   flAbout:'About',flTerms:'Terms of Service',flPrivacy:'Privacy Policy',flContact:'Contact',
+  privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
   age:'yrs',male:'♂ Male',female:'♀ Female',
   ss_비견:'Independent Warrior',ss_겁재:'Bold Challenger',ss_식신:'Sensory Creator',ss_상관:'Rule-Breaking Genius',
   ss_편재:'Versatile Entertainer',ss_정재:'Steady Grower',ss_편관:'Charismatic Leader',ss_정관:'Guardian of Principles',
@@ -303,6 +306,7 @@ en:{
   disc3:'這是為了趣味和自我探索 🌟 命運不是注定的！',
   btnAgain:'← 重新分析',copied:'🔗 連結已複製！',
   flAbout:'服務介紹',flTerms:'使用條款',flPrivacy:'隱私權政策',flContact:'聯絡我們',
+  privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
   age:'歲',male:'♂ 男',female:'♀ 女',
   ss_비견:'獨立戰士',ss_겁재:'挑戰勝負師',ss_식신:'感性創作者',ss_상관:'打破規則的天才',
   ss_편재:'萬能娛樂家',ss_정재:'穩健成長者',ss_편관:'魅力領袖',ss_정관:'原則守護者',
@@ -379,6 +383,7 @@ en:{
   disc3:'这是为了趣味和自我探索 🌟 命运不是注定的！',
   btnAgain:'← 重新分析',copied:'🔗 链接已复制！',
   flAbout:'服务介绍',flTerms:'使用条款',flPrivacy:'隐私政策',flContact:'联系我们',
+  privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
   age:'岁',male:'♂ 男',female:'♀ 女',
   ss_비견:'独立战士',ss_겁재:'挑战胜负师',ss_식신:'感性创作者',ss_상관:'打破规则的天才',
   ss_편재:'万能娱乐家',ss_정재:'稳健成长者',ss_편관:'魅力领袖',ss_정관:'原则守护者',
@@ -653,6 +658,8 @@ function applyLang(){
   if(si('fl-terms')) si('fl-terms').textContent=t('flTerms');
   if(si('fl-privacy')) si('fl-privacy').textContent=t('flPrivacy');
   if(si('fl-contact')) si('fl-contact').textContent=t('flContact');
+  // 개인정보 고지문 번역
+  if(si('privacy-notice')) si('privacy-notice').textContent=t('privacyNotice');
 }
 // 초기 언어 로드
 try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}
