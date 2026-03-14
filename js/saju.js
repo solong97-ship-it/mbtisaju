@@ -1,7 +1,7 @@
 /* ╔══════════════════════════════════════════╗
    ║  Saju Engine Logic                       ║
    ╚══════════════════════════════════════════╝ */
-import { JG, JG_BI, JG_BR, SH, BH } from './constants.js';
+import { JG, JG_BI, JG_BR, SH, BH } from '../src/constants.js';
 
 export function parseYear(yy) {
   return yy <= 26 ? 2000 + yy : 1900 + yy;
