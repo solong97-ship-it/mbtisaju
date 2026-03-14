@@ -109,6 +109,29 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 .btn-img{display:flex;align-items:center;justify-content:center;gap:7px;width:calc(100% - 32px);margin:10px 16px 0;background:linear-gradient(135deg,var(--lav),var(--rose));color:#fff;font-family:'Jua',sans-serif;font-size:15px;font-weight:700;padding:14px;border:none;border-radius:var(--r-lg);cursor:pointer;box-shadow:0 4px 20px rgba(182,143,232,.3);transition:.15s}
 .btn-img:active{transform:scale(.97)}
 
+/* ── 포토카드 모달 ── */
+.pc-overlay{display:none;position:fixed;inset:0;z-index:9990;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);align-items:flex-end;justify-content:center}
+.pc-overlay.open{display:flex;animation:fadeUp .32s cubic-bezier(.22,1,.36,1) both}
+.pc-card{background:linear-gradient(145deg,#150D28,#2A1845);border-radius:28px 28px 0 0;padding:26px 22px 38px;width:100%;max-width:460px;border-top:1.5px solid rgba(182,143,232,.25);box-shadow:0 -12px 48px rgba(0,0,0,.4)}
+.pc-header{margin-bottom:18px}
+.pc-title{font-family:'Jua',sans-serif;font-size:18px;color:#fff;margin-bottom:4px}
+.pc-sub{font-size:12px;color:rgba(255,255,255,.42)}
+.pc-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.06em;margin-bottom:7px;display:block}
+.pc-limit{font-weight:400;color:rgba(255,255,255,.28)}
+.pc-input{width:100%;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:13px;color:#fff;font-family:'Nunito',sans-serif;font-size:16px;padding:12px 15px;outline:none;transition:.2s;margin-bottom:14px;-webkit-appearance:none}
+.pc-input:focus{border-color:rgba(182,143,232,.55);background:rgba(182,143,232,.07)}
+.pc-input::placeholder{color:rgba(255,255,255,.22)}
+.pc-date{font-size:14px;color-scheme:dark}
+.pc-counter{font-size:10px;color:rgba(255,255,255,.3);text-align:right;margin-top:-10px;margin-bottom:14px}
+.pc-color-row{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.pc-dots{display:flex;gap:6px}
+.pc-dot{width:20px;height:20px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.pc-elem-tag{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap}
+.pc-btn-row{display:flex;gap:10px}
+.pc-cancel{flex:1;padding:14px;border-radius:var(--r-lg);border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.5);font-size:14px;cursor:pointer;-webkit-appearance:none}
+.pc-generate{flex:2;padding:14px;border-radius:var(--r-lg);border:none;background:linear-gradient(135deg,var(--lav),var(--rose));color:#fff;font-family:'Jua',sans-serif;font-size:15px;cursor:pointer;box-shadow:0 4px 18px rgba(182,143,232,.3);transition:.15s;-webkit-appearance:none}
+.pc-generate:active{transform:scale(.97)}.pc-generate:disabled{opacity:.55}
+
 /* ── 결과: 히어로 ── */
 .res-hero{margin:14px 16px 0;background:linear-gradient(135deg,var(--lav) 0%,#D4A0F0 40%,var(--rose) 100%);border-radius:24px;padding:22px 20px;color:#fff;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(182,143,232,.35)}
 .res-hero::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1)}
@@ -499,6 +522,32 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
   </div>
   <button class="btn-secondary" onclick="reset()">← 다시 분석하기</button>
   <div style="height:32px"></div>
+</div>
+
+<!-- ═══ 포토카드 모달 ═══ -->
+<div class="pc-overlay" id="photo-modal" onclick="if(event.target===this)closePhotoModal()">
+  <div class="pc-card">
+    <div class="pc-header">
+      <div class="pc-title">📷 퍼스널 포토카드</div>
+      <div class="pc-sub">SNS 인증샷용 감성 카드 ✨</div>
+    </div>
+    <label class="pc-label">영문 닉네임</label>
+    <input class="pc-input" id="card-nick" placeholder="e.g. LUNA · STAR · MISO" maxlength="12" autocomplete="off">
+    <label class="pc-label">감성 메시지 <span class="pc-limit">20자 이내</span></label>
+    <input class="pc-input" id="card-msg" placeholder="e.g. Just born to shine ✨" maxlength="20" oninput="document.getElementById('msg-cnt').textContent=this.value.length" autocomplete="off">
+    <div class="pc-counter"><span id="msg-cnt">0</span>/20</div>
+    <label class="pc-label">날짜</label>
+    <input class="pc-input pc-date" id="card-date" type="date">
+    <div class="pc-color-row">
+      <span class="pc-label" style="margin:0">퍼스널 컬러</span>
+      <div class="pc-dots" id="pc-dots"></div>
+      <span class="pc-elem-tag" id="pc-elem-tag"></span>
+    </div>
+    <div class="pc-btn-row">
+      <button class="pc-cancel" onclick="closePhotoModal()">취소</button>
+      <button class="pc-generate" id="pc-gen-btn" onclick="generatePhotoCard()">✨ 카드 생성 + 링크 복사</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1979,6 +2028,7 @@ function generateLocal(year,month,day,gender,dw,natal,mbtiData){
 }
 
 let curBirth='',curGender='',curQ={},GEMINI_KEY='';
+let curElements={'木':0,'火':0,'土':0,'金':0,'水':0},curMType='';
 
 function toggleSettings(){
   const m=document.getElementById('modal-settings');
@@ -2097,6 +2147,7 @@ function renderResult(val,gender,dw,ai,aiInsight){
   const yy=+val.slice(0,2),mm=+val.slice(2,4),dd=+val.slice(4,6),yr=parseYear(yy);
   
   const mType=ai.mbti;
+  curMType=mType;curElements=ai.elements||{'木':0,'火':0,'土':0,'金':0,'水':0};
   const metaBase=META[mType]||META['INFP'];
   const lKey = LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
   
@@ -2359,90 +2410,205 @@ function _drawMascot(ctx,x,y,size){
     img.src=url;
   });
 }
-async function saveImage(){
-  const W=360,H=580;
-  const dpr=Math.min(window.devicePixelRatio||1,2);
+/* ── 포토카드: 상수 & 헬퍼 ── */
+const ELEM_PAL={
+  '木':{bg:['#0D2B1A','#1B5E35','#2E8B57'],accent:'#5DBB8A',text:'#C8F0D8',dots:['#2E8B57','#5DBB8A','#A8D8B8']},
+  '火':{bg:['#2B0A0A','#7B1515','#C0392B'],accent:'#FF6B6B',text:'#FFE0D8',dots:['#C0392B','#FF6B6B','#FFB3A0']},
+  '土':{bg:['#2B1800','#7A4000','#C07820'],accent:'#F4C05A',text:'#FFF3CD',dots:['#C07820','#F4C05A','#FFE08A']},
+  '金':{bg:['#0C1520','#1E2E44','#344E6E'],accent:'#A8C4DC',text:'#E8F2FA',dots:['#4A6A8A','#8AAAC8','#C0D8EC']},
+  '水':{bg:['#020E28','#0A2755','#0D47A1'],accent:'#42A5F5',text:'#BBDEFB',dots:['#0D47A1','#1976D2','#64B5F6']},
+};
+const CARD_TITLES={
+  '木':['THE FOREST SOUL','THE GREEN DREAM','THE WILD SPIRIT','THE LEAF HEART'],
+  '火':['THE SUMMER FLAME','THE BLAZING STAR','THE BRIGHT FORCE','THE FIRE DREAM'],
+  '土':['THE GOLDEN OASIS','THE EARTH KEEPER','THE WARM GROUND','THE QUIET PEAK'],
+  '金':['THE CRYSTAL MIND','THE SILVER SOUL','THE SHARP LIGHT','THE CLEAR SKY'],
+  '水':['THE DEEP CURRENT','THE MOON TIDE','THE OCEAN HEART','THE WINTER FLOW'],
+};
+const MBTI16=['INTJ','INTP','ENTJ','ENTP','INFJ','INFP','ENFJ','ENFP','ISTJ','ISFJ','ESTJ','ESFJ','ISTP','ISFP','ESTP','ESFP'];
+const ELEM_CHR={'木':'🌿','火':'🔥','土':'🌏','金':'✨','水':'💧'};
+
+function _getDomElem(el){let mx=0,dom='土';Object.entries(el||{}).forEach(([k,v])=>{if(v>mx){mx=v;dom=k;}});return dom;}
+
+function _loadQR(){
+  return new Promise(res=>{
+    if(window.QRCode){res();return;}
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js';
+    s.onload=res;s.onerror=res;
+    document.head.appendChild(s);
+  });
+}
+
+/* 모달 열기 */
+function saveImage(){
+  if(!curMType){showToast('결과를 먼저 확인해주세요');return;}
+  const today=new Date();
+  document.getElementById('card-date').value=today.toISOString().split('T')[0];
+  document.getElementById('card-nick').value='';
+  document.getElementById('card-msg').value='';
+  document.getElementById('msg-cnt').textContent='0';
+  const dom=_getDomElem(curElements);
+  const pal=ELEM_PAL[dom]||ELEM_PAL['土'];
+  document.getElementById('pc-dots').innerHTML=pal.dots.map(c=>`<div class="pc-dot" style="background:${c}"></div>`).join('');
+  document.getElementById('pc-elem-tag').textContent=ELEM_CHR[dom]+' '+dom+' 기운 퍼스널컬러';
+  document.getElementById('photo-modal').classList.add('open');
+  setTimeout(()=>document.getElementById('card-nick').focus(),300);
+}
+function closePhotoModal(){document.getElementById('photo-modal').classList.remove('open');}
+
+/* 포토카드 생성 */
+async function generatePhotoCard(){
+  const btn=document.getElementById('pc-gen-btn');
+  btn.disabled=true;btn.textContent='생성 중...';
+  try{await _generatePhotoCard();}finally{btn.disabled=false;btn.textContent='✨ 카드 생성 + 링크 복사';}
+}
+async function _generatePhotoCard(){
+  const nick=(document.getElementById('card-nick').value.trim()||'MY STAR').toUpperCase();
+  const msg=document.getElementById('card-msg').value.trim()||'Born under the stars ✨';
+  const dateVal=document.getElementById('card-date').value;
+  const dateDisp=dateVal?dateVal.replace(/-/g,'.'):'';
+  closePhotoModal();
+
+  await _loadQR();
+
+  const dom=_getDomElem(curElements);
+  const pal=ELEM_PAL[dom]||ELEM_PAL['土'];
+  const mIdx=Math.max(0,MBTI16.indexOf(curMType));
+  const cardTitle=(CARD_TITLES[dom]||CARD_TITLES['土'])[mIdx%4];
+
+  const S=600,dpr=Math.min(window.devicePixelRatio||1,2);
   const cv=document.createElement('canvas');
-  cv.width=W*dpr;cv.height=H*dpr;
+  cv.width=S*dpr;cv.height=S*dpr;
   const ctx=cv.getContext('2d');
   ctx.scale(dpr,dpr);
 
-  // 배경 그라데이션 (res-hero 색상 재현)
-  const bg=ctx.createLinearGradient(0,0,W,H);
-  bg.addColorStop(0,'#B68FE8');bg.addColorStop(.4,'#D4A0F0');bg.addColorStop(1,'#FF8FAB');
-  _roundRect(ctx,0,0,W,H,0);ctx.fillStyle=bg;ctx.fill();
+  // ── 배경 ──
+  const bgG=ctx.createLinearGradient(0,0,S*.7,S);
+  bgG.addColorStop(0,pal.bg[0]);bgG.addColorStop(.5,pal.bg[1]);bgG.addColorStop(1,pal.bg[2]);
+  ctx.fillStyle=bgG;ctx.fillRect(0,0,S,S);
 
-  // 장식 원형 (res-hero ::before/::after 재현)
-  ctx.save();ctx.globalAlpha=.10;
-  ctx.beginPath();ctx.arc(W+30,-30,130,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
-  ctx.beginPath();ctx.arc(20,H+20,80,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+  // 장식 원 (배경)
+  ctx.save();ctx.globalAlpha=.09;
+  ctx.beginPath();ctx.arc(S+80,-80,260,0,Math.PI*2);ctx.fillStyle=pal.accent;ctx.fill();
+  ctx.beginPath();ctx.arc(-60,S+60,200,0,Math.PI*2);ctx.fillStyle=pal.accent;ctx.fill();
   ctx.restore();
 
-  // 마스코트
-  await _drawMascot(ctx,W-126,30,120);
+  // 미세 격자
+  ctx.save();ctx.globalAlpha=.035;ctx.strokeStyle='#fff';ctx.lineWidth=.6;
+  for(let i=0;i<S;i+=40){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,S);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(S,i);ctx.stroke();}
+  ctx.restore();
 
-  // 앱 이름 pill
+  // ── 마스코트 (우상단) ──
+  await _drawMascot(ctx,S-152,14,140);
+
+  // ── 상단: 브랜드 pill ──
   ctx.save();
-  ctx.fillStyle='rgba(255,255,255,.22)';
-  _roundRect(ctx,16,18,108,28,14);ctx.fill();
-  ctx.fillStyle='#fff';ctx.font='bold 13px Jua,sans-serif';ctx.textAlign='left';
-  ctx.fillText('Birth MBTI 🌙',26,37);
+  ctx.fillStyle='rgba(255,255,255,.12)';_roundRect(ctx,22,24,110,30,15);ctx.fill();
+  ctx.fillStyle=pal.accent;ctx.font='bold 12px Nunito,sans-serif';ctx.textAlign='left';
+  ctx.fillText('Birth MBTI 🌙',32,44);
   ctx.restore();
 
-  // btags (생일 태그)
-  const btags=[...document.querySelectorAll('#r-btags .btag')].map(b=>b.textContent.trim());
-  let tx=16;
-  ctx.save();ctx.font='600 11px Nunito,sans-serif';
-  btags.slice(0,4).forEach(tag=>{
-    const tw=ctx.measureText(tag).width+20;
-    ctx.fillStyle='rgba(255,255,255,.22)';_roundRect(ctx,tx,54,tw,22,11);ctx.fill();
-    ctx.fillStyle='#fff';ctx.textAlign='left';ctx.fillText(tag,tx+10,68);
-    tx+=tw+6;
+  // MBTI 타입 코드 (우상단, 마스코트 위)
+  ctx.save();ctx.font='bold 13px Nunito,sans-serif';ctx.textAlign='right';
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.fillText(curMType,S-22,44);ctx.restore();
+
+  // ── 오행 에너지 라벨 ──
+  ctx.save();
+  ctx.font='bold 12px Nunito,sans-serif';ctx.textAlign='left';ctx.fillStyle=pal.accent;
+  ctx.fillText(ELEM_CHR[dom]+'  '+dom+' ENERGY',22,92);
+  ctx.restore();
+
+  // ── 닉네임 (가장 큰 텍스트) ──
+  ctx.save();
+  ctx.font='900 56px Nunito,sans-serif';ctx.textAlign='left';
+  ctx.shadowColor='rgba(0,0,0,.25)';ctx.shadowBlur=18;
+  // 글로우 효과
+  ctx.fillStyle=pal.accent;ctx.globalAlpha=.18;ctx.fillText(nick,22,172);
+  ctx.globalAlpha=1;ctx.fillStyle='#fff';ctx.fillText(nick,22,168);
+  ctx.restore();
+
+  // ── 카드 타이틀 (THE SUMMER OASIS) ──
+  ctx.save();
+  ctx.font='bold 20px Nunito,sans-serif';ctx.textAlign='left';
+  ctx.fillStyle=pal.text;ctx.fillText(cardTitle,22,202);ctx.restore();
+
+  // 타입명
+  const typename=(document.getElementById('r-typename')?.textContent||'').replace(/^\S+\s*/,'');
+  ctx.save();ctx.font='13px "Gowun Dodum",sans-serif';ctx.textAlign='left';
+  ctx.fillStyle='rgba(255,255,255,.45)';ctx.fillText(curMType+'  '+typename.trim(),22,226);ctx.restore();
+
+  // ── 오행 미니 바 차트 ──
+  const elems=['木','火','土','金','水'];
+  const eColors={'木':'#5DBB8A','火':'#FF6B6B','土':'#F4C05A','金':'#A8C4DC','水':'#42A5F5'};
+  const maxC=Math.max(...Object.values(curElements),1);
+  const bW=(S-44)/5-8,bSpac=(S-44)/5;
+  const bY=252,bH=10;
+  ctx.save();
+  elems.forEach((e,i)=>{
+    const bx=22+i*bSpac;const cnt=curElements[e]||0;const fw=bW*cnt/maxC;
+    ctx.fillStyle='rgba(255,255,255,.08)';_roundRect(ctx,bx,bY,bW,bH,5);ctx.fill();
+    if(fw>0){ctx.fillStyle=eColors[e];_roundRect(ctx,bx,bY,fw,bH,5);ctx.fill();}
+    ctx.font='bold 11px Nunito,sans-serif';ctx.textAlign='center';
+    ctx.fillStyle=cnt>0?eColors[e]:'rgba(255,255,255,.2)';
+    ctx.fillText(e,bx+bW/2,bY+bH+13);
+    if(cnt>0){ctx.font='10px Nunito,sans-serif';ctx.fillStyle='rgba(255,255,255,.45)';ctx.fillText(cnt,bx+bW/2,bY+bH+25);}
   });
   ctx.restore();
 
-  // MBTI 큰 글자
-  const mbti=document.getElementById('r-mbti').textContent||'';
-  ctx.save();
-  ctx.font='900 64px Nunito,sans-serif';ctx.textAlign='left';
-  ctx.fillStyle='rgba(255,255,255,.18)';ctx.fillText(mbti,22,188);// 그림자
-  ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.10)';ctx.shadowBlur=12;
-  ctx.fillText(mbti,22,185);
-  ctx.restore();
+  // ── 구분선 ──
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(22,308);ctx.lineTo(S-22,308);ctx.stroke();ctx.restore();
 
-  // 타입명
-  const typename=document.getElementById('r-typename').textContent||'';
-  ctx.save();ctx.font='bold 20px Jua,sans-serif';ctx.textAlign='left';
-  ctx.fillStyle='rgba(255,255,255,.95)';ctx.fillText(typename,24,215);ctx.restore();
+  // ── 감성 메시지 영역 ──
+  // 큰따옴표
+  ctx.save();ctx.font='900 52px Georgia,serif';ctx.fillStyle=pal.accent;ctx.globalAlpha=.4;
+  ctx.textAlign='left';ctx.fillText('"',22,362);ctx.restore();
 
-  // 태그라인
-  const tagline=document.getElementById('r-tagline').textContent||'';
-  ctx.save();ctx.font='13px "Gowun Dodum",sans-serif';ctx.fillStyle='rgba(255,255,255,.82)';
-  _wrapText(ctx,tagline,24,242,W-140,19,3,'left');ctx.restore();
+  // 메시지 텍스트
+  ctx.save();ctx.font='italic bold 17px "Gowun Dodum",Nunito,sans-serif';
+  ctx.fillStyle=pal.text;
+  _wrapText(ctx,msg,52,356,S-90-100,22,2,'left');ctx.restore();
 
-  // 캐릭터 설명 박스
-  const charline=document.getElementById('r-charline').textContent||'';
-  if(charline.trim()){
-    ctx.save();
-    ctx.fillStyle='rgba(255,255,255,.16)';_roundRect(ctx,16,290,W-32,90,14);ctx.fill();
-    ctx.font='12px "Gowun Dodum",sans-serif';ctx.fillStyle='rgba(255,255,255,.92)';
-    _wrapText(ctx,charline,W/2,316,W-52,18,4,'center');
-    ctx.restore();
+  // 날짜
+  if(dateDisp){
+    ctx.save();ctx.font='12px Nunito,sans-serif';ctx.textAlign='left';
+    ctx.fillStyle='rgba(255,255,255,.38)';ctx.fillText(dateDisp,52,392);ctx.restore();
   }
 
-  // 브랜딩
-  ctx.save();ctx.font='11px sans-serif';ctx.fillStyle='rgba(255,255,255,.45)';
-  ctx.textAlign='center';ctx.fillText('birthmbi.web.app',W/2,H-14);ctx.restore();
+  // ── QR 코드 (우하단) ──
+  const siteUrl='https://mbtisaju.pages.dev';
+  const qrSz=96,qrX=S-22-qrSz,qrY=S-22-qrSz;
+  // QR 배경 박스
+  ctx.save();ctx.fillStyle='#fff';_roundRect(ctx,qrX-5,qrY-5,qrSz+10,qrSz+10,10);ctx.fill();ctx.restore();
+  await new Promise(res=>{
+    try{
+      const qc=document.createElement('canvas');
+      QRCode.toCanvas(qc,siteUrl,{width:qrSz,margin:1,color:{dark:'#111111',light:'#ffffff'}},err=>{
+        if(!err)ctx.drawImage(qc,qrX,qrY,qrSz,qrSz);res();
+      });
+    }catch(e){res();}
+  });
 
-  // 다운로드
+  // URL 텍스트 (QR 아래)
+  ctx.save();ctx.font='10px Nunito,sans-serif';ctx.fillStyle='rgba(255,255,255,.35)';
+  ctx.textAlign='center';ctx.fillText(siteUrl,qrX+qrSz/2,S-8);ctx.restore();
+
+  // ── 하단 좌측 브랜드 ──
+  ctx.save();ctx.font='11px Nunito,sans-serif';ctx.textAlign='left';
+  ctx.fillStyle='rgba(255,255,255,.25)';ctx.fillText('Birth MBTI  ·  생일 에너지 분석',22,S-10);ctx.restore();
+
+  // ── 저장 + 링크 자동 복사 ──
+  const shareUrl=location.href.split('#')[0]+'#birth='+curBirth+'&g='+curGender;
+  try{await navigator.clipboard.writeText(shareUrl);}catch(e){}
+
   cv.toBlob(blob=>{
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
-    a.href=url;a.download='birthmbi_'+(mbti||'result')+'_'+curBirth+'.png';
-    a.click();
-    setTimeout(()=>URL.revokeObjectURL(url),1000);
-    showToast(t('imgSaved'));
-  },'image/png');
+    a.href=url;a.download='birthmbi_'+curMType+'_'+nick+'.jpg';
+    a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    showToast('📷 카드 저장 + 🔗 링크 복사 완료!');
+  },'image/jpeg',.93);
 }
 
 /* 공유 */
