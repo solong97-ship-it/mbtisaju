@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>개인정보처리방침 — 생일MBTI</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7FF;--surface:#fff;--border:#EDE4F5;--lav:#B68FE8;--rose:#FF8FAB;--ink:#2D1B4E;--g1:#5A4672;--g2:#9585A8;--g3:#C8BED6;--g4:#F0EBF6;--r-lg:22px;--r-md:14px;--sh:0 2px 16px rgba(45,27,78,.07)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',sans-serif;max-width:720px;margin:0 auto;padding:0 20px 60px;line-height:1.8;font-size:15px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0}
+.logo{font-family:'Jua',sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--lav),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.back-btn{font-size:14px;color:var(--g2);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;transition:.2s}
+.back-btn:hover{border-color:var(--lav);color:var(--lav)}
+h1{font-family:'Jua',sans-serif;font-size:26px;margin:36px 0 8px;color:var(--ink)}
+.subtitle{font-size:13px;color:var(--g2);margin-bottom:32px}
+h2{font-family:'Jua',sans-serif;font-size:18px;color:var(--lav);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+h3{font-size:15px;font-weight:700;color:var(--g1);margin:20px 0 8px}
+p{color:var(--g1);margin-bottom:12px}
+ul,ol{color:var(--g1);padding-left:20px;margin-bottom:12px}
+li{margin-bottom:6px}
+.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:20px 22px;margin-bottom:16px;box-shadow:var(--sh)}
+.highlight{background:rgba(182,143,232,.08);border-left:3px solid var(--lav);padding:12px 16px;border-radius:0 var(--r-md) var(--r-md) 0;margin:12px 0;color:var(--ink)}
+.footer-note{font-size:12px;color:var(--g3);text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+a{color:var(--lav);text-decoration:none}
+a:hover{text-decoration:underline}
+.badge{display:inline-block;background:var(--g4);border-radius:8px;padding:2px 10px;font-size:11px;font-weight:700;color:var(--g2);margin-left:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="/" class="logo">생일MBTI</a>
+  <a href="/" class="back-btn">← 홈으로</a>
+</div>
+
+<h1>개인정보처리방침</h1>
+<p class="subtitle">최종 업데이트: 2026년 3월 14일 <span class="badge">v1.0</span></p>
+
+<div class="card">
+  <p>생일MBTI(이하 "서비스")는 이용자의 개인정보를 소중히 여기며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 서비스가 어떤 정보를 수집하고, 어떻게 이용·보호하는지 설명합니다.</p>
+</div>
+
+<h2>1. 수집하는 정보</h2>
+
+<h3>1-1. 사용자가 직접 입력하는 정보</h3>
+<ul>
+  <li><strong>생년월일 (6자리 숫자)</strong> — 사주 기질 분석에 사용</li>
+  <li><strong>성별</strong> — 기질 성향 분석에 사용</li>
+  <li><strong>성격 테스트 응답 (선택사항)</strong> — 결과 보정에 사용</li>
+  <li><strong>Gemini API 키 (선택사항)</strong> — AI 심화 분석 기능 이용 시 사용자가 직접 입력</li>
+</ul>
+<div class="highlight">⚠️ 생년월일·성별·테스트 응답은 <strong>서버에 전송되거나 저장되지 않습니다.</strong> 모든 분석은 사용자의 기기(브라우저) 내에서만 처리됩니다.</div>
+
+<h3>1-2. 자동으로 수집되는 정보</h3>
+<ul>
+  <li><strong>언어 설정</strong> — 브라우저 로컬 스토리지에 저장 (서버 전송 없음)</li>
+  <li><strong>Gemini API 키</strong> — 입력 시 브라우저 로컬 스토리지에만 저장 (서버 전송 없음, 사용자가 언제든 삭제 가능)</li>
+  <li><strong>접속 로그</strong> — Firebase Hosting 서버가 표준 접속 로그(IP, 접속 시간, 요청 URL)를 자동 수집할 수 있습니다. 이는 Google Firebase의 정책에 따릅니다.</li>
+</ul>
+
+<h2>2. 제3자 서비스</h2>
+<div class="card">
+  <h3>Google Gemini API (선택사항)</h3>
+  <p>AI 심화 분석 기능을 사용하는 경우, 사용자가 입력한 생년월일·성별 정보가 Google의 Gemini API로 전송됩니다. 이 기능은 사용자가 직접 API 키를 입력했을 때만 활성화됩니다.</p>
+  <p>Google의 데이터 처리 방식: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></p>
+
+  <h3 style="margin-top:16px">Firebase Hosting (Google)</h3>
+  <p>서비스는 Google Firebase Hosting을 통해 제공됩니다. Firebase는 서비스 운영에 필요한 기본 접속 로그를 수집할 수 있습니다.</p>
+  <p>Firebase 정책: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 및 보안</a></p>
+
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>서비스는 Google AdSense를 통해 광고를 게재합니다. Google AdSense는 사용자의 관심사에 맞는 광고를 표시하기 위해 쿠키를 사용할 수 있습니다. 사용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 끌 수 있습니다.</p>
+  <p>Google의 광고 정책: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">광고 정보</a></p>
+
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>가독성을 위해 Google Fonts를 사용합니다. 폰트 로드 시 Google 서버에 요청이 발생할 수 있습니다.</p>
+</div>
+
+<h2>3. 쿠키 및 로컬 스토리지</h2>
+<ul>
+  <li><strong>로컬 스토리지 (언어 설정, API 키)</strong> — 서비스가 직접 저장하며 외부로 전송하지 않습니다. 브라우저 설정에서 삭제할 수 있습니다.</li>
+  <li><strong>광고 쿠키 (Google AdSense)</strong> — Google이 설정하는 쿠키로, 광고 개인화에 사용됩니다. 브라우저 설정 또는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 관리할 수 있습니다.</li>
+</ul>
+
+<h2>4. 정보의 이용 목적</h2>
+<ul>
+  <li>생일 기반 MBTI 기질 분석 결과 제공</li>
+  <li>다국어 서비스 지원 (언어 설정 유지)</li>
+  <li>AI 심화 분석 기능 제공 (API 키 입력 시에만)</li>
+  <li>서비스 안정성 유지 및 오류 대응</li>
+</ul>
+
+<h2>5. 정보 보유 및 삭제</h2>
+<p>서비스가 직접 저장하는 정보(언어 설정, API 키)는 사용자의 기기 로컬 스토리지에만 존재하며, 브라우저 설정에서 언제든 삭제할 수 있습니다. 서버에는 어떠한 개인정보도 저장하지 않습니다.</p>
+
+<h2>6. 아동의 개인정보</h2>
+<p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않습니다. 아동의 개인정보를 고의로 수집하지 않으며, 발견 시 즉시 삭제 조치합니다.</p>
+
+<h2>7. 이용자의 권리</h2>
+<ul>
+  <li>브라우저 설정을 통해 로컬 스토리지 데이터를 언제든 삭제할 수 있습니다.</li>
+  <li>광고 쿠키 설정은 브라우저 또는 Google 광고 설정에서 변경할 수 있습니다.</li>
+  <li>Gemini AI 기능은 API 키를 입력하지 않으면 사용되지 않습니다.</li>
+</ul>
+
+<h2>8. 방침 변경 안내</h2>
+<p>본 개인정보처리방침이 변경되는 경우 이 페이지에 변경 일자와 함께 공지됩니다. 지속적인 서비스 이용은 변경된 방침에 동의하는 것으로 간주됩니다.</p>
+
+<h2>9. 문의</h2>
+<p>개인정보 관련 문의사항은 아래 이메일로 연락해 주세요.</p>
+<div class="card">
+  <p>📧 이메일: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
+  <p>⏱️ 답변 기간: 영업일 기준 3일 이내</p>
+</div>
+
+<div class="footer-note">
+  <p>© 2026 생일MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">홈</a> · <a href="/about.html">소개</a> · <a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a></p>
+</div>
+</body>
+</html>
