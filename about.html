@@ -4,42 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>소개 — 생일MBTI</title>
-<meta name="description" content="생일MBTI는 태어난 날의 사주 원국에서 읽히는 타고난 기질을 MBTI로 표현하는 서비스입니다. 동양 역술의 사주명리와 현대 심리학적 MBTI를 융합한 새로운 자기 탐색 도구입니다.">
+<meta name="description" content="생일MBTI는 태어난 날의 사주 원국에서 읽히는 타고난 기질을 MBTI로 표현하는 서비스입니다. 동양 역술의 사주명리와 현대 심리학적 MBTI를 융합한 자기 탐색 도구입니다.">
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#FBF7FF;--surface:#fff;--border:#EDE4F5;--lav:#B68FE8;--rose:#FF8FAB;--mint:#7ED4BC;--gold:#FFD166;--ink:#2D1B4E;--g1:#5A4672;--g2:#9585A8;--g3:#C8BED6;--g4:#F0EBF6;--r-lg:22px;--r-md:14px;--sh:0 2px 16px rgba(45,27,78,.07);--sh-lg:0 8px 32px rgba(45,27,78,.10)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',sans-serif;max-width:720px;margin:0 auto;padding:0 20px 60px;line-height:1.8;font-size:15px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0;flex-wrap:wrap;gap:10px}
 .logo{font-family:'Jua',sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--lav),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
-.back-btn{font-size:14px;color:var(--g2);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;transition:.2s}
-.back-btn:hover{border-color:var(--lav);color:var(--lav)}
+.top-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.back-btn{font-size:13px;color:var(--g2);text-decoration:none;padding:7px 13px;border:1.5px solid var(--border);border-radius:20px;white-space:nowrap}
+.lang-bar{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-size:11px;padding:5px 10px;border:1.5px solid var(--border);border-radius:16px;cursor:pointer;background:var(--g4);color:var(--g2);font-family:inherit}
+.lbtn.active{border-color:var(--lav);background:rgba(182,143,232,.12);color:var(--lav);font-weight:700}
 .hero-section{text-align:center;padding:40px 0 32px}
-.hero-section h1{font-family:'Jua',sans-serif;font-size:30px;line-height:1.4;color:var(--ink);margin-bottom:12px}
+.hero-section h1{font-family:'Jua',sans-serif;font-size:28px;line-height:1.4;color:var(--ink);margin-bottom:12px}
 .hero-section h1 em{font-style:normal;background:linear-gradient(135deg,var(--lav),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-section p{font-size:15px;color:var(--g2);line-height:1.8}
-h2{font-family:'Jua',sans-serif;font-size:22px;color:var(--ink);margin:40px 0 16px}
+.hero-section p{font-size:14px;color:var(--g2);line-height:1.8}
+h2{font-family:'Jua',sans-serif;font-size:20px;color:var(--ink);margin:36px 0 14px}
 h2 span{background:linear-gradient(135deg,var(--lav),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-h3{font-size:17px;font-weight:700;color:var(--lav);margin:24px 0 10px}
+h3{font-size:16px;font-weight:700;color:var(--lav);margin:22px 0 10px}
 p{color:var(--g1);margin-bottom:14px;line-height:1.85}
 ul{color:var(--g1);padding-left:22px;margin-bottom:14px}
 li{margin-bottom:8px;line-height:1.8}
-.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:24px 26px;margin-bottom:20px;box-shadow:var(--sh)}
-.card-lav{border-color:rgba(182,143,232,.3);background:rgba(182,143,232,.04)}
-.card-rose{border-color:rgba(255,143,171,.3);background:rgba(255,143,171,.04)}
-.card-mint{border-color:rgba(126,212,188,.3);background:rgba(126,212,188,.04)}
-.divider{height:1px;background:var(--border);margin:32px 0}
-.step-row{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
-.step-num{flex-shrink:0;width:36px;height:36px;background:linear-gradient(135deg,var(--lav),var(--rose));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Jua',sans-serif;font-size:16px;color:#fff;font-weight:900;margin-top:2px}
-.step-body h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.step-body p{margin:0;font-size:14px}
+.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:22px 24px;margin-bottom:18px;box-shadow:var(--sh)}
+.divider{height:1px;background:var(--border);margin:30px 0}
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
-@media(max-width:500px){.compare-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.compare-grid{grid-template-columns:1fr}}
 .compare-card{border-radius:var(--r-md);padding:16px;text-align:center}
 .compare-card.normal{background:rgba(149,133,168,.08);border:1.5px solid rgba(149,133,168,.2)}
 .compare-card.birth{background:rgba(182,143,232,.08);border:1.5px solid rgba(182,143,232,.3)}
 .compare-card h4{font-family:'Jua',sans-serif;font-size:15px;margin-bottom:8px}
-.compare-card p{font-size:13px;margin:0;line-height:1.7}
+.compare-card p{font-size:13px;margin:0;line-height:1.7;color:var(--g1)}
 .pillar-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
 .pillar{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);padding:14px;text-align:center;box-shadow:var(--sh)}
 .pillar-icon{font-size:22px;margin-bottom:6px}
@@ -49,203 +45,291 @@ li{margin-bottom:8px;line-height:1.8}
 .mbti-item{background:var(--g4);border-radius:var(--r-md);padding:12px 14px}
 .mbti-item .axis{font-weight:700;color:var(--lav);font-size:13px;margin-bottom:4px}
 .mbti-item .desc{font-size:12px;color:var(--g1);line-height:1.6}
-.qa-item{margin-bottom:20px}
-.qa-q{font-weight:700;color:var(--ink);margin-bottom:6px;font-size:15px}
+.step-row{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step-num{flex-shrink:0;width:34px;height:34px;background:linear-gradient(135deg,var(--lav),var(--rose));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Jua',sans-serif;font-size:15px;color:#fff;margin-top:2px}
+.step-body h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.step-body p{margin:0;font-size:14px}
+.qa-item{margin-bottom:18px}
+.qa-q{font-weight:700;color:var(--ink);margin-bottom:6px}
 .qa-a{color:var(--g1);font-size:14px;line-height:1.8;padding-left:14px;border-left:2px solid var(--lav)}
-.contact-card{background:linear-gradient(135deg,rgba(182,143,232,.08),rgba(255,143,171,.08));border:1.5px solid rgba(182,143,232,.25);border-radius:var(--r-lg);padding:24px 26px;text-align:center}
-.contact-card h3{color:var(--ink);margin-top:0}
 .footer-note{font-size:12px;color:var(--g3);text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
 a{color:var(--lav);text-decoration:none}
 a:hover{text-decoration:underline}
 strong{color:var(--ink)}
+[data-sec]{display:none}
+[data-sec].show{display:block}
 </style>
 </head>
 <body>
 <div class="topbar">
   <a href="/" class="logo">생일MBTI</a>
-  <a href="/" class="back-btn">← 홈으로</a>
+  <div class="top-right">
+    <div class="lang-bar">
+      <button class="lbtn" onclick="setLang('ko')">🇰🇷 KO</button>
+      <button class="lbtn" onclick="setLang('ja')">🇯🇵 JA</button>
+      <button class="lbtn" onclick="setLang('en')">🇺🇸 EN</button>
+      <button class="lbtn" onclick="setLang('zh-TW')">🇹🇼 繁</button>
+      <button class="lbtn" onclick="setLang('zh-CN')">🇨🇳 简</button>
+    </div>
+    <a href="/" class="back-btn" id="back-btn">← 홈으로</a>
+  </div>
 </div>
 
+<!-- ══ 한국어 ══ -->
+<div data-sec="ko">
 <div class="hero-section">
   <h1>태어날 때부터 정해진<br><em>나만의 기질</em>을 만나봐</h1>
   <p>생일MBTI는 동양 역술의 사주명리학과<br>현대 심리 유형론 MBTI를 융합한 자기 탐색 서비스입니다.</p>
 </div>
-
 <div class="divider"></div>
-
 <h2>🌙 <span>생일MBTI란?</span></h2>
-
-<p>MBTI 검사를 할 때마다 결과가 달라진 경험이 있나요? 오늘은 INFP, 내일은 INFJ, 기분에 따라 ENFP가 되기도 하죠. 이건 당연한 일입니다. 일반 MBTI는 현재 내 상태와 환경, 경험에 따라 달라지는 <strong>"지금의 나"</strong>를 측정하거든요.</p>
-
-<p>생일MBTI는 다릅니다. 태어난 날의 <strong>사주 원국(四柱元局)</strong>에 담긴 기운을 분석해서, 환경과 경험에 흔들리지 않는 <strong>"태어날 때부터의 나"</strong>를 읽어냅니다. 이것이 바로 여러분의 타고난 기질(氣質)입니다.</p>
-
+<p>MBTI 검사를 할 때마다 결과가 달라진 경험이 있나요? 오늘은 INFP, 내일은 INFJ… 이건 당연합니다. 일반 MBTI는 현재 상태와 환경에 따라 달라지는 <strong>"지금의 나"</strong>를 측정하거든요.</p>
+<p>생일MBTI는 다릅니다. 태어난 날의 <strong>사주 원국(四柱元局)</strong>에 담긴 기운을 분석해서, 환경에 흔들리지 않는 <strong>"태어날 때부터의 나"</strong>를 읽어냅니다.</p>
 <div class="compare-grid">
-  <div class="compare-card normal">
-    <h4>일반 MBTI</h4>
-    <p>설문지 기반<br>현재 상태 측정<br>환경·기분에 따라 변함<br>주기적으로 재검사 필요</p>
-  </div>
-  <div class="compare-card birth">
-    <h4>생일 MBTI</h4>
-    <p>생년월일 기반<br>타고난 기질 측정<br>변하지 않는 본성<br>평생 유효한 기질 지도</p>
-  </div>
+  <div class="compare-card normal"><h4>일반 MBTI</h4><p>설문지 기반 · 현재 상태 측정 · 환경·기분에 따라 변함</p></div>
+  <div class="compare-card birth"><h4>생일 MBTI</h4><p>생년월일 기반 · 타고난 기질 측정 · 변하지 않는 본성</p></div>
 </div>
-
-<p style="font-size:13px;color:var(--g2)">💡 둘 다 진짜 나입니다. 생일MBTI는 타고난 뼈대, 일반 MBTI는 그 위에 환경이 입힌 옷이라고 생각하면 돼요.</p>
-
 <div class="divider"></div>
-
-<h2>🔮 <span>분석 원리: 사주명리와 MBTI의 융합</span></h2>
-
-<p>생일MBTI의 분석은 수천 년 역사를 가진 동양 역술 <strong>사주명리학(四柱命理學)</strong>을 기반으로 합니다. 사주명리학은 태어난 해·월·일·시의 4개 기둥(四柱)에서 읽히는 기운의 조합으로 사람의 본성과 기질을 파악하는 학문입니다.</p>
-
-<h3>사주의 3가지 기둥 (년·월·일주)</h3>
-
+<h2>🔮 <span>분석 원리</span></h2>
+<p>생일MBTI는 수천 년 역사의 <strong>사주명리학(四柱命理學)</strong>을 기반으로 합니다. 태어난 해·월·일의 기운 조합으로 사람의 본성과 기질을 파악하는 학문입니다.</p>
+<h3>사주의 3가지 기둥</h3>
 <div class="pillar-row">
-  <div class="pillar">
-    <div class="pillar-icon">🌏</div>
-    <div class="pillar-name">년주 (年柱)</div>
-    <div class="pillar-desc">태어난 해의 기운<br>조상·뿌리·큰 흐름</div>
-  </div>
-  <div class="pillar">
-    <div class="pillar-icon">🌿</div>
-    <div class="pillar-name">월주 (月柱)</div>
-    <div class="pillar-desc">태어난 달의 기운<br>사회적 환경·부모<br><strong>십성(十星) 도출</strong></div>
-  </div>
-  <div class="pillar">
-    <div class="pillar-icon">⭐</div>
-    <div class="pillar-name">일주 (日柱)</div>
-    <div class="pillar-desc">태어난 날의 기운<br><strong>자아의 핵심 기질</strong><br>60갑자 일주론</div>
-  </div>
+  <div class="pillar"><div class="pillar-icon">🌏</div><div class="pillar-name">년주(年柱)</div><div class="pillar-desc">태어난 해의 기운 · 큰 흐름</div></div>
+  <div class="pillar"><div class="pillar-icon">🌿</div><div class="pillar-name">월주(月柱)</div><div class="pillar-desc">태어난 달의 기운 · <strong>십성 도출</strong></div></div>
+  <div class="pillar"><div class="pillar-icon">⭐</div><div class="pillar-name">일주(日柱)</div><div class="pillar-desc"><strong>자아의 핵심 기질</strong> · 60갑자</div></div>
 </div>
-
-<h3>MBTI 4축 도출 방식</h3>
-<p>사주의 천간(天干)과 지지(地支)가 가진 오행(五行) 에너지와 십성(十星) 특성을 현대 심리 유형론의 4가지 축으로 변환합니다.</p>
-
+<h3>MBTI 4축 도출</h3>
 <div class="mbti-grid">
-  <div class="mbti-item">
-    <div class="axis">E / I — 외향·내향</div>
-    <div class="desc">일주 천간의 양(陽)·음(陰) 성질과 오행 에너지의 방향성으로 판단</div>
-  </div>
-  <div class="mbti-item">
-    <div class="axis">N / S — 직관·감각</div>
-    <div class="desc">월주 십성의 특성과 목(木)·화(火) vs 금(金)·수(水) 오행 비중으로 판단</div>
-  </div>
-  <div class="mbti-item">
-    <div class="axis">T / F — 사고·감정</div>
-    <div class="desc">관성(官星)·인성(印星) vs 식상(食傷)·재성(財星) 비율로 판단</div>
-  </div>
-  <div class="mbti-item">
-    <div class="axis">J / P — 판단·인식</div>
-    <div class="desc">정관(正官)·정인(正印) vs 편관(偏官)·편인(偏印)의 우세로 판단</div>
-  </div>
+  <div class="mbti-item"><div class="axis">E / I</div><div class="desc">일주 천간의 양·음 성질과 오행 방향성</div></div>
+  <div class="mbti-item"><div class="axis">N / S</div><div class="desc">월주 십성과 목·화 vs 금·수 오행 비중</div></div>
+  <div class="mbti-item"><div class="axis">T / F</div><div class="desc">관성·인성 vs 식상·재성 비율</div></div>
+  <div class="mbti-item"><div class="axis">J / P</div><div class="desc">정관·정인 vs 편관·편인의 우세</div></div>
 </div>
-
 <h3>분석 흐름</h3>
-
-<div class="step-row">
-  <div class="step-num">1</div>
-  <div class="step-body">
-    <h4>생년월일 → 사주 원국 산출</h4>
-    <p>입력된 생년월일을 60갑자 기준으로 변환해 년주·월주·일주를 산출합니다. 절기 기준 월주 보정이 적용됩니다.</p>
-  </div>
-</div>
-<div class="step-row">
-  <div class="step-num">2</div>
-  <div class="step-body">
-    <h4>월주 십성 분석 → MBTI 1차 도출</h4>
-    <p>월주의 천간과 일주 천간의 관계에서 십성(十星)을 도출하고, 이를 MBTI 유형 판단에 가장 큰 가중치로 반영합니다.</p>
-  </div>
-</div>
-<div class="step-row">
-  <div class="step-num">3</div>
-  <div class="step-body">
-    <h4>60갑자 일주론 → 기질 세부 분석</h4>
-    <p>총 60가지 갑자(甲子)로 표현되는 일주별 고유 기질을 분석합니다. 성별에 따른 음양 기질 차이도 반영합니다.</p>
-  </div>
-</div>
-<div class="step-row">
-  <div class="step-num">4</div>
-  <div class="step-body">
-    <h4>오행 에너지 + 대운·세운 분석</h4>
-    <p>원국 전체의 오행 분포, 현재 대운(10년 흐름)과 세운(올해 에너지)을 종합해 최종 기질 보정을 합니다.</p>
-  </div>
-</div>
-<div class="step-row">
-  <div class="step-num">5</div>
-  <div class="step-body">
-    <h4>순간 테스트 보정 (선택)</h4>
-    <p>4가지 직관적 질문으로 E/I, N/S 등 경계선에 있는 기질 축을 보정합니다. 답하지 않아도 분석에 문제없습니다.</p>
-  </div>
-</div>
-
+<div class="step-row"><div class="step-num">1</div><div class="step-body"><h4>생년월일 → 사주 원국 산출</h4><p>60갑자 기준으로 년주·월주·일주를 산출합니다. 절기 기준 월주 보정이 적용됩니다.</p></div></div>
+<div class="step-row"><div class="step-num">2</div><div class="step-body"><h4>월주 십성 분석 → MBTI 1차 도출</h4><p>월주와 일주의 관계에서 십성을 도출하고 MBTI 유형 판단에 가장 큰 가중치로 반영합니다.</p></div></div>
+<div class="step-row"><div class="step-num">3</div><div class="step-body"><h4>60갑자 일주론 → 기질 세부 분석</h4><p>60가지 일주별 고유 기질을 분석합니다. 성별에 따른 음양 기질 차이도 반영됩니다.</p></div></div>
+<div class="step-row"><div class="step-num">4</div><div class="step-body"><h4>오행·대운·세운 종합 보정</h4><p>오행 분포, 현재 대운(10년 흐름), 세운(올해 에너지)을 종합해 최종 기질을 보정합니다.</p></div></div>
 <div class="divider"></div>
-
-<h2>🌟 <span>사주명리학이란?</span></h2>
-
-<p>사주명리학은 중국에서 기원해 한국·일본·동아시아 전반에 수천 년간 전해 내려온 동양 철학의 한 분야입니다. 우주의 기운을 10개의 천간(天干: 甲乙丙丁戊己庚辛壬癸)과 12개의 지지(地支: 子丑寅卯辰巳午未申酉戌亥)로 나누어 표현하고, 사람이 태어난 시점의 기운 조합으로 타고난 성품과 기질을 파악합니다.</p>
-
-<h3>오행(五行)의 기본 성질</h3>
-<ul>
-  <li><strong>목(木 · 나무)</strong> — 성장, 확장, 창의, 봄의 기운. 진취적이고 도전적인 성향.</li>
-  <li><strong>화(火 · 불)</strong> — 열정, 표현, 감성, 여름의 기운. 카리스마 있고 감정이 풍부한 성향.</li>
-  <li><strong>토(土 · 대지)</strong> — 안정, 중심, 신뢰, 환절기의 기운. 현실적이고 균형 잡힌 성향.</li>
-  <li><strong>금(金 · 쇠)</strong> — 결단, 원칙, 정의, 가을의 기운. 논리적이고 분석적인 성향.</li>
-  <li><strong>수(水 · 물)</strong> — 지혜, 유연, 직관, 겨울의 기운. 깊이 있고 통찰력 있는 성향.</li>
-</ul>
-
-<h3>십성(十星) — 관계의 에너지</h3>
-<p>십성은 일주 천간과 다른 기둥의 천간 사이의 오행 관계에서 도출되는 10가지 에너지입니다. 각 십성은 고유한 심리적 특성을 가지며, 생일MBTI의 MBTI 유형 산출에 핵심 역할을 합니다.</p>
-<ul>
-  <li><strong>비견(比肩)·겁재(劫財)</strong> — 독립, 경쟁, 자기표현의 에너지</li>
-  <li><strong>식신(食神)·상관(傷官)</strong> — 표현, 창의, 감성의 에너지</li>
-  <li><strong>편재(偏財)·정재(正財)</strong> — 현실 감각, 실용, 재물의 에너지</li>
-  <li><strong>편관(偏官)·정관(正官)</strong> — 통제, 원칙, 리더십의 에너지</li>
-  <li><strong>편인(偏印)·정인(正印)</strong> — 지식, 직관, 보호의 에너지</li>
-</ul>
-
-<div class="divider"></div>
-
 <h2>❓ <span>자주 묻는 질문</span></h2>
-
-<div class="qa-item">
-  <div class="qa-q">Q. 기존 MBTI 결과와 많이 다른데 어느 쪽이 맞나요?</div>
-  <div class="qa-a">둘 다 맞습니다. 일반 MBTI는 "지금의 나"를, 생일MBTI는 "태어날 때부터의 나"를 보여줍니다. 다른 것이 당연해요. 오히려 두 결과를 비교하면서 환경이 나에게 어떤 영향을 미쳤는지 탐구하는 것이 더 흥미롭습니다.</div>
-</div>
-
-<div class="qa-item">
-  <div class="qa-q">Q. 생일MBTI는 과학적으로 검증된 건가요?</div>
-  <div class="qa-a">생일MBTI는 동양 역술 전통에 기반한 자기 탐색 도구이며, 현대 심리학적 의미의 과학적 검증을 거친 도구는 아닙니다. 재미와 자기 이해를 위한 참고 자료로 활용해 주세요. MBTI 자체도 심리학계에서 신뢰도 논란이 있는 도구라는 점도 참고하세요.</div>
-</div>
-
-<div class="qa-item">
-  <div class="qa-q">Q. 태어난 시간도 입력해야 더 정확하지 않나요?</div>
-  <div class="qa-a">시주(時柱)까지 포함하면 더 세밀한 분석이 가능하지만, 많은 분이 정확한 출생 시간을 모릅니다. 생일MBTI는 누구나 쉽게 이용할 수 있도록 년·월·일 3가지 기둥만으로 핵심 기질을 분석합니다.</div>
-</div>
-
-<div class="qa-item">
-  <div class="qa-q">Q. 내 정보는 어디에 저장되나요?</div>
-  <div class="qa-a">입력하신 생년월일과 성별은 서버에 전송되거나 저장되지 않습니다. 모든 분석은 여러분의 기기(브라우저) 내에서만 처리됩니다. 자세한 내용은 <a href="/privacy.html">개인정보처리방침</a>을 확인해 주세요.</div>
-</div>
-
-<div class="qa-item">
-  <div class="qa-q">Q. AI 분석 기능은 뭔가요?</div>
-  <div class="qa-a">Google Gemini API를 연동해 더 풍부한 AI 심화 분석을 제공하는 선택적 기능입니다. 사용하려면 Google AI Studio에서 무료로 발급받은 API 키를 설정(⚙️)에 입력하면 됩니다. API 키 없이도 기본 분석은 완전히 이용할 수 있습니다.</div>
-</div>
-
+<div class="qa-item"><div class="qa-q">Q. 기존 MBTI 결과와 다른데 어느 쪽이 맞나요?</div><div class="qa-a">둘 다 맞습니다. 일반 MBTI는 "지금의 나"를, 생일MBTI는 "태어날 때부터의 나"를 보여줍니다. 다른 것이 당연해요.</div></div>
+<div class="qa-item"><div class="qa-q">Q. 생일MBTI는 과학적으로 검증된 건가요?</div><div class="qa-a">동양 역술 전통에 기반한 자기 탐색 도구이며, 현대 심리학적 의미의 과학적 검증을 거친 도구는 아닙니다. 재미와 자기 이해를 위한 참고 자료로 활용해 주세요.</div></div>
+<div class="qa-item"><div class="qa-q">Q. 내 정보는 어디에 저장되나요?</div><div class="qa-a">입력하신 생년월일과 성별은 서버에 전송되거나 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. 자세한 내용은 <a href="/privacy.html">개인정보처리방침</a>을 확인해 주세요.</div></div>
 <div class="divider"></div>
-
 <h2>👩‍💻 <span>서비스 소개</span></h2>
-
 <div class="card">
-  <h3 style="margin-top:0;color:var(--ink)">생일MBTI</h3>
-  <p>생일MBTI는 동양 철학의 사주명리학과 현대 심리 유형론 MBTI를 융합해, 태어날 때부터의 타고난 기질을 쉽고 재미있게 탐색할 수 있는 서비스입니다.</p>
-  <p>복잡한 사주 지식 없이도 생년월일 6자리만으로 나만의 기질 지도를 그릴 수 있도록 설계했습니다. 한국어·영어·일본어·중국어(간·번체) 5개 언어를 지원합니다.</p>
+  <p>생일MBTI는 동양 철학의 사주명리학과 현대 심리 유형론 MBTI를 융합해, 누구나 생년월일 6자리만으로 타고난 기질을 탐색할 수 있는 서비스입니다. 한국어·영어·일본어·중국어(간·번체) 5개 언어를 지원합니다.</p>
   <p style="margin-bottom:0">📧 문의: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
 </div>
-
 <div class="footer-note">
   <p>© 2026 생일MBTI. All rights reserved.</p>
   <p style="margin-top:8px"><a href="/">홈</a> · <a href="/about.html">소개</a> · <a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a></p>
 </div>
+</div>
+
+<!-- ══ 日本語 ══ -->
+<div data-sec="ja">
+<div class="hero-section">
+  <h1>生まれた時から決まっていた<br><em>あなただけの気質</em>に出会おう</h1>
+  <p>誕生日MBTIは、東洋の四柱命理学と<br>現代の心理タイプ論MBTIを融合した自己探索サービスです。</p>
+</div>
+<div class="divider"></div>
+<h2>🌙 <span>誕生日MBTIとは？</span></h2>
+<p>MBTI検査で毎回結果が変わった経験はありませんか？今日はINFP、明日はINFJ…これは当然のことです。一般的なMBTIは、現在の状態と環境によって変わる<strong>「今の自分」</strong>を測定するからです。</p>
+<p>誕生日MBTIは違います。生まれた日の<strong>四柱元局</strong>に刻まれたエネルギーを分析し、環境に左右されない<strong>「生まれた時からの自分」</strong>を読み取ります。</p>
+<div class="compare-grid">
+  <div class="compare-card normal"><h4>一般MBTI</h4><p>アンケート形式 · 現在の状態 · 環境や気分で変わる</p></div>
+  <div class="compare-card birth"><h4>誕生日MBTI</h4><p>生年月日から · 生まれつきの気質 · 変わらない本質</p></div>
+</div>
+<div class="divider"></div>
+<h2>🔮 <span>分析の仕組み</span></h2>
+<p>誕生日MBTIは数千年の歴史を持つ<strong>四柱命理学</strong>を基盤としています。生まれた年・月・日のエネルギーの組み合わせで、人の本性と気質を把握する学問です。</p>
+<h3>四柱の3つの柱</h3>
+<div class="pillar-row">
+  <div class="pillar"><div class="pillar-icon">🌏</div><div class="pillar-name">年柱</div><div class="pillar-desc">生まれた年のエネルギー · 大きな流れ</div></div>
+  <div class="pillar"><div class="pillar-icon">🌿</div><div class="pillar-name">月柱</div><div class="pillar-desc">生まれた月のエネルギー · <strong>十星を導出</strong></div></div>
+  <div class="pillar"><div class="pillar-icon">⭐</div><div class="pillar-name">日柱</div><div class="pillar-desc"><strong>自我の核心気質</strong> · 六十甲子</div></div>
+</div>
+<h3>MBTI4軸の導出</h3>
+<div class="mbti-grid">
+  <div class="mbti-item"><div class="axis">E / I</div><div class="desc">日柱天干の陽・陰の性質と五行の方向性</div></div>
+  <div class="mbti-item"><div class="axis">N / S</div><div class="desc">月柱十星と木・火 vs 金・水の五行比重</div></div>
+  <div class="mbti-item"><div class="axis">T / F</div><div class="desc">官星・印星 vs 食傷・財星の比率</div></div>
+  <div class="mbti-item"><div class="axis">J / P</div><div class="desc">正官・正印 vs 偏官・偏印の優位</div></div>
+</div>
+<div class="divider"></div>
+<h2>❓ <span>よくある質問</span></h2>
+<div class="qa-item"><div class="qa-q">Q. 従来のMBTI結果と違うのですが、どちらが正しいですか？</div><div class="qa-a">どちらも正しいです。一般MBTIは「今の自分」を、誕生日MBTIは「生まれた時からの自分」を示します。違うのは当然です。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 誕生日MBTIは科学的に検証されていますか？</div><div class="qa-a">東洋の占術の伝統に基づく自己探索ツールであり、現代心理学的な意味での科学的検証を受けたものではありません。楽しみと自己理解のための参考資料としてご活用ください。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 入力した情報はどこに保存されますか？</div><div class="qa-a">入力された生年月日と性別はサーバーに送信・保存されません。すべての分析はデバイス内でのみ処理されます。詳細は<a href="/privacy.html">プライバシーポリシー</a>をご確認ください。</div></div>
+<div class="divider"></div>
+<h2>👩‍💻 <span>サービス紹介</span></h2>
+<div class="card">
+  <p>誕生日MBTIは東洋哲学の四柱命理学と現代心理タイプ論MBTIを融合し、生年月日6桁だけで生まれ持った気質を探索できるサービスです。韓国語・英語・日本語・中国語（繁体・簡体）の5言語に対応しています。</p>
+  <p style="margin-bottom:0">📧 お問い合わせ: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
+</div>
+<div class="footer-note">
+  <p>© 2026 誕生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">ホーム</a> · <a href="/about.html">サービス紹介</a> · <a href="/terms.html">利用規約</a> · <a href="/privacy.html">プライバシーポリシー</a></p>
+</div>
+</div>
+
+<!-- ══ English ══ -->
+<div data-sec="en">
+<div class="hero-section">
+  <h1>Discover the temperament<br><em>you were born with</em></h1>
+  <p>Birthday MBTI fuses the ancient wisdom of Four Pillars astrology<br>with the modern MBTI personality framework.</p>
+</div>
+<div class="divider"></div>
+<h2>🌙 <span>What is Birthday MBTI?</span></h2>
+<p>Have you ever gotten different MBTI results each time you test? INFP today, INFJ tomorrow — this is completely normal. Standard MBTI measures <strong>"who you are right now"</strong>, which shifts with your mood and experiences.</p>
+<p>Birthday MBTI is different. It analyzes the energy pattern in your <strong>Four Pillars birth chart</strong> to reveal <strong>"who you were born to be"</strong> — a temperament that doesn't change with the environment.</p>
+<div class="compare-grid">
+  <div class="compare-card normal"><h4>Standard MBTI</h4><p>Questionnaire-based · Measures current state · Changes with mood &amp; environment</p></div>
+  <div class="compare-card birth"><h4>Birthday MBTI</h4><p>Birth date-based · Measures innate temperament · Stable core nature</p></div>
+</div>
+<div class="divider"></div>
+<h2>🔮 <span>How It Works</span></h2>
+<p>Birthday MBTI is based on <strong>Four Pillars Astrology (사주명리학)</strong>, a discipline with thousands of years of history across East Asia. It reads the combination of energies at the moment of your birth — year, month, and day — to understand your innate nature.</p>
+<h3>The Three Pillars</h3>
+<div class="pillar-row">
+  <div class="pillar"><div class="pillar-icon">🌏</div><div class="pillar-name">Year Pillar</div><div class="pillar-desc">Energy of birth year · Broad life patterns</div></div>
+  <div class="pillar"><div class="pillar-icon">🌿</div><div class="pillar-name">Month Pillar</div><div class="pillar-desc">Energy of birth month · <strong>Derives Ten Stars</strong></div></div>
+  <div class="pillar"><div class="pillar-icon">⭐</div><div class="pillar-name">Day Pillar</div><div class="pillar-desc"><strong>Core self &amp; temperament</strong> · 60 Jiazi system</div></div>
+</div>
+<h3>Deriving the MBTI 4 Axes</h3>
+<div class="mbti-grid">
+  <div class="mbti-item"><div class="axis">E / I</div><div class="desc">Yang/Yin quality of Day Pillar Heavenly Stem + Five Element direction</div></div>
+  <div class="mbti-item"><div class="axis">N / S</div><div class="desc">Month Pillar Ten Stars + Wood·Fire vs Metal·Water balance</div></div>
+  <div class="mbti-item"><div class="axis">T / F</div><div class="desc">Officer·Resource stars vs Expression·Wealth stars ratio</div></div>
+  <div class="mbti-item"><div class="axis">J / P</div><div class="desc">Proper Officer·Resource vs Indirect Officer·Resource dominance</div></div>
+</div>
+<div class="divider"></div>
+<h2>❓ <span>Frequently Asked Questions</span></h2>
+<div class="qa-item"><div class="qa-q">Q. My Birthday MBTI differs from my standard MBTI. Which is correct?</div><div class="qa-a">Both are valid. Standard MBTI shows "who you are now," while Birthday MBTI shows "who you were born to be." The difference is perfectly expected — and exploring it is half the fun.</div></div>
+<div class="qa-item"><div class="qa-q">Q. Is Birthday MBTI scientifically validated?</div><div class="qa-a">Birthday MBTI is a self-exploration tool rooted in Eastern philosophical tradition. It has not undergone formal scientific validation in the Western psychological sense. Please use it as an entertaining reference for self-discovery.</div></div>
+<div class="qa-item"><div class="qa-q">Q. Where is my data stored?</div><div class="qa-a">Your date of birth and gender are never sent to any server. All analysis runs entirely in your browser. See our <a href="/privacy.html">Privacy Policy</a> for details.</div></div>
+<div class="divider"></div>
+<h2>👩‍💻 <span>About the Service</span></h2>
+<div class="card">
+  <p>Birthday MBTI combines the ancient Eastern wisdom of Four Pillars Astrology with the modern MBTI personality framework, making it easy for anyone to explore their innate temperament with just a 6-digit birth date. Available in Korean, English, Japanese, Traditional Chinese, and Simplified Chinese.</p>
+  <p style="margin-bottom:0">📧 Contact: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
+</div>
+<div class="footer-note">
+  <p>© 2026 Birthday MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/terms.html">Terms of Service</a> · <a href="/privacy.html">Privacy Policy</a></p>
+</div>
+</div>
+
+<!-- ══ 繁體中文 ══ -->
+<div data-sec="zh-TW">
+<div class="hero-section">
+  <h1>發現你與生俱來的<br><em>天生氣質</em></h1>
+  <p>生日MBTI融合了東方四柱命理學的智慧<br>與現代MBTI人格類型理論。</p>
+</div>
+<div class="divider"></div>
+<h2>🌙 <span>什麼是生日MBTI？</span></h2>
+<p>你是否每次測試MBTI都得到不同的結果？今天是INFP，明天是INFJ……這完全正常。標準MBTI測量的是受環境和心情影響的<strong>「現在的你」</strong>。</p>
+<p>生日MBTI不同。它分析出生日期中<strong>四柱元局</strong>蘊含的能量，揭示不受環境影響的<strong>「天生的你」</strong>。</p>
+<div class="compare-grid">
+  <div class="compare-card normal"><h4>標準MBTI</h4><p>問卷形式 · 測量當前狀態 · 隨環境心情變化</p></div>
+  <div class="compare-card birth"><h4>生日MBTI</h4><p>以出生日期為基礎 · 測量天生氣質 · 穩定的本質</p></div>
+</div>
+<div class="divider"></div>
+<h2>🔮 <span>分析原理</span></h2>
+<p>生日MBTI以擁有數千年歷史的<strong>四柱命理學</strong>為基礎。透過出生年、月、日的能量組合，了解一個人的本性與氣質。</p>
+<h3>四柱的三根支柱</h3>
+<div class="pillar-row">
+  <div class="pillar"><div class="pillar-icon">🌏</div><div class="pillar-name">年柱</div><div class="pillar-desc">出生年的能量 · 大方向</div></div>
+  <div class="pillar"><div class="pillar-icon">🌿</div><div class="pillar-name">月柱</div><div class="pillar-desc">出生月的能量 · <strong>導出十星</strong></div></div>
+  <div class="pillar"><div class="pillar-icon">⭐</div><div class="pillar-name">日柱</div><div class="pillar-desc"><strong>自我核心氣質</strong> · 六十甲子</div></div>
+</div>
+<h3>MBTI四軸導出方式</h3>
+<div class="mbti-grid">
+  <div class="mbti-item"><div class="axis">E / I</div><div class="desc">日柱天干的陽·陰性質與五行方向性</div></div>
+  <div class="mbti-item"><div class="axis">N / S</div><div class="desc">月柱十星與木·火 vs 金·水五行比重</div></div>
+  <div class="mbti-item"><div class="axis">T / F</div><div class="desc">官星·印星 vs 食傷·財星比例</div></div>
+  <div class="mbti-item"><div class="axis">J / P</div><div class="desc">正官·正印 vs 偏官·偏印的優勢</div></div>
+</div>
+<div class="divider"></div>
+<h2>❓ <span>常見問題</span></h2>
+<div class="qa-item"><div class="qa-q">Q. 生日MBTI與我的標準MBTI結果不同，哪個是正確的？</div><div class="qa-a">兩者都是正確的。標準MBTI顯示「現在的你」，生日MBTI顯示「天生的你」。不同是很正常的。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 生日MBTI有科學依據嗎？</div><div class="qa-a">生日MBTI是以東方哲學傳統為基礎的自我探索工具，並未經過現代心理學意義上的科學驗證。請將其作為娛樂與自我了解的參考資料使用。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 我的資訊儲存在哪裡？</div><div class="qa-a">您輸入的出生日期和性別不會傳送至任何伺服器。所有分析僅在您的裝置瀏覽器中執行。詳情請參閱<a href="/privacy.html">隱私權政策</a>。</div></div>
+<div class="divider"></div>
+<h2>👩‍💻 <span>服務介紹</span></h2>
+<div class="card">
+  <p>生日MBTI融合東方哲學的四柱命理學與現代MBTI人格類型理論，只需6位數出生日期，任何人都能輕鬆探索天生氣質。支援韓語、英語、日語、繁體中文和簡體中文共5種語言。</p>
+  <p style="margin-bottom:0">📧 聯絡我們: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
+</div>
+<div class="footer-note">
+  <p>© 2026 生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">首頁</a> · <a href="/about.html">服務介紹</a> · <a href="/terms.html">使用條款</a> · <a href="/privacy.html">隱私權政策</a></p>
+</div>
+</div>
+
+<!-- ══ 简体中文 ══ -->
+<div data-sec="zh-CN">
+<div class="hero-section">
+  <h1>发现你与生俱来的<br><em>天生气质</em></h1>
+  <p>生日MBTI融合了东方四柱命理学的智慧<br>与现代MBTI人格类型理论。</p>
+</div>
+<div class="divider"></div>
+<h2>🌙 <span>什么是生日MBTI？</span></h2>
+<p>你是否每次测试MBTI都得到不同的结果？今天是INFP，明天是INFJ……这完全正常。标准MBTI测量的是受环境和心情影响的<strong>「现在的你」</strong>。</p>
+<p>生日MBTI不同。它分析出生日期中<strong>四柱元局</strong>蕴含的能量，揭示不受环境影响的<strong>「天生的你」</strong>。</p>
+<div class="compare-grid">
+  <div class="compare-card normal"><h4>标准MBTI</h4><p>问卷形式 · 测量当前状态 · 随环境心情变化</p></div>
+  <div class="compare-card birth"><h4>生日MBTI</h4><p>以出生日期为基础 · 测量天生气质 · 稳定的本质</p></div>
+</div>
+<div class="divider"></div>
+<h2>🔮 <span>分析原理</span></h2>
+<p>生日MBTI以拥有数千年历史的<strong>四柱命理学</strong>为基础。通过出生年、月、日的能量组合，了解一个人的本性与气质。</p>
+<h3>四柱的三根支柱</h3>
+<div class="pillar-row">
+  <div class="pillar"><div class="pillar-icon">🌏</div><div class="pillar-name">年柱</div><div class="pillar-desc">出生年的能量 · 大方向</div></div>
+  <div class="pillar"><div class="pillar-icon">🌿</div><div class="pillar-name">月柱</div><div class="pillar-desc">出生月的能量 · <strong>导出十星</strong></div></div>
+  <div class="pillar"><div class="pillar-icon">⭐</div><div class="pillar-name">日柱</div><div class="pillar-desc"><strong>自我核心气质</strong> · 六十甲子</div></div>
+</div>
+<h3>MBTI四轴导出方式</h3>
+<div class="mbti-grid">
+  <div class="mbti-item"><div class="axis">E / I</div><div class="desc">日柱天干的阳·阴性质与五行方向性</div></div>
+  <div class="mbti-item"><div class="axis">N / S</div><div class="desc">月柱十星与木·火 vs 金·水五行比重</div></div>
+  <div class="mbti-item"><div class="axis">T / F</div><div class="desc">官星·印星 vs 食伤·财星比例</div></div>
+  <div class="mbti-item"><div class="axis">J / P</div><div class="desc">正官·正印 vs 偏官·偏印的优势</div></div>
+</div>
+<div class="divider"></div>
+<h2>❓ <span>常见问题</span></h2>
+<div class="qa-item"><div class="qa-q">Q. 生日MBTI与我的标准MBTI结果不同，哪个是正确的？</div><div class="qa-a">两者都是正确的。标准MBTI显示「现在的你」，生日MBTI显示「天生的你」。不同是很正常的。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 生日MBTI有科学依据吗？</div><div class="qa-a">生日MBTI是以东方哲学传统为基础的自我探索工具，并未经过现代心理学意义上的科学验证。请将其作为娱乐与自我了解的参考资料使用。</div></div>
+<div class="qa-item"><div class="qa-q">Q. 我的信息存储在哪里？</div><div class="qa-a">您输入的出生日期和性别不会发送至任何服务器。所有分析仅在您的设备浏览器中进行。详情请参阅<a href="/privacy.html">隐私政策</a>。</div></div>
+<div class="divider"></div>
+<h2>👩‍💻 <span>服务介绍</span></h2>
+<div class="card">
+  <p>生日MBTI融合东方哲学的四柱命理学与现代MBTI人格类型理论，只需6位数出生日期，任何人都能轻松探索天生气质。支持韩语、英语、日语、繁体中文和简体中文共5种语言。</p>
+  <p style="margin-bottom:0">📧 联系我们: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
+</div>
+<div class="footer-note">
+  <p>© 2026 生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">首页</a> · <a href="/about.html">服务介绍</a> · <a href="/terms.html">使用条款</a> · <a href="/privacy.html">隐私政策</a></p>
+</div>
+</div>
+
+<script>
+const BACK={ko:'← 홈으로',ja:'← ホームへ',en:'← Home','zh-TW':'← 返回首頁','zh-CN':'← 返回首页'};
+function setLang(l){
+  try{localStorage.setItem('saju_lang',l)}catch(e){}
+  document.querySelectorAll('[data-sec]').forEach(el=>el.classList.toggle('show',el.dataset.sec===l));
+  document.querySelectorAll('.lbtn').forEach(btn=>btn.classList.toggle('active',btn.textContent.includes({ko:'KO',ja:'JA',en:'EN','zh-TW':'繁','zh-CN':'简'}[l])));
+  document.getElementById('back-btn').textContent=BACK[l]||BACK.ko;
+  document.documentElement.lang=l==='zh-TW'?'zh-Hant':l==='zh-CN'?'zh-Hans':l;
+}
+(function(){
+  let l='ko';
+  try{l=localStorage.getItem('saju_lang')||'ko'}catch(e){}
+  if(!['ko','ja','en','zh-TW','zh-CN'].includes(l))l='ko';
+  setLang(l);
+})();
+</script>
 </body>
 </html>

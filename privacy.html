@@ -9,10 +9,13 @@
 :root{--bg:#FBF7FF;--surface:#fff;--border:#EDE4F5;--lav:#B68FE8;--rose:#FF8FAB;--ink:#2D1B4E;--g1:#5A4672;--g2:#9585A8;--g3:#C8BED6;--g4:#F0EBF6;--r-lg:22px;--r-md:14px;--sh:0 2px 16px rgba(45,27,78,.07)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',sans-serif;max-width:720px;margin:0 auto;padding:0 20px 60px;line-height:1.8;font-size:15px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 0 0;flex-wrap:wrap;gap:10px}
 .logo{font-family:'Jua',sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--lav),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
-.back-btn{font-size:14px;color:var(--g2);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;transition:.2s}
-.back-btn:hover{border-color:var(--lav);color:var(--lav)}
+.top-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.back-btn{font-size:13px;color:var(--g2);text-decoration:none;padding:7px 13px;border:1.5px solid var(--border);border-radius:20px;white-space:nowrap}
+.lang-bar{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-size:11px;padding:5px 10px;border:1.5px solid var(--border);border-radius:16px;cursor:pointer;background:var(--g4);color:var(--g2);font-family:inherit}
+.lbtn.active{border-color:var(--lav);background:rgba(182,143,232,.12);color:var(--lav);font-weight:700}
 h1{font-family:'Jua',sans-serif;font-size:26px;margin:36px 0 8px;color:var(--ink)}
 .subtitle{font-size:13px;color:var(--g2);margin-bottom:32px}
 h2{font-family:'Jua',sans-serif;font-size:18px;color:var(--lav);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
@@ -21,102 +24,305 @@ p{color:var(--g1);margin-bottom:12px}
 ul,ol{color:var(--g1);padding-left:20px;margin-bottom:12px}
 li{margin-bottom:6px}
 .card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:20px 22px;margin-bottom:16px;box-shadow:var(--sh)}
-.highlight{background:rgba(182,143,232,.08);border-left:3px solid var(--lav);padding:12px 16px;border-radius:0 var(--r-md) var(--r-md) 0;margin:12px 0;color:var(--ink)}
+.hl{background:rgba(182,143,232,.08);border-left:3px solid var(--lav);padding:12px 16px;border-radius:0 var(--r-md) var(--r-md) 0;margin:12px 0;color:var(--ink)}
 .footer-note{font-size:12px;color:var(--g3);text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
 a{color:var(--lav);text-decoration:none}
 a:hover{text-decoration:underline}
 .badge{display:inline-block;background:var(--g4);border-radius:8px;padding:2px 10px;font-size:11px;font-weight:700;color:var(--g2);margin-left:8px;vertical-align:middle}
+[data-sec]{display:none}
+[data-sec].show{display:block}
 </style>
 </head>
 <body>
 <div class="topbar">
   <a href="/" class="logo">생일MBTI</a>
-  <a href="/" class="back-btn">← 홈으로</a>
+  <div class="top-right">
+    <div class="lang-bar">
+      <button class="lbtn" onclick="setLang('ko')">🇰🇷 KO</button>
+      <button class="lbtn" onclick="setLang('ja')">🇯🇵 JA</button>
+      <button class="lbtn" onclick="setLang('en')">🇺🇸 EN</button>
+      <button class="lbtn" onclick="setLang('zh-TW')">🇹🇼 繁</button>
+      <button class="lbtn" onclick="setLang('zh-CN')">🇨🇳 简</button>
+    </div>
+    <a href="/" class="back-btn" id="back-btn">← 홈으로</a>
+  </div>
 </div>
 
+<!-- ══ 한국어 ══ -->
+<div data-sec="ko">
 <h1>개인정보처리방침</h1>
 <p class="subtitle">최종 업데이트: 2026년 3월 14일 <span class="badge">v1.0</span></p>
-
-<div class="card">
-  <p>생일MBTI(이하 "서비스")는 이용자의 개인정보를 소중히 여기며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 서비스가 어떤 정보를 수집하고, 어떻게 이용·보호하는지 설명합니다.</p>
-</div>
-
+<div class="card"><p>생일MBTI(이하 "서비스")는 이용자의 개인정보를 소중히 여기며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 서비스가 어떤 정보를 수집하고, 어떻게 이용·보호하는지 설명합니다.</p></div>
 <h2>1. 수집하는 정보</h2>
-
-<h3>1-1. 사용자가 직접 입력하는 정보</h3>
+<h3>직접 입력 정보</h3>
 <ul>
-  <li><strong>생년월일 (6자리 숫자)</strong> — 사주 기질 분석에 사용</li>
+  <li><strong>생년월일 (6자리)</strong> — 사주 기질 분석에 사용</li>
   <li><strong>성별</strong> — 기질 성향 분석에 사용</li>
-  <li><strong>성격 테스트 응답 (선택사항)</strong> — 결과 보정에 사용</li>
-  <li><strong>Gemini API 키 (선택사항)</strong> — AI 심화 분석 기능 이용 시 사용자가 직접 입력</li>
+  <li><strong>성격 테스트 응답 (선택)</strong> — 결과 보정에 사용</li>
+  <li><strong>Gemini API 키 (선택)</strong> — AI 심화 분석 시 사용자가 직접 입력</li>
 </ul>
-<div class="highlight">⚠️ 생년월일·성별·테스트 응답은 <strong>서버에 전송되거나 저장되지 않습니다.</strong> 모든 분석은 사용자의 기기(브라우저) 내에서만 처리됩니다.</div>
-
-<h3>1-2. 자동으로 수집되는 정보</h3>
+<div class="hl">⚠️ 생년월일·성별·테스트 응답은 <strong>서버에 전송되거나 저장되지 않습니다.</strong> 모든 분석은 사용자 기기 내에서만 처리됩니다.</div>
+<h3>자동 수집 정보</h3>
 <ul>
-  <li><strong>언어 설정</strong> — 브라우저 로컬 스토리지에 저장 (서버 전송 없음)</li>
-  <li><strong>Gemini API 키</strong> — 입력 시 브라우저 로컬 스토리지에만 저장 (서버 전송 없음, 사용자가 언제든 삭제 가능)</li>
-  <li><strong>접속 로그</strong> — Firebase Hosting 서버가 표준 접속 로그(IP, 접속 시간, 요청 URL)를 자동 수집할 수 있습니다. 이는 Google Firebase의 정책에 따릅니다.</li>
+  <li><strong>언어 설정</strong> — 브라우저 로컬 스토리지에만 저장</li>
+  <li><strong>Gemini API 키</strong> — 로컬 스토리지에만 저장, 사용자가 언제든 삭제 가능</li>
+  <li><strong>접속 로그</strong> — Firebase Hosting 서버가 표준 로그(IP, 접속 시간) 수집 가능</li>
 </ul>
-
 <h2>2. 제3자 서비스</h2>
 <div class="card">
-  <h3>Google Gemini API (선택사항)</h3>
-  <p>AI 심화 분석 기능을 사용하는 경우, 사용자가 입력한 생년월일·성별 정보가 Google의 Gemini API로 전송됩니다. 이 기능은 사용자가 직접 API 키를 입력했을 때만 활성화됩니다.</p>
-  <p>Google의 데이터 처리 방식: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></p>
-
-  <h3 style="margin-top:16px">Firebase Hosting (Google)</h3>
-  <p>서비스는 Google Firebase Hosting을 통해 제공됩니다. Firebase는 서비스 운영에 필요한 기본 접속 로그를 수집할 수 있습니다.</p>
-  <p>Firebase 정책: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 및 보안</a></p>
-
+  <h3>Google Gemini API (선택)</h3>
+  <p>AI 심화 분석 사용 시, 생년월일·성별이 Google Gemini API로 전송됩니다. API 키 입력 시에만 활성화됩니다. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>서비스는 Google Firebase Hosting을 통해 제공됩니다. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 정책</a></p>
   <h3 style="margin-top:16px">Google AdSense</h3>
-  <p>서비스는 Google AdSense를 통해 광고를 게재합니다. Google AdSense는 사용자의 관심사에 맞는 광고를 표시하기 위해 쿠키를 사용할 수 있습니다. 사용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 끌 수 있습니다.</p>
-  <p>Google의 광고 정책: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">광고 정보</a></p>
-
+  <p>서비스는 Google AdSense 광고를 게재합니다. AdSense는 맞춤 광고를 위해 쿠키를 사용할 수 있습니다. <a href="https://adssettings.google.com" target="_blank" rel="noopener">광고 설정</a>에서 관리 가능합니다. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 정책</a></p>
   <h3 style="margin-top:16px">Google Fonts</h3>
-  <p>가독성을 위해 Google Fonts를 사용합니다. 폰트 로드 시 Google 서버에 요청이 발생할 수 있습니다.</p>
+  <p>가독성을 위해 Google Fonts를 사용합니다.</p>
 </div>
-
 <h2>3. 쿠키 및 로컬 스토리지</h2>
 <ul>
-  <li><strong>로컬 스토리지 (언어 설정, API 키)</strong> — 서비스가 직접 저장하며 외부로 전송하지 않습니다. 브라우저 설정에서 삭제할 수 있습니다.</li>
-  <li><strong>광고 쿠키 (Google AdSense)</strong> — Google이 설정하는 쿠키로, 광고 개인화에 사용됩니다. 브라우저 설정 또는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 관리할 수 있습니다.</li>
+  <li><strong>로컬 스토리지</strong> — 언어·API 키 저장, 외부 전송 없음, 브라우저에서 삭제 가능</li>
+  <li><strong>광고 쿠키 (Google AdSense)</strong> — Google이 설정, <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 관리</li>
 </ul>
-
-<h2>4. 정보의 이용 목적</h2>
-<ul>
-  <li>생일 기반 MBTI 기질 분석 결과 제공</li>
-  <li>다국어 서비스 지원 (언어 설정 유지)</li>
-  <li>AI 심화 분석 기능 제공 (API 키 입력 시에만)</li>
-  <li>서비스 안정성 유지 및 오류 대응</li>
-</ul>
-
+<h2>4. 정보 이용 목적</h2>
+<ul><li>생일 기반 MBTI 기질 분석 결과 제공</li><li>다국어 서비스 지원</li><li>AI 심화 분석 (API 키 입력 시)</li><li>서비스 안정성 유지</li></ul>
 <h2>5. 정보 보유 및 삭제</h2>
-<p>서비스가 직접 저장하는 정보(언어 설정, API 키)는 사용자의 기기 로컬 스토리지에만 존재하며, 브라우저 설정에서 언제든 삭제할 수 있습니다. 서버에는 어떠한 개인정보도 저장하지 않습니다.</p>
-
+<p>서비스가 직접 저장하는 정보는 로컬 스토리지에만 존재하며 브라우저 설정에서 언제든 삭제할 수 있습니다. 서버에는 개인정보를 저장하지 않습니다.</p>
 <h2>6. 아동의 개인정보</h2>
-<p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않습니다. 아동의 개인정보를 고의로 수집하지 않으며, 발견 시 즉시 삭제 조치합니다.</p>
-
-<h2>7. 이용자의 권리</h2>
-<ul>
-  <li>브라우저 설정을 통해 로컬 스토리지 데이터를 언제든 삭제할 수 있습니다.</li>
-  <li>광고 쿠키 설정은 브라우저 또는 Google 광고 설정에서 변경할 수 있습니다.</li>
-  <li>Gemini AI 기능은 API 키를 입력하지 않으면 사용되지 않습니다.</li>
-</ul>
-
-<h2>8. 방침 변경 안내</h2>
-<p>본 개인정보처리방침이 변경되는 경우 이 페이지에 변경 일자와 함께 공지됩니다. 지속적인 서비스 이용은 변경된 방침에 동의하는 것으로 간주됩니다.</p>
-
-<h2>9. 문의</h2>
-<p>개인정보 관련 문의사항은 아래 이메일로 연락해 주세요.</p>
-<div class="card">
-  <p>📧 이메일: <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p>
-  <p>⏱️ 답변 기간: 영업일 기준 3일 이내</p>
-</div>
-
+<p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않습니다.</p>
+<h2>7. 방침 변경 안내</h2>
+<p>방침 변경 시 이 페이지에 변경 일자와 함께 공지됩니다.</p>
+<h2>8. 문의</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a> · 영업일 기준 3일 이내 답변</p></div>
 <div class="footer-note">
   <p>© 2026 생일MBTI. All rights reserved.</p>
   <p style="margin-top:8px"><a href="/">홈</a> · <a href="/about.html">소개</a> · <a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a></p>
 </div>
+</div>
+
+<!-- ══ 日本語 ══ -->
+<div data-sec="ja">
+<h1>プライバシーポリシー</h1>
+<p class="subtitle">最終更新日：2026年3月14日 <span class="badge">v1.0</span></p>
+<div class="card"><p>誕生日MBTI（以下「本サービス」）は、ユーザーの個人情報を大切にし、関連法令を遵守します。本ポリシーは、本サービスが収集する情報とその利用・保護方法について説明します。</p></div>
+<h2>1. 収集する情報</h2>
+<h3>ユーザーが直接入力する情報</h3>
+<ul>
+  <li><strong>生年月日（6桁）</strong> — 四柱気質分析に使用</li>
+  <li><strong>性別</strong> — 気質傾向の分析に使用</li>
+  <li><strong>性格テストの回答（任意）</strong> — 結果の補正に使用</li>
+  <li><strong>Gemini APIキー（任意）</strong> — AI詳細分析機能使用時にユーザーが入力</li>
+</ul>
+<div class="hl">⚠️ 生年月日・性別・テスト回答は<strong>サーバーに送信・保存されません。</strong>すべての分析はユーザーのデバイス内でのみ処理されます。</div>
+<h3>自動収集される情報</h3>
+<ul>
+  <li><strong>言語設定</strong> — ブラウザのローカルストレージにのみ保存</li>
+  <li><strong>Gemini APIキー</strong> — ローカルストレージにのみ保存、いつでも削除可能</li>
+  <li><strong>アクセスログ</strong> — Firebase Hostingサーバーが標準ログを収集する場合があります</li>
+</ul>
+<h2>2. 第三者サービス</h2>
+<div class="card">
+  <h3>Google Gemini API（任意）</h3>
+  <p>AI詳細分析機能を使用する場合、生年月日・性別がGoogle Gemini APIに送信されます。APIキーを入力した場合のみ有効化されます。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>本サービスはGoogle Firebase Hostingを通じて提供されます。<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシーポリシー</a></p>
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>本サービスはGoogle AdSenseを通じて広告を表示します。AdSenseはパーソナライズ広告のためにCookieを使用する場合があります。<a href="https://adssettings.google.com" target="_blank" rel="noopener">広告設定</a>で管理できます。<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google広告ポリシー</a></p>
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>読みやすさのためにGoogle Fontsを使用しています。</p>
+</div>
+<h2>3. CookieおよびローカルストレージStorage</h2>
+<ul>
+  <li><strong>ローカルストレージ</strong> — 言語設定・APIキーを保存。外部送信なし。ブラウザから削除可能</li>
+  <li><strong>広告Cookie（Google AdSense）</strong> — Googleが設定。<a href="https://adssettings.google.com" target="_blank" rel="noopener">Google広告設定</a>で管理可能</li>
+</ul>
+<h2>4. 情報の利用目的</h2>
+<ul><li>生年月日に基づくMBTI気質分析結果の提供</li><li>多言語サービスの提供</li><li>AI詳細分析（APIキー入力時）</li><li>サービスの安定運営</li></ul>
+<h2>5. 情報の保存と削除</h2>
+<p>本サービスが直接保存する情報はローカルストレージにのみ存在し、ブラウザ設定からいつでも削除できます。サーバーには個人情報を保存しません。</p>
+<h2>6. 子どものプライバシー</h2>
+<p>本サービスは14歳未満の子どもを対象としていません。</p>
+<h2>7. ポリシーの変更</h2>
+<p>ポリシーを変更する場合は、このページに変更日とともに通知します。</p>
+<h2>8. お問い合わせ</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a> · 営業日3日以内に返信</p></div>
+<div class="footer-note">
+  <p>© 2026 誕生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">ホーム</a> · <a href="/about.html">サービス紹介</a> · <a href="/terms.html">利用規約</a> · <a href="/privacy.html">プライバシーポリシー</a></p>
+</div>
+</div>
+
+<!-- ══ English ══ -->
+<div data-sec="en">
+<h1>Privacy Policy</h1>
+<p class="subtitle">Last updated: March 14, 2026 <span class="badge">v1.0</span></p>
+<div class="card"><p>Birthday MBTI ("the Service") values your privacy and complies with applicable data protection laws. This policy explains what information we collect, how we use it, and how we protect it.</p></div>
+<h2>1. Information We Collect</h2>
+<h3>Information You Provide</h3>
+<ul>
+  <li><strong>Date of Birth (6 digits)</strong> — Used for Four Pillars temperament analysis</li>
+  <li><strong>Gender</strong> — Used for temperament tendency analysis</li>
+  <li><strong>Quiz Answers (optional)</strong> — Used to refine your results</li>
+  <li><strong>Gemini API Key (optional)</strong> — Entered by you to enable AI-powered analysis</li>
+</ul>
+<div class="hl">⚠️ Your date of birth, gender, and quiz answers are <strong>never sent to or stored on any server.</strong> All analysis runs locally in your browser.</div>
+<h3>Automatically Collected Information</h3>
+<ul>
+  <li><strong>Language preference</strong> — Stored in browser localStorage only</li>
+  <li><strong>Gemini API Key</strong> — Stored in browser localStorage only; delete it anytime in browser settings</li>
+  <li><strong>Access logs</strong> — Firebase Hosting servers may collect standard access logs (IP, timestamp)</li>
+</ul>
+<h2>2. Third-Party Services</h2>
+<div class="card">
+  <h3>Google Gemini API (Optional)</h3>
+  <p>If you use the AI analysis feature, your date of birth and gender are sent to Google's Gemini API. This is only activated when you enter your own API key. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>The Service is hosted on Google Firebase Hosting. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy &amp; Security</a></p>
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>The Service displays ads via Google AdSense. AdSense may use cookies to serve personalized ads. You can manage preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ad Settings</a>. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising Policies</a></p>
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>We use Google Fonts for readability, which may result in requests to Google servers.</p>
+</div>
+<h2>3. Cookies &amp; Local Storage</h2>
+<ul>
+  <li><strong>Local Storage</strong> — Stores language and API key locally. Never sent externally. Clear anytime in browser settings.</li>
+  <li><strong>Ad Cookies (Google AdSense)</strong> — Set by Google. Manage at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ad Settings</a>.</li>
+</ul>
+<h2>4. How We Use Information</h2>
+<ul><li>Provide MBTI temperament analysis based on your birth date</li><li>Remember your language preference</li><li>Enable AI analysis (only when you provide an API key)</li><li>Maintain service reliability</li></ul>
+<h2>5. Data Retention &amp; Deletion</h2>
+<p>Data stored by the Service lives only in your browser's local storage. No personal data is stored on our servers. You can delete all stored data by clearing your browser's local storage.</p>
+<h2>6. Children's Privacy</h2>
+<p>This Service is not directed at children under 14 years of age.</p>
+<h2>7. Changes to This Policy</h2>
+<p>If we update this policy, we will post the changes here with a new date.</p>
+<h2>8. Contact Us</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a> · We respond within 3 business days</p></div>
+<div class="footer-note">
+  <p>© 2026 Birthday MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/terms.html">Terms of Service</a> · <a href="/privacy.html">Privacy Policy</a></p>
+</div>
+</div>
+
+<!-- ══ 繁體中文 ══ -->
+<div data-sec="zh-TW">
+<h1>隱私權政策</h1>
+<p class="subtitle">最後更新：2026年3月14日 <span class="badge">v1.0</span></p>
+<div class="card"><p>生日MBTI（以下簡稱「本服務」）重視您的個人隱私，並遵守相關法律規定。本政策說明本服務收集哪些資訊、如何使用及保護這些資訊。</p></div>
+<h2>1. 收集的資訊</h2>
+<h3>您直接提供的資訊</h3>
+<ul>
+  <li><strong>出生日期（6位數字）</strong> — 用於四柱氣質分析</li>
+  <li><strong>性別</strong> — 用於氣質傾向分析</li>
+  <li><strong>性格測驗答案（選填）</strong> — 用於結果修正</li>
+  <li><strong>Gemini API 金鑰（選填）</strong> — 使用 AI 深度分析時由您自行輸入</li>
+</ul>
+<div class="hl">⚠️ 您的出生日期、性別及測驗答案<strong>不會傳送至任何伺服器或被儲存。</strong>所有分析僅在您的裝置瀏覽器中執行。</div>
+<h3>自動收集的資訊</h3>
+<ul>
+  <li><strong>語言設定</strong> — 僅儲存於瀏覽器本地儲存空間</li>
+  <li><strong>Gemini API 金鑰</strong> — 僅儲存於本地儲存空間，可隨時刪除</li>
+  <li><strong>存取記錄</strong> — Firebase Hosting 伺服器可能會收集標準存取記錄</li>
+</ul>
+<h2>2. 第三方服務</h2>
+<div class="card">
+  <h3>Google Gemini API（選用）</h3>
+  <p>使用 AI 深度分析功能時，您的出生日期及性別將傳送至 Google Gemini API。僅在您輸入 API 金鑰時啟用。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>本服務透過 Google Firebase Hosting 提供。<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私與安全</a></p>
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>本服務透過 Google AdSense 刊登廣告。AdSense 可能使用 Cookie 提供個人化廣告。您可在<a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 廣告設定</a>中管理偏好。<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 廣告政策</a></p>
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>本服務使用 Google Fonts 提升閱讀體驗。</p>
+</div>
+<h2>3. Cookie 與本地儲存空間</h2>
+<ul>
+  <li><strong>本地儲存空間</strong> — 儲存語言設定及 API 金鑰，不對外傳送，可於瀏覽器設定中刪除</li>
+  <li><strong>廣告 Cookie（Google AdSense）</strong> — 由 Google 設置，可於<a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 廣告設定</a>中管理</li>
+</ul>
+<h2>4. 資訊使用目的</h2>
+<ul><li>提供基於出生日期的 MBTI 氣質分析結果</li><li>支援多語言服務</li><li>啟用 AI 深度分析（輸入 API 金鑰時）</li><li>維持服務穩定運作</li></ul>
+<h2>5. 資料保存與刪除</h2>
+<p>本服務直接儲存的資訊僅存在於本地儲存空間，可隨時透過瀏覽器設定刪除。我們不在伺服器上儲存任何個人資訊。</p>
+<h2>6. 兒童隱私</h2>
+<p>本服務不針對14歲以下兒童。</p>
+<h2>7. 政策變更</h2>
+<p>若更新本政策，將在此頁面公告更新日期及內容。</p>
+<h2>8. 聯絡我們</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a> · 3個工作天內回覆</p></div>
+<div class="footer-note">
+  <p>© 2026 生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">首頁</a> · <a href="/about.html">服務介紹</a> · <a href="/terms.html">使用條款</a> · <a href="/privacy.html">隱私權政策</a></p>
+</div>
+</div>
+
+<!-- ══ 简体中文 ══ -->
+<div data-sec="zh-CN">
+<h1>隐私政策</h1>
+<p class="subtitle">最后更新：2026年3月14日 <span class="badge">v1.0</span></p>
+<div class="card"><p>生日MBTI（以下简称"本服务"）重视您的个人隐私，并遵守相关法律法规。本政策说明本服务收集哪些信息，以及如何使用和保护这些信息。</p></div>
+<h2>1. 收集的信息</h2>
+<h3>您直接提供的信息</h3>
+<ul>
+  <li><strong>出生日期（6位数字）</strong> — 用于四柱气质分析</li>
+  <li><strong>性别</strong> — 用于气质倾向分析</li>
+  <li><strong>性格测验答案（选填）</strong> — 用于结果修正</li>
+  <li><strong>Gemini API 密钥（选填）</strong> — 使用 AI 深度分析时由您自行输入</li>
+</ul>
+<div class="hl">⚠️ 您的出生日期、性别及测验答案<strong>不会发送至任何服务器或被存储。</strong>所有分析仅在您的设备浏览器中进行。</div>
+<h3>自动收集的信息</h3>
+<ul>
+  <li><strong>语言设置</strong> — 仅存储于浏览器本地存储</li>
+  <li><strong>Gemini API 密钥</strong> — 仅存储于本地存储，可随时删除</li>
+  <li><strong>访问日志</strong> — Firebase Hosting 服务器可能会收集标准访问日志</li>
+</ul>
+<h2>2. 第三方服务</h2>
+<div class="card">
+  <h3>Google Gemini API（可选）</h3>
+  <p>使用 AI 深度分析功能时，您的出生日期及性别将发送至 Google Gemini API。仅在您输入 API 密钥时启用。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私政策</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>本服务通过 Google Firebase Hosting 提供。<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隐私与安全</a></p>
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>本服务通过 Google AdSense 展示广告。AdSense 可能使用 Cookie 提供个性化广告。您可在<a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 广告设置</a>中管理偏好。<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 广告政策</a></p>
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>本服务使用 Google Fonts 提升阅读体验。</p>
+</div>
+<h2>3. Cookie 与本地存储</h2>
+<ul>
+  <li><strong>本地存储</strong> — 存储语言设置及 API 密钥，不对外传输，可在浏览器设置中删除</li>
+  <li><strong>广告 Cookie（Google AdSense）</strong> — 由 Google 设置，可在<a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 广告设置</a>中管理</li>
+</ul>
+<h2>4. 信息使用目的</h2>
+<ul><li>提供基于出生日期的 MBTI 气质分析结果</li><li>支持多语言服务</li><li>启用 AI 深度分析（输入 API 密钥时）</li><li>维持服务稳定运行</li></ul>
+<h2>5. 数据保存与删除</h2>
+<p>本服务直接存储的信息仅存在于本地存储中，可随时通过浏览器设置删除。我们不在服务器上存储任何个人信息。</p>
+<h2>6. 儿童隐私</h2>
+<p>本服务不针对14岁以下儿童。</p>
+<h2>7. 政策变更</h2>
+<p>若更新本政策，将在此页面公告更新日期及内容。</p>
+<h2>8. 联系我们</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a> · 3个工作日内回复</p></div>
+<div class="footer-note">
+  <p>© 2026 生日MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">首页</a> · <a href="/about.html">服务介绍</a> · <a href="/terms.html">使用条款</a> · <a href="/privacy.html">隐私政策</a></p>
+</div>
+</div>
+
+<script>
+const BACK={ko:'← 홈으로',ja:'← ホームへ',en:'← Home','zh-TW':'← 返回首頁','zh-CN':'← 返回首页'};
+function setLang(l){
+  try{localStorage.setItem('saju_lang',l)}catch(e){}
+  document.querySelectorAll('[data-sec]').forEach(el=>el.classList.toggle('show',el.dataset.sec===l));
+  document.querySelectorAll('.lbtn').forEach(btn=>btn.classList.toggle('active',btn.textContent.includes({ko:'KO',ja:'JA',en:'EN','zh-TW':'繁','zh-CN':'简'}[l])));
+  document.getElementById('back-btn').textContent=BACK[l]||BACK.ko;
+  document.documentElement.lang=l==='zh-TW'?'zh-Hant':l==='zh-CN'?'zh-Hans':l;
+}
+(function(){
+  let l='ko';
+  try{l=localStorage.getItem('saju_lang')||'ko'}catch(e){}
+  if(!['ko','ja','en','zh-TW','zh-CN'].includes(l))l='ko';
+  setLang(l);
+})();
+</script>
 </body>
 </html>
