@@ -70,6 +70,7 @@ ko:{
   disc3:'이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!',
   btnAgain:'← 다시 분석하기',copied:'🔗 링크가 복사됐어요!',
   flAbout:'서비스 소개',flTerms:'이용약관',flPrivacy:'개인정보처리방침',flContact:'문의',
+  settingsTitle:'⚙️ 설정',settingsApiDesc:'키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)',settingsSave:'저장',settingsClose:'닫기',
   privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
   segYY:'YY 년',segMM:'MM 월',segDD:'DD 일',
   exDesc1:'남 01.01.12',exDesc2:'여 03.02.15',exDesc3:'여 99.12.25',
@@ -152,6 +153,7 @@ ja:{
   disc3:'これはエンターテイメントと自己探索の目的です 🌟 運命は決まっていません！',
   btnAgain:'← もう一度分析する',copied:'🔗 リンクがコピーされました！',
   flAbout:'サービス紹介',flTerms:'利用規約',flPrivacy:'プライバシーポリシー',flContact:'お問い合わせ',
+  settingsTitle:'⚙️ 設定',settingsApiDesc:'キーを入力するとAI分析が追加されます！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'閉じる',
   privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
   exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
@@ -232,6 +234,7 @@ en:{
   disc3:'This is for fun and self-discovery 🌟 Destiny is not fixed!',
   btnAgain:'← Analyze Again',copied:'🔗 Link copied!',
   flAbout:'About',flTerms:'Terms of Service',flPrivacy:'Privacy Policy',flContact:'Contact',
+  settingsTitle:'⚙️ Settings',settingsApiDesc:'Enter your key to enable AI analysis! 🌙 (Gemini 1.5 Flash)',settingsSave:'Save',settingsClose:'Close',
   privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
   segYY:'YY',segMM:'MM',segDD:'DD',
   exDesc1:'M 01.01.12',exDesc2:'F 03.02.15',exDesc3:'F 99.12.25',
@@ -312,6 +315,7 @@ en:{
   disc3:'這是為了趣味和自我探索 🌟 命運不是注定的！',
   btnAgain:'← 重新分析',copied:'🔗 連結已複製！',
   flAbout:'服務介紹',flTerms:'使用條款',flPrivacy:'隱私權政策',flContact:'聯絡我們',
+  settingsTitle:'⚙️ 設定',settingsApiDesc:'輸入金鑰即可啟用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'儲存',settingsClose:'關閉',
   privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
   exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
@@ -391,6 +395,7 @@ en:{
   disc3:'这是为了趣味和自我探索 🌟 命运不是注定的！',
   btnAgain:'← 重新分析',copied:'🔗 链接已复制！',
   flAbout:'服务介绍',flTerms:'使用条款',flPrivacy:'隐私政策',flContact:'联系我们',
+  settingsTitle:'⚙️ 设置',settingsApiDesc:'输入密钥即可启用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'关闭',
   privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
   exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
@@ -678,6 +683,11 @@ function applyLang(){
   if(si('ex-desc-1')) si('ex-desc-1').textContent=t('exDesc1');
   if(si('ex-desc-2')) si('ex-desc-2').textContent=t('exDesc2');
   if(si('ex-desc-3')) si('ex-desc-3').textContent=t('exDesc3');
+  // 설정 모달 번역
+  if(si('settings-title')) si('settings-title').textContent=t('settingsTitle');
+  if(si('settings-api-desc')) si('settings-api-desc').textContent=t('settingsApiDesc');
+  if(si('settings-save-btn')) si('settings-save-btn').textContent=t('settingsSave');
+  if(si('settings-close-btn')) si('settings-close-btn').textContent=t('settingsClose');
 }
 // 초기 언어 로드
 try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}

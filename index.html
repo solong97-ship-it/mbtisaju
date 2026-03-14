@@ -11,6 +11,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>생일MBTI — 내 생일로 알아보는 진짜 나</title>
+<meta name="description" content="생년월일로 알아보는 타고난 MBTI! 사주 원국의 일주·월주 기질을 MBTI로 분석합니다. 환경이 아닌 태어날 때부터의 나를 찾아보세요.">
+<meta name="keywords" content="생일MBTI,사주MBTI,타고난성격,MBTI,사주,일주,월주,성격유형,생년월일">
+<meta name="author" content="생일MBTI">
+<link rel="canonical" href="https://sajumbti-app.web.app/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sajumbti-app.web.app/">
+<meta property="og:title" content="생일MBTI — 내 생일로 알아보는 진짜 나">
+<meta property="og:description" content="생년월일로 알아보는 타고난 MBTI! 사주 원국의 일주·월주 기질을 MBTI로 분석합니다. 환경이 아닌 태어날 때부터의 나를 찾아보세요.">
+<meta property="og:image" content="https://sajumbti-app.web.app/og-image.png">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="생일MBTI">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="생일MBTI — 내 생일로 알아보는 진짜 나">
+<meta name="twitter:description" content="생년월일로 알아보는 타고난 MBTI! 사주 일주·월주 기질 분석">
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Google tag (gtag.js) — TODO: Replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/style.css">
 </head>
@@ -99,13 +125,13 @@
   <!-- 설정 모달 -->
   <div id="modal-settings" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;padding:20px;align-items:center;justify-content:center">
     <div style="background:var(--surface);width:100%;max-width:400px;border-radius:var(--r-lg);padding:24px;box-shadow:var(--sh-lg)">
-      <h3 style="margin-bottom:12px">⚙️ 설정</h3>
+      <h3 id="settings-title" style="margin-bottom:12px">⚙️ 설정</h3>
       <label class="inp-label-set" for="api-key">Gemini API Key (무료)</label>
-      <p style="font-size:11px;color:var(--g3);margin-bottom:10px">키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)</p>
+      <p id="settings-api-desc" style="font-size:11px;color:var(--g3);margin-bottom:10px">키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)</p>
       <input type="password" id="api-key" class="birth-inp" style="font-size:14px;letter-spacing:0;text-align:left;margin-bottom:16px" placeholder="AI 분석용 API 키 입력">
       <div style="display:flex;gap:10px">
-        <button class="btn-primary" style="margin:0;flex:1" onclick="saveApiKey()">저장</button>
-        <button class="btn-secondary" style="margin:0;flex:1" onclick="toggleSettings()">닫기</button>
+        <button id="settings-save-btn" class="btn-primary" style="margin:0;flex:1" onclick="saveApiKey()">저장</button>
+        <button id="settings-close-btn" class="btn-secondary" style="margin:0;flex:1" onclick="toggleSettings()">닫기</button>
       </div>
     </div>
   </div>
@@ -194,6 +220,30 @@
 
   <button class="btn-primary" onclick="startAnalysis()"><span>냥별이의 에너지 분석 시작</span> <span>🔮</span></button>
   <button class="btn-secondary" id="btn-share-app" onclick="shareApp()" style="gap:7px">🔗 친구에게 앱 공유</button>
+
+  <!-- 서비스 특징 — 크롤러 및 사용자 모두를 위한 정적 콘텐츠 -->
+  <div style="margin:24px 16px 0;padding:20px;background:rgba(182,143,232,.06);border-radius:18px;border:1.5px solid rgba(182,143,232,.15)">
+    <p style="font-size:13px;font-weight:700;color:var(--g1);margin-bottom:14px;text-align:center">🌟 생일MBTI는 이렇게 달라요</p>
+    <div style="display:grid;gap:10px">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <span style="font-size:18px;flex-shrink:0">🔮</span>
+        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">사주 원국 기반 타고난 기질</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">일주(日柱)·월주(月柱)·년주(年柱)의 에너지를 분석해 타고난 성격의 뼈대를 찾아드려요</p></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <span style="font-size:18px;flex-shrink:0">🧬</span>
+        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">MBTI 4축 과학적 매핑</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">십성(十星)·오행(五行)을 E/I·S/N·T/F·J/P 4축으로 변환해 현대 심리학 언어로 표현해요</p></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <span style="font-size:18px;flex-shrink:0">🔒</span>
+        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">완전 로컬 처리 · 개인정보 안전</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">입력한 생년월일은 서버에 저장되지 않아요. 모든 분석은 기기 안에서만 이루어집니다</p></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <span style="font-size:18px;flex-shrink:0">🌏</span>
+        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">5개 언어 지원</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">한국어·日本語·English·繁體中文·简体中文 — 전 세계 누구나 자신의 언어로 이용할 수 있어요</p></div>
+      </div>
+    </div>
+  </div>
+
   <div style="margin:10px 16px 28px;text-align:center">
     <p style="font-size:11px;color:var(--g3);line-height:1.7">사주 원국에 담긴 타고난 기질 × MBTI 표현<br>환경이 만든 내가 아닌, <strong style="color:var(--g2)">태어날 때부터의 나</strong>를 만나봐 🌸</p>
     <p id="privacy-notice" style="font-size:10px;color:var(--g3);margin-top:12px;line-height:1.6;padding:10px 14px;background:rgba(182,143,232,.06);border-radius:10px;text-align:left">🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.</p>
