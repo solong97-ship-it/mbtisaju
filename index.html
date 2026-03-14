@@ -519,7 +519,9 @@ ko:{
   secFig:'나와 비슷한 사람들',secFigSub:'에너지가 닮은 유명인',
   secCareer:'나에게 잘 맞는 일',secCareerSub:'AGI 시대를 위한 진로 가이드',
   secDist:'세상의 성격 지도',secDistSub:'16유형 분포',
-  secSaju:'내 생일 에너지 코드',secSajuSub:'사주 원국 (년·월·일주)',sajuNote:'태어난 해·달·날의 에너지 패턴 · 동양 역술 전통 기반',
+  secSaju:'내 생일 에너지 코드',secSajuSub:'사주 원국 (년·월·일주)',
+  sajuInfo:'내 생일의 글자들은 내가 태어난 순간의 우주 기운을 담고 있어요. 이 기운들이 서로 섞이며 당신만의 독특한 에너지 지도를 만든답니다! 🗺️',
+  sajuNote:'태어난 해·달·날의 에너지 패턴 · 동양 역술 전통 기반',
   yrP:'년주',moP:'월주',dyP:'일주',
   disc1:'🌙 생일MBTI는 태어난 날의 사주 원국에서 읽히는 <strong style="color:var(--g1)">타고난 기질</strong>을 MBTI로 표현한 거예요',
   disc2:'일반 MBTI와 다를 수 있어요 — 환경이 아닌 태어날 때부터의 나를 보여주거든요!',
@@ -590,7 +592,9 @@ ja:{
   secFig:'似ているタイプの有名人',secFigSub:'エネルギーが似ている人',
   secCareer:'向いている仕事',secCareerSub:'キャリア探索ガイド',
   secDist:'世界の性格マップ',secDistSub:'16タイプ分布',
-  secSaju:'誕生日エネルギーコード',secSajuSub:'四柱命式（年・月・日柱）',sajuNote:'生まれた年・月・日のエネルギーパターン（東洋占術伝統）',
+  secSaju:'誕生日エネルギーコード',secSajuSub:'四柱命式（年・月・日柱）',
+  sajuInfo:'誕生日の漢字には、あなたが生まれた瞬間の宇宙のエネルギーが込められています。これらの気が混ざり合い、あなただけの特別なエネルギーマップを作ります！ 🗺️',
+  sajuNote:'生まれた年・月・日のエネルギーパターン（東洋占術伝統）',
   yrP:'年柱',moP:'月柱',dyP:'日柱',
   disc1:'🌙 誕生日MBTIは四柱命式から読み取った<strong style="color:var(--g1)">生まれつきの気質</strong>をMBTIで表現したものです',
   disc2:'一般MBTIと異なる場合があります — 環境ではなく生まれた時からの自分を見せます！',
@@ -659,7 +663,9 @@ en:{
   secFig:'Similar Famous People',secFigSub:'People with similar energy',
   secCareer:'Best Career Fits',secCareerSub:'Career exploration guide',
   secDist:'World Personality Map',secDistSub:'16-type distribution',
-  secSaju:'Birth Energy Code',secSajuSub:'Four Pillars (Year·Month·Day)',sajuNote:'Energy patterns of birth year, month & day · Eastern tradition',
+  secSaju:'Birth Energy Code',secSajuSub:'Four Pillars (Year·Month·Day)',
+  sajuInfo:'The characters of your birthday capture the cosmic energy of the moment you were born. These energies blend to create your own unique energy map! 🗺️',
+  sajuNote:'Energy patterns of birth year, month & day · Eastern tradition',
   yrP:'Year',moP:'Month',dyP:'Day',
   disc1:'🌙 Birth MBTI expresses your <strong style="color:var(--g1)">innate temperament</strong> from your Four Pillars birth chart as MBTI',
   disc2:'It may differ from regular MBTI — it shows the you from birth, not from environment!',
@@ -728,7 +734,9 @@ en:{
   secFig:'相似的名人',secFigSub:'能量相似的名人',
   secCareer:'適合的工作',secCareerSub:'職涯探索指南',
   secDist:'世界性格地圖',secDistSub:'16類型分布',
-  secSaju:'出生能量密碼',secSajuSub:'四柱命盤（年·月·日柱）',sajuNote:'出生年、月、日的能量模式 · 東方命理傳統',
+  secSaju:'出生能量密碼',secSajuSub:'四柱命盤（年·月·日柱）',
+  sajuInfo:'你的生日漢字捕捉了你出生那一刻的宇宙能量。這些能量交織在一起，創造了你獨特的能量圖譜！ 🗺️',
+  sajuNote:'出生年、月、日的能量模式 · 東方命理傳統',
   yrP:'年柱',moP:'月柱',dyP:'日柱',
   disc1:'🌙 生日MBTI是將四柱命盤中的<strong style="color:var(--g1)">先天氣質</strong>以MBTI表達',
   disc2:'可能與一般MBTI不同 — 顯示的是從出生就有的你！',
@@ -875,6 +883,90 @@ en:{
   편인:{sub:'直觉与独创的能量 — 拥有独特视角的气质',why:'强直觉与独创性 → 内在探索型能量，灵感驱动的灵活行动'},
   정인:{sub:'学习与包容的能量 — 知性且温暖的气质',why:'学术性且包容 → 内在专注型能量，直觉与判断的平衡'},
 }};
+/* ── 본질 × 계절 분석 다국어 ── */
+const ESSENCE_SEASON_I18N = {
+  ko: {
+    0: ["무한 성장기: 호기심 대장, 시작하는 에너지가 강력함", "꽃피운 워커홀릭: 능력 발휘 최고조, 단 번아웃 주의", "단단한 재목: 시련을 견디고 완성된 실력파, 결과 중심", "뿌리 내린 거목: 인내심의 끝판왕, 봄을 기다리는 기획자"],
+    1: ["만발한 들꽃: 인기쟁이, 사교성 최고, 매력 발산", "화려한 정원: 표현력 폭발, 감정 기복 주의", "가을의 국화: 환경 적응력 최고, 외유내강의 생존 전문가", "온실 속 화초: 보호본능 자극, 따뜻한 조력자가 필요함"],
+    2: ["따스한 봄 햇살: 친절함, 생명을 키우는 따뜻한 오지랖", "작열하는 한여름: 열정 폭발, 리더십 최강, 불같은 성격", "풍요를 비추는 빛: 결실을 맺는 능력, 미적 감각이 뛰어남", "반가운 난로: 어디서나 환영받는 존재, 희생정신"],
+    3: ["봄바람 속 불씨: 통찰력, 아이디어가 번뜩이는 브레인", "치열한 용광로: 경쟁심 강함, 목표를 향해 무섭게 집중함", "어둠 속의 등대: 가치를 감별하는 눈, 외로운 리더", "언 몸을 녹이는 불: 다정다감, 사람의 마음을 치유하는 카운슬러"],
+    4: ["새싹을 품은 산: 포용력, 후배나 사람을 키워내는 멘토", "메마른 화산: 스케일이 큼, 고집이 세고 마이웨이 성향", "단풍 든 풍요로운 산: 여유로움, 결실을 거두는 재물복의 아이콘", "눈 덮인 겨울 산: 속을 알 수 없는 신비로움, 깊은 철학적 사고"],
+    5: ["파릇파릇한 텃밭: 실속파, 부지런히 내 것을 가꾸는 성실함", "생명력 넘치는 땅: 오지랖과 정이 넘침, 주변을 풍요롭게 함", "수확을 앞둔 대지: 이해타산이 빠름, 실용주의적이고 알뜰함", "쉬고 있는 언 땅: 때를 기다리는 지혜, 저장하고 모으는 능력"],
+    6: ["다듬어지는 바위: 변화를 겪으며 성장 중, 잠재력 폭발 직전", "제련되는 강철: 혹독한 훈련을 거쳐 단단해진 진정한 전문가", "가을의 서리/칼: 맺고 끊음의 달인, 카리스마와 결단력 최강", "얼음 속의 바위: 냉철한 이성, 흔들리지 않는 굳건한 신념"],
+    7: ["반짝이는 원석: 자기애 충만, 예민하지만 빛나는 아이디어", "불 속의 보석: 스트레스에 취약함, 완벽주의적이고 예민함", "쇼윈도의 다이아: 최고의 가치, 프라이드가 높고 세련된 미적 감각", "물에 씻긴 보석: 차갑지만 맑은 지성, 뛰어난 말솜씨와 두뇌"],
+    8: ["생명을 키우는 물: 창의력 폭발, 만물을 돕는 유연한 사고방식", "여름의 오아시스: 인기 폭발, 문제 해결사, 시원시원한 성격", "깊고 맑은 호수: 속을 알 수 없는 깊이, 뛰어난 정보 수집력", "얼어붙은 바다: 생각이 너무 많음, 철학적이고 깊은 지혜"],
+    9: ["봄날의 단비: 센스쟁이, 어디서든 꼭 필요한 감초 역할", "가뭄의 소나기: 폭발적인 아이디어, 타이밍을 아는 승부사", "가을의 이슬: 촉촉한 감수성, 조용하지만 강한 파급력", "겨울의 눈보라: 비밀스러움, 아이디어는 많으나 실행력 필요"]
+  },
+  ja: {
+    0: ["無限成長期：好奇心旺盛、新しいことを始めるエネルギーが強力", "咲き誇るワーカーホリック：能力発揮が最高潮、バーンアウトに注意", "頑丈な材목：試練を乗り越え完成された実力派、結果重視", "深く根を張る巨木：忍耐力の達人, 春を待つ企画者"],
+    1: ["満開の野花：人気者、最高の社交性、魅力の発散", "華やかな庭園：表現力の爆発、情緒不安定に注意", "秋の菊：環境適応力が最高、外柔内剛の生存専門家", "温室の草花：保護本能を刺激、温かい協力者が必要"],
+    2: ["温かな春の日差し：親切、生命を育む温かな情熱", "灼熱の真夏：情熱の爆発、最強のリーダーシップ, 火のような性格", "豊かさを照らす光：結実を結ぶ能力、優れた美的センス", "歓迎される暖炉：どこでも歓迎される存在, 自己犠牲精神"],
+    3: ["春風の中の種火：洞察力、アイデアが光るブレイン", "熾烈な溶鉱炉：競争心が強い, 目標に向かって恐ろしいほど集中", "暗闇の中の灯台：価値を見抜く目、孤独なリーダー", "凍えた体を溶かす火：多情多感、人の心を癒やすカウンセラー"],
+    4: ["新芽を抱く山：包容力、後輩や人を育てるメンター", "乾いた火山：スケールが大きい、頑固でマイウェイな傾向", "紅葉した豊かな山：余裕、実りをもたらす財運のアイコン", "雪に覆われた冬の山：底知れぬ神秘性、深い哲学的思考"],
+    5: ["青々とした菜園：実利派、勤勉に自分のものを育てる誠実さ", "生命力溢れる土地：情に厚く、周囲を豊かにする", "収穫を控えた大地：損得勘定が速い、実用主義的で節約家", "休息中の凍土：時を待つ知恵、蓄えて集める能力"],
+    6: ["磨かれる岩：変化を経て成長中, 潜在能力の爆発直前", "鍛えられる鋼鉄：過酷な訓練を経て強くなった真の専門家", "秋の霜/刀：けじめの達人, 最強のカリスマと決断力", "氷の中の岩岩：冷静な理性、揺らぐことのない堅固な信念"],
+    7: ["輝く原石：自己愛に満ち、鋭敏だが輝くアイデア", "火の中の宝石：ストレスに弱く、完璧主義的で過敏", "ショーウィンドーのダイヤ：最高の価値、プライドが高く洗練された美的センス", "水で洗われた宝石：冷たいが澄んだ知性、優れた弁舌と頭脳"],
+    8: ["生命を育む水：創造力の爆発、万物を助ける柔軟な思考", "夏のオアシス：人気爆発、問題解決者、さっぱりした性格", "深く澄んだ湖：底知れぬ深さ, 優れた情報収集力", "凍りついた海：考えすぎ、哲学的で深い知恵"],
+    9: ["春の恵みの雨：センス抜群、どこにでも必要な隠し味のような役割", "干ばつの夕立：爆発的なアイデア、タイミングを知る勝負師", "秋の露：しっとりとした感性、静かだが強い波及力", "冬の吹雪：秘密主義、アイデアは多いが実行力が必要"]
+  },
+  en: {
+    0: ["Infinite Growth: Curiosity master, powerful starting energy", "Blooming Workaholic: Peak performance, beware of burnout", "Solid Timber: Skilled expert who endured trials, result-oriented", "Rooted Giant Tree: Ultimate patience, planner waiting for spring"],
+    1: ["Wildflowers in Bloom: Popular, top social skills, radiating charm", "Flamboyant Garden: Exploding expression, beware of mood swings", "Autumn Chrysanthemum: Best adaptability, inner strength survivalist", "Greenhouse Plant: Stimulates protection instinct, needs a warm helper"],
+    2: ["Warm Spring Sunshine: Kindness, warm nurturing spirit", "Scorching Midsummer: Exploding passion, strongest leadership, fiery nature", "Light Illuminating Abundance: Ability to bear fruit, great aesthetic sense", "Welcomed Fireplace: Welcomed everywhere, spirit of self-sacrifice"],
+    3: ["Spark in Spring Breeze: Insight, brilliant idea brain", "Intense Furnace: Strong competitiveness, fearsome focus on goals", "Lighthouse in Darkness: Eye for value, lonely leader", "Fire Melting Frozen Bodies: Warm-hearted, counselor healing minds"],
+    4: ["Mountain Embracing Sprouts: Inclusivity, mentor who nurtures people", "Arid Volcano: Large scale, stubborn and independent", "Abundant Autumn Mountain: Leisurely, icon of wealth and harvest", "Snow-covered Winter Mountain: Mysterious depth, deep philosophical thinking"],
+    5: ["Lush Vegetable Garden: Practical, diligent in self-cultivation", "Vital Land: Nurturing and affectionate, enriches surroundings", "Harvest-ready Earth: Quick calculating, pragmatic and thrifty", "Resting Frozen Ground: Wisdom of waiting, ability to save and collect"],
+    6: ["Shaping Rock: Growing through change, potential about to explode", "Forged Steel: True expert hardened through harsh training", "Autumn Frost/Blade: Master of boundaries, top charisma and decisiveness", "Rock in Ice: Cool reason, unwavering steadfast belief"],
+    7: ["Shining Raw Stone: Full of self-love, sensitive but brilliant ideas", "Jewel in Fire: Vulnerable to stress, perfectionist and sensitive", "Diamond in Showcase: Ultimate value, high pride and sophisticated taste", "Water-washed Jewel: Cool but clear intellect, excellent speech and brain"],
+    8: ["Life-giving Water: Exploding creativity, flexible thinking helping all", "Summer Oasis: Bursting popularity, problem solver, refreshing personality", "Deep Clear Lake: Mysterious depth, excellent information gathering", "Frozen Sea: Overthinking, philosophical and deep wisdom"],
+    9: ["Spring Refreshing Rain: Sense master, essential presence everywhere", "Drought Shower: Exploding ideas, competitor who knows timing", "Autumn Dew: Moist sensitivity, quiet but powerful influence", "Winter Blizzard: Secretive, many ideas but needs execution power"]
+  },
+  'zh-TW': {
+    0: ["無限成長期：好奇心大王，啟動能量強大", "盛開的工作狂：能力發揮至巔峰，注意過勞", "堅固的材木：經受考驗而完成的實力派，結果導向", "紮根的巨木：忍耐力的極致，等待春天的企劃者"],
+    1: ["盛開的野花：人氣王，社交力極佳，散發魅力", "華麗的花園：表達力爆發，注意情緒波動", "秋天的菊花：環境適應力最強，外柔內剛的生存專家", "溫室裡的花朵：激發保護欲，需要溫暖的助手"],
+    2: ["溫暖的春陽：親切，育化萬物的溫暖情懷", "熾熱的盛夏：熱情爆發，領導力最強，火爆性格", "照亮豐饒的光：結出果實的能力，美感卓越", "受歡迎的暖爐：處處受歡迎的存在，犧牲精神"],
+    3: ["春風中的火種：洞察力，靈感閃現的大腦", "激烈的熔爐：競爭心強，對目標有驚人的專注力", "黑暗中的燈塔：辨別價值的眼光，孤獨的領袖", "融化冰冷的火：多情善感，治癒人心的諮商師"],
+    4: ["孕育新芽的山：包容力, 培養後輩或他人的導師", "乾涸的火山：格局大，固執且自我的傾向", "楓紅的豐饒之山：悠閒, 收穫成果的財富圖騰", "被雪覆蓋的冬山：深不可測的神秘感, 深刻的哲學思考"],
+    5: ["翠綠的菜園：實務派, 勤奮耕耘自我的誠實感", "充滿生命力的土地：熱情且有情有義, 豐富周圍環境", "即將收穫的大地：計算快, 實用主義且精打細算", "休息中的凍土：等待時機的智慧, 儲蓄和收集的能力"],
+    6: ["雕琢中的岩石：在變化中成長, 潛力即將爆發", "煉就的鋼鐵：歷經嚴酷訓練而變強的真正專家", "秋天的霜/劍：斷捨離的大師, 領袖魅力與決斷力最強", "冰中的岩石：冷靜的理性, 動搖不了的堅定信念"],
+    7: ["閃耀的原石：自愛滿滿, 敏感但有閃耀的點子", "火中的寶石：對壓力脆弱, 完美主義且敏感", "櫥窗裡的鑽石：最高價值, 自尊心高且審美洗鍊", "水洗的寶石：冰冷但清晰的智慧, 優秀的口才與頭腦"],
+    8: ["孕育生命的生命之水：創意爆發, 幫助萬物的靈活思維", "夏日的綠洲：人氣爆發, 問題解決者, 性格豪爽", "深邃清澈的湖泊：深不可測的深度, 卓越的信息收集力", "冰封的大海：想法太多, 哲學且深邃的智慧"],
+    9: ["春日的甘霖：靈活敏捷, 在任何地方都是不可或缺的角色", "旱地的陣雨：爆發性的創意, 懂得時機的勝負師", "秋天的露水：濕潤的感性, 安靜但有強大的影響力", "冬日的暴風雪：神秘, 點子多但需要執行力"]
+  }
+};
+
+/* ── 오행 개수 분석 다국어 ── */
+const ELEM_QUANT_I18N = {
+  ko: {
+    '木': { key: '기획 & 추진', best: '추진력 좋은 행동파', too: '작심삼일 주의! 벌려놓고 수습 안 됨', need: '시작이 너무 어려워, 의욕 부족' },
+    '火': { key: '열정 & 표현', best: '솔직 당당 매력쟁이', too: '버럭 주의! 감정 기복이 롤러코스터', need: '리액션 실종, 존재감이 좀 약할지도?' },
+    '土': { key: '안정 & 신뢰', best: '든든한 중심 잡기', too: '답답함 주의! 변화를 극도로 거부함', need: '정착이 힘들어, 멘탈이 잘 흔들림' },
+    '金': { key: '결단 & 원칙', best: '깔끔한 마무리 투수', too: '팩폭 주의! 칼 같은 말로 상처 줌', need: '거절 못 하는 예스맨, 마무리가 흐릿' },
+    '水': { key: '지혜 & 적응', best: '눈치 빠르고 유연함', too: '생각 감옥 주의! 고민만 하다가 우울행', need: '융통성 제로, F 감성 충전이 시급함' }
+  },
+  ja: {
+    '木': { key: '企画 & 推進', best: '推進力の良い行動派', too: '三日坊主に注意！広げすぎて収拾がつかない', need: '始めるのが難しすぎる、意欲不足' },
+    '火': { key: '情熱 & 表現', best: '素直で堂々とした魅力者', too: '怒りに注意！感情の起伏が激しすぎる', need: 'リアクション不足、存在感が薄いかも？' },
+    '土': { key: '安定 & 信頼', best: '頼もしい中心軸', too: 'もどかしさに注意！変化を極端に拒否する', need: '定着が難しい、メンタルが揺らぎやすい' },
+    '金': { key: '決断 & 原則', best: '完璧な仕上げ役', too: '言葉의 刃에注意！鋭い言葉で傷つける', need: '断れないイエスマン、仕上げが曖昧' },
+    '水': { key: '知恵 & 適応', best: '機転が利き柔軟', too: '考えすぎに注意！悩みすぎて落ち込みやすい', need: '融通が利かない、共感力が必要' }
+  },
+  en: {
+    '木': { key: 'Planning & Drive', best: 'Action-taker with strong drive', too: 'Beware of giving up! Starting too much without finishing', need: 'Difficulty starting, lack of motivation' },
+    '火': { key: 'Passion & Expression', best: 'Honest and confident charmer', too: 'Beware of temper! Emotional roller coaster', need: 'Missing reactions, presence might be weak' },
+    '土': { key: 'Stability & Trust', best: 'Reliable anchor', too: 'Beware of being stuck! Extreme refusal to change', need: 'Hard to settle down, fragile mentality' },
+    '金': { key: 'Decision & Principles', best: 'Clean finisher', too: 'Beware of sharp words! Hurting others with harsh facts', need: 'Yes-man who can\'t say no, blurry finishing' },
+    '水': { key: 'Wisdom & Adaptability', best: 'Quick-witted and flexible', too: 'Beware of overthinking! Falling into depression from worry', need: 'Zero flexibility, needs emotional recharge' }
+  },
+  'zh-TW': {
+    '木': { key: '企劃 & 推進', best: '推動力強的行動派', too: '注意三分鐘熱度！開了頭卻無法收尾', need: '起步太難，缺乏意欲' },
+    '火': { key: '熱情 & 表達', best: '率真自信的魅力者', too: '注意暴躁！情緒起伏如雲霄飛車', need: '缺乏反應，存在感可能較弱' },
+    '土': { key: '安定 & 信任', best: '可靠的定海神針', too: '注意固執！極度拒絕改變', need: '難以安頓，心態容易動搖' },
+    '金': { key: '決斷 & 原則', best: '乾淨俐落的收尾者', too: '注意毒舌！用銳利的話語傷人', need: '不懂拒絕的便利貼女孩/男孩，收尾模糊' },
+    '水': { key: '智慧 & 適應', best: '機敏且靈活', too: '注意胡思亂想！過度憂慮導致情緒低落', need: '缺乏彈性，急需補感情感能量' }
+  }
+};
+
 function tSip(god,field){
   const d=SIP_I18N[LANG];
   if(d&&d[god]&&d[god][field]) return d[god][field];
@@ -985,9 +1077,21 @@ const BH=['자','축','인','묘','진','사','오','미','신','유','술','해
 const SE_ELEM=[0,0,1,1,2,2,3,3,4,4]; // 木0 火1 土2 金3 水4
 const BE_ELEM=[4,2,0,0,2,1,1,2,3,3,2,4];
 const BRANCH_BONGI=[9,5,0,1,4,2,3,5,6,7,4,8];
-const ELEM_NAME=['木','火','土','金','水'];
-const SMS=['큰 나무 / 우뚝 선 거목의 성장 에너지','화초·넝쿨 / 부드럽게 뻗는 유연함','태양 / 세상을 비추는 강렬한 빛','촛불·별빛 / 꺼지지 않는 내면의 불꽃','큰 산·바위 / 흔들리지 않는 묵직한 대지','논밭·대지 / 만물을 품어 키우는 땅','원석·도끼 / 단단하고 예리한 금 기운','보석·칼날 / 정제된 빛의 섬세함','큰 강·바다 / 깊고 넓은 물의 힘','빗물·이슬 / 고요히 스미는 지혜의 물'];
-const BMS=['겨울 밤물 / 깊은 고요','얼어붙은 대지 / 인내','봄 새벽 숲 / 힘찬 시작','봄바람·꽃밭 / 개화','봄 안개·용 / 변화무쌍','여름 불씨 / 지혜','여름 태양 / 활활','여름 대지 / 따뜻한 들판','가을 쇠 / 결단','가을 서리 / 정제','황혼 황토 / 충직','겨울 깊은 물 / 풍요'];
+/* ── 사주 에너지 코드 다국어 텍스트 ── */
+const SMS_I18N = {
+  ko: ['큰 나무 / 우뚝 선 거목의 성장 에너지','화초·넝쿨 / 부드럽게 뻗는 유연함','태양 / 세상을 비추는 강렬한 빛','촛불·별빛 / 꺼지지 않는 내면의 불꽃','큰 산·바위 / 흔들리지 않는 묵직한 대지','논밭·대지 / 만물을 품어 키우는 땅','원석·도끼 / 단단하고 예리한 금 기운','보석·칼날 / 정제된 빛의 섬세함','큰 강·바다 / 깊고 넓은 물의 힘','빗물·이슬 / 고요히 스미는 지혜의 물'],
+  ja: ['大樹 / 高くそびえる巨木の成長エネルギー','草花・蔦 / しなやかに伸びる柔軟性','太陽 / 世界を照らす強烈な光','ろうそく・星明かり / 消えることのない内面の炎','大きな山・岩 / 揺らぐことのない重厚な大地','田畑・大地 / 万物を包み育てる土','原석・斧 / 硬く鋭い金の気運','宝石・刃 / 精製された光の繊細さ','大河・海 / 深く広い水の力','雨水・露 / 静かに染み込む知恵の水'],
+  en: ['Tall Tree / Growth energy of a towering tree','Flowers & Vines / Flexibility that spreads softly','Sun / Intense light illuminating the world','Candle & Starlight / Inner flame that never goes out','Great Mountain & Rock / Solid earth that never wavers','Fields & Earth / Land that embraces and nurtures all things','Raw Stone & Axe / Hard and sharp metal energy','Gem & Blade / Meticulous brilliance of refined light','Great River & Sea / Power of deep and wide water','Rain & Dew / Water of wisdom that quietly permeates'],
+  'zh-TW': ['大樹 / 頂天立地的巨木成長能量','花草·藤蔓 / 柔韌延伸的生命力','太陽 / 照亮世界的強烈光芒','燭光·星光 / 永不熄滅的內在火花','大山·岩石 / 穩重而不動搖的大地','田野·大地 / 孕育萬物的土壤','原石·斧頭 / 堅硬銳利的金之氣','寶石·刃 / 精煉之光的細膩','大江·大海 / 深邃寬廣的水之力','雨水·露水 / 靜靜滲透的智慧之水'],
+  'zh-CN': ['大树 / 顶天立地的巨木成长能量','花草·藤蔓 / 柔韧延伸的生命力','太阳 / 照亮世界的强烈光芒','烛光·星光 / 永不熄灭的内在火花','大山·岩石 / 稳重而不动摇的大地','田野·大地 / 孕育万物的土壤','原石·斧头 / 坚硬锐利的金之气','宝石·刃 / 精炼之光的细腻','大江·大海 / 深邃宽广的水之力','雨水·露水 / 静静渗透的智慧之水']
+};
+const BMS_I18N = {
+  ko: ['겨울 밤물 / 깊은 고요','얼어붙은 대지 / 인내','봄 새벽 숲 / 힘찬 시작','봄바람·꽃밭 / 개화','봄 안개·용 / 변화무쌍','여름 불씨 / 지혜','여름 태양 / 활활','여름 대지 / 따뜻한 들판','가을 쇠 / 결단','가을 서리 / 정제','황혼 황토 / 충직','겨울 깊은 물 / 풍요'],
+  ja: ['冬の夜の水 / 深い静寂','凍てついた大地 / 忍耐','春の暁の森 / 力強い始まり','春風・花畑 / 開花','春の霧・龍 / 変幻自在','夏の火種 / 知恵','夏の太陽 / 燃え上がる','夏の土地 / 温かい野原','秋の鉄 / 決断','秋の霜 / 精製','黄昏の黄土 / 忠実','冬の深い水 / 豊かさ'],
+  en: ['Winter night water / Deep silence','Frozen earth / Patience','Spring dawn forest / Powerful start','Spring breeze & Flower field / Blooming','Spring mist & Dragon / Ever-changing','Summer spark / Wisdom','Summer sun / Blazing','Summer earth / Warm field','Autumn metal / Decision','Autumn frost / Refinement','Twilight loess / Loyalty','Deep winter water / Abundance'],
+  'zh-TW': ['冬夜之水 / 深邃靜謐','凍結的大地 / 忍耐','春曉之森 / 充滿力量的開始','春風·花田 / 開花','春霧·龍 / 變化萬千','夏日火種 / 智慧','夏日太陽 / 烈火燃燒','夏日大地 / 溫暖的田野','秋日之金 / 決斷','秋霜 / 精煉','黃昏之土 / 忠誠','冬日深水 / 豐饒'],
+  'zh-CN': ['冬夜之水 / 深邃静谧','冻结的大地 / 忍耐','春晓之森 / 充满力量的开始','春风·田 / 开花','春雾·龙 / 变化万千','夏日火种 / 智慧','夏日太阳 / 烈火燃烧','夏日大地 / 温暖的田野','秋日之金 / 决断','秋霜 / 精炼','黄昏之土 / 忠诚','冬日深水 / 丰饶']
+};
 
 const JG=[[1,6],[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,7],[9,8],[10,8],[11,7],[12,7]];
 const JG_BI=[11,0,1,2,3,4,5,6,7,8,9,10];
@@ -1415,9 +1519,14 @@ const META={
       ja:[{e:'🎮',n:'小島秀夫',r:'ゲーム監督'},{e:'🏯',n:'織田信長',r:'戦国武将'},{e:'♟️',n:'藤井聡太',r:'将棋棋士'}],
       zh:[{e:'🏯',n:'諸葛亮',r:'蜀漢丞相'},{e:'🎥',n:'周星馳',r:'導演·演員'},{e:'💻',n:'張一鳴',r:'字節跳動創始人'}]
     },
-    figNote:'시스템으로 세상을 바꾸는 전략가들과 에너지가 닮았어.',
-    careers:[{e:'🤖',n:'AI AGI 시스템 아키텍트',t:1,d:'전체 시스템의 논리 구조를 설계하는 마스터'},{e:'🚀',n:'우주 항공 전략가',t:1,d:'미래 인류의 거주지를 설계하는 역할'},{e:'📊',n:'프롬프트 엔지니어링 리더',t:0,d:'AI의 한계를 넘는 최적의 지시 설계'},{e:'🎮',n:'가상 세계 경제 설계자',t:0,d:'메타버스 내의 경제 생태계 구축'},{e:'🎓',n:'미래학 연구원',t:0,d:'데이터 기반으로 인류의 미래를 예측'}],
-    careerDesc:'논리와 비전으로 세상을 재설계하는 빌더 타입이야.'},
+    figNote:{ko:'시스템으로 세상을 바꾸는 전략가들과 에너지가 닮았어.',ja:'システムで世界を変える戦略家たちとエネルギーが似ているよ。',en:'Your energy resembles strategists who change the world through systems.',zh:'你的能量與那些透過系統改變世界的戰略家們相似。'},
+    careers:{
+      ko:[{e:'🤖',n:'AI AGI 시스템 아키텍트',t:1,d:'전체 시스템의 논리 구조를 설계하는 마스터'},{e:'🚀',n:'우주 항공 전략가',t:1,d:'미래 인류의 거주지를 설계하는 역할'},{e:'📊',n:'프롬프트 엔지니어링 리더',t:0,d:'AI의 한계를 넘는 최적의 지시 설계'},{e:'🎮',n:'가상 세계 경제 설계자',t:0,d:'메타버스 내의 경제 생태계 구축'},{e:'🎓',n:'미래학 연구원',t:0,d:'데이터 기반으로 인류의 미래를 예측'}],
+      ja:[{e:'🤖',n:'AI AGIシステムアーキテクト',t:1,d:'システム全体の論理構造を設計するマスター'},{e:'🚀',n:'宇宙航空戦略家',t:1,d:'未来の人類の居住地を設計する役割'},{e:'📊',n:'プロンプトエンジニアリングリーダー',t:0,d:'AIの限界を超える最適の指示設計'},{e:'🎮',n:'仮想世界経済設計者',t:0,d:'メタバース内の経済生態系の構築'},{e:'🎓',n:'未来学研究員',t:0,d:'データに基づいて人類の未来を予測'}],
+      en:[{e:'🤖',n:'AI AGI System Architect',t:1,d:'Master designing the logical structure of entire systems'},{e:'🚀',n:'Aerospace Strategist',t:1,d:'Role designing future human habitats'},{e:'📊',n:'Prompt Engineering Leader',t:0,d:'Optimal instruction design beyond AI limits'},{e:'🎮',n:'Virtual World Economy Designer',t:0,d:'Building economic ecosystems within the metaverse'},{e:'🎓',n:'Futurology Researcher',t:0,d:'Predicting human future based on data'}],
+      zh:[{e:'🤖',n:'AI AGI 系統架構師',t:1,d:'設計整個系統邏輯結構的大師'},{e:'🚀',n:'航太戰略家',t:1,d:'負責設計未來人類棲息地的角色'},{e:'📊',n:'提示工程領導者',t:0,d:'設計超越 AI 極限的最佳指令'},{e:'🎮',n:'虛擬世界經濟設計師',t:0,d:'在元宇宙內構建經濟生態系統'},{e:'🎓',n:'未來學研究員',t:0,d:'基於數據預測人類未來'}]
+    },
+    careerDesc:{ko:'논리와 비전으로 세상을 재설계하는 빌더 타입이야.',ja:'論理とビジョンで世界を再設計するビルダータイプだよ. ',en:'You are a builder type who redesigns the world with logic and vision.',zh:'你是一個用邏輯和願景重新設計世界的構建者類型。'}},
   INTP:{emoji:'🧬',name:'논리술사형',tag:'탐구를 즐기는 논리적 지식 탐험가',good:['ENTJ','ESTJ'],care:['ESFJ','ENFJ'],
     figs:{
       ko:[{e:'⚛️',n:'알버트 아인슈타인',r:'물리학자'},{e:'💻',n:'이찬진',r:'한글과컴퓨터'},{e:'🎲',n:'이세돌',r:'바둑 기사'}],
@@ -1584,6 +1693,14 @@ function typeColor(t){
 /* ╔══════════════════════════════════════════╗
    ║  로컬 텍스트 생성 엔진                    ║
    ╚══════════════════════════════════════════╝ */
+const STEM_STR_I18N={
+ko:{0:[{icon:'🌲',title:'강한 추진력',desc:'한번 목표를 정하면 끝까지 밀고 나가는 힘이 있어. 그 뚝심이 가장 큰 무기야.'},{icon:'👑',title:'리더십',desc:'자연스럽게 앞에 서는 카리스마. 방향을 정하고 이끄는 것이 잘 맞아.'},{icon:'💡',title:'독창적 발상',desc:'남들이 생각 못한 방식으로 문제를 풀어. 틀에 갇히지 않는 자유로운 시각.'}],1:[{icon:'🌿',title:'유연한 적응력',desc:'어떤 상황에서도 부드럽게 적응하는 힘. 변화가 두렵지 않아.'},{icon:'💚',title:'섬세한 공감',desc:'상대방의 마음을 잘 읽어. 그 감수성이 관계를 풍부하게 만들어.'},{icon:'🎨',title:'창의적 감각',desc:'아름다운 것을 만들고 표현하는 재능. 예술적 감각이 남달라.'}],2:[{icon:'☀️',title:'강한 에너지',desc:'어디서든 존재감이 있어. 열정과 밝은 에너지로 주변을 환하게.'},{icon:'🔥',title:'뜨거운 추진력',desc:'일단 시작하면 끝까지 달리는 불같은 열정.'},{icon:'🤝',title:'사람을 끄는 힘',desc:'자연스러운 따뜻함으로 사람들이 주변에 모여들어.'}],3:[{icon:'🕯️',title:'깊은 통찰',desc:'표면 아래를 꿰뚫는 예리한 직관. 남들이 보지 못하는 것을 먼저 느껴.'},{icon:'🎭',title:'감성 표현',desc:'풍부한 내면을 섬세하게 표현해. 사람 마음을 움직이는 힘.'},{icon:'✨',title:'예술적 감성',desc:'아름다움과 의미에 민감해. 평범한 것에서 특별함을 발견해.'}],4:[{icon:'🏔️',title:'믿음직한 안정감',desc:'어떤 상황에서도 흔들리지 않는 든든함. 사람들이 믿고 의지해.'},{icon:'📋',title:'체계적 실행',desc:'계획을 세우고 꼼꼼하게 실행하는 능력이 탁월해.'},{icon:'🛡️',title:'강한 책임감',desc:'맡은 일은 끝까지 해내는 강한 책임감.'}],5:[{icon:'🌱',title:'따뜻한 배려',desc:'주변 사람을 세심하게 챙기는 따뜻함. 관계를 깊게 만드는 힘.'},{icon:'🤲',title:'넉넉한 수용력',desc:'다양한 사람과 상황을 넉넉하게 받아들이는 포용력.'},{icon:'🌸',title:'섬세한 관찰',desc:'작은 것도 놓치지 않는 세심한 눈.'}],6:[{icon:'⚔️',title:'결단력',desc:'필요한 순간에 망설임 없이 결정하는 힘. 그 명확함이 신뢰를 만들어.'},{icon:'🎯',title:'목표 집중력',desc:'목표를 향해 흔들리지 않고 집중하는 힘이 강해.'},{icon:'💎',title:'높은 기준',desc:'높은 기준을 유지하는 완벽주의. 탁월한 결과를 만들어.'}],7:[{icon:'💫',title:'완벽한 심미안',desc:'아름다움을 만들고 알아보는 섬세한 감각. 디테일에서 진가가 드러나.'},{icon:'🔍',title:'정밀한 분석',desc:'세밀하게 분석하고 완성도를 높이는 능력.'},{icon:'🌙',title:'깊은 내면',desc:'풍부한 내면과 독자적인 관점.'}],8:[{icon:'🌊',title:'넓은 시야',desc:'큰 그림을 보는 안목. 멀리 내다보는 통찰력이 강점.'},{icon:'💡',title:'창의적 발상',desc:'남들이 생각 못한 아이디어를 내는 창의성.'},{icon:'🚀',title:'자유로운 도전',desc:'새로운 것에 두려움 없이 뛰어드는 용기.'}],9:[{icon:'💧',title:'깊은 감성',desc:'내면이 풍부하고 감수성이 높아. 특별한 통찰을 만들어.'},{icon:'🔮',title:'예리한 직관',desc:'보이지 않는 것을 느끼는 강한 직관.'},{icon:'🌌',title:'자유로운 상상',desc:'무한한 상상력으로 새로운 세계를 그려내.'}]},
+ja:{0:[{icon:'🌲',title:'強い推進力',desc:'一度目標を定めると最後までやり遂げる力があります。その粘り強さが最大の武器です。'},{icon:'👑',title:'リーダーシップ',desc:'自然と人の前に立つカリスマ。方向を定め、導くことが得意です。'},{icon:'💡',title:'独創的な発想',desc:'他人が思いつかない方法で問題を解決します。枠にとらわれない自由な視点。'}],1:[{icon:'🌿',title:'柔軟な適応力',desc:'どんな状況でもしなやかに適応する力。変化を恐れません。'},{icon:'💚',title:'繊細な共感',desc:'相手の心をよく読み取ります。その感受性が関係を豊かにします。'},{icon:'🎨',title:'創造的な感覚',desc:'美しいものを作り表現する才能。芸術的なセンスが抜群です。'}],2:[{icon:'☀️',title:'強いエネルギー',desc:'どこにいても存在感があります。情熱と明るいエネルギーで周囲を照らします。'},{icon:'🔥',title:'熱い推進力',desc:'一度始めると最後まで走り抜ける、炎のような情熱。'},{icon:'🤝',title:'人を惹きつける力',desc:'自然な温かさで、人々が周囲に集まってきます。'}],3:[{icon:'🕯️',title:'深い洞察',desc:'表面下を見抜く鋭い直感。他人が気づかないことを先に感じ取ります。'},{icon:'🎭',title:'感性の表現',desc:'豊かな内面を繊細に表現します。人の心を動かす力。'},{icon:'✨',title:'芸術的感性',desc:'美しさと意味に敏感です。平凡なものから特別さを発見します。'}],4:[{icon:'🏔️',title:'頼もしい安定感',desc:'どんな状況でも揺るがない安心感。人々から信頼され、頼りにされます。'},{icon:'📋',title:'体系的な実行',desc:'計画を立て、きっちりと実行する能力に長けています。'},{icon:'🛡️',title:'強い責任感',desc:'引き受けた仕事は最後までやり遂げる強い責任感。'}],5:[{icon:'🌱',title:'温かい配慮',desc:'周囲の人を細やかに気遣う温かさ。関係を深める力。'},{icon:'🤲',title:'寛容な受容力',desc:'多様な人々や状況を寛大に受け入れる包容力。'},{icon:'🌸',title:'繊細な観察',desc:'些細なことも見逃さない、細やかな目。'}],6:[{icon:'⚔️',title:'決断力',desc:'必要な瞬間に迷いなく決断する力。その明確さが信頼を生みます。'},{icon:'🎯',title:'目標集中力',desc:'目標に向かって揺るがずに集中する力が強いです。'},{icon:'💎',title:'高い基準',desc:'高い基準を維持する完璧主義。卓越した結果を生み出します。'}],7:[{icon:'💫',title:'完璧な審美眼',desc:'美しさを作り、見極める繊細な感覚。ディテールで真価を発揮します。'},{icon:'🔍',title:'精密な分析',desc:'細部まで分析し、完成度を高める能力。'},{icon:'🌙',title:'深い内面',desc:'豊かな内면と独自の視点。'}],8:[{icon:'🌊',title:'広い視野',desc:'大局を見る目。遠くを見通す洞察力が強みです。'},{icon:'💡',title:'独創的な発想',desc:'他人が思いつかないアイデアを出す創造性。'},{icon:'🚀',title:'自由な挑戦',desc:'新しいことに恐れず飛び込む勇気。'}],9:[{icon:'💧',title:'深い感性',desc:'内面が豊かで感受性が高いです。特別な洞察を生み出します。'},{icon:'🔮',title:'鋭い直感',desc:'見えないものを感じる強い直感。'},{icon:'🌌',title:'自由な想像',desc:'無限の想像力で新しい世界を描き出します。'}]},
+en:{0:[{icon:'🌲',title:'Strong Drive',desc:'Power to push to the end once a goal is set. Persistence is your weapon.'},{icon:'👑',title:'Leadership',desc:'Natural charisma. Fits well with setting direction and leading.'},{icon:'💡',title:'Original Thinking',desc:'Solving problems in ways others haven\'t thought of. Free perspective.'}],1:[{icon:'🌿',title:'Flexible Adaptability',desc:'Power to adapt smoothly to any situation. Not afraid of change.'},{icon:'💚',title:'Delicate Empathy',desc:'Good at reading others\' minds. Sensitivity enriches relationships.'},{icon:'🎨',title:'Creative Sense',desc:'Talent for creating and expressing beauty. Extraordinary artistic sense.'}],2:[{icon:'☀️',title:'Strong Energy',desc:'Presence everywhere. Brightens surroundings with passion and energy.'},{icon:'🔥',title:'Fiery Momentum',desc:'Blazing passion that runs to the end once started.'},{icon:'🤝',title:'People Magnet',desc:'People gather around due to your natural warmth.'}],3:[{icon:'🕯️',title:'Deep Insight',desc:'Sharp intuition piercing below the surface. Sensing things early.'},{icon:'🎭',title:'Emotional Expression',desc:'Delicately expressing a rich inner world. Power to move hearts.'},{icon:'✨',title:'Artistic Sensibility',desc:'Sensitive to beauty and meaning. Finding special in the ordinary.'}],4:[{icon:'🏔️',title:'Reliable Stability',desc:'Reliability that doesn\'t waver. People trust and rely on you.'},{icon:'📋',title:'Systematic Execution',desc:'Excellent at planning and meticulous execution.'},{icon:'🛡️',title:'Strong Responsibility',desc:'Strong sense of responsibility to complete assigned tasks.'}],5:[{icon:'🌱',title:'Warm Consideration',desc:'Caring for people meticulously. Power to deepen relationships.'},{icon:'🤲',title:'Generous Acceptance',desc:'Broad-mindedness to accept various people and situations.'},{icon:'🌸',title:'Delicate Observation',desc:'Attentive eye that doesn\'t miss small details.'}],6:[{icon:'⚔️',title:'Decisiveness',desc:'Deciding without hesitation when needed. Clarity builds trust.'},{icon:'🎯',title:'Goal Focus',desc:'Strong ability to focus on goals without wavering.'},{icon:'💎',title:'High Standards',desc:'Perfectionism maintaining high standards. Creating excellent results.'}],7:[{icon:'💫',title:'Perfect Aesthetics',desc:'Delicate sense for recognizing beauty. Value revealed in details.'},{icon:'🔍',title:'Precise Analysis',desc:'Ability to analyze in detail and improve completeness.'},{icon:'🌙',title:'Deep Inner Self',desc:'Rich inner world and unique perspective.'}],8:[{icon:'🌊',title:'Wide Vision',desc:'Eye for the big picture. Far-sighted insight is your strength.'},{icon:'💡',title:'Creative Ideas',desc:'Creativity to produce ideas others haven\'t thought of.'},{icon:'🚀',title:'Free Challenge',desc:'Courage to dive into new things without fear.'}],9:[{icon:'💧',title:'Deep Sensitivity',desc:'Rich inner world and high sensitivity. Creating special insights.'},{icon:'🔮',title:'Sharp Intuition',desc:'Strong intuition for sensing what isn\'t visible.'},{icon:'🌌',title:'Free Imagination',desc:'Drawing new worlds with infinite imagination.'}]},
+'zh-TW':{0:[{icon:'🌲',title:'強大的推動力',desc:'一旦設定目標就有堅持到底的力量。那份韌性是你最強大的武器。'},{icon:'👑',title:'領導力',desc:'自然而然站在前面的領袖魅力。擅長確定方向並帶領團隊。'},{icon:'💡',title:'獨創發想',desc:'以他人想不到的方式解決問題。不被框架束縛的自由視角。'}],1:[{icon:'🌿',title:'柔韌的適應力',desc:'在任何情況下都能溫柔適應的力量。無懼變化。'},{icon:'💚',title:'細膩的共感',desc:'擅長察覺對方的內心。那份感性讓關係變得豐富。'},{icon:'🎨',title:'創意感官',desc:'創造並表達美感的天賦。藝術觸覺過人。'}],2:[{icon:'☀️',title:'強大的能量',desc:'無論在哪裡都極具存在感。用熱情和開朗的能量照亮周圍。'},{icon:'🔥',title:'熾熱的推動力',desc:'一旦開始就奔向終點的火焰熱情。'},{icon:'🤝',title:'吸引人的力量',desc:'自然的溫暖讓身邊總是聚集著人群。'}],3:[{icon:'🕯️',title:'深邃的洞察',desc:'看穿表象下的銳利直覺。先於他人感受到隱藏的事物。'},{icon:'🎭',title:'感性表達',desc:'細膩地表達豐富的內心。觸動人心的力量。'},{icon:'✨',title:'藝術感性',desc:'對美和意義非常敏感。能從平凡中發現不凡。'}],4:[{icon:'🏔️',title:'可靠的安定感',desc:'在任何情況下都不動搖的穩重。讓人信賴與依靠。'},{icon:'📋',title:'體系化執行',desc:'制定計劃並縝密執行的能力非常卓越。'},{icon:'🛡️',title:'強大的責任感',desc:'堅持完成任務的強大責任心。'}],5:[{icon:'🌱',title:'溫暖的體貼',desc:'細心照顧周圍人的溫暖。加深關係的力量。'},{icon:'🤲',title:'寬大的包容力',desc:'能廣泛接受各種人和情況的包容心。'},{icon:'🌸',title:'細膩的觀察',desc:'連小細節也不放過的細心雙眼。'}],6:[{icon:'⚔️',title:'決斷力',desc:'在必要時刻毫不猶豫做出決定的力量。那份果斷建立信賴。'},{icon:'🎯',title:'目標專注力',desc:'向著目標堅定不移專注的力量很強。'},{icon:'💎',title:'高標準',desc:'維持高標準的完美主義。創造卓越的成果。'}],7:[{icon:'💫',title:'完美的審美眼',desc:'創造並辨別美感的細膩觸覺。在細節中顯現真價值。'},{icon:'🔍',title:'精密分析',desc:'詳細分析並提升完成度的能力。'},{icon:'🌙',title:'深沉的內心',desc:'豐富的內心世界與獨特觀點。'}],8:[{icon:'🌊',title:'廣闊的視野',desc:'看大局的眼光。遠見卓識是你的優勢。'},{icon:'💡',title:'獨創發想',desc:'提出他人想不到的點子的創造力。'},{icon:'🚀',title:'自由挑戰',desc:'無懼投入新事物的勇氣。'}],9:[{icon:'💧',title:'深沉的感性',desc:'內心豐富且感性強。創造特別的洞見。'},{icon:'🔮',title:'銳利直覺',desc:'能感受到肉眼不可見之物的強大直覺。'},{icon:'🌌',title:'自由想像',desc:'用無限的想像力描繪新的世界。'}]},
+'zh-CN':{0:[{icon:'🌲',title:'强大的推动力',desc:'一旦设定目标就有坚持到底的力量。那份韧性是你最强大的武器。'},{icon:'👑',title:'领导力',desc:'自然而然站在前面的领袖魅力。擅长确定方向并带领团队。'},{icon:'💡',title:'独创发想',desc:'以他人想不到的方式解决问题。不被框架束缚的自由视角。'}],1:[{icon:'🌿',title:'柔韧的适应力',desc:'在任何情况下都能温柔适应的力量。无惧变化。'},{icon:'💚',title:'细腻的共感',desc:'擅长察觉对方内心。那份感性让关系变得丰富。'},{icon:'🎨',title:'创意感官',desc:'创造并表达美感的天赋。艺术触觉过人。'}],2:[{icon:'☀️',title:'强大的能量',desc:'无论在哪里都极具存在感。用热情和开朗的能量照亮周围。'},{icon:'🔥',title:'炽热的推动力',desc:'一旦开始就奔向终点的火焰热情。'},{icon:'🤝',title:'吸引人的力量',desc:'自然的温暖让身边总是聚集着人群。'}],3:[{icon:'🕯️',title:'深邃的洞察',desc:'看穿表象下的锐利直觉。先于他人感受到隐藏的事物。'},{icon:'🎭',title:'感性表达',desc:'细腻地表达丰富的内心。触动人心的力量。'},{icon:'✨',title:'艺术感性',desc:'对美和意义非常敏感。能从平凡中发现不凡。'}],4:[{icon:'🏔️',title:'可靠的安定感',desc:'在任何情况下都不动摇的稳重。让人信赖与依靠。'},{icon:'📋',title:'体系化执行',desc:'制定计划并缜密执行的能力非常卓越。'},{icon:'🛡️',title:'强大的责任感',desc:'坚持完成任务的强大责任心。'}],5:[{icon:'🌱',title:'温暖的体贴',desc:'细心照顾周围人的温暖。加深关系的力量。'},{icon:'🤲',title:'宽大的包容力',desc:'能广泛接受各种人和情况的包容心。'},{icon:'🌸',title:'细腻的观察',desc:'连小细节也不放过的细心双眼。'}],6:[{icon:'⚔️',title:'决断力',desc:'在必要时刻毫不犹豫做出决定的力量。那份果断建立信赖。'},{icon:'🎯',title:'目标专注力',desc:'向着目标坚定不移专注的力量很强。'},{icon:'💎',title:'高标准',desc:'维持高标准的完美主义。创造卓越的成果。'}],7:[{icon:'💫',title:'完美的审美眼',desc:'创造并辨别美感的细腻触觉。在细节中显现真价值。'},{icon:'🔍',title:'精密分析',desc:'详细分析并提升完成度的能力。'},{icon:'🌙',title:'深沉的内心',desc:'丰富内心世界与独特观点。'}],8:[{icon:'🌊',title:'广阔的视野',desc:'看大局的眼光。远见卓识是你的优势。'},{icon:'💡',title:'独创发想',desc:'提出他人想不到的点子的创造力。'},{icon:'🚀',title:'自由挑战',desc:'无惧投入新事物的勇气。'}],9:[{icon:'💧',title:'深沉的感性',desc:'内心丰富且感性强。创造特别的洞见。'},{icon:'🔮',title:'锐利直觉',desc:'能感受到肉眼不可见之物的强大直觉。'},{icon:'🌌',title:'自由想象',desc:'用无限的想象力描绘新的世界。'}]}
+};
+
 function generateLocal(year,month,day,gender,dw,natal,mbtiData){
   const{yS,yB,mS,mB,dS,dB}=natal;
   const ec={'木':0,'火':0,'土':0,'金':0,'水':0};
@@ -1603,19 +1720,21 @@ function generateLocal(year,month,day,gender,dw,natal,mbtiData){
   const mgTitle=locGod(mg);
   const domGodName=locGod((mbtiData.dominant||{}).god||'비견');
 
-  // 천간별 강점
-  const STEM_STR={
-    0:[{icon:'🌲',title:'강한 추진력',desc:'한번 목표를 정하면 끝까지 밀고 나가는 힘이 있어. 그 뚝심이 가장 큰 무기야.'},{icon:'👑',title:'리더십',desc:'자연스럽게 앞에 서는 카리스마. 방향을 정하고 이끄는 것이 잘 맞아.'},{icon:'💡',title:'독창적 발상',desc:'남들이 생각 못한 방식으로 문제를 풀어. 틀에 갇히지 않는 자유로운 시각.'}],
-    1:[{icon:'🌿',title:'유연한 적응력',desc:'어떤 상황에서도 부드럽게 적응하는 힘. 변화가 두렵지 않아.'},{icon:'💚',title:'섬세한 공감',desc:'상대방의 마음을 잘 읽어. 그 감수성이 관계를 풍부하게 만들어.'},{icon:'🎨',title:'창의적 감각',desc:'아름다운 것을 만들고 표현하는 재능. 예술적 감각이 남달라.'}],
-    2:[{icon:'☀️',title:'강한 에너지',desc:'어디서든 존재감이 있어. 열정과 밝은 에너지로 주변을 환하게.'},{icon:'🔥',title:'뜨거운 추진력',desc:'일단 시작하면 끝까지 달리는 불같은 열정.'},{icon:'🤝',title:'사람을 끄는 힘',desc:'자연스러운 따뜻함으로 사람들이 주변에 모여들어.'}],
-    3:[{icon:'🕯️',title:'깊은 통찰',desc:'표면 아래를 꿰뚫는 예리한 직관. 남들이 보지 못하는 것을 먼저 느껴.'},{icon:'🎭',title:'감성 표현',desc:'풍부한 내면을 섬세하게 표현해. 사람 마음을 움직이는 힘.'},{icon:'✨',title:'예술적 감성',desc:'아름다움과 의미에 민감해. 평범한 것에서 특별함을 발견해.'}],
-    4:[{icon:'🏔️',title:'믿음직한 안정감',desc:'어떤 상황에서도 흔들리지 않는 든든함. 사람들이 믿고 의지해.'},{icon:'📋',title:'체계적 실행',desc:'계획을 세우고 꼼꼼하게 실행하는 능력이 탁월해.'},{icon:'🛡️',title:'강한 책임감',desc:'맡은 일은 끝까지 해내는 강한 책임감.'}],
-    5:[{icon:'🌱',title:'따뜻한 배려',desc:'주변 사람을 세심하게 챙기는 따뜻함. 관계를 깊게 만드는 힘.'},{icon:'🤲',title:'넉넉한 수용력',desc:'다양한 사람과 상황을 넉넉하게 받아들이는 포용력.'},{icon:'🌸',title:'섬세한 관찰',desc:'작은 것도 놓치지 않는 세심한 눈.'}],
-    6:[{icon:'⚔️',title:'결단력',desc:'필요한 순간에 망설임 없이 결정하는 힘. 그 명확함이 신뢰를 만들어.'},{icon:'🎯',title:'목표 집중력',desc:'목표를 향해 흔들리지 않고 집중하는 힘이 강해.'},{icon:'💎',title:'높은 기준',desc:'높은 기준을 유지하는 완벽주의. 탁월한 결과를 만들어.'}],
-    7:[{icon:'💫',title:'완벽한 심미안',desc:'아름다움을 만들고 알아보는 섬세한 감각. 디테일에서 진가가 드러나.'},{icon:'🔍',title:'정밀한 분석',desc:'세밀하게 분석하고 완성도를 높이는 능력.'},{icon:'🌙',title:'깊은 내면',desc:'풍부한 내면과 독자적인 관점.'}],
-    8:[{icon:'🌊',title:'넓은 시야',desc:'큰 그림을 보는 안목. 멀리 내다보는 통찰력이 강점.'},{icon:'💡',title:'창의적 발상',desc:'남들이 생각 못한 아이디어를 내는 창의성.'},{icon:'🚀',title:'자유로운 도전',desc:'새로운 것에 두려움 없이 뛰어드는 용기.'}],
-    9:[{icon:'💧',title:'깊은 감성',desc:'내면이 풍부하고 감수성이 높아. 특별한 통찰을 만들어.'},{icon:'🔮',title:'예리한 직관',desc:'보이지 않는 것을 느끼는 강한 직관.'},{icon:'🌌',title:'자유로운 상상',desc:'무한한 상상력으로 새로운 세계를 그려내.'}]
-  };
+  // 천간별 강점 (다국어)
+  const strengths = (STEM_STR_I18N[LANG] || STEM_STR_I18N.ko)[dS] || STEM_STR_I18N.ko[0];
+
+  // 계절 분석 (MZ 감성)
+  const seasonIdx = [2,3,4].includes(mB) ? 0 : [5,6,7].includes(mB) ? 1 : [8,9,10].includes(mB) ? 2 : 3;
+  const seasonDesc = (ESSENCE_SEASON_I18N[LANG] || ESSENCE_SEASON_I18N.ko)[dS]?.[seasonIdx] || "";
+
+  // 오행 개수 분석
+  const elemAnalysis = {};
+  ['木','火','土','金','水'].forEach(e => {
+    const count = ec[e] || 0;
+    const data = (ELEM_QUANT_I18N[LANG] || ELEM_QUANT_I18N.ko)[e];
+    let desc = count === 0 ? data.need : count >= 3 ? data.too : data.best;
+    elemAnalysis[e] = { key: data.key, desc: desc, count: count };
+  });
 
   // 최강 십성 정보
   const dom=mbtiData.dominant||{god:'비견',positions:[]};
@@ -1659,17 +1778,16 @@ function generateLocal(year,month,day,gender,dw,natal,mbtiData){
       {label:'일주',stemCh:SE[dS],branchCh:BE[dB],stemHan:SH[dS],branchHan:BH[dB]}
     ],
     elements:mbtiData.elements||ec,
+    elemAnalysis,
+    seasonDesc,
     story:_rStory, desc1:_rDesc1, desc2:_rDesc2, dwDesc:_rDw, swDesc:_rSw,
     swS, swB, swHan, nowYear,
     traits:[title.slice(0,4),mgTitle,domGodName],
-    strengths:STEM_STR[dS]||STEM_STR[0],
+    strengths:strengths,
     corrections:mbtiData.corrections,
   };
 }
 
-/* ╔══════════════════════════════════════════╗
-   ║  APP — 상태·입력·페이지 전환              ║
-   ╚══════════════════════════════════════════╝ */
 let curBirth='',curGender='',curQ={},GEMINI_KEY='';
 
 function toggleSettings(){
@@ -1787,8 +1905,18 @@ async function startAnalysis(){
    ╚══════════════════════════════════════════╝ */
 function renderResult(val,gender,dw,ai,aiInsight){
   const yy=+val.slice(0,2),mm=+val.slice(2,4),dd=+val.slice(4,6),yr=parseYear(yy);
+  
   const mType=ai.mbti;
-  const meta=META[mType]||META['INFP'];
+  const metaBase=META[mType]||META['INFP'];
+  const lKey = LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  
+  // Localized field helper
+  const gm = (f) => {
+    const val = metaBase[f];
+    if (val && typeof val === 'object' && !Array.isArray(val)) return val[lKey] || val['ko'] || val['en'] || '';
+    return val;
+  };
+
   const gStr=gender==='m'?t('male'):t('female');
   const mgd=SIPSUNG_DATA[ai.monthGod]||{};
   const ssTitle=t('ss_'+ai.monthGod)||mgd.title;
@@ -1801,8 +1929,8 @@ function renderResult(val,gender,dw,ai,aiInsight){
     '<span class="btag">'+mgd.emoji+' '+ssTitle+'</span>'+
     '<span class="btag" style="background:rgba(255,255,255,.12)">'+t('tagBorn')+'</span>';
   document.getElementById('r-mbti').textContent=mType;
-  document.getElementById('r-typename').innerHTML='<span style="margin-right:4px">'+meta.emoji+'</span>'+meta.name;
-  document.getElementById('r-tagline').textContent=t('tagPre')+meta.tag;
+  document.getElementById('r-typename').innerHTML='<span style="margin-right:4px">'+metaBase.emoji+'</span>'+gm('name');
+  document.getElementById('r-tagline').textContent=t('tagPre')+gm('tag');
 
   // ── AI Insight (냥별이의 비밀 조언) ──
   let charLineHtml = ai.characterLine||'';
@@ -1881,8 +2009,8 @@ function renderResult(val,gender,dw,ai,aiInsight){
     t('secIljuDiffNote')+'</div>'+
     '<div class="detail-label">'+t('secIljuL')+'</div>'+
     '<div class="detail-txt"><strong>'+hRead(ai.iljuKey)+'</strong> — '+ai.iljuDesc+'</div>'+
-    '<div class="detail-txt">'+t('secStem')+' <strong>'+hRead(SE[natal_.dS])+'</strong>: '+SMS[natal_.dS]+'</div>'+
-    '<div class="detail-txt">'+t('secBranch')+' <strong>'+hRead(BE[natal_.dB])+'</strong>: '+BMS[natal_.dB]+'</div>'+
+    '<div class="detail-txt">'+t('secStem')+' <strong>'+hRead(SE[natal_.dS])+'</strong>: '+(SMS_I18N[LANG]||SMS_I18N.ko)[natal_.dS]+'</div>'+
+    '<div class="detail-txt">'+t('secBranch')+' <strong>'+hRead(BE[natal_.dB])+'</strong>: '+(BMS_I18N[LANG]||BMS_I18N.ko)[natal_.dB]+'</div>'+
     (ai.corrections.length?'<div class="detail-txt" style="color:var(--g3);font-size:11px">'+t('secCorrNote').replace('{0}',ai.corrections.join(', '))+'</div>':''));
 
   // 2) 나는 이런 사람
@@ -1907,6 +2035,32 @@ function renderResult(val,gender,dw,ai,aiInsight){
 
   // 5) 성격 키워드
   let traitHtml='<div style="display:flex;flex-wrap:wrap;gap:5px">';
+  (ai.traits||[]).forEach((k,i)=>traitHtml+='<span class="trait-chip'+(i<2?' hi':'')+'">'+k+'</span>');
+  traitHtml+='</div>';
+  html+=makeSection('lav','⚡',t('secKw'),t('secKwSub'),traitHtml);
+
+  // 6) 궁합
+  html+=makeSection('rose','💞',t('secCompat'),t('secCompatSub'),
+    '<div class="compat-row"><div class="compat-card good"><div class="compat-head">'+t('compatGood')+'</div>'+metaBase.good.map(x=>'<span class="compat-type">'+x+'</span>').join('')+'<p style="font-size:10px;color:var(--g2);margin-top:8px;line-height:1.4">'+t('compatGoodR')+'</p></div>'+
+    '<div class="compat-card care"><div class="compat-head">'+t('compatCare')+'</div>'+metaBase.care.map(x=>'<span class="compat-type">'+x+'</span>').join('')+'<p style="font-size:10px;color:var(--g2);margin-top:8px;line-height:1.4">'+t('compatCareR')+'</p></div></div>');
+
+  // 7) 나와 비슷한 사람들 (Localized)
+  let figHtml='';
+  const localizedFigs = metaBase.figs[lKey] || metaBase.figs['en'] || [];
+  localizedFigs.forEach(f=>{
+    figHtml+='<div class="fig-card"><div class="fig-em">'+f.e+'</div><div><div class="fig-name">'+f.n+'</div><div class="fig-role">'+f.r+'</div></div></div>';
+  });
+  figHtml+='<div class="fig-note">'+gm('figNote')+'</div>';
+  html+=makeSection('mint','🌟',t('secFig'),t('secFigSub'),figHtml);
+
+  // 8) 잘 맞는 일
+  let carHtml='<div class="detail-txt" style="margin-bottom:8px">'+gm('careerDesc')+'</div>';
+  const localizedCareers = (metaBase.careers && typeof metaBase.careers === 'object' && !Array.isArray(metaBase.careers)) ? (metaBase.careers[lKey] || metaBase.careers['ko']) : metaBase.careers;
+  (localizedCareers||[]).forEach(c=>{
+    carHtml+='<div class="career-chip'+(c.t?' top':'')+'"><div class="career-main">'+c.e+' '+c.n+'</div>'+(c.d?'<div class="career-desc">'+c.d+'</div>':'')+'</div>';
+  });
+  html+=makeSection('mint','🚀',t('secCareer'),t('secCareerSub'),carHtml);
+
   (ai.traits||[]).forEach((k,i)=>traitHtml+='<span class="trait-chip'+(i<2?' hi':'')+'">'+k+'</span>');
   traitHtml+='</div>';
   html+=makeSection('lav','⚡',t('secKw'),t('secKwSub'),traitHtml);
@@ -1941,18 +2095,54 @@ function renderResult(val,gender,dw,ai,aiInsight){
   distHtml+='</div>';
   html+=makeSection('sky','🌍',t('secDist'),t('secDistSub'),distHtml);
 
-  // 10) 사주원국
-  let sajuHtml='<div class="pillar-grid">';
+  // 10) 사주원국 + 에너지 분석
+  let sajuHtml=`<div class="detail-txt" style="margin-bottom:16px;padding:12px;background:rgba(182,143,232,0.05);border-radius:12px;border:1px dashed var(--lav);font-size:12px">${t('sajuInfo')}</div>`;
+  sajuHtml+='<div class="pillar-grid">';
   const cls=['yr','mo','dy'];const plbls=[t('yrP'),t('moP'),t('dyP')];
   (ai.pillars||[]).forEach((p,i)=>{
     const _han=hRead(p.stemCh+p.branchCh);
     sajuHtml+='<div class="pillar '+cls[i]+'"><div class="pillar-lbl">'+plbls[i]+'</div><div class="pillar-stem">'+p.stemCh+'</div><div class="pillar-branch">'+p.branchCh+'</div><div class="pillar-han">'+_han+'</div></div>';
   });
-  sajuHtml+='</div><div class="elem-row">';
+  sajuHtml+='</div>';
+  
+  // 계절 분석 추가
+  if(ai.seasonDesc){
+    sajuHtml += `<div style="margin-top:16px;padding:12px;background:rgba(255,209,102,0.1);border:1px solid rgba(255,209,102,0.3);border-radius:12px;font-size:12px;line-height:1.6;color:var(--ink)">
+      <div style="font-weight:800;color:#E8960A;margin-bottom:4px;display:flex;align-items:center;gap:4px">✨ 생일 에너지 시너지</div>
+      ${ai.seasonDesc}
+    </div>`;
+  }
+
+  sajuHtml+='<div class="elem-row">';
   ['木','火','土','金','水'].forEach(e=>{
-    sajuHtml+='<div class="elem-cell"><div class="elem-icon">'+ELEM_ICON[e]+'</div><div class="elem-name">'+e+'</div><div class="elem-cnt" style="color:'+ELEM_COLOR[e]+'">'+(ai.elements[e]||0)+'</div></div>';
+    sajuHtml+='<div class="elem-cell" style="background:var(--surface);border:1px solid var(--border);flex:1">'+
+      '<div class="elem-icon">'+ELEM_ICON[e]+'</div>'+
+      '<div class="elem-name" style="font-weight:700;color:var(--ink)">'+e+'</div>'+
+      '<div class="elem-cnt" style="color:'+ELEM_COLOR[e]+';font-size:18px">'+(ai.elements[e]||0)+'</div>'+
+      '</div>';
   });
-  sajuHtml+='</div><div style="text-align:center;font-size:10px;color:var(--g3);margin-top:8px">'+t('sajuNote')+'</div>';
+  sajuHtml+='</div>';
+  
+  // 오행 상세 분석 리스트
+  sajuHtml += '<div style="margin-top:12px;display:grid;gap:8px">';
+  ['木','火','土','金','水'].forEach(e => {
+    const an = ai.elemAnalysis[e];
+    const statusColor = an.count === 0 ? 'var(--g3)' : an.count >= 3 ? 'var(--rose)' : 'var(--mint)';
+    const statusIcon = an.count === 0 ? '⚪' : an.count >= 3 ? '🔴' : '🟢';
+    sajuHtml += `<div style="padding:10px;background:var(--g4);border-radius:10px;display:flex;align-items:center;gap:10px">
+      <div style="font-size:18px">${ELEM_ICON[e]}</div>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;font-weight:800">${an.key}</span>
+          <span style="font-size:10px;font-weight:700;color:${statusColor}">${statusIcon} ${an.count}개</span>
+        </div>
+        <div style="font-size:11px;color:var(--g2);margin-top:2px">${an.desc}</div>
+      </div>
+    </div>`;
+  });
+  sajuHtml += '</div>';
+
+  sajuHtml+='<div style="text-align:center;font-size:10px;color:var(--g3);margin-top:12px">'+t('sajuNote')+'</div>';
   html+=makeSection('gold','🪐',t('secSaju'),t('secSajuSub'),sajuHtml);
 
   document.getElementById('r-sections').innerHTML=html;
