@@ -1512,12 +1512,14 @@ function hRead(hStr){
    ║  16유형 META DATA (Localized Figures)    ║
    ╚══════════════════════════════════════════╝ */
 const META={
-  INTJ:{emoji:'🔭',name:'전략가형',tag:'독립적 비전의 완벽주의 전략가',good:['ENFP','ENTP'],care:['ESFP','ESTP'],
+  INTJ:{emoji:'🔭',good:['ENFP','ENTP'],care:['ESFP','ESTP'],
+    name:{ko:'전략가형',ja:'戦略家型',en:'Architect',zh:'戰略家型'},
+    tag:{ko:'독립적 비전의 완벽주의 전략가',ja:'独立的ビジョンの完璧主義戦略家',en:'Perfectionist strategist with independent vision',zh:'擁有獨立願景的完美主義戰略家'},
     figs:{
       ko:[{e:'🤖',n:'일론 머스크',r:'테슬라'},{e:'📖',n:'정도전',r:'조선의 설계자'},{e:'🎮',n:'페이커',r:'T1'}],
       en:[{e:'🤖',n:'Elon Musk',r:'Tesla'},{e:'🧠',n:'Sam Altman',r:'OpenAI'},{e:'🔭',n:'Isaac Newton',r:'Scientist'}],
       ja:[{e:'🎮',n:'小島秀夫',r:'ゲーム監督'},{e:'🏯',n:'織田信長',r:'戦国武将'},{e:'♟️',n:'藤井聡太',r:'将棋棋士'}],
-      zh:[{e:'🏯',n:'諸葛亮',r:'蜀漢丞相'},{e:'🎥',n:'周星馳',r:'導演·演員'},{e:'💻',n:'張一鳴',r:'字節跳動創始人'}]
+      zh:[{e:'🏯',n:'諸葛亮',r:'蜀漢丞相'},{e:'🎥',n:'周星馳',r:'導演·演員'},{e:'💻',n:'張一鳴',r:'字節跳動創始인'}]
     },
     figNote:{ko:'시스템으로 세상을 바꾸는 전략가들과 에너지가 닮았어.',ja:'システムで世界を変える戦略家たちとエネルギーが似ているよ。',en:'Your energy resembles strategists who change the world through systems.',zh:'你的能量與那些透過系統改變世界的戰略家們相似。'},
     careers:{
@@ -1527,16 +1529,24 @@ const META={
       zh:[{e:'🤖',n:'AI AGI 系統架構師',t:1,d:'設計整個系統邏輯結構的大師'},{e:'🚀',n:'航太戰略家',t:1,d:'負責設計未來人類棲息地的角色'},{e:'📊',n:'提示工程領導者',t:0,d:'設計超越 AI 極限的最佳指令'},{e:'🎮',n:'虛擬世界經濟設計師',t:0,d:'在元宇宙內構建經濟生態系統'},{e:'🎓',n:'未來學研究員',t:0,d:'基於數據預測人類未來'}]
     },
     careerDesc:{ko:'논리와 비전으로 세상을 재설계하는 빌더 타입이야.',ja:'論理とビジョンで世界を再設計するビルダータイプだよ. ',en:'You are a builder type who redesigns the world with logic and vision.',zh:'你是一個用邏輯和願景重新設計世界的構建者類型。'}},
-  INTP:{emoji:'🧬',name:'논리술사형',tag:'탐구를 즐기는 논리적 지식 탐험가',good:['ENTJ','ESTJ'],care:['ESFJ','ENFJ'],
+  INTP:{emoji:'🧬',good:['ENTJ','ESTJ'],care:['ESFJ','ENFJ'],
+    name:{ko:'논리술사형',ja:'論理学者型',en:'Logician',zh:'邏輯學家型'},
+    tag:{ko:'탐구를 즐기는 논리적 지식 탐험가',ja:'探究を楽しむ論理的な知識探検家',en:'Logical knowledge explorer who enjoys exploration',zh:'享受探索的邏輯知識探險家'},
     figs:{
       ko:[{e:'⚛️',n:'알버트 아인슈타인',r:'물리학자'},{e:'💻',n:'이찬진',r:'한글과컴퓨터'},{e:'🎲',n:'이세돌',r:'바둑 기사'}],
       en:[{e:'⚛️',n:'Albert Einstein',r:'Physicist'},{e:'💻',n:'Linus Torvalds',r:'Linux Creator'},{e:'♟️',n:'Bobby Fischer',r:'Chess Grandmaster'}],
       ja:[{e:'🧪',n:'野口英世',r:'医学者'},{e:'🔬',n:'山中伸弥',r:'ノーベル賞'},{e:'🎮',n:'宮本茂',r:'任天堂'}],
       zh:[{e:'🧪',n:'屠呦呦',r:'諾貝爾獎'},{e:'📖',n:'老子',r:'哲學家'},{e:'🌐',n:'馬化騰',r:'騰訊創始人'}]
     },
-    figNote:'끝없는 지적 탐구로 패러다임을 바꾼 사색가들과 닮았어.',
-    careers:[{e:'🧠',n:'AGI 연구 과학자',t:1,d:'AI의 자의식과 논리 구조를 탐구'},{e:'🔢',n:'양자 컴퓨팅 프로그래머',t:1,d:'차세대 연산 알고리즘 개발'},{e:'💻',n:'탈중앙화 앱(DApp) 개발자',t:0,d:'웹3.0 시대의 새로운 규칙 설계'},{e:'🧪',n:'바이오 정보학자',t:0,d:'유전자 데이터와 IT의 융합 분석'},{e:'🎨',n:'생성형 AI 아트 디렉터',t:0,d:'AI 알고리즘으로 새로운 예술 장르 개척'}],
-    careerDesc:'이론+분석+시스템 설계에서 대체 불가능한 힘을 발휘해.'},
+    figNote:{ko:'끝없는 지적 탐구로 패러다임을 바꾼 사색가들과 닮았어.',ja:'絶え間ない知的探究でパラダイムを変えた思索家たちに似ているよ。',en:'You resemble thinkers who changed paradigms through endless intellectual pursuit.',zh:'你與那些透過無止境的智力追求改變範式的思想家們相似。'},
+    careers:{
+      ko:[{e:'🧠',n:'AGI 연구 과학자',t:1,d:'AI의 자의식과 논리 구조를 탐구'},{e:'🔢',n:'양자 컴퓨팅 프로그래머',t:1,d:'차세대 연산 알고리즘 개발'},{e:'💻',n:'탈중앙화 앱(DApp) 개발자',t:0,d:'웹3.0 시대의 새로운 규칙 설계'},{e:'🧪',n:'바이오 정보학자',t:0,d:'유전자 데이터와 IT의 융합 분석'},{e:'🎨',n:'생성형 AI 아트 디렉터',t:0,d:'AI 알고리즘으로 새로운 예술 장르 개척'}],
+      ja:[{e:'🧠',n:'AGI研究科学者',t:1,d:'AIの自意識と論理構造を探究'},{e:'🔢',n:'量子コンピューティングプログラマー',t:1,d:'次世代演算アルゴリズムの開発'},{e:'💻',n:'分散型アプリ(DApp)デベロッパー',t:0,d:'Web3.0時代の新しいルール設計'},{e:'🧪',n:'バイオ情報学者',t:0,d:'遺伝子データとITの融合分析'},{e:'🎨',n:'生成型AIアートディレクター',t:0,d:'AI算法で新しい芸術ジャンルを開拓'}],
+      en:[{e:'🧠',n:'AGI Research Scientist',t:1,d:'Exploring AI self-awareness and logical structures'},{e:'🔢',n:'Quantum Computing Programmer',t:1,d:'Developing next-generation computing algorithms'},{e:'💻',n:'Decentralized App (DApp) Developer',t:0,d:'Designing new rules for the Web 3.0 era'},{e:'🧪',n:'Bioinformatics Scientist',t:0,d:'Fused analysis of genetic data and IT'},{e:'🎨',n:'Generative AI Art Director',t:0,d:'Opening new art genres with AI algorithms'}],
+      zh:[{e:'🧠',n:'AGI 研究科學家',t:1,d:'探索 AI 的自我意識和邏輯結構'},{e:'🔢',n:'量子計算程式設計師',t:1,d:'開發下一代運算算法'},{e:'💻',n:'去中心化應用 (DApp) 開發者',t:0,d:'設計 Web 3.0 時代的新規則'},{e:'🧪',n:'生物資訊學家',t:0,d:'基因數據與 IT 的融合分析'},{e:'🎨',n:'生成式 AI 藝術總監',t:0,d:'利用 AI 算法開闢新的藝術流派'}]
+    },
+    careerDesc:{ko:'이론+분석+시스템 설계에서 대체 불가능한 힘을 발휘해.',ja:'理論＋分析＋システム設計で代替不可能な力を発揮するよ。',en:'You exert irreplaceable power in theory, analysis, and system design.',zh:'你在理論、分析和系統設計方面發揮著不可替代的力量。'}},
+
   ENTJ:{emoji:'⚡',name:'통솔자형',tag:'강한 의지로 목표를 이끄는 타고난 리더',good:['INTP','ISTP'],care:['INFP','ISFP'],
     figs:{
       ko:[{e:'🚀',n:'이재용',r:'삼성전자'},{e:'⚔️',n:'이순신',r:'조선 제독'},{e:'🎤',n:'방시혁',r:'HYBE'}],
@@ -1597,86 +1607,143 @@ const META={
     figNote:'숏폼 한 편으로 세상을 흔드는 에너지의 소유자들.',
     careers:[{e:'📱',n:'버추얼 인플루언서 기획자',t:1,d:'AI 가상 인물에 생명력과 매력을 불어넣는 창조자'},{e:'🎨',n:'AI 아트 퍼포먼스 기획',t:1,d:'기술과 예술을 결합한 새로운 경험 창조'},{e:'🚀',n:'미래 엔터테이너 창업',t:0,d:'에너지를 비즈니스로 연결하는 리더'},{e:'🎤',n:'글로벌 트렌드 큐레이터',t:0,d:'세상의 모든 힙한 것을 찾아 연결'},{e:'🌐',n:'가상 세계 여행 가이드',t:0,d:'메타버스 내의 독특한 경험을 설계'}],
     careerDesc:'창의성+사람 에너지가 합쳐지는 곳에서 너의 천직을 찾을 수 있어.'},
-  ISTJ:{emoji:'🏛️',name:'현실주의자형',tag:'신뢰와 책임감으로 묵묵히 완수하는 기둥',good:['ESFP','ESTP'],care:['ENFP','ENTP'],
+  ISTJ:{emoji:'🏛️',good:['ESFP','ESTP'],care:['ENFP','ENTP'],
+    name:{ko:'현실주의자형',ja:'管理者형',en:'Logistician',zh:'物流師型'},
+    tag:{ko:'신뢰와 책임감으로 묵묵히 완수하는 기둥',ja:'信頼と責任感で黙々とやり遂げる大黒柱',en:'Anchor who completes tasks with reliability and responsibility',zh:'以信賴與責任感默默完成任務的支柱'},
     figs:{
       ko:[{e:'⚽',n:'손흥민',r:'축구 선수'},{e:'🏅',n:'김연아',r:'피겨 스타'},{e:'💼',n:'정도전',r:'조선의 학자'}],
       en:[{e:'⚽',n:'Cristiano Ronaldo',r:'Athlete'},{e:'💼',n:'Warren Buffett',r:'Investor'},{e:'⚖️',n:'Queen Elizabeth II',r:'Monarch'}],
       ja:[{e:'⚾',n:'イチロー',r:'元野球選手'},{e:'🏯',n:'徳川家康',r:'戦国武将'},{e:'💼',n:'渋沢栄一',r:'実業家'}],
       zh:[{e:'🏯',n:'諸葛亮',r:'蜀漢丞相'},{e:'💼',n:'王健林',r:'萬達集團'},{e:'⚖️',n:'包拯',r:'北宋名臣'}]
     },
-    figNote:'꾸준함과 기본기로 정상에 오른 사람들.',
-    careers:[{e:'💻',n:'데이터 무결성 관리자',t:1,d:'AI 시대 데이터의 정확성과 신뢰성을 수호'},{e:'🔐',n:'블록체인 보안 전문가',t:1,d:'원칙과 체계로 시스템의 구멍을 차단'},{e:'📊',n:'미래 재무 알고리즘 분석가',t:0,d:'숫자로 미래의 진실을 찾는 역할'},{e:'⚖️',n:'리걸테크 컴플라이언스',t:0,d:'법률과 기술의 교차점을 정밀하게 관리'},{e:'🏗️',n:'스마트시티 인프라 아키텍트',t:0,d:'견고하고 효율적인 도시 시스템 설계'}],
-    careerDesc:'안정과 신뢰를 기반으로 하는 전문 분야에서 독보적이야.'},
-  ISFJ:{emoji:'🛡️',name:'수호자형',tag:'조용히 헌신하며 곁에 있어주는 따뜻한 보호자',good:['ESFP','ESTP'],care:['ENTJ','ENTP'],
+    figNote:{ko:'꾸준함과 기본기로 정상에 오른 사람들.',ja:'地道な努力と基本に忠実な姿勢で頂点に立った人々。',en:'People who reached the top through consistency and solid basics.',zh:'憑藉持之以恆的努力與紮實的基本功登上巔峰的人們。'},
+    careers:{
+      ko:[{e:'💻',n:'데이터 무결성 관리자',t:1,d:'AI 시대 데이터의 정확성과 신뢰성을 수호'},{e:'🔐',n:'블록체인 보안 전문가',t:1,d:'원칙과 체계로 시스템의 구멍을 차단'},{e:'📊',n:'미래 재무 알고리즘 분석가',t:0,d:'숫자로 미래의 진실을 찾는 역할'},{e:'⚖️',n:'리걸테크 컴플라이언스',t:0,d:'법률과 기술의 교차점을 정밀하게 관리'},{e:'🏗️',n:'스마트시티 인프라 아키텍트',t:0,d:'견고하고 효율적인 도시 시스템 설계'}],
+      ja:[{e:'💻',n:'データ整合性管理者',t:1,d:'AI時代のデータの正確性と信頼性を守る'},{e:'🔐',n:'ブロックチェーンセキュリティ専門家',t:1,d:'原則と体系でシステムの穴を遮단',t:1},{e:'📊',n:'未来財務アルゴリズム分析者',t:0,d:'数字で未来の真実を見つけ出す役割'},{e:'⚖️',n:'リーガルテックコンプライアンス',t:0,d:'法律と技術の交差点を精密に管理'},{e:'🏗️',n:'スマートシティインフラアーキテクト',t:0,d:'堅牢で効率的な都市システムを設計'}],
+      en:[{e:'💻',n:'Data Integrity Manager',t:1,d:'Guarding the accuracy and reliability of data in the AI era'},{e:'🔐',n:'Blockchain Security Expert',t:1,d:'Blocking system vulnerabilities with principles and structure'},{e:'📊',n:'Future Financial Algorithm Analyst',t:0,d:'Role finding the truth of the future through numbers'},{e:'⚖️',n:'LegalTech Compliance',t:0,d:'Precisely managing the intersection of law and technology'},{e:'🏗️',n:'Smart City Infrastructure Architect',t:0,d:'Designing robust and efficient urban systems'}],
+      zh:[{e:'💻',n:'數據完整性管理員',t:1,d:'在 AI 時代守護數據的準確性與可靠性'},{e:'🔐',n:'區塊鏈安全專家',t:1,d:'以原則與體系封堵系統漏洞'},{e:'📊',n:'未來財務演算法分析師',t:0,d:'透過數字尋找未來真相的角色'},{e:'⚖️',n:'法律科技合規專員',t:0,d:'精確管理法律與技術的交匯點'},{e:'🏗️',n:'智慧城市基礎設施架構師',t:0,d:'設計穩固且高效的城市系統'}]
+    },
+    careerDesc:{ko:'안정과 신뢰를 기반으로 하는 전문 분야에서 독보적이야.',ja:'安定と信頼を基盤とする専門分野で独歩的だよ。',en:'You are unrivaled in specialized fields based on stability and trust.',zh:'你在基於穩定與信賴的專業領域中出類拔萃。'}},
+  ISFJ:{emoji:'🛡️',good:['ESFP','ESTP'],care:['ENTJ','ENTP'],
+    name:{ko:'수호자형',ja:'擁護者型',en:'Defender',zh:'守護者型'},
+    tag:{ko:'조용히 헌신하며 곁에 있어주는 따뜻한 보호자',ja:'静かに献身し、寄り添ってくれる温かな保護者',en:'Warm protector who quietly devotes and stays by your side',zh:'默默奉獻、守候在旁的溫暖守護者'},
     figs:{
       ko:[{e:'🌸',n:'아이유',r:'가수'},{e:'🍳',n:'백종원',r:'사업가'},{e:'🌿',n:'허준',r:'조선 의학자'}],
       en:[{e:'🌸',n:'Selena Gomez',r:'Singer'},{e:'👸',n:'Princess Diana',r:'Royal'},{e:'🎬',n:'Anne Hathaway',r:'Actor'}],
       ja:[{e:'🌸',n:'綾瀬はるか',r:'俳優'},{e:'🍱',n:'タモリ',r:'タレント'},{e:'🏯',n:'上杉謙信',r:'戦国武将'}],
       zh:[{e:'🎥',n:'周迅',r:'演員'},{e:'🎵',n:'鄧麗君',r:'歌手'},{e:'🏯',n:'岳飛',r:'南宋名將'}]
     },
-    figNote:'따뜻한 일상 콘텐츠로 팬덤이 자연스럽게 생긴 사람들.',
-    careers:[{e:'🍳',n:'AI 맞춤형 영양 솔루션 전문가',t:1,d:'데이터를 활용해 개인에게 최적화된 돌봄 제공'},{e:'🌿',n:'디지털 헤리티지 보존가',t:1,d:'소중한 문화와 기억을 기록하고 수호'},{e:'🧘',n:'버추얼 테라피스트',t:0,d:'가상 공간에서 따뜻한 위로를 전달'},{e:'📸',n:'아카이브 브이로그 크리에이터',t:0,d:'평범한 일상을 가치 있는 기록으로 승화'},{e:'💊',n:'미래 통합 헬스 코치',t:0,d:'신체와 정신의 건강을 동시에 케어'}],
-    careerDesc:'따뜻한 케어와 세심한 관찰이 필요한 일에서 가장 큰 보람을 느껴.'},
-  ESTJ:{emoji:'👑',name:'경영자형',tag:'원칙과 추진력으로 목표를 완수하는 실행가',good:['ISFP','ISTP'],care:['INFP','INFJ'],
+    figNote:{ko:'따뜻한 일상 콘텐츠로 팬덤이 자연스럽게 생긴 사람들.',ja:'温かい日常のコンテンツで自然とファンダムができた人々。',en:'People whose fandoms grew naturally through warm daily content.',zh:'透過溫馨的日常內容自然吸引粉絲的人們。'},
+    careers:{
+      ko:[{e:'🍳',n:'AI 맞춤형 영양 솔루션 전문가',t:1,d:'데이터를 활용해 개인에게 최적화된 돌봄 제공'},{e:'🌿',n:'디지털 헤리티지 보존가',t:1,d:'소중한 문화와 기억을 기록하고 수호'},{e:'🧘',n:'버추얼 테라피스트',t:0,d:'가상 공간에서 따뜻한 위로를 전달'},{e:'📸',n:'아카이브 브이로그 크리에이터',t:0,d:'평범한 일상을 가치 있는 기록으로 승화'},{e:'💊',n:'미래 통합 헬스 코치',t:0,d:'신체와 정신의 건강을 동시에 케어'}],
+      ja:[{e:'🍳',n:'AIパーソナライズ栄養ソリューション専門家',t:1,d:'データを活用して個人に最適化されたケアを提供'},{e:'🌿',n:'デジタルヘリテージ保存家',t:1,d:'大切な文化と記憶を記録し守る'},{e:'🧘',n:'バーチャルセラピスト',t:0,d:'仮想空間で温かい慰めを伝える'},{e:'📸',n:'アーカイブVlogクリエイター',t:0,d:'平凡な日常を価値ある記録へと昇華'},{e:'💊',n:'未来統合ヘルスコーチ',t:0,d:'身体と精神の健康を同時にケア'}],
+      en:[{e:'🍳',n:'AI-Tailored Nutrition Specialist',t:1,d:'Providing optimized care for individuals using data'},{e:'🌿',n:'Digital Heritage Preservationist',t:1,d:'Recording and guarding precious cultures and memories'},{e:'🧘',n:'Virtual Therapist',t:0,d:'Delivering warm comfort in virtual spaces'},{e:'📸',n:'Archive Vlog Creator',t:0,d:'Sublimating ordinary life into valuable records'},{e:'💊',n:'Future Integrated Health Coach',t:0,d:'Caring for both physical and mental health'}],
+      zh:[{e:'🍳',n:'AI 定製營養方案專家',t:1,d:'利用數據為個人提供優化的照護'},{e:'🌿',n:'數位遺產保存者',t:1,d:'記錄並守護珍貴的文化與記憶'},{e:'🧘',n:'虛擬治療師',t:0,d:'在虛擬空間傳遞溫暖的慰藉'},{e:'📸',n:'檔案式 Vlog 創作者',t:0,d:'將平凡日常昇華為有價值的記錄'},{e:'💊',n:'未來綜合健康教練',t:0,d:'同時關注生理與心理健康'}]
+    },
+    careerDesc:{ko:'따뜻한 케어와 세심한 관찰이 필요한 일에서 가장 큰 보람을 느껴.',ja:'温かいケアと細やかな観察が必要な仕事で最大のやりがいを感じるよ。',en:'You feel the greatest fulfillment in work that requires warm care and meticulous observation.',zh:'你在需要溫暖照護與細緻觀察的工作中感受到最大的成就感。'}},
+  ESTJ:{emoji:'👑',good:['ISFP','ISTP'],care:['INFP','INFJ'],
+    name:{ko:'경영자형',ja:'幹部型',en:'Executive',zh:'總經理型'},
+    tag:{ko:'원칙과 추진력으로 목표를 완수하는 실행가',ja:'原則と推進力で目標を完遂する実行家',en:'Executor who completes goals with principles and drive',zh:'以原則與推動力完成目標的執行者'},
     figs:{
       ko:[{e:'🏀',n:'서장훈',r:'방송인'},{e:'💼',n:'이재용',r:'삼성전자'},{e:'⚔️',n:'김유신',r:'신라 장군'}],
       en:[{e:'🏀',n:'LeBron James',r:'Athlete'},{e:'💼',n:'Tim Cook',r:'Apple CEO'},{e:'🎬',n:'Judge Judy',r:'Personality'}],
       ja:[{e:'💼',n:'柳井正',r:'ファーストリテイリング'},{e:'🏰',n:'北条時宗',r:'鎌倉幕府執権'},{e:'⚾',n:'野村克也',r:'元プロ野球監督'}],
       zh:[{e:'🏯',n:'秦始皇',r:'秦朝皇帝'},{e:'💼',n:'雷軍',r:'小米創始人'},{e:'🎥',n:'陳凱歌',r:'導演'}]
     },
-    figNote:'목표 설정+팀 리드에서 탁월한 리더십의 소유자들.',
-    careers:[{e:'🏢',n:'AI 프로젝트 오너(PO)',t:1,d:'AI 기술을 비즈니스 성과로 연결하는 리더'},{e:'📊',n:'운영 자동화 시스템(COO)',t:1,d:'전체 공정을 효율적으로 최적화하는 달인'},{e:'🎯',n:'미래 도시 운영 본부장',t:0,d:'현실의 문제를 데이터로 신속하게 해결'},{e:'💰',n:'퀀트 데이터 뱅커',t:0,d:'수치와 원칙으로 자산을 운용'},{e:'🏗️',n:'AGI 물류 망 설계자',t:0,d:'가장 효율적인 유통 시스템 구축'}],
-    careerDesc:'현실적인 목표를 달성하고 효율을 극대화하는 일에 최적화되어 있어.'},
-  ESFJ:{emoji:'🤝',name:'집정관형',tag:'관계의 중심에서 모두를 연결하는 사교적 돌보미',good:['ISFP','ISTP'],care:['INTP','INFP'],
+    figNote:{ko:'목표 설정+팀 리드에서 탁월한 리더십의 소유자들.',ja:'目標設定＋チームリードにおいて卓越したリーダーシップの持ち主たち。',en:'Possessors of excellent leadership in goal setting and team leading.',zh:'在設定目標與帶領團隊方面擁有卓越領導力的人。'},
+    careers:{
+      ko:[{e:'🏢',n:'AI 프로젝트 오너(PO)',t:1,d:'AI 기술을 비즈니스 성과로 연결하는 리더'},{e:'📊',n:'운영 자동화 시스템(COO)',t:1,d:'전체 공정을 효율적으로 최적화하는 달인'},{e:'🎯',n:'미래 도시 운영 본부장',t:0,d:'현실의 문제를 데이터로 신속하게 해결'},{e:'💰',n:'퀀트 데이터 뱅커',t:0,d:'수치와 원칙으로 자산을 운용'},{e:'🏗️',n:'AGI 물류 망 설계자',t:0,d:'가장 효율적인 유통 시스템 구축'}],
+      ja:[{e:'🏢',n:'AIプロジェクトオーナー(PO)',t:1,d:'AI技術をビジネス成果につなげるリーダー'},{e:'📊',n:'運営自動化システム(COO)',t:1,d:'全工程を効率的に最適化する達人'},{e:'🎯',n:'未来都市運営本部長',t:0,d:'現実の問題をデータで迅速に解決'},{e:'💰',n:'クオンツデータバンカー',t:0,d:'数値と原則で資産を運用'},{e:'🏗️',n:'AGI物流網設計者',t:0,d:'最も効率的な流通システムを構築'}],
+      en:[{e:'🏢',n:'AI Project Owner (PO)',t:1,d:'Leader connecting AI technology to business results'},{e:'📊',n:'Operations Automation Expert (COO)',t:1,d:'Master of efficiently optimizing entire processes'},{e:'🎯',n:'Future City Operations Chief',t:0,d:'Solving real-world problems rapidly with data'},{e:'💰',n:'Quant Data Banker',t:0,d:'Managing assets with numbers and principles'},{e:'🏗️',n:'AGI Logistics Network Designer',t:0,d:'Building the most efficient distribution systems'}],
+      zh:[{e:'🏢',n:'AI 專案負責人 (PO)',t:1,d:'將 AI 技術轉化為商業成果的領導者'},{e:'📊',n:'營運自動化專家 (COO)',t:1,d:'高效優化整個流程的大師'},{e:'🎯',n:'未來城市營運總監',t:0,d:'利用數據快速解決現實問題'},{e:'💰',n:'量化數據銀行家',t:0,d:'以數字與原則進行資產運作'},{e:'🏗️',n:'AGI 物流網絡設計師',t:0,d:'構建最高效的流通系統'}]
+    },
+    careerDesc:{ko:'현실적인 목표를 달성하고 효율을 극대화하는 일에 최적화되어 있어.',ja:'現実的な目標を達成し効率を最大化する仕事に最適化されているよ。',en:'Optimized for achieving realistic goals and maximizing efficiency.',zh:'最適合達成現實目標並將效率發揮到極致的工作。'}},
+  ESFJ:{emoji:'🤝',good:['ISFP','ISTP'],care:['INTP','INFP'],
+    name:{ko:'집정관형',ja:'領事官型',en:'Consul',zh:'執政官型'},
+    tag:{ko:'관계의 중심에서 모두를 연결하는 사교적 돌보미',ja:'関係の中心で皆をつなげる社交的なケアラー',en:'Social caregiver who connects everyone at the center of relationships',zh:'在關係中心連結眾人的社交型照顧者'},
     figs:{
       ko:[{e:'🐰',n:'카리나',r:'에스파'},{e:'📸',n:'김나영',r:'방송인'},{e:'🎊',n:'황희',r:'조선 재상'}],
       en:[{e:'🐰',n:'Taylor Swift',r:'Singer'},{e:'📸',n:'Jennifer Aniston',r:'Actor'},{e:'🎊',n:'Hugh Jackman',r:'Actor'}],
       ja:[{e:'🌸',n:'石原さとみ',r:'俳優'},{e:'📺',n:'中居正広',r:'タレント'},{e:'🏯',n:'藤原道長',r:'平安貴族'}],
-      zh:[{e:'🎥',n:'楊冪',r:'演員'},{e:'🎵',n:'王페이',r:'歌手'},{e:'🎙️',n:'謝娜',r:'主持人'}]
+      zh:[{e:'🎥',n:'楊冪',r:'演員'},{e:'🎵',n:'王菲',r:'歌手'},{e:'🎙️',n:'謝娜',r:'主持人'}]
     },
-    figNote:'SNS에서 자연스럽게 팬이 모이는 퍼스널 브랜딩의 달인들.',
-    careers:[{e:'📣',n:'글로벌 팬덤 매니저',t:1,d:'AI 아티스트와 인간 팬 사이를 연결하는 허브'},{e:'🎉',n:'체험형 이벤트 디자이너',t:1,d:'사람과 사람이 만나는 행복한 순간을 설계'},{e:'🛎️',n:'AI 맞춤 호스피탈리티 디렉터',t:0,d:'최첨단 기술에 따뜻한 환대를 결합'},{e:'📱',n:'사회적 가치 연결 플랫폼 기획',t:0,d:'모두가 상생하는 네트워크 구축'},{e:'💄',n:'미래 뷰티 테크 크리에이터',t:0,d:'기술로 아름다움의 정의를 확장'}],
-    careerDesc:'사람 사이의 연결을 강화하고 모두를 행복하게 만드는 일에서 빛나.'},
-  ISTP:{emoji:'🔧',name:'장인형',tag:'침착하게 문제를 해결하는 실용적 문제해결사',good:['ESTJ','ENTJ'],care:['ENFJ','INFJ'],
+    figNote:{ko:'SNS에서 자연스럽게 팬이 모이는 퍼스널 브랜딩의 달인들.',ja:'SNSで自然とファンが集まるパーソナルブランディングの達人たち。',en:'Masters of personal branding who naturally gather fans on social media.',zh:'在社群媒體上自然吸引粉絲的個人品牌大師。'},
+    careers:{
+      ko:[{e:'📣',n:'글로벌 팬덤 매니저',t:1,d:'AI 아티스트와 인간 팬 사이를 연결하는 허브'},{e:'🎉',n:'체험형 이벤트 디자이너',t:1,d:'사람과 사람이 만나는 행복한 순간을 설계'},{e:'🛎️',n:'AI 맞춤 호스피탈리티 디렉터',t:0,d:'최첨단 기술에 따뜻한 환대를 결합'},{e:'📱',n:'사회적 가치 연결 플랫폼 기획',t:0,d:'모두가 상생하는 네트워크 구축'},{e:'💄',n:'미래 뷰티 테크 크리에이터',t:0,d:'기술로 아름다움의 정의를 확장'}],
+      ja:[{e:'📣',n:'グローバルファンダムマネージャー',t:1,d:'AIアーティストと人間のファンの間をつなぐハブ'},{e:'🎉',n:'体験型イベントデザイナー',t:1,d:'人と人が出会う幸せな瞬間을設計'},{e:'🛎️',n:'AIパーソナライズホスピタリティディレクター',t:0,d:'最先端技術に温かいおもてなしを結合'},{e:'📱',n:'社会的価値連結プラットフォーム企画',t:0,d:'皆が相生するネットワークの構築'},{e:'💄',n:'未来のビューティーテッククリエイター',t:0,d:'技術で美の定義を拡張'}],
+      en:[{e:'📣',n:'Global Fandom Manager',t:1,d:'Hub connecting AI artists and human fans'},{e:'🎉',n:'Experiential Event Designer',t:1,d:'Designing happy moments where people meet'},{e:'🛎️',n:'AI-Tailored Hospitality Director',t:0,d:'Combining cutting-edge tech with warm hospitality'},{e:'📱',n:'Social Value Connection Platform Planner',t:0,d:'Building networks where everyone prospers'},{e:'💄',n:'Future BeautyTech Creator',t:0,d:'Expanding the definition of beauty through technology'}],
+      zh:[{e:'📣',n:'全球粉絲經理',t:1,d:'連結 AI 藝人與人類粉絲的中樞'},{e:'🎉',n:'體驗型活動設計師',t:1,d:'設計人與人相遇的幸福瞬間'},{e:'🛎️',n:'AI 定製款待總監',t:0,d:'將尖端技術與溫暖款待相結合'},{e:'📱',n:'社會價值連結平台企劃',t:0,d:'構建人人共贏的網絡'},{e:'💄',n:'未來美妝科技創作者',t:0,d:'利用技術擴展美的定義'}]
+    },
+    careerDesc:{ko:'사람 사이의 연결을 강화하고 모두를 행복하게 만드는 일에서 빛나.',ja:'人とのつながりを強め、皆を幸せにする仕事で輝くよ。',en:'You shine in work that strengthens connections and makes everyone happy.',zh:'你在強化人際連結並讓大眾感到幸福的工作中發光發熱。'}},
+  ISTP:{emoji:'🔧',good:['ESTJ','ENTJ'],care:['ENFJ','INFJ'],
+    name:{ko:'장인형',ja:'巨匠型',en:'Virtuoso',zh:'鑒賞家型'},
+    tag:{ko:'침착하게 문제를 해결하는 실용적 문제해결사',ja:'冷静に問題を解決する実用的な問題解決者',en:'Practical problem solver who solves problems calmly',zh:'冷靜解決問題的務實問題解決者'},
     figs:{
       ko:[{e:'🎮',n:'페이커',r:'T1'},{e:'🏎️',n:'임권택',r:'영화감독'},{e:'🛹',n:'김유신',r:'신라 장군'}],
       en:[{e:'🏎️',n:'Lewis Hamilton',r:'F1'},{e:'🛹',n:'Nyjah Huston',r:'Skateboarder'},{e:'🛠️',n:'Bear Grylls',r:'Survivalist'}],
       ja:[{e:'⚾',n:'大谷翔平',r:'ドジャース'},{e:'🏯',n:'宮本武蔵',r:'剣豪'},{e:'🚗',n:'本田宗一郎',r:'ホンダ創業者'}],
       zh:[{e:'🏯',n:'魯班',r:'發明家'},{e:'🎥',n:'甄子丹',r:'演員'},{e:'🏸',n:'林丹',r:'運動員'}]
     },
-    figNote:'손으로 직접 만들고 극한 도전을 즐기는 메이커 DNA.',
-    careers:[{e:'🔧',n:'하드웨어 해킹 마스터',t:1,d:'미래의 로봇과 기계를 뜯고 고치며 개선'},{e:'🎮',n:'e스포츠 데이터 분석 코치',t:1,d:'순간적인 상황 판단을 데이터로 지원'},{e:'💻',n:'임베디드 AI 개발자',t:0,d:'기계에 지능을 불어넣는 핵심 엔지니어'},{e:'🛹',n:'미래형 익스트림 스포츠 기획',t:0,d:'한계를 뛰어넘는 물리적 도전을 설계'},{e:'🎛️',n:'AGI 음향/시각 엔지니어',t:0,d:'기술적 완성도로 감각을 자극'}],
-    careerDesc:'기술적 난제를 해결하고 무언가를 직접 다루는 일에서 탁월한 실력을 발휘해.'},
-  ISFP:{emoji:'🎨',name:'모험가형',tag:'감각과 감성으로 지금을 사는 자유로운 예술가',good:['ESTJ','ESFJ'],care:['INTJ','ENTJ'],
+    figNote:{ko:'손으로 직접 만들고 극한 도전을 즐기는 메이커 DNA.',ja:'手で直接作り、極限の挑戦を楽しむメーカーDNA。',en:'Maker DNA that enjoys hands-on creation and extreme challenges.',zh:'喜歡親手製作並享受極限挑戰的「創作者」基因。'},
+    careers:{
+      ko:[{e:'🔧',n:'하드웨어 해킹 마스터',t:1,d:'미래의 로봇과 기계를 뜯고 고치며 개선'},{e:'🎮',n:'e스포츠 데이터 분석 코치',t:1,d:'순간적인 상황 판단을 데이터로 지원'},{e:'💻',n:'임베디드 AI 개발자',t:0,d:'기계에 지능을 불어넣는 핵심 엔지니어'},{e:'🛹',n:'미래형 익스트림 스포츠 기획',t:0,d:'한계를 뛰어넘는 물리적 도전을 설계'},{e:'🎛️',n:'AGI 음향/시각 엔지니어',t:0,d:'기술적 완성도로 감각을 자극'}],
+      ja:[{e:'🔧',n:'ハードウェアハッキングマスター',t:1,d:'未来のロボットや機械を分解・修理して改善'},{e:'🎮',n:'eスポーツデータ分析コーチ',t:1,d:'瞬間的な状況判断をデータで支援'},{e:'💻',n:'組み込みAI開発者',t:0,d:'機械に知能を吹き込む核心エンジニア'},{e:'🛹',n:'未来型エクストリームスポーツ企画',t:0,d:'限界を超える物理的な挑戦を設計'},{e:'🎛️',n:'AGI音響/視覚エンジニア',t:0,d:'技術的な完成度で感覚を刺激'}],
+      en:[{e:'🔧',n:'Hardware Hacking Master',t:1,d:'Improving future robots and machines by taking them apart'},{e:'🎮',n:'eSports Data Analyst Coach',t:1,d:'Supporting split-second decisions with data'},{e:'💻',n:'Embedded AI Developer',t:0,d:'Core engineer breathing intelligence into machines'},{e:'🛹',n:'Future Extreme Sports Planner',t:0,d:'Designing physical challenges that push limits'},{e:'🎛️',n:'AGI Audio/Visual Engineer',t:0,d:'Stimulating senses with technical perfection'}],
+      zh:[{e:'🔧',n:'硬體駭客大師',t:1,d:'拆解並改良未來的機器人與機械'},{e:'🎮',n:'電競數據分析教練',t:1,d:'以數據支援瞬間的狀況判斷'},{e:'💻',n:'嵌入式 AI 開發者',t:0,d:'為機器注入智慧的核心工程師'},{e:'🛹',n:'未來極한運動企劃',t:0,d:'設計超越極限的物理挑戰'},{e:'🎛️',n:'AGI 音效/視覺工程師',t:0,d:'以技術完成度刺激感官'}]
+    },
+    careerDesc:{ko:'기술적 난제를 해결하고 무언가를 직접 다루는 일에서 탁월한 실력을 발휘해.',ja:'技術的な難題を解決し、何かを直接扱う仕事で卓越した実力を発揮するよ。',en:'You exhibit outstanding skill in solving technical puzzles and hands-on work.',zh:'你在解決技術難題和親手操作方面發揮出卓越的能力。'}},
+  ISFP:{emoji:'🎨',good:['ESTJ','ESFJ'],care:['INTJ','ENTJ'],
+    name:{ko:'모험가형',ja:'冒険家型',en:'Adventurer',zh:'探險家型'},
+    tag:{ko:'감각과 감성으로 지금을 사는 자유로운 예술가',ja:'感覚と感性で今を生きる自由な芸術家',en:'Free artist who lives in the moment with sense and emotion',zh:'以感官與感性活在當下的自由藝術家'},
     figs:{
       ko:[{e:'🎨',n:'제니',r:'블랙핑크'},{e:'📸',n:'백남준',r:'예술가'},{e:'🎵',n:'김광석',r:'가수'}],
       en:[{e:'🎵',n:'Billie Eilish',r:'Singer'},{e:'🎨',n:'Banksy',r:'Artist'},{e:'📸',n:'Zendaya',r:'Actor'}],
       ja:[{e:'🎨',n:'草間彌生',r:'芸術家'},{e:'🎵',n:'宇多田ヒカル',r:'音楽家'},{e:'🎭',n:'佐藤健',r:'俳優'}],
       zh:[{e:'🎥',n:'劉亦菲',r:'演員'},{e:'🎵',n:'周杰倫',r:'歌手'},{e:'🎨',n:'齊白石',r:'畫家'}]
     },
-    figNote:'미적 감각이 독보적인 비주얼 크리에이터들.',
-    careers:[{e:'🎨',n:'AI-휴먼 협업 미디어 아티스트',t:1,d:'AI를 붓 삼아 새로운 시각 언어를 창조'},{e:'📸',n:'실감형 메타버스 디자이너',t:1,d:'눈부시게 아름다운 가상 세계를 시각화'},{e:'🎵',n:'사운드스케이프 작곡가',t:0,d:'공간의 분위기를 소리로 창조하는 감성가'},{e:'👗',n:'디지털 패션 스타일리스트',t:0,d:'아바타의 개성을 완성하는 패션 전문가'},{e:'🌿',n:'가상 공간 조경가',t:0,d:'디지털 숲과 자연을 설계하는 힐러'}],
-    careerDesc:'자신의 미적 감수성을 자유롭게 발산할 수 있는 일에서 존재감을 드러내.'},
-  ESTP:{emoji:'🚀',name:'사업가형',tag:'순발력과 담대함으로 기회를 낚아채는 행동가',good:['ISFJ','ISTJ'],care:['INFJ','INTJ'],
+    figNote:{ko:'미적 감각이 독보적인 비주얼 크리에이터들.',ja:'美的センスが独歩的なビジュアルクリエイターたち。',en:'Visual creators with unrivaled aesthetic sense.',zh:'美感出眾的視覺創作者。'},
+    careers:{
+      ko:[{e:'🎨',n:'AI-휴먼 협업 미디어 아티스트',t:1,d:'AI를 붓 삼아 새로운 시각 언어를 창조'},{e:'📸',n:'실감형 메타버스 디자이너',t:1,d:'눈부시게 아름다운 가상 세계를 시각화'},{e:'🎵',n:'사운드스케이프 작곡가',t:0,d:'공간의 분위기를 소리로 창조하는 감성가'},{e:'👗',n:'디지털 패션 스타일리스트',t:0,d:'아바타의 개성을 완성하는 패션 전문가'},{e:'🌿',n:'가상 공간 조경가',t:0,d:'디지털 숲과 자연을 설계하는 힐러'}],
+      ja:[{e:'🎨',n:'AI-人間協業メディアアーティスト',t:1,d:'AIを筆にして新しい視覚言語を創造'},{e:'📸',n:'没入型メタバースデザイナー',t:1,d:'目も眩むほど美しい仮想世界を視覚化'},{e:'🎵',n:'サウンドスケープ作曲家',t:0,d:'空間の雰囲気を音で創造する感性豊かな人'},{e:'👗',n:'デジタルファッションスタイリスト',t:0,d:'アバターの個性を完成させるファッション専門家'},{e:'🌿',n:'仮想空間造園家',t:0,d:'デジタルの森と自然を設計するヒーラー'}],
+      en:[{e:'🎨',n:'AI-Human Collaborative Media Artist',t:1,d:'Creating new visual languages using AI as a brush'},{e:'📸',n:'Immersive Metaverse Designer',t:1,d:'Visualizing stunningly beautiful virtual worlds'},{e:'🎵',n:'Soundscape Composer',t:0,d:'Creating space atmospheres through sound'},{e:'👗',n:'Digital Fashion Stylist',t:0,d:'Fashion expert finalizing avatar personalities'},{e:'🌿',n:'Virtual Landscape Architect',t:0,d:'Healer designing digital forests and nature'}],
+      zh:[{e:'🎨',n:'人機協作多媒體藝術家',t:1,d:'以 AI 為畫筆創造新的視覺語言'},{e:'📸',n:'沉浸式元宇宙設計師',t:1,d:'將璀璨奪目的虛擬世界視覺化'},{e:'🎵',n:'聲景作曲家',t:0,d:'透過聲音創造空間氛圍的感性創作者'},{e:'👗',n:'數位時尚造型師',t:0,d:'完善虛擬化身個性的時尚專家'},{e:'🌿',n:'虛擬空間造景師',t:0,d:'設計數位森林與自然的療癒者'}]
+    },
+    careerDesc:{ko:'자신의 미적 감수성을 자유롭게 발산할 수 있는 일에서 존재감을 드러내.',ja:'自身の美的感性を自由に発散できる仕事で存在感を表すよ。',en:'You reveal your presence in work where you can freely express your aesthetic sensibility.',zh:'你在能自由揮灑美學感性的工作中展現存在感。'}},
+  ESTP:{emoji:'🚀',good:['ISFJ','ISTJ'],care:['INFJ','INTJ'],
+    name:{ko:'사업가형',ja:'起業家型',en:'Entrepreneur',zh:'企業家型'},
+    tag:{ko:'순발력과 담대함으로 기회를 낚아채는 행동가',ja:'瞬発力と大胆さでチャンスを掴み取る行動家',en:'Action-oriented individual who grabs opportunities with wit and boldness',zh:'以爆發力與大膽抓住機會的行動家'},
     figs:{
       ko:[{e:'🎤',n:'지드래곤',r:'가수'},{e:'⚽',n:'음바페',r:'축구 선수'},{e:'🎮',n:'허준',r:'방송인'}],
       en:[{e:'🥊',n:'Conor McGregor',r:'Fighter'},{e:'🎤',n:'Justin Bieber',r:'Singer'},{e:'🎮',n:'Ninja',r:'Streamer'}],
       ja:[{e:'🏯',n:'真田幸村',r:'戦国武将'},{e:'📺',n:'中田英寿',r:'元サッカー選手'},{e:'🎬',n:'窪塚洋介',r:'俳優'}],
       zh:[{e:'🏯',n:'項羽',r:'西楚霸王'},{e:'💼',n:'王思聰',r:'企業家'},{e:'🎥',n:'謝霆鋒',r:'演員'}],
     },
-    figNote:'지금 이 순간에 올인하는 에너지로 판을 흔드는 사람들.',
-    careers:[{e:'💸',n:'미래 자산 트레이더',t:1,d:'순간적인 변화를 감지해 기회를 낚아채는 타격가'},{e:'🎤',n:'버추얼 라이브 액션 리더',t:1,d:'실시간 소통과 에너지로 관중을 압도'},{e:'🎮',n:'AGI 게임 스트리머',t:0,d:'순발력과 엔터테인먼트 감각의 정점'},{e:'🏄',n:'프로 우주 스포츠 선수',t:0,d:'물리적 한계를 넘는 도전의 주인공'},{e:'🤝',n:'현장 중심 미래 세일즈',t:0,d:'사람의 마음을 즉각적으로 움직이는 설득가'}],
-    careerDesc:'속도감 있는 변화 속에서 직접 부딪치며 성과를 내는 일에 탁월해.'},
-  ESFP:{emoji:'🎊',name:'연예인형',tag:'모든 순간을 축제로 만드는 에너지 넘치는 주인공',good:['ISFJ','ISTJ'],care:['INTJ','INFJ'],
+    figNote:{ko:'지금 이 순간에 올인하는 에너지로 판을 흔드는 사람들.',ja:'今この瞬間に全力を注ぐエネルギーで局面を動かす人々。',en:'People who shake the game with energy that goes all-in on the present moment.',zh:'以全身心投入當下的能量震撼全局的人。'},
+    careers:{
+      ko:[{e:'💸',n:'미래 자산 트레이더',t:1,d:'순간적인 변화를 감지해 기회를 낚아채는 타격가'},{e:'🎤',n:'버추얼 라이브 액션 리더',t:1,d:'실시간 소통과 에너지로 관중을 압도'},{e:'🎮',n:'AGI 게임 스트리머',t:0,d:'순발력과 엔터테인먼트 감각의 정점'},{e:'🏄',n:'프로 우주 스포츠 선수',t:0,d:'물리적 한계를 넘는 도전의 주인공'},{e:'🤝',n:'현장 중심 미래 세일즈',t:0,d:'사람의 마음을 즉각적으로 움직이는 설득가'}],
+      ja:[{e:'💸',n:'未来資産トレーダー',t:1,d:'瞬間的な変化を察知してチャンスを掴む打撃手'},{e:'🎤',n:'バーチャルライブアクションリーダー',t:1,d:'リアルタイムの疎通とエネルギーで観衆を圧倒'},{e:'🎮',n:'AGIゲームストリーマー',t:0,d:'瞬発力とエンターテインメント感覚の頂点'},{e:'🏄',n:'プロ宇宙スポーツ選手',t:0,d:'物理的限界を超える挑戦の主人公'},{e:'🤝',n:'現場中心の未来セールス',t:0,d:'人の心を即座に動かす説得の達人'}],
+      en:[{e:'💸',n:'Future Asset Trader',t:1,d:'Striker grabbing opportunities by sensing instant changes'},{e:'🎤',n:'Virtual Live Action Leader',t:1,d:'Overwhelming audiences with real-time communication and energy'},{e:'🎮',n:'AGI Game Streamer',t:0,d:'Peak of wit and entertainment sense'},{e:'🏄',n:'Pro Space Athlete',t:0,d:'Hero of challenges pushing physical limits'},{e:'🤝',n:'Field-Oriented Future Sales',t:0,d:'Persuader moving hearts instantly'}],
+      zh:[{e:'💸',n:'未來資產交易員',t:1,d:'察覺瞬間變化並抓住機會的打擊手'},{e:'🎤',n:'虛擬直播活動領袖',t:1,d:'以即時溝通與能量壓倒觀眾'},{e:'🎮',n:'AGI 遊戲實況主',t:0,d:'反應能力與娛樂感的巔峰'},{e:'🏄',n:'職業太空運動員',t:0,d:'超越物理極限的挑戰主角'},{e:'🤝',n:'現場導向的未來銷售',t:0,d:'能立即打動人心的說服者'}]
+    },
+    careerDesc:{ko:'속도감 있는 변화 속에서 직접 부딪치며 성과를 내는 일에 탁월해.',ja:'スピード感のある変化の中で、直接ぶつかりながら成果を出す仕事に長けているよ。',en:'Outstanding in work that involves direct confrontation and achieving results amid rapid change.',zh:'擅長在節奏快速的變化中親自衝鋒陷陣並取得成果的工作。'}},
+  ESFP:{emoji:'🎊',good:['ISFJ','ISTJ'],care:['INTJ','INFJ'],
+    name:{ko:'연예인형',ja:'エンターテイナー型',en:'Entertainer',zh:'表演者型'},
+    tag:{ko:'모든 순간을 축제로 만드는 에너지 넘치는 주인공',ja:'すべての瞬間を祭りにするエネルギー溢れる主人公',en:'Energetic hero who turns every moment into a festival',zh:'讓每個瞬間都變成慶典、充滿能量的主角'},
     figs:{
       ko:[{e:'🎤',n:'리사',r:'블랙핑크'},{e:'🎉',n:'제이홉',r:'BTS'},{e:'💃',n:'이효리',r:'가수'}],
       en:[{e:'🎤',n:'Cardi B',r:'Rapper'},{e:'🎉',n:'Katy Perry',r:'Singer'},{e:'💃',n:'Shakira',r:'Singer'}],
       ja:[{e:'📺',n:'渡辺直美',r:'タレント'},{e:'🎤',n:'きゃりーぱみゅぱみゅ',r:'歌手'},{e:'💃',n:'ローラ',r:'モデル'}],
       zh:[{e:'🎥',n:'迪麗熱巴',r:'演員'},{e:'🎵',n:'鄧紫棋',r:'歌手'},{e:'🎙️',n:'小S',r:'主持人'}]
     },
-    figNote:'카메라·무대·군중 앞에서 자동으로 ON되는 퍼포머들.',
-    careers:[{e:'🎤',n:'글로벌 AI 퍼포먼스 스타',t:1,d:'AI와 융합된 화려한 무대로 전 세계를 사로잡는 주인공'},{e:'📱',n:'몰입형 숏폼 콘텐츠 디렉터',t:1,d:'보는 순간 빠져들게 만드는 매력의 창조자'},{e:'💃',n:'버추얼 댄스 아카데미 리더',t:0,d:'춤과 몸짓으로 긍정적인 에너지를 전파'},{e:'🎉',n:'메타버스 페스티벌 기획자',t:0,d:'가상 세계에서도 잊지 못할 축제를 설계'},{e:'🏋️',n:'미래형 피트니스 인플루언서',t:0,d:'즐거움과 건강을 동시에 전달하는 아이콘'}],
-    careerDesc:'사람들의 시선 중심에서 에너지를 폭발시킬 수 있는 환경이 너의 무대야.'}
+    figNote:{ko:'카메라·무대·군중 앞에서 자동으로 ON되는 퍼포머들.',ja:'カメラ・舞台・群衆の前で自動的にONになるパフォーマーたち。',en:'Performers who automatically turn "ON" in front of cameras, stages, and crowds.',zh:'在鏡頭、舞台和人群面前自動啟動「表演模式」的演出者。'},
+    careers:{
+      ko:[{e:'🎤',n:'글로벌 AI 퍼포먼스 스타',t:1,d:'AI와 융합된 화려한 무대로 전 세계를 사로잡는 주인공'},{e:'📱',n:'몰입형 숏폼 콘텐츠 디렉터',t:1,d:'보는 순간 빠져들게 만드는 매력의 창조자'},{e:'💃',n:'버추얼 댄스 아카데미 리더',t:0,d:'춤과 몸짓으로 긍정적인 에너지를 전파'},{e:'🎉',n:'메타버스 페스티벌 기획자',t:0,d:'가상 세계에서도 잊지 못할 축제를 설계'},{e:'🏋️',n:'미래형 피트니스 인플루언서',t:0,d:'즐거움과 건강을 동시에 전달하는 아이콘'}],
+      ja:[{e:'🎤',n:'グローバルAIパフォーマンススター',t:1,d:'AIと融合した華やかな舞台で世界を魅了する主人公'},{e:'📱',n:'没入型短尺動画コンテンツディレクター',t:1,d:'見た瞬間に引き込まれる魅力の創造者'},{e:'💃',n:'バーチャルダンスアカデミーリーダー',t:0,d:'ダンスと身振りでポジティブなエネルギーを広める'},{e:'🎉',n:'メタバースフェスティバルプランナー',t:0,d:'仮想世界でも忘れられない祭りを設計'},{e:'🏋️',n:'未来型フィットネスインフルエンサー',t:0,d:'楽しさと健康を同時に伝えるアイコン'}],
+      en:[{e:'🎤',n:'Global AI Performance Star',t:1,d:'Hero captivating the world with spectacular stages fused with AI'},{e:'📱',n:'Immersive Short-form Content Director',t:1,d:'Creator of charm that draws you in instantly'},{e:'💃',n:'Virtual Dance Academy Leader',t:0,d:'Spreading positive energy through dance and gesture'},{e:'🎉',n:'Metaverse Festival Planner',t:0,d:'Designing unforgettable festivals in virtual worlds'},{e:'🏋️',n:'Future Fitness Influencer',t:0,d:'Icon delivering fun and health simultaneously'}],
+      zh:[{e:'🎤',n:'全球 AI 表演明星',t:1,d:'以結合 AI 的華麗舞台擄獲全世界的主角'},{e:'📱',n:'沉浸式短影音內容總監',t:1,d:'創造讓人一見傾心的魅力創作者'},{e:'💃',n:'虛擬舞蹈學院領袖',t:0,d:'透過舞蹈與肢體散播正面能量'},{e:'🎉',n:'元宇宙慶典企劃者',t:0,d:'在虛擬世界設計令人難忘的慶典'},{e:'🏋️',n:'未來型健身網紅',t:0,d:'同時傳遞樂趣與健康的偶像'}]
+    },
+    careerDesc:{ko:'사람들의 시선 중심에서 에너지를 폭발시킬 수 있는 환경이 너의 무대야.',ja:'人々の視線の中心でエネルギーを爆発させられる環境が君の舞台だよ。',en:'An environment where you can explode your energy at the center of attention is your stage.',zh:'能讓你在眾人目光焦點中爆發能量的環境，就是你的舞台。'}}
+
 };
 
 const DIST={INFP:8.3,ENFP:7.6,INFJ:5.1,ENFJ:4.2,INTJ:3.8,ENTJ:4.1,INTP:6.4,ENTP:5.3,ISFJ:11.2,ESFJ:9.3,ISTJ:10.2,ESTJ:7.1,ISFP:7.5,ESFP:6.1,ISTP:6.7,ESTP:5.7};
