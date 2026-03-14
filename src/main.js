@@ -2141,6 +2141,7 @@ window.reset=reset;
 window.saveImage=saveImage;
 window.closePhotoModal=closePhotoModal;
 window.generatePhotoCard=generatePhotoCard;
+window.toggleSection=toggleSection;
 
 /* 입력 이벤트 */
 document.getElementById('bi').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,6);document.getElementById('err-msg').style.display='none';});
