@@ -460,6 +460,7 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
   </div>
 
   <button class="btn-primary" onclick="startAnalysis()"><span>냥별이의 에너지 분석 시작</span> <span>🔮</span></button>
+  <button class="btn-secondary" id="btn-share-app" onclick="shareApp()" style="gap:7px">🔗 친구에게 앱 공유</button>
   <div style="margin:10px 16px 28px;text-align:center">
     <p style="font-size:11px;color:var(--g3);line-height:1.7">사주 원국에 담긴 타고난 기질 × MBTI 표현<br>환경이 만든 내가 아닌, <strong style="color:var(--g2)">태어날 때부터의 나</strong>를 만나봐 🌸</p>
     <p style="font-size:9px;color:var(--g3);margin-top:16px;opacity:.8" id="footer-copy">© 2026.03 Released. solong97@gmail.com. All rights reserved. Unauthorized Use Prohibited.</p>
@@ -594,7 +595,7 @@ ko:{
   // 로딩
   ldTitle:'냥별이가 분석 중이다냥 ✨',ld1:'🪐 사주 패턴 계산 중',ld2:'🔮 월주 십성 분석 중',ld3:'✨ 일주 기질 매칭 중',
   // 결과
-  share:'🔗 공유',saveImg:'📷 이미지 저장',imgSaved:'이미지 저장 완료 📷',
+  share:'🔗 공유',shareApp:'🔗 친구에게 앱 공유',saveImg:'📷 이미지 저장',imgSaved:'이미지 저장 완료 📷',
   pcTitle:'📷 퍼스널 포토카드',pcSub:'SNS 인증샷용 감성 카드 ✨',pcNick:'영문 닉네임',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'감성 메시지',pcMsgLimit:'20자 이내',pcMsgPh:'e.g. Born to shine ✨',pcDate:'날짜',pcColor:'퍼스널 컬러',pcElem:'{0} 기운 퍼스널컬러',pcCancel:'취소',pcGen:'✨ 카드 생성 + 링크 복사',pcGenerating:'생성 중...',pcToast:'📷 카드 저장 + 🔗 링크 복사 완료!',
   tagBorn:'🌙 타고난 기질',tagPre:'🌙 태어날 때부터 품고 온 기질 — ',
   sipBadge:'월주 십성',sipRank:'MBTI 산출 1순위',sipWhy:'💡 MBTI 영향: ',
@@ -672,7 +673,7 @@ ja:{
   btnStart:'にゃんぼしのエネルギー分析開始 🔮',
   footP:'四柱命式に刻まれた生まれつきの気質 × MBTI表現<br>環境が作った自分ではなく、<strong style="color:var(--g2)">生まれた時からの自分</strong>に出会おう 🌸',
   ldTitle:'にゃんぼしが分析中だにゃん ✨',ld1:'🪐 四柱パターン計算中',ld2:'🔮 月柱十神分析中',ld3:'✨ 日柱気質マッチング中',
-  share:'🔗 共有',saveImg:'📷 画像を保存',imgSaved:'画像を保存しました 📷',
+  share:'🔗 共有',shareApp:'🔗 友達にシェア',saveImg:'📷 画像を保存',imgSaved:'画像を保存しました 📷',
   pcTitle:'📷 パーソナルフォトカード',pcSub:'SNSシェア用の感性カード ✨',pcNick:'英語ニックネーム',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性メッセージ',pcMsgLimit:'20文字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日付',pcColor:'パーソナルカラー',pcElem:'{0} エネルギーカラー',pcCancel:'キャンセル',pcGen:'✨ カード生成 + リンクコピー',pcGenerating:'生成中...',pcToast:'📷 カード保存 + 🔗 リンクコピー完了！',
   tagBorn:'🌙 生まれつきの気質',tagPre:'🌙 生まれた時から持っている気質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTIへの影響: ',
@@ -748,7 +749,7 @@ en:{
   btnStart:'Start Nyangbyeol\'s Energy Reading 🔮',
   footP:'Innate temperament from your birth chart × MBTI expression<br>Meet the <strong style="color:var(--g2)">you that existed from day one</strong> 🌸',
   ldTitle:'Nyangbyeol is analyzing meow ✨',ld1:'🪐 Calculating birth patterns',ld2:'🔮 Analyzing month pillar energy',ld3:'✨ Matching day pillar temperament',
-  share:'🔗 Share',saveImg:'📷 Save Image',imgSaved:'Image saved! 📷',
+  share:'🔗 Share',shareApp:'🔗 Share this app',saveImg:'📷 Save Image',imgSaved:'Image saved! 📷',
   pcTitle:'📷 Personal Photo Card',pcSub:'Create your vibe card for SNS ✨',pcNick:'Your Nickname',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'Vibe Message',pcMsgLimit:'max 20 chars',pcMsgPh:'e.g. Born to shine ✨',pcDate:'Date',pcColor:'Personal Color',pcElem:'{0} Energy Color',pcCancel:'Cancel',pcGen:'✨ Create Card + Copy Link',pcGenerating:'Creating...',pcToast:'📷 Card saved + 🔗 Link copied!',
   tagBorn:'🌙 Innate Type',tagPre:'🌙 The temperament you were born with — ',
   sipBadge:'Month Pillar Star',sipRank:'MBTI Factor #1',sipWhy:'💡 MBTI Impact: ',
@@ -824,7 +825,7 @@ en:{
   btnStart:'喵星的能量分析開始 🔮',
   footP:'四柱命盤中的先天氣質 × MBTI表達<br>遇見<strong style="color:var(--g2)">從出生那天就存在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 計算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱氣質',
-  share:'🔗 分享',saveImg:'📷 儲存圖片',imgSaved:'圖片已儲存 📷',
+  share:'🔗 分享',shareApp:'🔗 分享給朋友',saveImg:'📷 儲存圖片',imgSaved:'圖片已儲存 📷',
   pcTitle:'📷 個人照片卡',pcSub:'為SNS分享創建感性卡片 ✨',pcNick:'英文暱稱',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以內',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'個人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 複製連結',pcGenerating:'生成中...',pcToast:'📷 卡片已儲存 + 🔗 連結已複製！',
   tagBorn:'🌙 天生氣質',tagPre:'🌙 與生俱來的氣質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTI影響：',
@@ -900,7 +901,7 @@ en:{
   btnStart:'喵星的能量分析开始 🔮',
   footP:'四柱命盘中的先天气质 × MBTI表达<br>遇见<strong style="color:var(--g2)">从出生那天就存在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 计算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱气质',
-  share:'🔗 分享',saveImg:'📷 保存图片',imgSaved:'图片已保存 📷',
+  share:'🔗 分享',shareApp:'🔗 分享给朋友',saveImg:'📷 保存图片',imgSaved:'图片已保存 📷',
   pcTitle:'📷 个人照片卡',pcSub:'为SNS分享创建感性卡片 ✨',pcNick:'英文昵称',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'个人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 复制链接',pcGenerating:'生成中...',pcToast:'📷 卡片已保存 + 🔗 链接已复制！',
   tagBorn:'🌙 天生气质',tagPre:'🌙 与生俱来的气质 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1优先',sipWhy:'💡 MBTI影响：',
@@ -1195,6 +1196,7 @@ function applyLang(){
   // 결과 상단
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
   if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
+  if(s('#btn-share-app')) s('#btn-share-app').textContent=t('shareApp');
 }
 // 초기 언어 로드
 try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}
@@ -2646,6 +2648,11 @@ async function _generatePhotoCard(){
 }
 
 /* 공유 */
+function shareApp(){
+  const url='https://mbtisaju.pages.dev';
+  if(navigator.share){navigator.share({title:t('title'),text:t('shareApp'),url}).catch(()=>copyUrl(url));}
+  else{copyUrl(url);}
+}
 function share(){
   const url=location.href.split('#')[0]+'#birth='+curBirth+'&g='+curGender;
   if(navigator.share){navigator.share({title:t('title'),text:t('title')+' 🌙✨ '+url,url}).catch(()=>copyUrl(url));}
