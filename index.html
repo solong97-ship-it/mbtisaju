@@ -43,8 +43,14 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 
 /* ── 마스코트 ── */
 .mascot{display:block;margin:0 auto}
-.mascot-float{animation:mFloat 3s ease-in-out infinite}
-@keyframes mFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mascot-float{animation:mFloat 2.8s ease-in-out infinite}
+@keyframes mFloat{
+  0%,100%{transform:translateY(0) rotate(-3deg) scale(1)}
+  30%{transform:translateY(-12px) rotate(2deg) scale(1.04)}
+  60%{transform:translateY(-6px) rotate(-1deg) scale(1.02)}
+}
+.mascot-sparkle{animation:mSpark 1.8s ease-in-out infinite alternate}
+@keyframes mSpark{0%{opacity:.7;transform:scale(.9) rotate(-5deg)}100%{opacity:1;transform:scale(1.1) rotate(5deg)}}
 
 /* ── 히어로 ── */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0}
@@ -258,25 +264,57 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 <svg style="display:none">
 <defs>
 <symbol id="mascot" viewBox="0 0 120 120">
-  <ellipse cx="60" cy="78" rx="32" ry="26" fill="#E8D5F5"/>
-  <circle cx="60" cy="48" r="27" fill="#F0E0FF" stroke="#E0CCEE" stroke-width="1"/>
-  <path d="M39 28 L44 42 L33 40Z" fill="#F0E0FF" stroke="#E0CCEE" stroke-width=".8"/>
-  <path d="M81 28 L76 42 L87 40Z" fill="#F0E0FF" stroke="#E0CCEE" stroke-width=".8"/>
-  <path d="M41 31 L44 40 L36 39Z" fill="#FFB5D0"/>
-  <path d="M79 31 L76 40 L84 39Z" fill="#FFB5D0"/>
-  <ellipse cx="49" cy="47" rx="5.5" ry="6.5" fill="#2D1B4E"/>
-  <ellipse cx="71" cy="47" rx="5.5" ry="6.5" fill="#2D1B4E"/>
-  <circle cx="47" cy="44" r="2.2" fill="white"/>
-  <circle cx="69" cy="44" r="2.2" fill="white"/>
-  <circle cx="51" cy="48" r="1" fill="white" opacity=".6"/>
-  <circle cx="73" cy="48" r="1" fill="white" opacity=".6"/>
-  <ellipse cx="38" cy="54" rx="5.5" ry="3" fill="#FFB5D0" opacity=".4"/>
-  <ellipse cx="82" cy="54" rx="5.5" ry="3" fill="#FFB5D0" opacity=".4"/>
-  <path d="M55 56 Q60 60 65 56" stroke="#2D1B4E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <polygon points="60,20 62.2,26 68,26 63.2,29.5 65,35.5 60,31.5 55,35.5 56.8,29.5 52,26 57.8,26" fill="#FFD166" stroke="#F0C040" stroke-width=".5"/>
-  <path d="M91 78 Q102 60 96 42" stroke="#E8D5F5" stroke-width="5.5" fill="none" stroke-linecap="round"/>
-  <path d="M97 43 A5 5 0 1 0 94 38" fill="none" stroke="#FFD166" stroke-width="3" stroke-linecap="round"/>
-  <ellipse cx="60" cy="86" rx="8" ry="4" fill="#D8C0EE" opacity=".5"/>
+  <!-- 그림자 -->
+  <ellipse cx="60" cy="108" rx="20" ry="5" fill="#D8C0EE" opacity=".3"/>
+  <!-- 몸통 (통통하고 귀엽게) -->
+  <ellipse cx="60" cy="86" rx="26" ry="20" fill="#F5E8FF"/>
+  <!-- 꼬리 (동적, 하트 끝) -->
+  <path d="M86 84 Q104 64 96 44 Q92 32 99 26" stroke="#E8D5F5" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M95 20 Q100 15 105 20 Q110 15 115 20 Q110 27 105 31 Q100 27 95 20Z" fill="#FFB5D0" opacity=".9"/>
+  <!-- 얼굴 (더 크고 둥글게) -->
+  <circle cx="60" cy="50" r="33" fill="#F8EEFF" stroke="#ECD5FF" stroke-width="1.5"/>
+  <!-- 귀 -->
+  <path d="M33 22 L39 42 L24 38Z" fill="#F8EEFF" stroke="#ECD5FF" stroke-width="1"/>
+  <path d="M87 22 L81 42 L96 38Z" fill="#F8EEFF" stroke="#ECD5FF" stroke-width="1"/>
+  <!-- 귀 안 (핑크) -->
+  <path d="M35 25 L39 40 L27 37Z" fill="#FFB5D0" opacity=".8"/>
+  <path d="M85 25 L81 40 L93 37Z" fill="#FFB5D0" opacity=".8"/>
+  <!-- 왼쪽 눈 (크고 반짝) -->
+  <circle cx="46" cy="49" r="10" fill="#2D1B4E"/>
+  <circle cx="46" cy="49" r="8.5" fill="#3D2A6E"/>
+  <circle cx="42" cy="44" r="4" fill="white"/>
+  <circle cx="51" cy="53" r="2" fill="white" opacity=".6"/>
+  <circle cx="44" cy="46" r="1.5" fill="#B68FE8" opacity=".8"/>
+  <!-- 오른쪽 눈 (크고 반짝) -->
+  <circle cx="74" cy="49" r="10" fill="#2D1B4E"/>
+  <circle cx="74" cy="49" r="8.5" fill="#3D2A6E"/>
+  <circle cx="70" cy="44" r="4" fill="white"/>
+  <circle cx="79" cy="53" r="2" fill="white" opacity=".6"/>
+  <circle cx="72" cy="46" r="1.5" fill="#B68FE8" opacity=".8"/>
+  <!-- 볼 블러셔 (하트) -->
+  <path d="M28 59 Q31 55 34 59 Q37 55 40 59 Q37 64 34 67 Q31 64 28 59Z" fill="#FFB5D0" opacity=".55"/>
+  <path d="M80 59 Q83 55 86 59 Q89 55 92 59 Q89 64 86 67 Q83 64 80 59Z" fill="#FFB5D0" opacity=".55"/>
+  <!-- 웃는 입 + 혀 -->
+  <path d="M50 65 Q60 74 70 65" stroke="#2D1B4E" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M53 67 Q60 75 67 67 Q63.5 80 60 80 Q56.5 80 53 67Z" fill="#FFB5D0" opacity=".7"/>
+  <!-- 수염 -->
+  <path d="M16 54 L38 58" stroke="#C8B0DC" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+  <path d="M16 60 L38 60" stroke="#C8B0DC" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+  <path d="M104 54 L82 58" stroke="#C8B0DC" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+  <path d="M104 60 L82 60" stroke="#C8B0DC" stroke-width="1.3" stroke-linecap="round" opacity=".5"/>
+  <!-- 별 왕관 (더 크고 화려하게) -->
+  <polygon points="60,5 63,15 73,15 65.5,21 68,31 60,25 52,31 54.5,21 47,15 57,15" fill="#FFD166" stroke="#F0C040" stroke-width="1"/>
+  <circle cx="60" cy="14" r="3" fill="#FFF0A0" opacity=".8"/>
+  <!-- 주변 반짝이는 별들 -->
+  <polygon points="15,20 16.2,24 20,24 17,26.5 18.2,30.5 15,28 11.8,30.5 13,26.5 10,24 13.8,24" fill="#FFD166" opacity=".75"/>
+  <polygon points="105,18 106,21.5 109.5,21.5 107,23.5 108,27 105,25 102,27 103,23.5 100.5,21.5 104,21.5" fill="#FFB5D0" opacity=".75"/>
+  <circle cx="10" cy="48" r="2.5" fill="#B68FE8" opacity=".6"/>
+  <circle cx="110" cy="42" r="2" fill="#FFD166" opacity=".7"/>
+  <circle cx="108" cy="72" r="1.8" fill="#7ED4BC" opacity=".65"/>
+  <circle cx="12" cy="70" r="2" fill="#FFB5D0" opacity=".6"/>
+  <!-- 작은 하트 장식 -->
+  <path d="M20 32 Q22 29 24 32 Q26 29 28 32 Q26 36 24 38 Q22 36 20 32Z" fill="#FFB5D0" opacity=".5"/>
+  <path d="M92 30 Q94 27 96 30 Q98 27 100 30 Q98 34 96 36 Q94 34 92 30Z" fill="#FFD166" opacity=".5"/>
 </symbol>
 </defs>
 </svg>
@@ -427,7 +465,7 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
         <div class="mbti-name" id="r-typename"></div>
         <div class="mbti-tagline" id="r-tagline"></div>
       </div>
-      <svg class="mascot" width="72" height="72" style="flex-shrink:0;opacity:.9"><use href="#mascot"/></svg>
+      <svg class="mascot mascot-sparkle" width="80" height="80" style="flex-shrink:0;opacity:.95"><use href="#mascot"/></svg>
     </div>
     <div id="r-charline" style="margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.15);border-radius:14px;font-size:13px;font-weight:700;line-height:1.5;text-align:center"></div>
   </div>
@@ -514,8 +552,8 @@ ko:{
   secStr:'나의 강점',secStrSub:'일주 천간 기반 핵심 강점',
   secKw:'성격 키워드',secKwSub:'나를 표현하는 단어들',
   secCompat:'나랑 잘 맞는 유형',secCompatSub:'궁합 유형 분석',compatGood:'💚 잘 맞는 유형',compatCare:'🔥 주의가 필요한 유형',
-  compatGoodR:'서로의 부족한 에너지를 보완해주는 최고의 파트너!',
-  compatCareR:'에너지가 충돌하거나 일방적으로 소모될 수 있어 주의가 필요해.',
+  compatGoodR:'서로의 에너지를 완벽하게 채워주는 최강 드림팀! ✨',
+  compatCareR:'다른 에너지가 만나 더 강해질 수 있어! 서로 이해하고 맞춰가면 최고의 케미가 탄생해 💪',
   secFig:'나와 비슷한 사람들',secFigSub:'에너지가 닮은 유명인',
   secCareer:'나에게 잘 맞는 일',secCareerSub:'AGI 시대를 위한 진로 가이드',
   secDist:'세상의 성격 지도',secDistSub:'16유형 분포',
@@ -589,9 +627,12 @@ ja:{
   secMap:'性格マップ',secMapSub:'MBTI 4軸分析',
   secStr:'私の強み',secStrSub:'日柱天干ベース核心強み',
   secKw:'性格キーワード',secKwSub:'私を表す言葉',
-  secCompat:'相性の良いタイプ',secCompatSub:'相性分析',compatGood:'💚 相性の良いタイプ',compatCare:'🔥 注意が必要なタイプ',
-  secFig:'似ているタイプの有名人',secFigSub:'エネルギーが似ている人',
-  secCareer:'向いている仕事',secCareerSub:'キャリア探索ガイド',
+  secCompat:'相性タイプ',secCompatSub:'相性分析',compatGood:'💚 ドリームチーム',compatCare:'🔥 成長コンビ',
+  compatGoodR:'お互いのエネルギーを完璧に補い合う最強のパートナー！ ✨',
+  compatCareR:'違うエネルギーだからこそ最高のケミが生まれる！理解し合えば最強コンビになれるよ 💪',
+  secFig:'あなたに似た有名人',secFigSub:'エネルギーが似ている人',
+  secCareer:'あなたに向いている仕事',secCareerSub:'AGI時代のキャリアガイド',
+  secSynTitle:'✨ 誕生日エネルギーシナジー',
   secDist:'世界の性格マップ',secDistSub:'16タイプ分布',
   secSaju:'誕生日エネルギーコード',secSajuSub:'四柱命式（年・月・日柱）',
   sajuInfo:'誕生日の漢字には、あなたが生まれた瞬間の宇宙のエネルギーが込められています。これらの気が混ざり合い、あなただけの特別なエネルギーマップを作ります！ 🗺️',
@@ -660,9 +701,12 @@ en:{
   secMap:'Personality Map',secMapSub:'MBTI 4-Axis Analysis',
   secStr:'My Strengths',secStrSub:'Day stem-based core strengths',
   secKw:'Personality Keywords',secKwSub:'Words that describe me',
-  secCompat:'Compatible Types',secCompatSub:'Compatibility analysis',compatGood:'💚 Great Match',compatCare:'🔥 Needs Attention',
-  secFig:'Similar Famous People',secFigSub:'People with similar energy',
-  secCareer:'Best Career Fits',secCareerSub:'Career exploration guide',
+  secCompat:'Compatible Types',secCompatSub:'Compatibility analysis',compatGood:'💚 Dream Team',compatCare:'🔥 Growth Duo',
+  compatGoodR:'Your energies perfectly complement each other — the ultimate power team! ✨',
+  compatCareR:'Different energies create exciting chemistry — understanding each other makes you both unstoppable! 💪',
+  secFig:'People Like You',secFigSub:'Famous souls with similar energy',
+  secCareer:'Best Career Fits',secCareerSub:'Your guide to thriving in the AGI era',
+  secSynTitle:'✨ Birthday Energy Synergy',
   secDist:'World Personality Map',secDistSub:'16-type distribution',
   secSaju:'Birth Energy Code',secSajuSub:'Four Pillars (Year·Month·Day)',
   sajuInfo:'The characters of your birthday capture the cosmic energy of the moment you were born. These energies blend to create your own unique energy map! 🗺️',
@@ -731,9 +775,12 @@ en:{
   secMap:'性格地圖',secMapSub:'MBTI 4軸分析',
   secStr:'我的優勢',secStrSub:'日柱天干核心優勢',
   secKw:'性格關鍵字',secKwSub:'描述我的詞語',
-  secCompat:'相合的類型',secCompatSub:'相性分析',compatGood:'💚 相合類型',compatCare:'🔥 需注意類型',
-  secFig:'相似的名人',secFigSub:'能量相似的名人',
-  secCareer:'適合的工作',secCareerSub:'職涯探索指南',
+  secCompat:'相合類型',secCompatSub:'相性分析',compatGood:'💚 夢幻搭檔',compatCare:'🔥 成長拍檔',
+  compatGoodR:'彼此能量完美互補——最強力的夢幻團隊！ ✨',
+  compatCareR:'不同能量碰撞出最精彩的火花！相互理解就能成為無敵組合 💪',
+  secFig:'和你相似的名人',secFigSub:'能量相似的名人',
+  secCareer:'最適合的工作',secCareerSub:'AGI時代職涯探索指南',
+  secSynTitle:'✨ 生日能量協同效應',
   secDist:'世界性格地圖',secDistSub:'16類型分布',
   secSaju:'出生能量密碼',secSajuSub:'四柱命盤（年·月·日柱）',
   sajuInfo:'你的生日漢字捕捉了你出生那一刻的宇宙能量。這些能量交織在一起，創造了你獨特的能量圖譜！ 🗺️',
@@ -802,9 +849,11 @@ en:{
   secMap:'性格地图',secMapSub:'MBTI 4轴分析',
   secStr:'我的优势',secStrSub:'日柱天干核心优势',
   secKw:'性格关键字',secKwSub:'描述我的词语',
-  secCompat:'相合的类型',secCompatSub:'相性分析',compatGood:'💚 相合类型',compatCare:'🔥 需注意类型',
-  secFig:'相似的名人',secFigSub:'能量相似的名人',
-  secCareer:'适合的工作',secCareerSub:'职涯探索指南',
+  secCompat:'相合类型',secCompatSub:'相性分析',compatGood:'💚 梦幻搭档',compatCare:'🔥 成长拍档',
+  compatGoodR:'彼此能量完美互补——最强力的梦幻团队！ ✨',
+  compatCareR:'不同能量碰撞出最精彩的火花！相互理解就能成为无敌组合 💪',
+  secFig:'和你相似的名人',secFigSub:'能量相似的名人',
+  secCareer:'最适合的工作',secCareerSub:'AGI时代职涯探索指南',
   secDist:'世界性格地图',secDistSub:'16类型分布',
   secSaju:'出生能量密码',secSajuSub:'四柱命盘（年·月·日柱）',sajuNote:'出生年、月、日的能量模式 · 东方命理传统',
   yrP:'年柱',moP:'月柱',dyP:'日柱',
@@ -1567,66 +1616,114 @@ const META={
     },
     careerDesc:{ko:'이론+분석+시스템 설계에서 대체 불가능한 힘을 발휘해.',ja:'理論＋分析＋システム設計で代替不可能な力を発揮するよ。',en:'You exert irreplaceable power in theory, analysis, and system design.',zh:'你在理論、分析和系統設計方面發揮著不可替代的力量。'}},
 
-  ENTJ:{emoji:'⚡',name:'통솔자형',tag:'강한 의지로 목표를 이끄는 타고난 리더',good:['INTP','ISTP'],care:['INFP','ISFP'],
+  ENTJ:{emoji:'⚡',
+    name:{ko:'통솔자형',ja:'指揮官型',en:'Commander',zh:'統帥型'},
+    tag:{ko:'강한 의지로 목표를 이끄는 타고난 리더',ja:'強い意志で目標へと導く天性のリーダー',en:'Born leader who drives goals with unstoppable will',zh:'以強大意志引領目標的天生領袖'},
+    good:['INTP','ISTP'],care:['INFP','ISFP'],
     figs:{
       ko:[{e:'🚀',n:'이재용',r:'삼성전자'},{e:'⚔️',n:'이순신',r:'조선 제독'},{e:'🎤',n:'방시혁',r:'HYBE'}],
       en:[{e:'🚀',n:'Steve Jobs',r:'Apple'},{e:'💼',n:'Sheryl Sandberg',r:'Meta'},{e:'🎬',n:'James Cameron',r:'Director'}],
       ja:[{e:'💼',n:'孫正義',r:'ソフトバンク'},{e:'🏯',n:'豊臣秀吉',r:'戦国武将'},{e:'⚾',n:'栗山英樹',r:'WBC監督'}],
-      zh:[{e:'🏯',n:'曹操',r:'魏武帝'},{e:'💼',n:'董明珠',r:'格력電器'},{e:'🎥',n:'張藝謀',r:'導演'}]
+      zh:[{e:'🏯',n:'曹操',r:'魏武帝'},{e:'💼',n:'董明珠',r:'格力電器'},{e:'🎥',n:'張藝謀',r:'導演'}]
     },
-    figNote:'판 자체를 새로 짜는 빌더형 리더들과 에너지가 닮았어.',
-    careers:[{e:'🏢',n:'글로벌 AGI 거버넌스 이사',t:1,d:'전 세계 AI 규칙과 표준을 결정하는 리더'},{e:'📈',n:'뉴 프론티어 VC',t:1,d:'화성 식민지 등 미래 산업에 투자'},{e:'🌐',n:'글로벌 PM',t:0,d:'인간과 AI 팀을 통합 관리하는 팀장'},{e:'🎙️',n:'비즈니스 인플루언서',t:0,d:'강력한 비전으로 시장 트렌드를 주도'},{e:'🤝',n:'미래 산업 전략 파트너십',t:0,d:'기업 간 초연결을 설계하는 협상가'}],
-    careerDesc:'조직을 이끌고 거대한 판을 짜는 포지션에서 빛나.'},
-  ENTP:{emoji:'💡',name:'변론가형',tag:'창의적 도전으로 세상을 뒤집는 아이디어맨',good:['INFJ','INTJ'],care:['ISFJ','ISTJ'],
+    figNote:{ko:'판 자체를 새로 짜는 빌더형 리더들과 에너지가 닮았어.',ja:'판を새로작るビルダー型リーダーたちとエネルギーが似ているよ。',en:'Your energy mirrors builder-leaders who create entirely new playing fields.',zh:'你的能量與那些重新構建舞台的構建者型領袖相似。'},
+    careers:{
+      ko:[{e:'🏢',n:'글로벌 AGI 거버넌스 이사',t:1,d:'전 세계 AI 규칙과 표준을 결정하는 리더'},{e:'📈',n:'뉴 프론티어 VC',t:1,d:'화성 식민지 등 미래 산업에 투자'},{e:'🌐',n:'글로벌 PM',t:0,d:'인간과 AI 팀을 통합 관리하는 팀장'},{e:'🎙️',n:'비즈니스 인플루언서',t:0,d:'강력한 비전으로 시장 트렌드를 주도'},{e:'🤝',n:'미래 산업 전략 파트너십',t:0,d:'기업 간 초연결을 설계하는 협상가'}],
+      ja:[{e:'🏢',n:'グローバルAGIガバナンス理事',t:1,d:'世界のAIルールと標準を決めるリーダー'},{e:'📈',n:'ニューフロンティアVC',t:1,d:'火星植民地など未来産業に投資するトップ投資家'},{e:'🌐',n:'グローバルPM',t:0,d:'人間とAIチームを統合管理するリーダー'},{e:'🎙️',n:'ビジネスインフルエンサー',t:0,d:'強力なビジョンで市場トレンドを主導する人'},{e:'🤝',n:'未来産業戦略パートナーシップ',t:0,d:'企業間の超連結を設計する交渉のプロ'}],
+      en:[{e:'🏢',n:'Global AGI Governance Director',t:1,d:'Leader defining global AI rules and standards'},{e:'📈',n:'New Frontier VC',t:1,d:'Investing in future industries like Mars colonization'},{e:'🌐',n:'Global Product Manager',t:0,d:'Leading integrated human + AI teams'},{e:'🎙️',n:'Business Influencer',t:0,d:'Driving market trends with visionary leadership'},{e:'🤝',n:'Future Industry Strategy Partner',t:0,d:'Negotiator designing hyper-connectivity between organizations'}],
+      zh:[{e:'🏢',n:'全球AGI治理總監',t:1,d:'制定全球AI規則與標準的領導者'},{e:'📈',n:'新邊疆風投',t:1,d:'投資火星殖民地等未來產業的頂級投資人'},{e:'🌐',n:'全球產品經理',t:0,d:'整合管理人類與AI團隊的隊長'},{e:'🎙️',n:'商業影響者',t:0,d:'以強大願景引領市場趨勢'},{e:'🤝',n:'未來產業戰略合夥人',t:0,d:'設計企業間超連結的談判高手'}]
+    },
+    careerDesc:{ko:'조직을 이끌고 거대한 판을 짜는 포지션에서 빛나.',ja:'組織をリードし、大きな場を作るポジションで輝くよ。',en:'You shine in positions where you lead teams and build massive structures.',zh:'你在引領組織、構建宏大格局的崗位上大放異彩。'}},
+  ENTP:{emoji:'💡',
+    name:{ko:'변론가형',ja:'討論者型',en:'Debater',zh:'辯論家型'},
+    tag:{ko:'창의적 도전으로 세상을 뒤집는 아이디어맨',ja:'創意ある挑戦で世界をひっくり返すアイデアの天才',en:'Idea genius who flips the world with creative challenges',zh:'以創意挑戰顛覆世界的點子狂人'},
+    good:['INFJ','INTJ'],care:['ISFJ','ISTJ'],
     figs:{
       ko:[{e:'🎬',n:'봉준호',r:'영화감독'},{e:'🎙️',n:'유시민',r:'작가'},{e:'⚡',n:'정약용',r:'조선 실학자'}],
       en:[{e:'🎬',n:'Quentin Tarantino',r:'Director'},{e:'⚡',n:'Thomas Edison',r:'Inventor'},{e:'🎙️',n:'Ryan Reynolds',r:'Actor'}],
       ja:[{e:'🏯',n:'坂本龍馬',r:'幕末志士'},{e:'📺',n:'西野亮廣',r:'クリエイター'},{e:'🎬',n:'北野武',r:'映画監督'}],
       zh:[{e:'📖',n:'莊子',r:'哲學家'},{e:'🎥',n:'姜文',r:'導演'},{e:'🌐',n:'周鴻禕',r:'奇虎360創始人'}]
     },
-    figNote:'반짝이는 재치와 도전 정신으로 통념을 깬 혁신가들.',
-    careers:[{e:'🎙️',n:'AGI 프롬프트 컨설턴트',t:1,d:'AI의 창의성을 극한으로 끌어내는 조언가'},{e:'🚀',n:'그로스 해커',t:1,d:'전혀 새로운 성장 공식을 찾아내는 눈'},{e:'🤝',n:'스타트업 인큐베이터',t:0,d:'아이디어를 사업화하는 최고의 기획자'},{e:'📱',n:'메타버스 월드 빌더',t:0,d:'새로운 가상 세계의 규칙을 발명'},{e:'🎓',n:'에듀테크 이노베이터',t:0,d:'학습의 개념 자체를 바꾸는 혁신가'}],
-    careerDesc:'아이디어+설득+혁신적 문제해결이 너의 최강 무기야.'},
-  INFJ:{emoji:'🌙',name:'옹호자형',tag:'깊은 공감과 비전의 조용한 이상주의자',good:['ENFP','ENTP'],care:['ESTP','ESFP'],
+    figNote:{ko:'반짝이는 재치와 도전 정신으로 통념을 깬 혁신가들.',ja:'輝く機智と挑戦精神で常識を打ち破った革新家たち。',en:'Innovators who shattered norms with brilliant wit and relentless curiosity.',zh:'以閃耀的機智和挑戰精神打破常規的創新者們。'},
+    careers:{
+      ko:[{e:'🎙️',n:'AGI 프롬프트 컨설턴트',t:1,d:'AI의 창의성을 극한으로 끌어내는 조언가'},{e:'🚀',n:'그로스 해커',t:1,d:'전혀 새로운 성장 공식을 찾아내는 눈'},{e:'🤝',n:'스타트업 인큐베이터',t:0,d:'아이디어를 사업화하는 최고의 기획자'},{e:'📱',n:'메타버스 월드 빌더',t:0,d:'새로운 가상 세계의 규칙을 발명'},{e:'🎓',n:'에듀테크 이노베이터',t:0,d:'학습의 개념 자체를 바꾸는 혁신가'}],
+      ja:[{e:'🎙️',n:'AGIプロンプトコンサルタント',t:1,d:'AIの創造性を極限まで引き出すアドバイザー'},{e:'🚀',n:'グロースハッカー',t:1,d:'全く新しい成長公式を見つける天才的な目'},{e:'🤝',n:'スタートアップインキュベーター',t:0,d:'アイデアを事業化する最高のプランナー'},{e:'📱',n:'メタバースワールドビルダー',t:0,d:'新しい仮想世界のルールを発明する人'},{e:'🎓',n:'エドテックイノベーター',t:0,d:'学びの概念そのものを変える革新家'}],
+      en:[{e:'🎙️',n:'AGI Prompt Consultant',t:1,d:'Advisor who pushes AI creativity to its limits'},{e:'🚀',n:'Growth Hacker',t:1,d:'Eye for finding entirely new growth formulas'},{e:'🤝',n:'Startup Incubator',t:0,d:'Master planner who turns ideas into businesses'},{e:'📱',n:'Metaverse World Builder',t:0,d:'Inventor of rules for brand-new virtual worlds'},{e:'🎓',n:'EdTech Innovator',t:0,d:'Visionary who redefines what learning even means'}],
+      zh:[{e:'🎙️',n:'AGI提示詞顧問',t:1,d:'將AI創造力發揮到極限的諮詢專家'},{e:'🚀',n:'增長駭客',t:1,d:'發現全新成長公式的獨到眼光'},{e:'🤝',n:'新創孵化器',t:0,d:'將想法轉化為事業的頂尖策劃人'},{e:'📱',n:'元宇宙世界構建者',t:0,d:'發明全新虛擬世界規則的創造者'},{e:'🎓',n:'教育科技創新者',t:0,d:'重新定義學習概念的變革者'}]
+    },
+    careerDesc:{ko:'아이디어+설득+혁신적 문제해결이 너의 최강 무기야.',ja:'アイデア＋説得＋革新的な問題解決があなたの最強武器だよ。',en:'Ideas + persuasion + innovative problem-solving are your ultimate superpowers.',zh:'點子＋說服力＋創新解題是你的終極武器。'}},
+  INFJ:{emoji:'🌙',
+    name:{ko:'옹호자형',ja:'提唱者型',en:'Advocate',zh:'倡導者型'},
+    tag:{ko:'깊은 공감과 비전의 조용한 이상주의자',ja:'深い共感とビジョンを持つ静かな理想主義者',en:'Quiet idealist with deep empathy and world-changing vision',zh:'擁有深刻共情與願景的安靜理想主義者'},
+    good:['ENFP','ENTP'],care:['ESTP','ESFP'],
     figs:{
       ko:[{e:'🎵',n:'아이유',r:'가수'},{e:'📖',n:'한강',r:'소설가'},{e:'🌱',n:'윤동주',r:'시인'}],
       en:[{e:'🎵',n:'Taylor Swift',r:'Singer'},{e:'📖',n:'J.K. Rowling',r:'Author'},{e:'🕊️',n:'Nelson Mandela',r:'Leader'}],
       ja:[{e:'📖',n:'夏目漱石',r:'小説家'},{e:'🎵',n:'坂本龍一',r:'音楽家'},{e:'🎬',n:'新海誠',r:'アニメ監督'}],
       zh:[{e:'📖',n:'魯迅',r:'作家'},{e:'🎥',n:'李安',r:'導演'},{e:'🎨',n:'顧城',r:'詩人'}]
     },
-    figNote:'감성 글쓰기와 깊은 공감으로 마음을 움직인 아티스트들.',
-    careers:[{e:'✍️',n:'AI 윤리 관리자',t:1,d:'AI가 인간의 가치를 훼손하지 않도록 가이드 설계'},{e:'🎨',n:'디지털 힐링 테라피스트',t:1,d:'가상 공간에서 사람의 마음을 치유하는 콘텐츠 제작'},{e:'🧘',n:'정신 건강 코치',t:0,d:'깊은 통찰로 개인의 성장을 돕는 가이드'},{e:'🌱',n:'소셜 임팩트 전략가',t:0,d:'세상을 더 나은 곳으로 만드는 의미 있는 일'},{e:'🎬',n:'다큐멘터리 스토리텔러',t:0,d:'인류의 본질적인 이야기를 전달'}],
-    careerDesc:'감성+공감+의미 있는 일에서 최고의 몰입을 느껴.'},
-  INFP:{emoji:'🌸',name:'중재자형',tag:'진정성과 감성으로 세상을 바라보는 몽상가',good:['ENFJ','ENTJ'],care:['ESTJ','ISTJ'],
+    figNote:{ko:'감성 글쓰기와 깊은 공감으로 마음을 움직인 아티스트들.',ja:'感性あふれる表現と深い共感で心を動かしたアーティストたち。',en:'Artists who moved hearts through emotional expression and deep empathy.',zh:'以感性書寫與深刻共情打動人心的藝術家們。'},
+    careers:{
+      ko:[{e:'✍️',n:'AI 윤리 관리자',t:1,d:'AI가 인간의 가치를 훼손하지 않도록 가이드 설계'},{e:'🎨',n:'디지털 힐링 테라피스트',t:1,d:'가상 공간에서 사람의 마음을 치유하는 콘텐츠 제작'},{e:'🧘',n:'정신 건강 코치',t:0,d:'깊은 통찰로 개인의 성장을 돕는 가이드'},{e:'🌱',n:'소셜 임팩트 전략가',t:0,d:'세상을 더 나은 곳으로 만드는 의미 있는 일'},{e:'🎬',n:'다큐멘터리 스토리텔러',t:0,d:'인류의 본질적인 이야기를 전달'}],
+      ja:[{e:'✍️',n:'AI倫理マネージャー',t:1,d:'AIが人間の価値を損なわないようガイドを設計'},{e:'🎨',n:'デジタルヒーリングセラピスト',t:1,d:'仮想空間で人の心を癒すコンテンツを制作'},{e:'🧘',n:'メンタルヘルスコーチ',t:0,d:'深い洞察で個人の成長を助けるガイド'},{e:'🌱',n:'ソーシャルインパクトストラテジスト',t:0,d:'世界をより良くするために意味のある仕事'},{e:'🎬',n:'ドキュメンタリーストーリーテラー',t:0,d:'人類の本質的な物語を伝える'}],
+      en:[{e:'✍️',n:'AI Ethics Manager',t:1,d:'Designing guidelines so AI never undermines human values'},{e:'🎨',n:'Digital Healing Therapist',t:1,d:'Creating content that heals hearts in virtual spaces'},{e:'🧘',n:'Mental Health Coach',t:0,d:'Guide who helps individuals grow through deep insight'},{e:'🌱',n:'Social Impact Strategist',t:0,d:'Doing meaningful work that makes the world better'},{e:'🎬',n:'Documentary Storyteller',t:0,d:'Conveying the essential stories of humanity'}],
+      zh:[{e:'✍️',n:'AI倫理管理者',t:1,d:'設計指南確保AI不損害人類價值'},{e:'🎨',n:'數位療癒治療師',t:1,d:'在虛擬空間創作療癒人心的內容'},{e:'🧘',n:'心理健康教練',t:0,d:'以深刻洞察幫助個人成長的嚮導'},{e:'🌱',n:'社會影響力戰略家',t:0,d:'從事讓世界變得更美好的有意義工作'},{e:'🎬',n:'紀錄片說書人',t:0,d:'傳遞人類最本質的故事'}]
+    },
+    careerDesc:{ko:'감성+공감+의미 있는 일에서 최고의 몰입을 느껴.',ja:'感性＋共感＋意義ある仕事に最高の没入感を感じるよ。',en:'You reach your deepest flow state in work that is emotional, empathetic, and meaningful.',zh:'你在充滿感性、共情與意義的工作中感受到最深的心流狀態。'}},
+  INFP:{emoji:'🌸',
+    name:{ko:'중재자형',ja:'仲介者型',en:'Mediator',zh:'調停者型'},
+    tag:{ko:'진정성과 감성으로 세상을 바라보는 몽상가',ja:'真心と感性で世界を見つめる夢想家',en:'Dreamer who sees the world through authenticity and pure emotion',zh:'以真誠與感性看待世界的夢想家'},
+    good:['ENFJ','ENTJ'],care:['ESTJ','ISTJ'],
     figs:{
       ko:[{e:'🎵',n:'BTS 뷔',r:'가수'},{e:'🎨',n:'백석',r:'시인'},{e:'✍️',n:'정세랑',r:'소설가'}],
       en:[{e:'🎵',n:'Lana Del Rey',r:'Singer'},{e:'🎨',n:'Vincent van Gogh',r:'Painter'},{e:'📖',n:'William Shakespeare',r:'Author'}],
       ja:[{e:'📖',n:'太宰治',r:'小説家'},{e:'🎬',n:'岩井俊二',r:'映画監督'},{e:'🎵',n:'米津玄師',r:'音楽家'}],
       zh:[{e:'📖',n:'三毛',r:'作家'},{e:'🎥',n:'王家衛',r:'導演'},{e:'🎵',n:'華晨宇',r:'歌手'}]
     },
-    figNote:'자기만의 세계관으로 조용히 팬덤을 만들어가는 아티스트들.',
-    careers:[{e:'✍️',n:'AI 협업 웹툰/웹소설 작가',t:1,d:'AI 툴을 활용해 자신만의 거대한 세계관을 시각화'},{e:'🎨',n:'메타버스 아바타 디자이너',t:1,d:'디지털 자아의 개성을 창조'},{e:'🎵',n:'버추얼 인디 뮤지션',t:0,d:'진정성 있는 음악으로 소통하는 아티스트'},{e:'📸',n:'감성 라이프스타일 큐레이터',t:0,d:'일상의 소중한 순간을 포착하는 기획자'},{e:'🎮',n:'게임 서사 디자이너',t:0,d:'사용자의 감정을 자극하는 스토리 설계'}],
-    careerDesc:'창작+감성+자기만의 독창적인 세계관에서 가장 빛나.'},
-  ENFJ:{emoji:'🌟',name:'선도자형',tag:'사람들에게 영감을 주는 따뜻한 멘토',good:['INFP','ISFP'],care:['ISTP','INTP'],
+    figNote:{ko:'자기만의 세계관으로 조용히 팬덤을 만들어가는 아티스트들.',ja:'自分だけの世界観で静かにファンダムを作り上げているアーティストたち。',en:'Artists who quietly built devoted fandoms through their unique, authentic worldview.',zh:'以獨特世界觀默默建立忠實粉絲群的藝術家們。'},
+    careers:{
+      ko:[{e:'✍️',n:'AI 협업 웹툰/웹소설 작가',t:1,d:'AI 툴을 활용해 자신만의 거대한 세계관을 시각화'},{e:'🎨',n:'메타버스 아바타 디자이너',t:1,d:'디지털 자아의 개성을 창조'},{e:'🎵',n:'버추얼 인디 뮤지션',t:0,d:'진정성 있는 음악으로 소통하는 아티스트'},{e:'📸',n:'감성 라이프스타일 큐레이터',t:0,d:'일상의 소중한 순간을 포착하는 기획자'},{e:'🎮',n:'게임 서사 디자이너',t:0,d:'사용자의 감정을 자극하는 스토리 설계'}],
+      ja:[{e:'✍️',n:'AI協業ウェブトゥーン/ウェブ小説作家',t:1,d:'AIツールを活用して自分だけの巨大な世界観を視覚化'},{e:'🎨',n:'メタバースアバターデザイナー',t:1,d:'デジタルアイデンティティの個性を創造'},{e:'🎵',n:'バーチャルインディーミュージシャン',t:0,d:'真心のある音楽で繋がるアーティスト'},{e:'📸',n:'感性ライフスタイルキュレーター',t:0,d:'日常の大切な瞬間を切り取るプランナー'},{e:'🎮',n:'ゲームナラティブデザイナー',t:0,d:'ユーザーの感情を刺激するストーリーを設計'}],
+      en:[{e:'✍️',n:'AI-Collab Webtoon / Web Novel Creator',t:1,d:'Visualizing your massive worldview using AI tools'},{e:'🎨',n:'Metaverse Avatar Designer',t:1,d:'Creating the personality of digital selves'},{e:'🎵',n:'Virtual Indie Musician',t:0,d:'Artist connecting through deeply authentic music'},{e:'📸',n:'Emotional Lifestyle Curator',t:0,d:'Planner capturing precious moments of everyday life'},{e:'🎮',n:'Game Narrative Designer',t:0,d:'Crafting stories that stir the player\'s emotions'}],
+      zh:[{e:'✍️',n:'AI協作漫畫/網路小說作家',t:1,d:'利用AI工具將自己的龐大世界觀視覺化'},{e:'🎨',n:'元宇宙虛擬形象設計師',t:1,d:'創造數位自我的個性與獨特魅力'},{e:'🎵',n:'虛擬獨立音樂人',t:0,d:'以真誠音樂連結聽眾的藝術家'},{e:'📸',n:'感性生活方式策展人',t:0,d:'捕捉日常珍貴瞬間的企劃人'},{e:'🎮',n:'遊戲敘事設計師',t:0,d:'設計觸動玩家情感的故事體驗'}]
+    },
+    careerDesc:{ko:'창작+감성+자기만의 독창적인 세계관에서 가장 빛나.',ja:'創作＋感性＋自分だけの独自の世界観で最も輝くよ。',en:'You glow brightest in creation, emotion, and your own one-of-a-kind worldview.',zh:'你在創作、感性與自己獨特世界觀的交匯處最為閃耀。'}},
+  ENFJ:{emoji:'🌟',
+    name:{ko:'선도자형',ja:'主人公型',en:'Protagonist',zh:'主角型'},
+    tag:{ko:'사람들에게 영감을 주는 따뜻한 멘토',ja:'人々にインスピレーションを与える温かいメンター',en:'Warm mentor who inspires everyone around them',zh:'給予周圍人無限啟發的溫暖導師'},
+    good:['INFP','ISFP'],care:['ISTP','INTP'],
     figs:{
       ko:[{e:'🎙️',n:'유재석',r:'MC'},{e:'🌟',n:'BTS RM',r:'가수'},{e:'📣',n:'김구',r:'독립운동가'}],
       en:[{e:'🎙️',n:'Oprah Winfrey',r:'Presenter'},{e:'🌟',n:'Barack Obama',r:'Leader'},{e:'📣',n:'Malala Yousafzai',r:'Activist'}],
       ja:[{e:'🎾',n:'松岡修造',r:'元テニス選手'},{e:'🏯',n:'聖徳太子',r:'政治家'},{e:'🎬',n:'是枝裕和',r:'映画監督'}],
       zh:[{e:'🏯',n:'周恩來',r:'政治家'},{e:'🎥',n:'成龍',r:'演員'},{e:'🎙️',n:'何炅',r:'主持人'}]
     },
-    figNote:'사람 에너지를 모으고 커뮤니티를 만드는 능력이 압도적.',
-    careers:[{e:'🎙️',n:'커뮤니티 빌더',t:1,d:'AI 시대에 인간 소외를 해결하는 커뮤니티 전문가'},{e:'📱',n:'휴먼-AI 커뮤니케이션 매니저',t:1,d:'인간과 AI의 원활한 소통을 중재'},{e:'🎓',n:'미래 라이프 코치',t:0,d:'변화하는 시대에 개인의 비전을 찾아주는 가이드'},{e:'🌱',n:'글로벌 사회 혁신가',t:0,d:'좋은 영향력을 전 세계로 전파'},{e:'🎬',n:'몰입형 토크쇼 호스트',t:0,d:'대화로 사람의 가치를 찾아내는 전문가'}],
-    careerDesc:'사람을 모으고 성장시키는 일에서 천부적인 재능을 발휘해.'},
-  ENFP:{emoji:'🎉',name:'활동가형',tag:'열정과 상상력이 넘치는 자유로운 영혼',good:['INTJ','INFJ'],care:['ISTJ','ISFJ'],
+    figNote:{ko:'사람 에너지를 모으고 커뮤니티를 만드는 능력이 압도적.',ja:'人のエネルギーを集め、コミュニティを作る力が圧倒的。',en:'Their ability to gather people\'s energy and build communities is absolutely unmatched.',zh:'聚集人心、建立社群的能力令人歎為觀止。'},
+    careers:{
+      ko:[{e:'🎙️',n:'커뮤니티 빌더',t:1,d:'AI 시대에 인간 소외를 해결하는 커뮤니티 전문가'},{e:'📱',n:'휴먼-AI 커뮤니케이션 매니저',t:1,d:'인간과 AI의 원활한 소통을 중재'},{e:'🎓',n:'미래 라이프 코치',t:0,d:'변화하는 시대에 개인의 비전을 찾아주는 가이드'},{e:'🌱',n:'글로벌 사회 혁신가',t:0,d:'좋은 영향력을 전 세계로 전파'},{e:'🎬',n:'몰입형 토크쇼 호스트',t:0,d:'대화로 사람의 가치를 찾아내는 전문가'}],
+      ja:[{e:'🎙️',n:'コミュニティビルダー',t:1,d:'AI時代の人間疎外を解決するコミュニティ専門家'},{e:'📱',n:'ヒューマンAIコミュニケーションマネージャー',t:1,d:'人間とAIのスムーズなコミュニケーションを調停'},{e:'🎓',n:'未来ライフコーチ',t:0,d:'変化する時代に個人のビジョンを見つけるガイド'},{e:'🌱',n:'グローバル社会イノベーター',t:0,d:'良い影響を全世界に広める人'},{e:'🎬',n:'没入型トークショーホスト',t:0,d:'会話で人の価値を引き出す専門家'}],
+      en:[{e:'🎙️',n:'Community Builder',t:1,d:'Community expert solving human loneliness in the AI age'},{e:'📱',n:'Human-AI Communication Manager',t:1,d:'Bridging smooth communication between humans and AI'},{e:'🎓',n:'Future Life Coach',t:0,d:'Guide who helps find personal vision in a changing world'},{e:'🌱',n:'Global Social Innovator',t:0,d:'Spreading positive impact across the entire world'},{e:'🎬',n:'Immersive Talk Show Host',t:0,d:'Expert at uncovering a person\'s value through conversation'}],
+      zh:[{e:'🎙️',n:'社群建設者',t:1,d:'解決AI時代人際疏離問題的社群專家'},{e:'📱',n:'人機溝通管理者',t:1,d:'調解人類與AI之間順暢溝通的橋樑'},{e:'🎓',n:'未來生活教練',t:0,d:'在變化時代幫助個人找到願景的嚮導'},{e:'🌱',n:'全球社會創新家',t:0,d:'將正面影響力傳播到全世界'},{e:'🎬',n:'沉浸式脫口秀主持人',t:0,d:'透過對話挖掘他人價值的專家'}]
+    },
+    careerDesc:{ko:'사람을 모으고 성장시키는 일에서 천부적인 재능을 발휘해.',ja:'人を集めて成長させる仕事で天賦の才能を発揮するよ。',en:'Your natural genius shines in work that brings people together and helps them grow.',zh:'你在聚集人心並助人成長的工作中展現出天賦才能。'}},
+  ENFP:{emoji:'🎉',
+    name:{ko:'활동가형',ja:'広報運動家型',en:'Campaigner',zh:'競選者型'},
+    tag:{ko:'열정과 상상력이 넘치는 자유로운 영혼',ja:'情熱と想像力あふれる自由な魂',en:'Free spirit overflowing with passion and boundless imagination',zh:'充滿熱情與無限想像力的自由靈魂'},
+    good:['INTJ','INFJ'],care:['ISTJ','ISFJ'],
     figs:{
       ko:[{e:'🎬',n:'박재범',r:'가수'},{e:'🎤',n:'로제',r:'가수'},{e:'🌈',n:'노홍철',r:'방송인'}],
       en:[{e:'🎬',n:'Robert Downey Jr.',r:'Actor'},{e:'🎤',n:'Harry Styles',r:'Singer'},{e:'🌈',n:'Emma Chamberlain',r:'YouTuber'}],
-      ja:[{e:'🏯',n:'織田信長',r:'戦국武将'},{e:'📺',n:'明石家さんま',r:'芸人'},{e:'🎭',n:'ムロツヨシ',r:'俳優'}],
+      ja:[{e:'🏯',n:'織田信長',r:'戦国武将'},{e:'📺',n:'明石家さんま',r:'芸人'},{e:'🎭',n:'ムロツヨシ',r:'俳優'}],
       zh:[{e:'🎥',n:'賈玲',r:'演員·導演'},{e:'🎵',n:'大張偉',r:'歌手'},{e:'🎨',n:'徐悲鴻',r:'畫家'}]
     },
-    figNote:'숏폼 한 편으로 세상을 흔드는 에너지의 소유자들.',
-    careers:[{e:'📱',n:'버추얼 인플루언서 기획자',t:1,d:'AI 가상 인물에 생명력과 매력을 불어넣는 창조자'},{e:'🎨',n:'AI 아트 퍼포먼스 기획',t:1,d:'기술과 예술을 결합한 새로운 경험 창조'},{e:'🚀',n:'미래 엔터테이너 창업',t:0,d:'에너지를 비즈니스로 연결하는 리더'},{e:'🎤',n:'글로벌 트렌드 큐레이터',t:0,d:'세상의 모든 힙한 것을 찾아 연결'},{e:'🌐',n:'가상 세계 여행 가이드',t:0,d:'메타버스 내의 독특한 경험을 설계'}],
-    careerDesc:'창의성+사람 에너지가 합쳐지는 곳에서 너의 천직을 찾을 수 있어.'},
+    figNote:{ko:'숏폼 한 편으로 세상을 흔드는 에너지의 소유자들.',ja:'ショートフォーム一本で世界を揺らすエネルギーの持ち主たち。',en:'Energy powerhouses who can shake the world with a single short-form post.',zh:'一條短影音就能撼動世界的能量擁有者們。'},
+    careers:{
+      ko:[{e:'📱',n:'버추얼 인플루언서 기획자',t:1,d:'AI 가상 인물에 생명력과 매력을 불어넣는 창조자'},{e:'🎨',n:'AI 아트 퍼포먼스 기획',t:1,d:'기술과 예술을 결합한 새로운 경험 창조'},{e:'🚀',n:'미래 엔터테이너 창업',t:0,d:'에너지를 비즈니스로 연결하는 리더'},{e:'🎤',n:'글로벌 트렌드 큐레이터',t:0,d:'세상의 모든 힙한 것을 찾아 연결'},{e:'🌐',n:'가상 세계 여행 가이드',t:0,d:'메타버스 내의 독특한 경험을 설계'}],
+      ja:[{e:'📱',n:'バーチャルインフルエンサー企画者',t:1,d:'AI仮想人物に命と魅力を吹き込むクリエイター'},{e:'🎨',n:'AIアートパフォーマンス企画',t:1,d:'テクノロジーと芸術を融合した新体験を創造'},{e:'🚀',n:'未来エンターテイナー起業',t:0,d:'エネルギーをビジネスに繋げるリーダー'},{e:'🎤',n:'グローバルトレンドキュレーター',t:0,d:'世界のすべてのクールなものを見つけて繋げる'},{e:'🌐',n:'仮想世界旅行ガイド',t:0,d:'メタバース内のユニークな体験を設計'}],
+      en:[{e:'📱',n:'Virtual Influencer Creator',t:1,d:'Creator breathing life and charm into AI virtual personas'},{e:'🎨',n:'AI Art Performance Planner',t:1,d:'Creating new experiences that fuse technology and art'},{e:'🚀',n:'Future Entertainer Founder',t:0,d:'Leader connecting pure energy to a real business'},{e:'🎤',n:'Global Trend Curator',t:0,d:'Finding and connecting everything cool in the world'},{e:'🌐',n:'Virtual World Travel Guide',t:0,d:'Designing unique experiences inside the metaverse'}],
+      zh:[{e:'📱',n:'虛擬網紅企劃者',t:1,d:'為AI虛擬人物注入生命力與魅力的創造者'},{e:'🎨',n:'AI藝術表演策劃',t:1,d:'創造融合科技與藝術的全新體驗'},{e:'🚀',n:'未來藝人創業者',t:0,d:'將能量轉化為商業的領導者'},{e:'🎤',n:'全球潮流策展人',t:0,d:'找到並連結世界上所有酷炫事物'},{e:'🌐',n:'虛擬世界旅遊嚮導',t:0,d:'在元宇宙內設計獨特體驗'}]
+    },
+    careerDesc:{ko:'창의성+사람 에너지가 합쳐지는 곳에서 너의 천직을 찾을 수 있어.',ja:'創造性＋人のエネルギーが合わさる場所に天職があるよ。',en:'Find your calling where creativity and people energy collide — that\'s your stage.',zh:'在創造力與人際能量交匯之處，你的天職正等著你。'}},
   ISTJ:{emoji:'🏛️',good:['ESFP','ESTP'],care:['ENFP','ENTP'],
     name:{ko:'현실주의자형',ja:'管理者형',en:'Logistician',zh:'物流師型'},
     tag:{ko:'신뢰와 책임감으로 묵묵히 완수하는 기둥',ja:'信頼と責任感で黙々とやり遂げる大黒柱',en:'Anchor who completes tasks with reliability and responsibility',zh:'以信賴與責任感默默完成任務的支柱'},
