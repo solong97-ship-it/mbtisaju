@@ -638,7 +638,7 @@ function applyLang(){
   if(discPs[1]) discPs[1].textContent=t('disc2');
   if(discPs[2]) discPs[2].textContent=t('disc3');
   if(discPs[3]) discPs[3].textContent=t('disc4');
-  if(s('.btn-secondary')) s('.btn-secondary').textContent=t('btnAgain');
+  document.querySelectorAll('.btn-secondary[onclick="reset()"]').forEach(el=>el.textContent=t('btnAgain'));
   // 결과 상단
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
   if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
@@ -2095,7 +2095,7 @@ async function _generatePhotoCard(){
 
 /* 공유 */
 function shareApp(){
-  const url='https://mbtisaju.pages.dev';
+  const url='https://sajumbti-app.web.app';
   if(navigator.share){navigator.share({title:t('title'),text:t('shareApp'),url}).catch(()=>copyUrl(url));}
   else{copyUrl(url);}
 }
@@ -2108,6 +2108,22 @@ function copyUrl(url){
   if(navigator.clipboard){navigator.clipboard.writeText(url).then(()=>showToast(t('copied'))).catch(()=>showToast('Link: '+url));}
   else{showToast('Link: '+url);}
 }
+
+/* ── 전역 함수 노출 (ES 모듈에서 onclick 핸들러 사용을 위해) ── */
+window.toggleLang=toggleLang;
+window.setLang=setLang;
+window.toggleSettings=toggleSettings;
+window.saveApiKey=saveApiKey;
+window.setGender=setGender;
+window.setQ=setQ;
+window.setEx=setEx;
+window.startAnalysis=startAnalysis;
+window.shareApp=shareApp;
+window.share=share;
+window.reset=reset;
+window.saveImage=saveImage;
+window.closePhotoModal=closePhotoModal;
+window.generatePhotoCard=generatePhotoCard;
 
 /* 입력 이벤트 */
 document.getElementById('bi').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,6);document.getElementById('err-msg').style.display='none';});
