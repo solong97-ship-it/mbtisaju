@@ -1987,7 +1987,6 @@ async function _generatePhotoCard(){
   closePhotoModal();
 
   await document.fonts.ready;
-  await _loadQR();
 
   const dom=_getDomElem(curElements);
   const pal=ELEM_PAL[dom]||ELEM_PAL['土'];
@@ -2130,11 +2129,21 @@ async function _generatePhotoCard(){
   try{await navigator.clipboard.writeText(shareUrl);}catch(e){}
 
   cv.toBlob(blob=>{
+    if(!blob){showToast('이미지 생성 실패. 다시 시도해주세요.');return;}
     const url=URL.createObjectURL(blob);
-    const a=document.createElement('a');
-    a.href=url;a.download='birthmbi_'+curMType+'_'+nick+'.jpg';
-    a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    showToast(t('pcToast'));
+    // iOS Safari: blob URL 다운로드 미지원 → 새 탭에서 열어 길게 눌러 저장 안내
+    const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+    if(isIOS){
+      window.open(url,'_blank');
+      showToast('이미지를 길게 눌러 저장해주세요 📷');
+      setTimeout(()=>URL.revokeObjectURL(url),5000);
+    }else{
+      const a=document.createElement('a');
+      a.href=url;a.download='birthmbi_'+curMType+'_'+nick+'.jpg';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(()=>URL.revokeObjectURL(url),1000);
+      showToast(t('pcToast'));
+    }
   },'image/jpeg',.93);
 }
 
