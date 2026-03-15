@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- 배경 그라디언트 -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0533"/>
+      <stop offset="50%" style="stop-color:#2d1060"/>
+      <stop offset="100%" style="stop-color:#0f2060"/>
+    </linearGradient>
+    <!-- 카드 글로우 -->
+    <radialGradient id="glow1" cx="30%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#9B59B6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="40%">
+      <stop offset="0%" style="stop-color:#3498DB;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#3498DB;stop-opacity:0"/>
+    </radialGradient>
+    <!-- 별 필터 -->
+    <filter id="star-blur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- 별들 (배경 장식) -->
+  <g opacity="0.6" filter="url(#star-blur)">
+    <circle cx="80" cy="60" r="1.5" fill="white"/>
+    <circle cx="200" cy="40" r="1" fill="white"/>
+    <circle cx="340" cy="90" r="2" fill="white"/>
+    <circle cx="480" cy="30" r="1.5" fill="white"/>
+    <circle cx="620" cy="70" r="1" fill="white"/>
+    <circle cx="780" cy="45" r="2" fill="white"/>
+    <circle cx="920" cy="80" r="1.5" fill="white"/>
+    <circle cx="1060" cy="35" r="1" fill="white"/>
+    <circle cx="1140" cy="100" r="2" fill="white"/>
+    <circle cx="120" cy="500" r="1.5" fill="white"/>
+    <circle cx="280" cy="540" r="1" fill="white"/>
+    <circle cx="450" cy="510" r="2" fill="white"/>
+    <circle cx="700" cy="560" r="1.5" fill="white"/>
+    <circle cx="900" cy="520" r="1" fill="white"/>
+    <circle cx="1100" cy="570" r="2" fill="white"/>
+  </g>
+
+  <!-- 장식 원 (왼쪽 상단) -->
+  <circle cx="100" cy="120" r="80" fill="none" stroke="#9B59B6" stroke-width="1" opacity="0.3"/>
+  <circle cx="100" cy="120" r="55" fill="none" stroke="#9B59B6" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- 장식 원 (오른쪽 하단) -->
+  <circle cx="1130" cy="530" r="90" fill="none" stroke="#3498DB" stroke-width="1" opacity="0.25"/>
+  <circle cx="1130" cy="530" r="60" fill="none" stroke="#3498DB" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- 중앙 카드 패널 -->
+  <rect x="80" y="110" width="1040" height="410" rx="24" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- 마스코트 아이콘 영역 (왼쪽) -->
+  <g transform="translate(160, 220)">
+    <!-- 고양이 별 마스코트 (단순화) -->
+    <!-- 몸통 -->
+    <ellipse cx="75" cy="130" rx="50" ry="40" fill="#F0D9FF" opacity="0.95"/>
+    <!-- 머리 -->
+    <circle cx="75" cy="75" r="52" fill="#F0D9FF" opacity="0.95"/>
+    <!-- 귀 -->
+    <polygon points="35,38 20,5 55,25" fill="#E8C5FF"/>
+    <polygon points="115,38 130,5 95,25" fill="#E8C5FF"/>
+    <!-- 눈 -->
+    <ellipse cx="58" cy="72" rx="9" ry="11" fill="#4A2080"/>
+    <ellipse cx="92" cy="72" rx="9" ry="11" fill="#4A2080"/>
+    <circle cx="61" cy="69" r="3" fill="white"/>
+    <circle cx="95" cy="69" r="3" fill="white"/>
+    <!-- 코 -->
+    <ellipse cx="75" cy="88" rx="5" ry="4" fill="#FFB5D0"/>
+    <!-- 입 -->
+    <path d="M68 94 Q75 101 82 94" stroke="#9B59B6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- 수염 -->
+    <line x1="20" y1="88" x2="60" y2="91" stroke="#C9A0EE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="20" y1="96" x2="60" y2="95" stroke="#C9A0EE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="130" y1="88" x2="90" y2="91" stroke="#C9A0EE" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="130" y1="96" x2="90" y2="95" stroke="#C9A0EE" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- 별 장식 -->
+    <text x="60" y="40" font-size="22" fill="#FFD700" text-anchor="middle">✦</text>
+    <text x="140" y="55" font-size="14" fill="#FFD700" text-anchor="middle">✦</text>
+    <text x="15" y="60" font-size="12" fill="#C9A0EE" text-anchor="middle">✦</text>
+  </g>
+
+  <!-- 오른쪽 텍스트 영역 -->
+  <!-- 앱 이름 -->
+  <text x="420" y="220" font-family="'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif" font-size="52" font-weight="900" fill="white" letter-spacing="-1">생일MBTI</text>
+
+  <!-- 구분선 -->
+  <rect x="420" y="238" width="680" height="2" rx="1" fill="url(#glow1)" opacity="0.5"/>
+  <rect x="420" y="238" width="300" height="2" rx="1" fill="#9B59B6" opacity="0.8"/>
+
+  <!-- 메인 캐치카피 -->
+  <text x="420" y="305" font-family="'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif" font-size="38" font-weight="700" fill="white" letter-spacing="-0.5">내 생일에 새겨진</text>
+  <text x="420" y="358" font-family="'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif" font-size="38" font-weight="700" fill="#D9A8FF" letter-spacing="-0.5">진짜 기질은?</text>
+
+  <!-- 설명 텍스트 -->
+  <text x="420" y="415" font-family="'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif" font-size="22" fill="rgba(255,255,255,0.72)" letter-spacing="0">사주 원국 × MBTI 융합 분석</text>
+  <text x="420" y="447" font-family="'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif" font-size="22" fill="rgba(255,255,255,0.72)" letter-spacing="0">생년월일만으로 · 무료 · 앱 설치 없음</text>
+
+  <!-- 뱃지: 무료 + 신뢰 시그널 -->
+  <g transform="translate(420, 470)">
+    <rect x="0" y="0" width="100" height="36" rx="18" fill="#9B59B6" opacity="0.9"/>
+    <text x="50" y="23" font-family="sans-serif" font-size="15" font-weight="700" fill="white" text-anchor="middle">✓ 무 료</text>
+  </g>
+  <g transform="translate(534, 470)">
+    <rect x="0" y="0" width="136" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="68" y="23" font-family="sans-serif" font-size="15" fill="white" text-anchor="middle">앱 설치 불필요</text>
+  </g>
+  <g transform="translate(684, 470)">
+    <rect x="0" y="0" width="148" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="74" y="23" font-family="sans-serif" font-size="15" fill="white" text-anchor="middle">로그인 불필요</text>
+  </g>
+
+  <!-- URL 표시 (신뢰 신호) -->
+  <text x="600" y="580" font-family="monospace" font-size="18" fill="rgba(255,255,255,0.45)" text-anchor="middle" letter-spacing="1">sajumbti-app.web.app</text>
+</svg>
