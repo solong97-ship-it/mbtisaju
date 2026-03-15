@@ -727,6 +727,7 @@ try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LA
 document.addEventListener('DOMContentLoaded',()=>{
   if(LANG!=='ko')setLang(LANG);
   document.addEventListener('click',e=>{if(!e.target.closest('.lang-sel'))document.getElementById('lang-drop')?.classList.remove('open')});
+  checkReturningUser();
 });
 
 /* ╔══════════════════════════════════════════╗
@@ -1684,6 +1685,7 @@ function renderResult(val,gender,dw,ai,aiInsight){
   
   const mType=ai.mbti;
   curMType=mType;curElements=ai.elements||{'木':0,'火':0,'土':0,'金':0,'水':0};
+  saveLastResult();
   curCharLine=(ai.characterLine||'').replace(/<[^>]+>/g,'').replace(/✨\s*냥별이의 비밀 조언\s*/,'').trim();
   const metaBase=META[mType]||META['INFP'];
   const lKey = LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
@@ -2227,6 +2229,105 @@ window.generatePhotoCard=generatePhotoCard;
 window.toggleSection=toggleSection;
 
 /* ╔══════════════════════════════════════════╗
+   ║  재방문자 웰컴 화면                       ║
+   ╚══════════════════════════════════════════╝ */
+const WC_I18N={
+  ko:{greet:'반가워, {t}야! 🌙',full:'✨ 오늘 전체 운세 보기',reset:'← 다른 생일 분석하기',
+      ilunTitle:'오늘의 일운',luckyTitle:'럭키 컬러',dayOf:'일·월·화·수·목·금·토'},
+  ja:{greet:'おかえり、{t}！ 🌙',full:'✨ 今日の運勢を全部見る',reset:'← 別の生年月日を分析',
+      ilunTitle:'今日の日運',luckyTitle:'ラッキーカラー',dayOf:'日·月·火·水·木·金·土'},
+  en:{greet:'Welcome back, {t}! 🌙',full:'✨ See My Full Daily Fortune',reset:'← Analyze a different birthday',
+      ilunTitle:"Today's Fortune",luckyTitle:'Lucky Color',dayOf:'Sun·Mon·Tue·Wed·Thu·Fri·Sat'},
+  'zh-TW':{greet:'歡迎回來，{t}！ 🌙',full:'✨ 查看今日完整運勢',reset:'← 分析其他生日',
+      ilunTitle:'今日運勢',luckyTitle:'幸運色',dayOf:'日·一·二·三·四·五·六'},
+  'zh-CN':{greet:'欢迎回来，{t}！ 🌙',full:'✨ 查看今日完整运势',reset:'← 分析其他生日',
+      ilunTitle:'今日运势',luckyTitle:'幸运色',dayOf:'日·一·二·三·四·五·六'}
+};
+
+function saveLastResult(){
+  try{
+    localStorage.setItem('saju_last_birth',curBirth);
+    localStorage.setItem('saju_last_gender',curGender);
+    localStorage.setItem('saju_last_mbti',curMType);
+    localStorage.setItem('saju_last_elements',JSON.stringify(curElements));
+    localStorage.setItem('saju_last_saved',Date.now().toString());
+  }catch(e){}
+}
+
+function checkReturningUser(){
+  // URL hash로 직접 접근하면 기존 분석 흐름 유지
+  if(location.hash.includes('birth=')) return false;
+  try{
+    const birth=localStorage.getItem('saju_last_birth');
+    const gender=localStorage.getItem('saju_last_gender');
+    const mbti=localStorage.getItem('saju_last_mbti');
+    const elemStr=localStorage.getItem('saju_last_elements');
+    if(!birth||!gender||!mbti||birth.length!==6) return false;
+    curBirth=birth; curGender=gender; curMType=mbti;
+    curElements=elemStr?JSON.parse(elemStr):{'木':0,'火':0,'土':0,'金':0,'水':0};
+    showWelcomePage();
+    return true;
+  }catch(e){return false;}
+}
+
+function showWelcomePage(){
+  const m=META[curMType]||META['INFP'];
+  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  const L=WC_I18N[LANG]||WC_I18N['ko'];
+  const name=m.name?.[lKey]||m.name?.ko||curMType;
+  const emoji=m.emoji||'🌙';
+  const tag=m.tag?.[lKey]||m.tag?.ko||'';
+
+  document.getElementById('wc-greeting').textContent=L.greet.replace('{t}',curMType);
+  document.getElementById('wc-mbti').textContent=emoji+' '+curMType;
+  document.getElementById('wc-typename').textContent=name;
+  document.getElementById('wc-tag').textContent=tag;
+  document.getElementById('wc-full-btn').textContent=L.full;
+  document.getElementById('wc-reset-btn').textContent=L.reset;
+
+  // 일운
+  const yy=+curBirth.slice(0,2),mm2=+curBirth.slice(2,4),dd=+curBirth.slice(4,6),yr=parseYear(yy);
+  const natal=getNatal(yr,mm2,dd);
+  renderIlun(natal,'wc-ilun');
+  renderLuckyColor(curElements,'wc-lucky');
+
+  // 럭키컬러 bookmark tip 숨기기 (welcome에서는 불필요)
+  document.querySelectorAll('#wc-lucky .lucky-bookmark').forEach(el=>el.style.display='none');
+
+  showPage('pg-welcome');
+}
+
+function showFullResult(){
+  showPage('pg-loading');
+  const stepEl=document.getElementById('ld-step');
+  if(stepEl) stepEl.innerHTML='<span class="ld-dots">'+(WC_I18N[LANG]||WC_I18N['ko']).ilunTitle+'...</span>';
+  setTimeout(async()=>{
+    try{
+      const val=curBirth;
+      const yy=+val.slice(0,2),mm2=+val.slice(2,4),dd=+val.slice(4,6),yr=parseYear(yy);
+      const natal=getNatal(yr,mm2,dd);
+      const dw=computeDaewoon(yr,mm2,dd,curGender);
+      const mbtiData=computeMBTI_V3(natal,curGender,undefined,undefined,undefined,undefined);
+      const result=generateLocal(yr,mm2,dd,curGender,dw,natal,mbtiData);
+      renderResult(val,curGender,dw,result,null);
+    }catch(e){console.error(e);showPage('pg-welcome');}
+  },350);
+}
+
+function clearSaved(){
+  try{
+    ['saju_last_birth','saju_last_gender','saju_last_mbti','saju_last_elements','saju_last_saved']
+      .forEach(k=>localStorage.removeItem(k));
+  }catch(e){}
+  curBirth='';curGender='';curMType='';curElements={'木':0,'火':0,'土':0,'金':0,'水':0};
+  document.getElementById('bi').value='';
+  setGender('');
+  showPage('pg-input');
+}
+window.showFullResult=showFullResult;
+window.clearSaved=clearSaved;
+
+/* ╔══════════════════════════════════════════╗
    ║  궁합 (Compatibility) Feature            ║
    ╚══════════════════════════════════════════╝ */
 
@@ -2370,8 +2471,8 @@ function getRelation(myElem, todayElem){
   return 'same';
 }
 
-function renderIlun(natal){
-  const el=document.getElementById('r-ilun');
+function renderIlun(natal,targetId='r-ilun'){
+  const el=document.getElementById(targetId);
   if(!el||!natal)return;
   const today=getTodayPillar();
   const myDayStem=SE[natal.dS]||'甲';
@@ -2447,8 +2548,8 @@ function installPWA(){
 }
 window.installPWA=installPWA;
 
-function renderLuckyColor(elements){
-  const el=document.getElementById('r-lucky');
+function renderLuckyColor(elements,targetId='r-lucky'){
+  const el=document.getElementById(targetId);
   if(!el)return;
   const dom=_getDomElem(elements);
   const ld=LUCKY_DATA[dom];

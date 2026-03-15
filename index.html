@@ -110,10 +110,48 @@
 </defs>
 </svg>
 
+<!-- ═══ PAGE 0: WELCOME (재방문자) ═══ -->
+<div class="page" id="pg-welcome">
+  <div class="topbar">
+    <span class="logo">생일MBTI<span class="ver-tag">v3.2.0</span></span>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="lang-sel">
+        <button class="lang-btn" onclick="toggleLang()" id="wc-lang-btn">🇰🇷 한국어</button>
+        <div class="lang-drop" id="wc-lang-drop" style="display:none">
+          <button class="lang-opt active" onclick="setLang('ko')">🇰🇷 한국어</button>
+          <button class="lang-opt" onclick="setLang('ja')">🇯🇵 日本語</button>
+          <button class="lang-opt" onclick="setLang('en')">🇺🇸 English</button>
+          <button class="lang-opt" onclick="setLang('zh-TW')">🇹🇼 繁體中文</button>
+          <button class="lang-opt" onclick="setLang('zh-CN')">🇨🇳 简体中文</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 인사 히어로 -->
+  <div class="wc-hero">
+    <div id="wc-greeting" class="wc-greeting"></div>
+    <div id="wc-mbti" class="wc-mbti-big"></div>
+    <div id="wc-typename" class="wc-typename"></div>
+    <div id="wc-tag" class="wc-tag"></div>
+  </div>
+
+  <!-- 오늘의 일운 -->
+  <div id="wc-ilun" style="margin:0 16px"></div>
+
+  <!-- 오늘의 럭키 컬러 -->
+  <div id="wc-lucky" style="margin:10px 16px 0"></div>
+
+  <!-- CTA 버튼 -->
+  <button class="btn-primary" id="wc-full-btn" onclick="showFullResult()" style="margin-top:16px">✨ 오늘 전체 운세 보기</button>
+  <button class="btn-secondary" id="wc-reset-btn" onclick="clearSaved()" style="margin-top:10px">← 다른 생일 분석하기</button>
+  <div style="height:40px"></div>
+</div>
+
 <!-- ═══ PAGE 1: INPUT ═══ -->
 <div class="page active" id="pg-input">
   <div class="topbar">
-    <span class="logo">생일MBTI<span class="ver-tag">v3.1.0</span></span>
+    <span class="logo">생일MBTI<span class="ver-tag">v3.2.0</span></span>
     <div style="display:flex;gap:10px;align-items:center">
       <button class="lang-btn" onclick="toggleSettings()" id="settings-btn">⚙️</button>
       <div class="lang-sel">
