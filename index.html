@@ -229,27 +229,7 @@
   <button class="btn-secondary" id="btn-share-app" onclick="shareApp()" style="gap:7px">🔗 친구에게 앱 공유</button>
 
   <!-- 서비스 특징 — 크롤러 및 사용자 모두를 위한 정적 콘텐츠 -->
-  <div style="margin:24px 16px 0;padding:20px;background:rgba(182,143,232,.06);border-radius:18px;border:1.5px solid rgba(182,143,232,.15)">
-    <p style="font-size:13px;font-weight:700;color:var(--g1);margin-bottom:14px;text-align:center">🌟 생일MBTI는 이렇게 달라요</p>
-    <div style="display:grid;gap:10px">
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <span style="font-size:18px;flex-shrink:0">🔮</span>
-        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">사주 원국 기반 타고난 기질</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">일주(日柱)·월주(月柱)·년주(年柱)의 에너지를 분석해 타고난 성격의 뼈대를 찾아드려요</p></div>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <span style="font-size:18px;flex-shrink:0">🧬</span>
-        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">MBTI 4축 과학적 매핑</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">십성(十星)·오행(五行)을 E/I·S/N·T/F·J/P 4축으로 변환해 현대 심리학 언어로 표현해요</p></div>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <span style="font-size:18px;flex-shrink:0">🔒</span>
-        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">완전 로컬 처리 · 개인정보 안전</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">입력한 생년월일은 서버에 저장되지 않아요. 모든 분석은 기기 안에서만 이루어집니다</p></div>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <span style="font-size:18px;flex-shrink:0">🌏</span>
-        <div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">5개 언어 지원</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">한국어·日本語·English·繁體中文·简体中文 — 전 세계 누구나 자신의 언어로 이용할 수 있어요</p></div>
-      </div>
-    </div>
-  </div>
+  <div id="feat-section" style="margin:24px 16px 0;padding:20px;background:rgba(182,143,232,.06);border-radius:18px;border:1.5px solid rgba(182,143,232,.15)"></div>
 
   <div style="margin:10px 16px 28px;text-align:center">
     <p style="font-size:11px;color:var(--g3);line-height:1.7">사주 원국에 담긴 타고난 기질 × MBTI 표현<br>환경이 만든 내가 아닌, <strong style="color:var(--g2)">태어날 때부터의 나</strong>를 만나봐 🌸</p>
@@ -296,6 +276,9 @@
   <!-- 이미지 저장 -->
   <button class="btn-img" id="btn-save-img" onclick="saveImage()">📷 이미지 저장</button>
 
+  <!-- 오늘의 럭키 컬러 -->
+  <div id="r-lucky" style="margin:10px 16px 0;display:none"></div>
+
   <!-- 특이사항 (계절쏠림/결핍) -->
   <div id="r-special" style="margin:8px 16px 0;display:none"></div>
 
@@ -318,8 +301,76 @@
     <p>이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!</p>
     <p style="margin-top:4px;font-size:9px;color:var(--g3)">이 결과는 자기 이해를 위한 참고 자료이며, 과학적 진단이 아닙니다. 운명은 정해져 있지 않으며, 모든 선택은 여러분의 것입니다.</p>
   </div>
+  <button class="btn-gunghap" onclick="showGunghap()">💑 궁합 보기</button>
   <button class="btn-secondary" onclick="reset()">← 다시 분석하기</button>
   <div style="height:32px"></div>
+</div>
+
+<!-- ═══ PAGE 4: GUNGHAP ═══ -->
+<div class="page" id="pg-gunghap">
+  <div class="res-topbar">
+    <div class="btn-back" onclick="showPage('pg-result')">←</div>
+    <span class="logo" style="font-size:16px">생일 궁합</span>
+    <span style="width:60px"></span>
+  </div>
+
+  <div style="padding:18px 16px 0;text-align:center">
+    <div style="font-size:36px;margin-bottom:6px">💑</div>
+    <h2 id="gg-title" style="font-size:19px;font-family:'Jua',sans-serif;margin-bottom:4px">생일 에너지 궁합</h2>
+    <p id="gg-sub" style="font-size:12px;color:var(--g2);line-height:1.6">두 사람의 사주 기운이 얼마나 맞을까? 🌟</p>
+  </div>
+
+  <!-- Person A (나) -->
+  <div style="margin:16px 16px 0">
+    <div style="font-size:10px;font-weight:700;color:var(--g2);letter-spacing:.05em;margin-bottom:6px" id="gg-a-label">나 (생일MBTI 분석 결과)</div>
+    <div class="gg-person-card gg-card-a" id="gg-a-box"></div>
+  </div>
+
+  <div style="text-align:center;font-size:26px;margin:10px 0;opacity:.7">💫</div>
+
+  <!-- Person B (상대방) -->
+  <div class="inp-card" style="margin-top:0">
+    <div style="font-size:10px;font-weight:700;color:var(--g2);letter-spacing:.05em;margin-bottom:10px" id="gg-b-label">상대방 정보</div>
+    <label class="inp-label" id="gg-b-birth-label">🎂 생년월일 6자리</label>
+    <input type="tel" id="gg-bi" class="birth-inp num-font" maxlength="6" placeholder="010112" inputmode="numeric" autocomplete="off">
+    <div class="seg-labels"><span class="seg-label">YY 년</span><span class="seg-label">MM 월</span><span class="seg-label">DD 일</span></div>
+    <label class="inp-label mt-14" id="gg-b-gender-label">🌟 성별</label>
+    <div class="gender-row">
+      <button class="gbtn" id="gg-btn-m" onclick="setGgGender('m')" id="gg-b-gender-label">♂ 남자</button>
+      <button class="gbtn" id="gg-btn-f" onclick="setGgGender('f')">♀ 여자</button>
+    </div>
+    <div class="err-msg" id="gg-err">⚠️ 상대방 생년월일 6자리와 성별을 입력해 주세요</div>
+  </div>
+
+  <button class="btn-primary" onclick="startGunghap()" id="gg-btn-start"><span id="gg-btn-label">💑 궁합 분석하기</span></button>
+
+  <!-- 결과 -->
+  <div id="gg-result" style="display:none;margin:18px 16px 0">
+    <!-- 점수 -->
+    <div class="gg-score-card">
+      <div class="gg-score-ring" id="gg-ring">
+        <div class="gg-score-num" id="gg-score-num"></div>
+        <div class="gg-score-label">궁합</div>
+      </div>
+      <div class="gg-score-tag" id="gg-score-tag"></div>
+      <div class="gg-score-emoji" id="gg-score-emoji"></div>
+    </div>
+
+    <!-- 두 사람 나란히 -->
+    <div class="gg-compare">
+      <div class="gg-person-card gg-card-a" id="gg-res-a"></div>
+      <div style="display:flex;align-items:center;font-size:22px;opacity:.6">↔</div>
+      <div class="gg-person-card gg-card-b" id="gg-res-b"></div>
+    </div>
+
+    <!-- 분석 텍스트 -->
+    <div class="gg-analysis" id="gg-analysis"></div>
+
+    <!-- 재분석 -->
+    <button class="btn-secondary" style="margin-top:12px" onclick="document.getElementById('gg-result').style.display='none';document.getElementById('gg-bi').value='';setGgGender('')">🔄 다른 사람 분석</button>
+  </div>
+
+  <div style="height:40px"></div>
 </div>
 
 <!-- ═══ 포토카드 모달 ═══ -->

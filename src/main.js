@@ -688,6 +688,39 @@ function applyLang(){
   if(si('settings-api-desc')) si('settings-api-desc').textContent=t('settingsApiDesc');
   if(si('settings-save-btn')) si('settings-save-btn').textContent=t('settingsSave');
   if(si('settings-close-btn')) si('settings-close-btn').textContent=t('settingsClose');
+  // 서비스 특징 섹션 번역
+  const featEl=si('feat-section');
+  if(featEl){
+    const F={
+      ko:{h:'🌟 생일MBTI는 이렇게 달라요',
+        f:[{e:'🔮',t:'사주 원국 기반 타고난 기질',d:'일주(日柱)·월주(月柱)·년주(年柱)의 에너지를 분석해 타고난 성격의 뼈대를 찾아드려요'},
+           {e:'🧬',t:'MBTI 4축 과학적 매핑',d:'십성(十星)·오행(五行)을 E/I·S/N·T/F·J/P 4축으로 변환해 현대 심리학 언어로 표현해요'},
+           {e:'🔒',t:'완전 로컬 처리 · 개인정보 안전',d:'입력한 생년월일은 서버에 저장되지 않아요. 모든 분석은 기기 안에서만 이루어집니다'},
+           {e:'🌏',t:'5개 언어 지원',d:'한국어·日本語·English·繁體中文·简体中文 — 전 세계 누구나 자신의 언어로 이용할 수 있어요'}]},
+      ja:{h:'🌟 誕生日MBTIはここが違う',
+        f:[{e:'🔮',t:'四柱原局ベースの生まれ持った気質',d:'日柱・月柱・年柱のエネルギーを分析し、生まれ持った性格の骨格を見つけます'},
+           {e:'🧬',t:'MBTI 4軸の科学的マッピング',d:'十星・五行をE/I・S/N・T/F・J/Pの4軸に変換し、現代心理学の言語で表現します'},
+           {e:'🔒',t:'完全ローカル処理・個人情報安全',d:'入力した生年月日はサーバーに保存されません。分析はすべてデバイス内で行われます'},
+           {e:'🌏',t:'5言語対応',d:'한국어·日本語·English·繁體中文·简体中文 — 世界中の誰でも自分の言語で利用できます'}]},
+      en:{h:'🌟 What Makes Birthday MBTI Different',
+        f:[{e:'🔮',t:'Innate Temperament from Four Pillars',d:'Analyzes the energy of Day, Month, and Year Pillars to reveal your born personality framework'},
+           {e:'🧬',t:'Scientific MBTI 4-Axis Mapping',d:'Converts Ten Gods & Five Elements into E/I·S/N·T/F·J/P axes using modern psychology'},
+           {e:'🔒',t:'Fully Local · Privacy Safe',d:'Your birthdate is never stored on servers. All analysis happens only on your device'},
+           {e:'🌏',t:'5 Languages Supported',d:'Korean·日本語·English·繁體中文·简体中文 — Anyone in the world can use it in their own language'}]},
+      'zh-TW':{h:'🌟 生日MBTI的獨特之處',
+        f:[{e:'🔮',t:'基於四柱原局的天生氣質',d:'分析日柱·月柱·年柱的能量，找出天生性格的骨架'},
+           {e:'🧬',t:'MBTI四軸科學映射',d:'將十星·五行轉換為E/I·S/N·T/F·J/P四軸，以現代心理學語言呈現'},
+           {e:'🔒',t:'完全本地處理·個人資訊安全',d:'輸入的生日不會儲存於伺服器，所有分析僅在您的裝置上進行'},
+           {e:'🌏',t:'支援5種語言',d:'한국어·日本語·English·繁體中文·简体中文 — 全球任何人都能以自己的語言使用'}]},
+      'zh-CN':{h:'🌟 生日MBTI的独特之处',
+        f:[{e:'🔮',t:'基于四柱原局的天生气质',d:'分析日柱·月柱·年柱的能量，找出天生性格的骨架'},
+           {e:'🧬',t:'MBTI四轴科学映射',d:'将十星·五行转换为E/I·S/N·T/F·J/P四轴，以现代心理学语言呈现'},
+           {e:'🔒',t:'完全本地处理·个人信息安全',d:'输入的生日不会存储于服务器，所有分析仅在您的设备上进行'},
+           {e:'🌏',t:'支持5种语言',d:'한국어·日本語·English·繁體中文·简体中文 — 全球任何人都能以自己的语言使用'}]}
+    };
+    const fd=F[LANG]||F['ko'];
+    featEl.innerHTML=`<p style="font-size:13px;font-weight:700;color:var(--g1);margin-bottom:14px;text-align:center">${fd.h}</p><div style="display:grid;gap:10px">${fd.f.map(r=>`<div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:18px;flex-shrink:0">${r.e}</span><div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">${r.t}</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">${r.d}</p></div></div>`).join('')}</div>`;
+  }
 }
 // 초기 언어 로드
 try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}
@@ -1870,6 +1903,7 @@ function renderResult(val,gender,dw,ai,aiInsight){
   const footerHtml = `<div style="text-align:center;padding:20px 16px;font-size:9px;color:var(--g3);line-height:1.5">${t('copyright')}</div>`;
   document.getElementById('r-sections').innerHTML += footerHtml;
 
+  renderLuckyColor(curElements);
   showPage('pg-result');
 
   // 애니메이션
@@ -2189,9 +2223,259 @@ window.closeImgPreview=closeImgPreview;
 window.generatePhotoCard=generatePhotoCard;
 window.toggleSection=toggleSection;
 
+/* ╔══════════════════════════════════════════╗
+   ║  궁합 (Compatibility) Feature            ║
+   ╚══════════════════════════════════════════╝ */
+
+/* ── 오늘의 럭키 컬러 ── */
+const LUCKY_DATA = {
+  '木':{
+    colors:['#7ED4BC','#6ABF8E','#4CAF7D','#88D8B0','#52C09A'],
+    colorNames:{ko:['민트 그린','에메랄드','새싹 초록','세이지 그린','청록'],ja:['ミントグリーン','エメラルド','新緑グリーン','セージグリーン','青緑'],en:['Mint Green','Emerald','Sprout Green','Sage Green','Teal'],zh:['薄荷綠','翡翠綠','嫩草綠','鼠尾草綠','青綠']},
+    items:{ko:['식물 키우기','숲길 산책','친환경 제품','나무 소품','허브티'],ja:['植物を育てる','森の散歩','エコ製品','木製小物','ハーブティー'],en:['Grow a plant','Forest walk','Eco products','Wood accessories','Herbal tea'],zh:['種植植物','森林散步','環保產品','木製小物','花草茶']}
+  },
+  '火':{
+    colors:['#FF8FAB','#FF6B8A','#FFB5C8','#FF7C7C','#FF5E8A'],
+    colorNames:{ko:['코랄 핑크','딥 로즈','베이비 핑크','레드 오렌지','핫 핑크'],ja:['コーラルピンク','ディープローズ','ベイビーピンク','レッドオレンジ','ホットピンク'],en:['Coral Pink','Deep Rose','Baby Pink','Red Orange','Hot Pink'],zh:['珊瑚粉','玫瑰紅','嬰兒粉','橘紅','亮粉']},
+    items:{ko:['빨간 음식 먹기','캔들 명상','열정적인 대화','새 도전 시작','운동하기'],ja:['赤い食べ物','キャンドル瞑想','情熱的な会話','新しい挑戦','運動する'],en:['Red foods','Candle meditation','Passionate chat','Start something new','Exercise'],zh:['吃紅色食物','蠟燭冥想','熱情對話','開始新挑戰','運動']}
+  },
+  '土':{
+    colors:['#FFD166','#E8B84B','#F5C842','#D4A843','#FFCC44'],
+    colorNames:{ko:['골드 옐로','허니 옐로','선샤인 옐로','앰버 골드','레몬 옐로'],ja:['ゴールドイエロー','ハニーイエロー','サンシャインイエロー','アンバーゴールド','レモンイエロー'],en:['Gold Yellow','Honey Yellow','Sunshine Yellow','Amber Gold','Lemon Yellow'],zh:['金黃色','蜂蜜黃','陽光黃','琥珀金','檸檬黃']},
+    items:{ko:['노란 과일 먹기','새 노트 정리','집 청소하기','따뜻한 차 마시기','감사 일기'],ja:['黄色い果物','ノート整理','部屋の掃除','温かいお茶','感謝日記'],en:['Yellow fruits','Organize notes','Clean your space','Warm tea','Gratitude journal'],zh:['吃黃色水果','整理筆記','打掃房間','喝溫茶','感恩日記']}
+  },
+  '金':{
+    colors:['#C0C8D4','#A8B4C4','#D4DCE8','#B8C4D4','#9BA8BA'],
+    colorNames:{ko:['실버 그레이','스틸 블루','아이스 화이트','페일 블루','문라이트'],ja:['シルバーグレー','スティールブルー','アイスホワイト','ペールブルー','ムーンライト'],en:['Silver Gray','Steel Blue','Ice White','Pale Blue','Moonlight'],zh:['銀灰色','鋼鐵藍','冰白色','淡藍色','月光色']},
+    items:{ko:['금속 소품 착용','조용한 독서','깨끗한 물 마시기','명상하기','정리 정돈'],ja:['金属アクセ','静かな読書','きれいな水','瞑想する','整理整頓'],en:['Metal accessories','Quiet reading','Pure water','Meditate','Declutter'],zh:['佩戴金屬飾品','安靜閱讀','喝純淨水','冥想','整理物品']}
+  },
+  '水':{
+    colors:['#7EB8E8','#5FA3D4','#93C9F0','#4A8AC4','#6DB8E8'],
+    colorNames:{ko:['스카이 블루','오션 블루','아쿠아 블루','딥 블루','세룰리안'],ja:['スカイブルー','オーシャンブルー','アクアブルー','ディープブルー','セルリアン'],en:['Sky Blue','Ocean Blue','Aqua Blue','Deep Blue','Cerulean'],zh:['天空藍','海洋藍','水藍色','深藍色','蔚藍']},
+    items:{ko:['물 많이 마시기','목욕 또는 수영','음악 감상','흘러가는 대로 살기','직관 따르기'],ja:['水をたくさん飲む','お風呂か水泳','音楽を聴く','流れに身を任せる','直感に従う'],en:['Drink lots of water','Bath or swim','Listen to music','Go with the flow','Trust your gut'],zh:['多喝水','泡澡或游泳','聆聽音樂','順其自然','跟隨直覺']}
+  }
+};
+
+const LUCKY_BOOKMARK = {
+  ko:'⭐ 이 페이지를 즐겨찾기 해두고 매일 아침 나의 럭키 기운을 확인하세요!',
+  ja:'⭐ このページをブックマークして、毎朝あなたのラッキーエネルギーを確認しよう！',
+  en:'⭐ Bookmark this page and check your daily lucky energy every morning!',
+  'zh-TW':'⭐ 收藏此頁面，每天早上查看你的幸運能量！',
+  'zh-CN':'⭐ 收藏此页面，每天早上查看你的幸运能量！'
+};
+const LUCKY_TITLE = {
+  ko:'✨ 오늘의 럭키 컬러',ja:'✨ 今日のラッキーカラー',en:'✨ Today\'s Lucky Color',
+  'zh-TW':'✨ 今日幸運色','zh-CN':'✨ 今日幸运色'
+};
+const LUCKY_ITEM_PREFIX = {
+  ko:'🍀 추천 아이템:',ja:'🍀 おすすめアイテム:',en:'🍀 Lucky items:',
+  'zh-TW':'🍀 推薦物品:','zh-CN':'🍀 推荐物品:'
+};
+
+function renderLuckyColor(elements){
+  const el=document.getElementById('r-lucky');
+  if(!el)return;
+  const dom=_getDomElem(elements);
+  const ld=LUCKY_DATA[dom];
+  if(!ld){el.style.display='none';return;}
+  const now=new Date();
+  const dayIdx=(now.getFullYear()*366+now.getMonth()*31+now.getDate())%5;
+  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  const lKeyFull=LANG;
+  const color=ld.colors[dayIdx]||ELEM_COLOR[dom];
+  const colorName=(ld.colorNames[lKey]||ld.colorNames['ko'])[dayIdx];
+  const items=ld.items[lKey]||ld.items['ko'];
+  const itemStr=items.slice(0,3).join(' · ');
+  const dateStr=`${now.getMonth()+1}/${now.getDate()}`;
+  const title=LUCKY_TITLE[lKeyFull]||LUCKY_TITLE['ko'];
+  const itemPfx=LUCKY_ITEM_PREFIX[lKeyFull]||LUCKY_ITEM_PREFIX['ko'];
+  const bookmark=LUCKY_BOOKMARK[lKeyFull]||LUCKY_BOOKMARK['ko'];
+  el.style.display='block';
+  el.innerHTML=`<div class="lucky-card" style="--lucky-color:${color};border-color:${color}44;background:${color}0D">
+    <div class="lucky-date">${title} (${dateStr})</div>
+    <div class="lucky-main">
+      <div class="lucky-swatch" style="background:${color}"></div>
+      <div class="lucky-text">
+        <div class="lucky-headline">${ELEM_EMOJI[dom]} ${colorName}</div>
+        <div class="lucky-items">${itemPfx} ${itemStr}</div>
+      </div>
+    </div>
+    <div class="lucky-bookmark">${bookmark}</div>
+  </div>`;
+}
+
+const GG_TXT = {
+  ko:{title:'생일 에너지 궁합',sub:'두 사람의 사주 기운이 얼마나 맞을까? 🌟',aLabel:'나 (생일MBTI 분석 결과)',bLabel:'상대방 정보',bBirth:'🎂 생년월일 6자리',bGender:'🌟 성별',btnStart:'💑 궁합 분석하기',
+    lvl:['천생연분 💕','최강 케미 💫','잘 맞는 궁합 ✨','무난한 궁합 🌟','도전적 궁합 💪','불꽃 케미 🔥'],
+    mbti_good:'MBTI 에너지가 완벽하게 보완돼요',mbti_care:'MBTI 에너지 차이가 있지만 서로 배울 수 있어요',mbti_neutral:'MBTI 에너지가 무난하게 어울려요',
+    elem_same:'같은 오행 기운으로 서로 깊이 이해해요',elem_saeng:'오행 상생으로 서로의 기운을 북돋아줘요',elem_geuk:'오행 상극이지만 강한 케미가 생겨요',elem_neutral:'서로 다른 오행이 균형을 이뤄요',
+    intro_hi:'🐱 냥별이가 두 분의 기운을 분석했어요!\n\n',outro:'✨ 어떤 궁합도 서로를 이해하려는 마음이 가장 중요해요!'},
+  ja:{title:'誕生日エネルギー相性',sub:'二人の四柱の気はどれだけ合う？🌟',aLabel:'自分（誕生日MBTI結果）',bLabel:'相手の情報',bBirth:'🎂 生年月日 6桁',bGender:'🌟 性別',btnStart:'💑 相性を分析する',
+    lvl:['天生縁分 💕','最強ケミ 💫','相性ピッタリ ✨','まあまあな相性 🌟','チャレンジな相性 💪','情熱ケミ 🔥'],
+    mbti_good:'MBTIエネルギーが完璧に補い合います',mbti_care:'MBTIエネルギーに差がありますが互いに学べます',mbti_neutral:'MBTIエネルギーが無難に合います',
+    elem_same:'同じ五行の気で深く理解し合えます',elem_saeng:'五行相生で互いの気を高め合います',elem_geuk:'五行相克ですが強いケミが生まれます',elem_neutral:'異なる五行がバランスを保ちます',
+    intro_hi:'🐱 ニャンビョリが二人のエネルギーを分析しました！\n\n',outro:'✨ どんな相性も、理解しようとする心が一番大切です！'},
+  en:{title:'Birthday Energy Compatibility',sub:'How well do your birth energies match? 🌟',aLabel:'Me (Birthday MBTI Result)',bLabel:"Partner's Info",bBirth:'🎂 Birthdate (6 digits)',bGender:'🌟 Gender',btnStart:'💑 Analyze Compatibility',
+    lvl:['Soulmates 💕','Ultimate Chemistry 💫','Great Match ✨','Compatible 🌟','Challenging Chemistry 💪','Electric Chemistry 🔥'],
+    mbti_good:'Your MBTI energies perfectly complement each other',mbti_care:'Your MBTI energies differ but you can learn from each other',mbti_neutral:'Your MBTI energies blend together naturally',
+    elem_same:'Sharing the same element means deep mutual understanding',elem_saeng:'Your elements nourish each other (Sang-saeng)',elem_geuk:'Your elements clash but create powerful chemistry',elem_neutral:'Different elements balance each other out',
+    intro_hi:"🐱 Nyangbyeoli analyzed both of your energies!\n\n",outro:'✨ Understanding and effort matter more than any compatibility score!'},
+  'zh-TW':{title:'生日能量合婚',sub:'兩人的命格氣場有多契合？🌟',aLabel:'我（生日MBTI分析結果）',bLabel:'對方資訊',bBirth:'🎂 出生日期（6位數）',bGender:'🌟 性別',btnStart:'💑 分析合婚',
+    lvl:['天生緣分 💕','最強契合 💫','相性絕佳 ✨','普通合婚 🌟','充滿挑戰 💪','電力十足 🔥'],
+    mbti_good:'MBTI能量完美互補',mbti_care:'MBTI能量有差異，但可以互相學習',mbti_neutral:'MBTI能量自然融合',
+    elem_same:'同一五行氣場，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相剋，但產生強烈化學反應',elem_neutral:'不同五行取得平衡',
+    intro_hi:'🐱 冥星喵分析了兩位的能量！\n\n',outro:'✨ 無論何種合婚，理解對方的心最重要！'},
+  'zh-CN':{title:'生日能量合婚',sub:'两人的命格气场有多契合？🌟',aLabel:'我（生日MBTI分析结果）',bLabel:'对方信息',bBirth:'🎂 出生日期（6位数）',bGender:'🌟 性别',btnStart:'💑 分析合婚',
+    lvl:['天生缘分 💕','最强契合 💫','相性绝佳 ✨','普通合婚 🌟','充满挑战 💪','电力十足 🔥'],
+    mbti_good:'MBTI能量完美互补',mbti_care:'MBTI能量有差异，但可以互相学习',mbti_neutral:'MBTI能量自然融合',
+    elem_same:'同一五行气场，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相克，但产生强烈化学反应',elem_neutral:'不同五行取得平衡',
+    intro_hi:'🐱 冥星喵分析了两位的能量！\n\n',outro:'✨ 无论何种合婚，理解对方的心最重要！'}
+};
+
+// 오행 색상: 기존 ELEM_COLOR 상수 재사용 (위에서 선언됨)
+// 오행 이모지
+const ELEM_EMOJI={'木':'🌿','火':'🔥','土':'🌍','金':'✨','水':'💧'};
+const SANG_SAENG={'木':'火','火':'土','土':'金','金':'水','水':'木'};
+const SANG_GEUK={'木':'土','火':'金','土':'水','金':'木','水':'火'};
+
+let curGgGender='';
+
+function ggTxt(key){const L=GG_TXT[LANG]||GG_TXT['ko'];return L[key]||GG_TXT['ko'][key]||'';}
+
+function setGgGender(g){
+  curGgGender=g;
+  document.getElementById('gg-btn-m').className='gbtn'+(g==='m'?' sel-m':'');
+  document.getElementById('gg-btn-f').className='gbtn'+(g==='f'?' sel-f':'');
+}
+
+function _renderPersonCard(el,type,birthStr,gender){
+  const m=META[type]||META['INFP'];
+  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  const name=m.name?.[lKey]||m.name?.ko||type;
+  const emoji=m.emoji||'🌟';
+  const gStr=gender==='m'?'♂':'♀';
+  const yy=+birthStr.slice(0,2),mm=+birthStr.slice(2,4),dd=+birthStr.slice(4,6);
+  const yr=parseYear(yy);
+  el.innerHTML=`<div class="gg-person-emoji">${emoji}</div><div><div class="gg-person-type">${type}</div><div class="gg-person-name">${name} · ${gStr} · ${yr}.${String(mm).padStart(2,'0')}.${String(dd).padStart(2,'0')}</div></div>`;
+}
+
+function _renderPersonCardFull(el,type,birthStr,gender,elements){
+  const m=META[type]||META['INFP'];
+  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  const name=m.name?.[lKey]||m.name?.ko||type;
+  const emoji=m.emoji||'🌟';
+  const gStr=gender==='m'?'♂':'♀';
+  const yy=+birthStr.slice(0,2),mm2=+birthStr.slice(2,4),dd=+birthStr.slice(4,6);
+  const yr=parseYear(yy);
+  const dom=_getDomElem(elements);
+  const c=ELEM_COLOR[dom]||ELEM_COLOR['土']||'#B68FE8';
+  const em=ELEM_EMOJI[dom]||'✨';
+  el.innerHTML=`<div class="gg-person-emoji">${emoji}</div><div style="flex:1"><div class="gg-person-type">${type}</div><div class="gg-person-name">${name} · ${gStr} · ${yr}.${String(mm2).padStart(2,'0')}.${String(dd).padStart(2,'0')}</div><div class="gg-person-elem"><span class="gg-elem-badge" style="background:${c}22;color:${c};border:1px solid ${c}44">${em} ${dom}</span></div></div>`;
+}
+
+function calcGunghap(typeA, elemA, typeB, elemB){
+  // MBTI 궁합 (0-60)
+  let mbtiScore=30,mbtiKey='mbti_neutral';
+  const aGood=META[typeA]?.good||[];const aCare=META[typeA]?.care||[];
+  const bGood=META[typeB]?.good||[];const bCare=META[typeB]?.care||[];
+  if(aGood.includes(typeB)){mbtiScore=60;mbtiKey='mbti_good';}
+  else if(bGood.includes(typeA)){mbtiScore=55;mbtiKey='mbti_good';}
+  else if(aCare.includes(typeB)||bCare.includes(typeA)){mbtiScore=15;mbtiKey='mbti_care';}
+
+  // 오행 궁합 (0-40)
+  const domA=_getDomElem(elemA),domB=_getDomElem(elemB);
+  let elemScore=20,elemKey='elem_neutral';
+  if(domA===domB){elemScore=25;elemKey='elem_same';}
+  else if(SANG_SAENG[domA]===domB||SANG_SAENG[domB]===domA){elemScore=35;elemKey='elem_saeng';}
+  else if(SANG_GEUK[domA]===domB||SANG_GEUK[domB]===domA){elemScore=10;elemKey='elem_geuk';}
+
+  const raw=mbtiScore+elemScore; // 10~95
+  const pct=Math.round(((raw-10)/85)*100);
+  return {pct,mbtiKey,elemKey,domA,domB};
+}
+
+function showGunghap(){
+  if(!curMType){return;}
+  const lang=GG_TXT[LANG]||GG_TXT['ko'];
+  document.getElementById('gg-title').textContent=lang.title;
+  document.getElementById('gg-sub').textContent=lang.sub;
+  document.getElementById('gg-a-label').textContent=lang.aLabel;
+  document.getElementById('gg-b-label').textContent=lang.bLabel;
+  document.getElementById('gg-b-birth-label').textContent=lang.bBirth;
+  document.getElementById('gg-b-gender-label').textContent=lang.bGender;
+  document.getElementById('gg-btn-label').textContent=lang.btnStart;
+  // Person A 미리보기
+  _renderPersonCardFull(document.getElementById('gg-a-box'),curMType,curBirth,curGender,curElements);
+  // 리셋
+  document.getElementById('gg-result').style.display='none';
+  document.getElementById('gg-bi').value='';
+  document.getElementById('gg-err').style.display='none';
+  setGgGender('');
+  showPage('pg-gunghap');
+}
+window.showGunghap=showGunghap;
+window.setGgGender=setGgGender;
+
+function startGunghap(){
+  const val=document.getElementById('gg-bi').value.replace(/\D/g,'').slice(0,6);
+  if(!validateInput(val)||!curGgGender){
+    document.getElementById('gg-err').style.display='block';return;
+  }
+  document.getElementById('gg-err').style.display='none';
+  try{
+    const yy=+val.slice(0,2),mm=+val.slice(2,4),dd=+val.slice(4,6),yr=parseYear(yy);
+    const natal=getNatal(yr,mm,dd);
+    const mbtiData=computeMBTI_V3(natal,curGgGender,undefined,undefined,undefined,undefined);
+    renderGunghap(val,curGgGender,mbtiData.mbti,mbtiData.elements);
+  }catch(e){console.error(e);}
+}
+window.startGunghap=startGunghap;
+
+function renderGunghap(bBirth,bGender,bType,bElements){
+  const {pct,mbtiKey,elemKey,domA,domB}=calcGunghap(curMType,curElements,bType,bElements);
+  const lang=GG_TXT[LANG]||GG_TXT['ko'];
+
+  // 레벨
+  let lvlIdx=5;
+  if(pct>=90)lvlIdx=0;else if(pct>=75)lvlIdx=1;else if(pct>=60)lvlIdx=2;else if(pct>=45)lvlIdx=3;else if(pct>=30)lvlIdx=4;
+  const lvlEmoji=['💕','💫','✨','🌟','💪','🔥'][lvlIdx];
+  const lvlColor=['#FF8FAB','#B68FE8','#7ED4BC','#FFD166','#FFB89A','#FF6B6B'][lvlIdx];
+
+  // 점수 링
+  const ring=document.getElementById('gg-ring');
+  ring.style.setProperty('--pct',`${pct*3.6}deg`);
+  ring.style.background=`conic-gradient(${lvlColor} ${pct*3.6}deg, var(--g4) 0%)`;
+  document.getElementById('gg-score-num').textContent=pct+'%';
+  document.getElementById('gg-score-tag').textContent=lang.lvl[lvlIdx];
+  document.getElementById('gg-score-emoji').textContent=lvlEmoji;
+
+  // 두 사람 카드
+  _renderPersonCardFull(document.getElementById('gg-res-a'),curMType,curBirth,curGender,curElements);
+  _renderPersonCardFull(document.getElementById('gg-res-b'),bType,bBirth,bGender,bElements);
+
+  // 분석 텍스트
+  const domAem=ELEM_EMOJI[domA]||'✨',domBem=ELEM_EMOJI[domB]||'✨';
+  const mA=META[curMType]||{};const mB=META[bType]||{};
+  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
+  const nameA=mA.name?.[lKey]||mA.name?.ko||curMType;
+  const nameB=mB.name?.[lKey]||mB.name?.ko||bType;
+  const mbtiDesc=lang[mbtiKey];
+  const elemDesc=lang[elemKey];
+  document.getElementById('gg-analysis').innerHTML=
+    `<p>${lang.intro_hi}<strong>${curMType} ${nameA}</strong> × <strong>${bType} ${nameB}</strong></p>`+
+    `<p style="margin-top:10px">🔮 <strong>MBTI 궁합:</strong> ${mbtiDesc}</p>`+
+    `<p style="margin-top:6px">${domAem}${domBem} <strong>오행 궁합:</strong> ${elemDesc}</p>`+
+    `<p style="margin-top:10px;font-size:11px;color:var(--g2)">${lang.outro}</p>`;
+
+  document.getElementById('gg-result').style.display='block';
+  document.getElementById('gg-result').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
 /* 입력 이벤트 */
 document.getElementById('bi').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,6);document.getElementById('err-msg').style.display='none';});
 document.getElementById('bi').addEventListener('keydown',function(e){if(e.key==='Enter')startAnalysis();});
+document.getElementById('gg-bi').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,6);document.getElementById('gg-err').style.display='none';});
+document.getElementById('gg-bi').addEventListener('keydown',function(e){if(e.key==='Enter')startGunghap();});
 
 /* URL hash 자동 로드 */
 (function(){
