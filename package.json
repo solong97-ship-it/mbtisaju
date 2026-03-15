@@ -9,6 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.0.0"
+    "@fontsource/noto-sans-kr": "^5.2.9",
+    "canvas": "^3.2.1",
+    "puppeteer": "^24.39.1",
+    "vite": "^5.0.0",
+    "vite-plugin-pwa": "^1.2.0"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.96"
   }
 }
