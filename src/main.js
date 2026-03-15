@@ -2336,6 +2336,22 @@ const ILUN_MSG = {
       geuk_give:'내 기운이 오늘 에너지를 통제하려는 날이에요. 무리하지 않고 여유를 가지세요 🛡️',
       geuk_recv:'오늘 에너지가 나를 자극하는 날이에요. 집중력이 오르고 결단력이 생겨요 ⚡',
     },
+    study:{
+      same:'익숙한 과목을 복습하며 기본을 다지세요. 오늘 공부한 내용은 오래 기억됩니다 📖',
+      saeng_give:'친구나 스터디에서 설명해주세요. 남에게 가르칠 때 실력이 완성되는 날이에요 📢',
+      saeng_recv:'강의·선생님·참고서를 최대한 활용하세요. 무엇이든 빠르게 흡수되는 날이에요 🧲',
+      geuk_give:'취약 과목·어려운 문제에 정면 도전하세요. 오늘 넘으면 진짜 실력이 됩니다 ⚔️',
+      geuk_recv:'약간의 긴장감이 오히려 집중력을 높여줘요. 모의고사·타이머 학습으로 실전 감각을 키우세요 ⚡',
+    },
+    work:{
+      same:'평소대로 차분히 일하세요. 억지로 변화를 줄 필요 없이 자연스럽게 인정받는 날이에요 🌿',
+      saeng_give:'동료·후배를 돕고 아낌없이 나눠주세요. 베풀수록 신뢰가 쌓이고 팀에서 빛납니다 🌟',
+      saeng_recv:'상사·선배의 조언을 열린 마음으로 받아들이세요. 오늘 받은 피드백이 성장의 발판이 돼요 💫',
+      geuk_give:'주도적으로 의견을 내되 상대 반응도 살피세요. 강하게 밀되 여유를 잃지 마세요 🛡️',
+      geuk_recv:'압박이 와도 흔들리지 마세요. 침착하게 대응하면 오히려 능력을 증명하는 기회가 돼요 💪',
+    },
+    studyTitle:'📚 오늘의 공부 전략',
+    workTitle:'💼 오늘의 처세 전략',
     elem:{'木':'나무의 성장 에너지','火':'불의 열정 에너지','土':'대지의 안정 에너지','金':'쇠의 결단 에너지','水':'물의 지혜 에너지'},
     title:'🌙 오늘의 일운',
     today:'오늘',tip:'📌 이 페이지를 즐겨찾기하면 매일 확인할 수 있어요',
@@ -2349,6 +2365,22 @@ const ILUN_MSG = {
       geuk_give:'あなたの気が今日のエネルギーを制御しようとする日です。無理せず余裕を持って 🛡️',
       geuk_recv:'今日のエネルギーがあなたを刺激する日です。集中力と決断力が上がります ⚡',
     },
+    study:{
+      same:'得意科目を復習して基礎を固めましょう。今日学んだことは長く記憶に残ります 📖',
+      saeng_give:'友達やグループに説明・指導してみましょう。教えることで実力が完成されます 📢',
+      saeng_recv:'授業・先生・参考書をフル活用しましょう。吸収力が最高の日です 🧲',
+      geuk_give:'苦手科目や難問に正面から挑戦しましょう。今日乗り越えれば本物の実力になります ⚔️',
+      geuk_recv:'少しの緊張感が集中力を高めます。模試やタイマー学習で実戦感覚を磨きましょう ⚡',
+    },
+    work:{
+      same:'いつも通りに落ち着いて取り組みましょう。自然体で輝ける日です 🌿',
+      saeng_give:'同僚や後輩を助け、惜しみなく共有しましょう。与えるほど信頼が積まれます 🌟',
+      saeng_recv:'上司や先輩のアドバイスを素直に受け取りましょう。今日のフィードバックが成長の糧になります 💫',
+      geuk_give:'積極的に意見を出しつつ相手の反応も確認しましょう。力強く押しながらも余裕を忘れずに 🛡️',
+      geuk_recv:'プレッシャーが来ても動じないで。冷静に対応すれば能力を証明するチャンスです 💪',
+    },
+    studyTitle:'📚 今日の学習戦略',
+    workTitle:'💼 今日の仕事の処世術',
     elem:{'木':'木の成長エネルギー','火':'火の情熱エネルギー','土':'大地の安定エネルギー','金':'金の決断エネルギー','水':'水の知恵エネルギー'},
     title:'🌙 今日の日運',today:'今日',tip:'📌 このページをブックマークして毎日確認しよう',
     myday:'私の日柱',todayp:'今日の気'
@@ -2361,6 +2393,22 @@ const ILUN_MSG = {
       geuk_give:'Your energy tends to control today\'s element. Take it easy and leave room to breathe 🛡️',
       geuk_recv:'Today\'s energy challenges and sharpens you. Focus and decisiveness are heightened ⚡',
     },
+    study:{
+      same:'Review familiar subjects and reinforce your foundations. What you study today will stick with you 📖',
+      saeng_give:'Explain concepts to friends or your study group. Teaching others is the fastest path to mastery 📢',
+      saeng_recv:'Make the most of classes, textbooks, and mentors. Your ability to absorb is at its peak today 🧲',
+      geuk_give:'Take on your weak subjects and toughest problems head-on. Conquering them today builds real skill ⚔️',
+      geuk_recv:'A little tension sharpens your focus. Try timed practice or a mock exam to build real-test confidence ⚡',
+    },
+    work:{
+      same:'Work at your natural pace. You shine without forcing anything today 🌿',
+      saeng_give:'Help colleagues and share freely. The more you give, the more trust and respect you earn 🌟',
+      saeng_recv:'Welcome feedback from seniors with an open mind. Today\'s insights become tomorrow\'s growth 💫',
+      geuk_give:'Take the lead and voice your ideas, but stay attuned to others\' reactions. Strength with grace 🛡️',
+      geuk_recv:'Stay calm under pressure. Handling challenges with composure is your chance to prove yourself 💪',
+    },
+    studyTitle:'📚 Study Strategy for Today',
+    workTitle:'💼 Workplace Strategy for Today',
     elem:{'木':'Wood growth energy','火':'Fire passion energy','土':'Earth stability energy','金':'Metal decisiveness energy','水':'Water wisdom energy'},
     title:'🌙 Today\'s Daily Fortune',today:'Today',tip:'📌 Bookmark this page to check your daily fortune every day',
     myday:'My Day Pillar',todayp:'Today\'s Energy'
@@ -2373,6 +2421,22 @@ const ILUN_MSG = {
       geuk_give:'您的氣場傾向制約今日能量。放輕鬆，留有餘地 🛡️',
       geuk_recv:'今日能量激勵您。專注力與決斷力提升 ⚡',
     },
+    study:{
+      same:'複習熟悉的科目，鞏固基礎。今天學到的內容將長久留在記憶中 📖',
+      saeng_give:'試著向朋友或讀書會說明、教導。教人的過程中，真正的實力才完整 📢',
+      saeng_recv:'充分利用課堂、老師與教材。今天的吸收力達到最高峰 🧲',
+      geuk_give:'正面迎戰弱點科目與難題。今天克服的，就是真正屬於你的實力 ⚔️',
+      geuk_recv:'些許緊張感能提升專注力。用計時練習或模擬考來磨練實戰感覺 ⚡',
+    },
+    work:{
+      same:'按照平時的節奏沉穩工作。不用刻意改變，自然地發光發熱 🌿',
+      saeng_give:'協助同事與後輩，慷慨地分享。越是付出，信任就越深厚 🌟',
+      saeng_recv:'以開放的心態接受上司或前輩的回饋。今天的建議將成為成長的基石 💫',
+      geuk_give:'主動表達意見，同時觀察對方的反應。強勢推進，但不忘保持從容 🛡️',
+      geuk_recv:'壓力來臨也不要動搖。沉著應對，反而是展現能力的絕佳時機 💪',
+    },
+    studyTitle:'📚 今日學習策略',
+    workTitle:'💼 今日職場處世策略',
     elem:{'木':'木的成長能量','火':'火的熱情能量','土':'土的安定能量','金':'金的決斷能量','水':'水的智慧能量'},
     title:'🌙 今日運勢',today:'今天',tip:'📌 收藏此頁面，每天查看今日運勢',
     myday:'我的日柱',todayp:'今日能量'
@@ -2385,6 +2449,22 @@ const ILUN_MSG = {
       geuk_give:'您的气场倾向制约今日能量。放轻松，留有余地 🛡️',
       geuk_recv:'今日能量激励您。专注力与决断力提升 ⚡',
     },
+    study:{
+      same:'复习熟悉的科目，巩固基础。今天学到的内容将长久留在记忆中 📖',
+      saeng_give:'试着向朋友或学习小组说明、教导。在教人的过程中，真正的实力才完整 📢',
+      saeng_recv:'充分利用课堂、老师与教材。今天的吸收力达到最高峰 🧲',
+      geuk_give:'正面迎战弱点科目与难题。今天克服的，就是真正属于你的实力 ⚔️',
+      geuk_recv:'些许紧张感能提升专注力。用计时练习或模拟考来磨练实战感觉 ⚡',
+    },
+    work:{
+      same:'按照平时的节奏沉稳工作。不用刻意改变，自然地发光发热 🌿',
+      saeng_give:'协助同事与下属，慷慨地分享。越是付出，信任就越深厚 🌟',
+      saeng_recv:'以开放的心态接受上司或前辈的反馈。今天的建议将成为成长的基石 💫',
+      geuk_give:'主动表达意见，同时观察对方的反应。强势推进，但不忘保持从容 🛡️',
+      geuk_recv:'压力来临也不要动摇。沉着应对，反而是展现能力的绝佳时机 💪',
+    },
+    studyTitle:'📚 今日学习策略',
+    workTitle:'💼 今日职场处世策略',
     elem:{'木':'木的成长能量','火':'火的热情能量','土':'土的安定能量','金':'金的决断能量','水':'水的智慧能量'},
     title:'🌙 今日运势',today:'今天',tip:'📌 收藏此页面，每天查看今日运势',
     myday:'我的日柱',todayp:'今日能量'
@@ -2436,6 +2516,8 @@ function renderIlun(natal,targetId='r-ilun'){
   const relColor={'same':'#B68FE8','saeng_give':'#7ED4BC','saeng_recv':'#FFD166','geuk_give':'#FF8FAB','geuk_recv':'#FF6B6B'};
   const c=relColor[rel]||'#B68FE8';
   el.style.display='block';
+  const studyMsg=L.study?.[rel]||L.study?.same||'';
+  const workMsg=L.work?.[rel]||L.work?.same||'';
   el.innerHTML=`<div class="ilun-card">
     <div class="ilun-date">${L.title} · ${L.today} ${dateStr}</div>
     <div class="ilun-stems">
@@ -2452,6 +2534,16 @@ function renderIlun(natal,targetId='r-ilun'){
       </div>
     </div>
     <div class="ilun-msg">${msg}</div>
+    <div class="ilun-strategies">
+      <div class="ilun-strategy">
+        <div class="ilun-strategy-title">${L.studyTitle}</div>
+        <div class="ilun-strategy-msg">${studyMsg}</div>
+      </div>
+      <div class="ilun-strategy">
+        <div class="ilun-strategy-title">${L.workTitle}</div>
+        <div class="ilun-strategy-msg">${workMsg}</div>
+      </div>
+    </div>
     <div class="ilun-bookmark-tip">${L.tip}</div>
   </div>`;
 }
