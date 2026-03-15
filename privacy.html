@@ -350,5 +350,31 @@ function setLang(l){
   setLang(l);
 })();
 </script>
+
+<!-- ═══ 쿠키 동의 배너 ═══ -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(45,27,78,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(182,143,232,0.25);padding:14px 20px">
+  <div style="max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between">
+    <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.82);line-height:1.65;flex:1;min-width:200px">
+      🍪 이 사이트는 서비스 개선 및 맞춤 광고 제공을 위해 쿠키를 사용합니다.
+      <a href="/privacy.html" style="color:#B68FE8;text-decoration:underline">개인정보처리방침</a>
+    </p>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <button onclick="setCookieConsent('declined')" style="padding:8px 16px;border-radius:20px;border:1px solid rgba(182,143,232,0.35);background:transparent;color:rgba(255,255,255,0.6);font-size:12px;cursor:pointer;font-family:inherit">거부</button>
+      <button onclick="setCookieConsent('accepted')" style="padding:8px 20px;border-radius:20px;border:none;background:linear-gradient(135deg,#B68FE8,#FF8FAB);color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit">동의</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var c=localStorage.getItem('cookie_consent');
+  if(!c){document.getElementById('cookie-banner').style.display='block';}
+  else if(c==='declined'){window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=1;}
+})();
+function setCookieConsent(choice){
+  localStorage.setItem('cookie_consent',choice);
+  document.getElementById('cookie-banner').style.display='none';
+  if(choice==='declined'){window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=1;}
+}
+</script>
 </body>
 </html>
