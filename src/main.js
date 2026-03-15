@@ -1904,6 +1904,9 @@ function renderResult(val,gender,dw,ai,aiInsight){
   document.getElementById('r-sections').innerHTML += footerHtml;
 
   renderLuckyColor(curElements);
+  const _natal=getNatal(yr,mm,dd);
+  renderIlun(_natal);
+  renderBookmark();
   showPage('pg-result');
 
   // 애니메이션
@@ -2271,6 +2274,178 @@ const LUCKY_ITEM_PREFIX = {
   ko:'🍀 추천 아이템:',ja:'🍀 おすすめアイテム:',en:'🍀 Lucky items:',
   'zh-TW':'🍀 推薦物品:','zh-CN':'🍀 推荐物品:'
 };
+
+/* ── 오늘의 일운 (日運) ── */
+// 오행별 메시지 (천간 기준)
+const ILUN_MSG = {
+  ko:{
+    rel:{
+      same:'오늘은 나와 같은 기운의 날이에요. 나다운 것에 집중하면 막힘없이 흘러갈 거예요 🌿',
+      saeng_give:'내 기운이 오늘의 에너지를 키워주는 날이에요. 베풀고 이끌수록 더 빛날 거예요 ✨',
+      saeng_recv:'오늘의 에너지가 나를 북돋아 주는 날이에요. 도움을 받아들이고 충전하세요 💫',
+      geuk_give:'내 기운이 오늘 에너지를 통제하려는 날이에요. 무리하지 않고 여유를 가지세요 🛡️',
+      geuk_recv:'오늘 에너지가 나를 자극하는 날이에요. 집중력이 오르고 결단력이 생겨요 ⚡',
+    },
+    elem:{'木':'나무의 성장 에너지','火':'불의 열정 에너지','土':'대지의 안정 에너지','金':'쇠의 결단 에너지','水':'물의 지혜 에너지'},
+    title:'🌙 오늘의 일운',
+    today:'오늘',tip:'📌 이 페이지를 즐겨찾기하면 매일 확인할 수 있어요',
+    myday:'내 일주',todayp:'오늘 기운'
+  },
+  ja:{
+    rel:{
+      same:'今日はあなたと同じ気の日です。自分らしさに集中すれば、流れが良くなります 🌿',
+      saeng_give:'あなたの気が今日のエネルギーを育てる日です。与え導くほど輝きます ✨',
+      saeng_recv:'今日のエネルギーがあなたを高める日です。サポートを受け入れ、充電しましょう 💫',
+      geuk_give:'あなたの気が今日のエネルギーを制御しようとする日です。無理せず余裕を持って 🛡️',
+      geuk_recv:'今日のエネルギーがあなたを刺激する日です。集中力と決断力が上がります ⚡',
+    },
+    elem:{'木':'木の成長エネルギー','火':'火の情熱エネルギー','土':'大地の安定エネルギー','金':'金の決断エネルギー','水':'水の知恵エネルギー'},
+    title:'🌙 今日の日運',today:'今日',tip:'📌 このページをブックマークして毎日確認しよう',
+    myday:'私の日柱',todayp:'今日の気'
+  },
+  en:{
+    rel:{
+      same:'Today shares your element. Stay true to yourself and things will flow naturally 🌿',
+      saeng_give:'Your energy nourishes today\'s element. The more you give and lead, the brighter you shine ✨',
+      saeng_recv:'Today\'s energy boosts and recharges you. Accept support and refuel 💫',
+      geuk_give:'Your energy tends to control today\'s element. Take it easy and leave room to breathe 🛡️',
+      geuk_recv:'Today\'s energy challenges and sharpens you. Focus and decisiveness are heightened ⚡',
+    },
+    elem:{'木':'Wood growth energy','火':'Fire passion energy','土':'Earth stability energy','金':'Metal decisiveness energy','水':'Water wisdom energy'},
+    title:'🌙 Today\'s Daily Fortune',today:'Today',tip:'📌 Bookmark this page to check your daily fortune every day',
+    myday:'My Day Pillar',todayp:'Today\'s Energy'
+  },
+  'zh-TW':{
+    rel:{
+      same:'今天與您的氣場相同。專注於真實的自我，一切將順暢流動 🌿',
+      saeng_give:'您的氣場滋養今日能量。越是給予引領，越是閃耀 ✨',
+      saeng_recv:'今日能量助益您。接受支持，充電滿電 💫',
+      geuk_give:'您的氣場傾向制約今日能量。放輕鬆，留有餘地 🛡️',
+      geuk_recv:'今日能量激勵您。專注力與決斷力提升 ⚡',
+    },
+    elem:{'木':'木的成長能量','火':'火的熱情能量','土':'土的安定能量','金':'金的決斷能量','水':'水的智慧能量'},
+    title:'🌙 今日運勢',today:'今天',tip:'📌 收藏此頁面，每天查看今日運勢',
+    myday:'我的日柱',todayp:'今日能量'
+  },
+  'zh-CN':{
+    rel:{
+      same:'今天与您的气场相同。专注于真实的自我，一切将顺畅流动 🌿',
+      saeng_give:'您的气场滋养今日能量。越是给予引领，越是闪耀 ✨',
+      saeng_recv:'今日能量助益您。接受支持，充电满电 💫',
+      geuk_give:'您的气场倾向制约今日能量。放轻松，留有余地 🛡️',
+      geuk_recv:'今日能量激励您。专注力与决断力提升 ⚡',
+    },
+    elem:{'木':'木的成长能量','火':'火的热情能量','土':'土的安定能量','金':'金的决断能量','水':'水的智慧能量'},
+    title:'🌙 今日运势',today:'今天',tip:'📌 收藏此页面，每天查看今日运势',
+    myday:'我的日柱',todayp:'今日能量'
+  }
+};
+
+// 천간 → 오행 매핑
+const STEM_ELEM={'甲':'木','乙':'木','丙':'火','丁':'火','戊':'土','己':'土','庚':'金','辛':'金','壬':'水','癸':'水'};
+// 지지 → 오행
+const BRANCH_ELEM={'子':'水','丑':'土','寅':'木','卯':'木','辰':'土','巳':'火','午':'火','未':'土','申':'金','酉':'金','戌':'土','亥':'水'};
+
+function getTodayPillar(){
+  // 갑자(甲子) 기준일: 1900-01-31 = JD 2415080
+  const JD_BASE=2415080, STEM_BASE=0, BRANCH_BASE=0;
+  const now=new Date();
+  const y=now.getFullYear(),m=now.getMonth()+1,d=now.getDate();
+  const a=Math.floor((14-m)/12), yr=y+4800-a, mn=m+12*a-3;
+  const jd=d+Math.floor((153*mn+2)/5)+365*yr+Math.floor(yr/4)-Math.floor(yr/100)+Math.floor(yr/400)-32045;
+  const diff=jd-JD_BASE;
+  const sIdx=((diff%10)+10)%10;
+  const bIdx=((diff%12)+12)%12;
+  const elem=STEM_ELEM[SE[sIdx]]||'土';
+  const bElem=BRANCH_ELEM[BE[bIdx]]||'土';
+  return {stem:SE[sIdx],branch:BE[bIdx],stemIdx:sIdx,branchIdx:bIdx,elem,bElem};
+}
+
+function getRelation(myElem, todayElem){
+  if(myElem===todayElem) return 'same';
+  if(SANG_SAENG[myElem]===todayElem) return 'saeng_give';
+  if(SANG_SAENG[todayElem]===myElem) return 'saeng_recv';
+  if(SANG_GEUK[myElem]===todayElem) return 'geuk_give';
+  if(SANG_GEUK[todayElem]===myElem) return 'geuk_recv';
+  return 'same';
+}
+
+function renderIlun(natal){
+  const el=document.getElementById('r-ilun');
+  if(!el||!natal)return;
+  const today=getTodayPillar();
+  const myDayStem=SE[natal.dS]||'甲';
+  const myDayBranch=BE[natal.dB]||'子';
+  const myElem=STEM_ELEM[myDayStem]||'土';
+  const todayElem=today.elem;
+  const rel=getRelation(myElem,todayElem);
+  const L=ILUN_MSG[LANG]||ILUN_MSG['ko'];
+  const msg=L.rel[rel]||L.rel['same'];
+  const now=new Date();
+  const dateStr=`${now.getMonth()+1}/${now.getDate()} (${['일','월','화','수','목','금','토'][now.getDay()]})`;
+  const relColor={'same':'#B68FE8','saeng_give':'#7ED4BC','saeng_recv':'#FFD166','geuk_give':'#FF8FAB','geuk_recv':'#FF6B6B'};
+  const c=relColor[rel]||'#B68FE8';
+  el.style.display='block';
+  el.innerHTML=`<div class="ilun-card">
+    <div class="ilun-date">${L.title} · ${L.today} ${dateStr}</div>
+    <div class="ilun-stems">
+      <div class="ilun-stem-box">
+        <div class="ilun-stem-label">${L.myday}</div>
+        <div class="ilun-stem-val">${myDayStem}${myDayBranch}</div>
+        <div class="ilun-stem-elem">${ELEM_EMOJI[myElem]||'✨'} ${myElem}</div>
+      </div>
+      <div style="display:flex;align-items:center;color:rgba(255,255,255,.4);font-size:20px">↔</div>
+      <div class="ilun-stem-box" style="border-color:${c}55;background:${c}22">
+        <div class="ilun-stem-label">${L.todayp}</div>
+        <div class="ilun-stem-val">${today.stem}${today.branch}</div>
+        <div class="ilun-stem-elem">${ELEM_EMOJI[todayElem]||'✨'} ${todayElem}</div>
+      </div>
+    </div>
+    <div class="ilun-msg">${msg}</div>
+    <div class="ilun-bookmark-tip">${L.tip}</div>
+  </div>`;
+}
+
+/* ── 북마크 유도 ── */
+const BOOKMARK_TXT={
+  ko:{text:'🔖 이 링크를 저장하면 다음에 바로 결과를 볼 수 있어요!',btn:'링크 복사'},
+  ja:{text:'🔖 このリンクを保存すれば、次回すぐに結果を見られます！',btn:'リンクをコピー'},
+  en:{text:'🔖 Save this link to jump straight to your results next time!',btn:'Copy link'},
+  'zh-TW':{text:'🔖 儲存此連結，下次可直接查看結果！',btn:'複製連結'},
+  'zh-CN':{text:'🔖 保存此链接，下次可直接查看结果！',btn:'复制链接'}
+};
+
+function renderBookmark(){
+  const el=document.getElementById('r-bookmark');
+  if(!el)return;
+  const url=location.href.split('#')[0]+'#birth='+curBirth+'&g='+curGender;
+  const L=BOOKMARK_TXT[LANG]||BOOKMARK_TXT['ko'];
+  el.style.display='block';
+  el.innerHTML=`<div class="bookmark-card">
+    <span style="font-size:20px">🔖</span>
+    <div class="bookmark-card-text">${L.text}<br><span style="font-size:10px;color:var(--g3);word-break:break-all">${url}</span></div>
+    <button class="bookmark-copy-btn" onclick="navigator.clipboard.writeText('${url}').then(()=>showToast('🔗 링크 복사 완료!'))">${L.btn}</button>
+  </div>`;
+}
+
+/* ── PWA 설치 ── */
+let _deferredInstall=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();_deferredInstall=e;
+  const banner=document.getElementById('pwa-banner');
+  if(banner) banner.style.display='block';
+});
+window.addEventListener('appinstalled',()=>{
+  const banner=document.getElementById('pwa-banner');
+  if(banner) banner.style.display='none';
+  _deferredInstall=null;
+});
+function installPWA(){
+  if(!_deferredInstall)return;
+  _deferredInstall.prompt();
+  _deferredInstall.userChoice.then(()=>{_deferredInstall=null;});
+}
+window.installPWA=installPWA;
 
 function renderLuckyColor(elements){
   const el=document.getElementById('r-lucky');

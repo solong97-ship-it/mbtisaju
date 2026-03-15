@@ -265,6 +265,24 @@ h1,h2,h3,.logo,.mbti-big{font-family:'Jua','Gowun Dodum',sans-serif}
 .mt-6{margin-top:6px}.mt-10{margin-top:10px}.mt-14{margin-top:14px}
 .tc{text-align:center}
 
+/* ── 오늘의 일운 ── */
+.ilun-card{border-radius:var(--r-lg);padding:14px 16px;background:linear-gradient(135deg,rgba(45,27,78,.85),rgba(61,42,110,.9));color:#fff;position:relative;overflow:hidden}
+.ilun-card::after{content:'🌙';position:absolute;right:14px;top:10px;font-size:28px;opacity:.25}
+.ilun-date{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.04em;margin-bottom:6px}
+.ilun-title{font-size:13px;font-weight:700;color:#E0D0FF;margin-bottom:8px}
+.ilun-stems{display:flex;gap:8px;margin-bottom:10px}
+.ilun-stem-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:6px 12px;text-align:center;flex:1}
+.ilun-stem-label{font-size:9px;color:rgba(255,255,255,.5);margin-bottom:3px}
+.ilun-stem-val{font-size:18px;font-weight:700;color:#fff}
+.ilun-stem-elem{font-size:10px;margin-top:2px}
+.ilun-msg{font-size:12px;color:rgba(255,255,255,.82);line-height:1.7;padding:10px 12px;background:rgba(255,255,255,.07);border-radius:10px}
+.ilun-bookmark-tip{margin-top:10px;font-size:10px;color:rgba(255,255,255,.45);text-align:center}
+
+/* ── 북마크 유도 ── */
+.bookmark-card{border-radius:var(--r-md);padding:12px 14px;background:var(--g4);border:1.5px dashed var(--border);display:flex;align-items:center;gap:10px}
+.bookmark-card-text{flex:1;font-size:11px;color:var(--g2);line-height:1.55}
+.bookmark-copy-btn{background:var(--lav);color:#fff;border:none;border-radius:16px;padding:7px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0}
+
 /* ── 오늘의 럭키 컬러 ── */
 .lucky-card{border-radius:var(--r-lg);padding:14px 16px;border:1.5px solid transparent;position:relative;overflow:hidden}
 .lucky-card::before{content:'';position:absolute;inset:0;opacity:.07;background:var(--lucky-color,var(--lav))}
