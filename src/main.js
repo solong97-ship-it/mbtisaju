@@ -1972,6 +1972,10 @@ function saveImage(){
   setTimeout(()=>document.getElementById('card-nick').focus(),300);
 }
 function closePhotoModal(){document.getElementById('photo-modal').classList.remove('open');}
+function closeImgPreview(){
+  document.getElementById('img-preview-modal').classList.remove('open');
+  document.getElementById('img-preview').src='';
+}
 
 /* 포토카드 생성 */
 async function generatePhotoCard(){
@@ -2128,23 +2132,27 @@ async function _generatePhotoCard(){
   const shareUrl=location.href.split('#')[0]+'#birth='+curBirth+'&g='+curGender;
   try{await navigator.clipboard.writeText(shareUrl);}catch(e){}
 
-  cv.toBlob(blob=>{
-    if(!blob){showToast('이미지 생성 실패. 다시 시도해주세요.');return;}
-    const url=URL.createObjectURL(blob);
-    // iOS Safari: blob URL 다운로드 미지원 → 새 탭에서 열어 길게 눌러 저장 안내
-    const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
-    if(isIOS){
-      window.open(url,'_blank');
-      showToast('이미지를 길게 눌러 저장해주세요 📷');
-      setTimeout(()=>URL.revokeObjectURL(url),5000);
-    }else{
-      const a=document.createElement('a');
-      a.href=url;a.download='birthmbi_'+curMType+'_'+nick+'.jpg';
-      document.body.appendChild(a);a.click();document.body.removeChild(a);
-      setTimeout(()=>URL.revokeObjectURL(url),1000);
-      showToast(t('pcToast'));
-    }
-  },'image/jpeg',.93);
+  // dataURL로 변환해 미리보기 모달에 표시 (인앱브라우저 팝업차단 우회)
+  const dataUrl=cv.toDataURL('image/jpeg',0.93);
+  const fname='birthmbi_'+curMType+'_'+nick+'.jpg';
+  const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const previewImg=document.getElementById('img-preview');
+  const guideEl=document.getElementById('img-preview-guide');
+  const dlBtn=document.getElementById('img-download-btn');
+
+  previewImg.src=dataUrl;
+  if(isMobile){
+    guideEl.textContent='이미지를 꾹 눌러서 저장하세요 📷';
+    dlBtn.style.display='none';
+  }else{
+    guideEl.textContent='아래 다운로드 버튼을 누르거나 이미지를 우클릭해 저장하세요.';
+    dlBtn.href=dataUrl;
+    dlBtn.download=fname;
+    dlBtn.style.display='block';
+  }
+  document.getElementById('img-preview-modal').classList.add('open');
+  showToast(t('pcToast'));
 }
 
 /* 공유 */
@@ -2177,6 +2185,7 @@ window.share=share;
 window.reset=reset;
 window.saveImage=saveImage;
 window.closePhotoModal=closePhotoModal;
+window.closeImgPreview=closeImgPreview;
 window.generatePhotoCard=generatePhotoCard;
 window.toggleSection=toggleSection;
 

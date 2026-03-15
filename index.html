@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://sajumbti-app.web.app/">
 <meta property="og:title" content="생일MBTI — 내 생일에 새겨진 진짜 기질은?">
 <meta property="og:description" content="사주 원국 × MBTI 융합 분석. 생년월일·성별만으로 타고난 성격 유형을 무료로 확인하세요. 앱 설치·로그인·결제 없이 바로 시작.">
-<meta property="og:image" content="https://sajumbti-app.web.app/og-image.png">
+<meta property="og:image" content="https://sajumbti-app.web.app/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="생일MBTI — 사주 원국 기반 MBTI 무료 분석">
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="생일MBTI — 내 생일에 새겨진 진짜 기질은?">
 <meta name="twitter:description" content="사주 × MBTI 융합 분석. 생년월일만으로 타고난 성격 유형 무료 확인. 앱 설치·로그인 불필요.">
-<meta name="twitter:image" content="https://sajumbti-app.web.app/og-image.png">
+<meta name="twitter:image" content="https://sajumbti-app.web.app/og-image.png?v=2">
 <!-- Favicon -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <!-- Google tag (gtag.js) — GA4 Measurement ID: G-X5127NJB52 -->
@@ -323,6 +323,21 @@
 </div>
 
 <!-- ═══ 포토카드 모달 ═══ -->
+<!-- 이미지 저장 미리보기 모달 -->
+<div class="pc-overlay" id="img-preview-modal" onclick="if(event.target===this)closeImgPreview()" style="z-index:2000">
+  <div class="pc-card" style="align-items:center;gap:14px;max-width:360px">
+    <div class="pc-title" style="font-size:16px">📷 이미지 저장</div>
+    <img id="img-preview" src="" alt="포토카드" style="width:100%;border-radius:12px;display:block">
+    <p id="img-preview-guide" style="font-size:13px;color:rgba(255,255,255,0.65);text-align:center;line-height:1.6;margin:0"></p>
+    <div style="display:flex;gap:10px;width:100%">
+      <button class="pc-cancel" onclick="closeImgPreview()" style="flex:1">닫기</button>
+      <a id="img-download-btn" download="" style="flex:2;display:none">
+        <button class="pc-generate" style="width:100%">⬇️ 다운로드</button>
+      </a>
+    </div>
+  </div>
+</div>
+
 <div class="pc-overlay" id="photo-modal" onclick="if(event.target===this)closePhotoModal()">
   <div class="pc-card">
     <div class="pc-header">
