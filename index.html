@@ -139,9 +139,6 @@
   <!-- 오늘의 일운 -->
   <div id="wc-ilun" style="margin:0 16px"></div>
 
-  <!-- 오늘의 럭키 컬러 -->
-  <div id="wc-lucky" style="margin:10px 16px 0"></div>
-
   <!-- CTA 버튼 -->
   <button class="btn-primary" id="wc-full-btn" onclick="showFullResult()" style="margin-top:16px">✨ 오늘 전체 운세 보기</button>
   <button class="btn-secondary" id="wc-reset-btn" onclick="clearSaved()" style="margin-top:10px">← 다른 생일 분석하기</button>
@@ -317,9 +314,6 @@
   <!-- 오늘의 일운 -->
   <div id="r-ilun" style="margin:10px 16px 0;display:none"></div>
 
-  <!-- 오늘의 럭키 컬러 -->
-  <div id="r-lucky" style="margin:10px 16px 0;display:none"></div>
-
   <!-- 특이사항 (계절쏠림/결핍) -->
   <div id="r-special" style="margin:8px 16px 0;display:none"></div>
 
@@ -366,7 +360,7 @@
 <div class="page" id="pg-gunghap">
   <div class="res-topbar">
     <div class="btn-back" onclick="showPage('pg-result')">←</div>
-    <span class="logo" style="font-size:16px">생일 궁합</span>
+    <span class="logo" style="font-size:16px" id="gg-topbar-title">생일 궁합</span>
     <span style="width:60px"></span>
   </div>
 
@@ -392,7 +386,7 @@
     <div class="seg-labels"><span class="seg-label">YY 년</span><span class="seg-label">MM 월</span><span class="seg-label">DD 일</span></div>
     <label class="inp-label mt-14" id="gg-b-gender-label">🌟 성별</label>
     <div class="gender-row">
-      <button class="gbtn" id="gg-btn-m" onclick="setGgGender('m')" id="gg-b-gender-label">♂ 남자</button>
+      <button class="gbtn" id="gg-btn-m" onclick="setGgGender('m')">♂ 남자</button>
       <button class="gbtn" id="gg-btn-f" onclick="setGgGender('f')">♀ 여자</button>
     </div>
     <div class="err-msg" id="gg-err">⚠️ 상대방 생년월일 6자리와 성별을 입력해 주세요</div>
@@ -406,7 +400,7 @@
     <div class="gg-score-card">
       <div class="gg-score-ring" id="gg-ring">
         <div class="gg-score-num" id="gg-score-num"></div>
-        <div class="gg-score-label">궁합</div>
+        <div class="gg-score-label" id="gg-score-label">궁합</div>
       </div>
       <div class="gg-score-tag" id="gg-score-tag"></div>
       <div class="gg-score-emoji" id="gg-score-emoji"></div>
@@ -423,7 +417,7 @@
     <div class="gg-analysis" id="gg-analysis"></div>
 
     <!-- 재분석 -->
-    <button class="btn-secondary" style="margin-top:12px" onclick="document.getElementById('gg-result').style.display='none';document.getElementById('gg-bi').value='';setGgGender('')">🔄 다른 사람 분석</button>
+    <button class="btn-secondary" id="gg-reset-btn" style="margin-top:12px" onclick="document.getElementById('gg-result').style.display='none';document.getElementById('gg-bi').value='';setGgGender('')">🔄 다른 사람 분석</button>
   </div>
 
   <div style="height:40px"></div>

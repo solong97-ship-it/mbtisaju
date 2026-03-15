@@ -1905,7 +1905,6 @@ function renderResult(val,gender,dw,ai,aiInsight){
   const footerHtml = `<div style="text-align:center;padding:20px 16px;font-size:9px;color:var(--g3);line-height:1.5">${t('copyright')}</div>`;
   document.getElementById('r-sections').innerHTML += footerHtml;
 
-  renderLuckyColor(curElements);
   const _natal=getNatal(yr,mm,dd);
   renderIlun(_natal);
   renderBookmark();
@@ -2233,15 +2232,15 @@ window.toggleSection=toggleSection;
    ╚══════════════════════════════════════════╝ */
 const WC_I18N={
   ko:{greet:'반가워, {t}야! 🌙',full:'✨ 오늘 전체 운세 보기',reset:'← 다른 생일 분석하기',
-      ilunTitle:'오늘의 일운',luckyTitle:'럭키 컬러',dayOf:'일·월·화·수·목·금·토'},
+      ilunTitle:'오늘의 일운',dayOf:'일·월·화·수·목·금·토'},
   ja:{greet:'おかえり、{t}！ 🌙',full:'✨ 今日の運勢を全部見る',reset:'← 別の生年月日を分析',
-      ilunTitle:'今日の日運',luckyTitle:'ラッキーカラー',dayOf:'日·月·火·水·木·金·土'},
+      ilunTitle:'今日の日運',dayOf:'日·月·火·水·木·金·土'},
   en:{greet:'Welcome back, {t}! 🌙',full:'✨ See My Full Daily Fortune',reset:'← Analyze a different birthday',
-      ilunTitle:"Today's Fortune",luckyTitle:'Lucky Color',dayOf:'Sun·Mon·Tue·Wed·Thu·Fri·Sat'},
+      ilunTitle:"Today's Fortune",dayOf:'Sun·Mon·Tue·Wed·Thu·Fri·Sat'},
   'zh-TW':{greet:'歡迎回來，{t}！ 🌙',full:'✨ 查看今日完整運勢',reset:'← 分析其他生日',
-      ilunTitle:'今日運勢',luckyTitle:'幸運色',dayOf:'日·一·二·三·四·五·六'},
+      ilunTitle:'今日運勢',dayOf:'日·一·二·三·四·五·六'},
   'zh-CN':{greet:'欢迎回来，{t}！ 🌙',full:'✨ 查看今日完整运势',reset:'← 分析其他生日',
-      ilunTitle:'今日运势',luckyTitle:'幸运色',dayOf:'日·一·二·三·四·五·六'}
+      ilunTitle:'今日运势',dayOf:'日·一·二·三·四·五·六'}
 };
 
 function saveLastResult(){
@@ -2289,11 +2288,6 @@ function showWelcomePage(){
   const yy=+curBirth.slice(0,2),mm2=+curBirth.slice(2,4),dd=+curBirth.slice(4,6),yr=parseYear(yy);
   const natal=getNatal(yr,mm2,dd);
   renderIlun(natal,'wc-ilun');
-  renderLuckyColor(curElements,'wc-lucky');
-
-  // 럭키컬러 bookmark tip 숨기기 (welcome에서는 불필요)
-  document.querySelectorAll('#wc-lucky .lucky-bookmark').forEach(el=>el.style.display='none');
-
   showPage('pg-welcome');
 }
 
@@ -2330,51 +2324,6 @@ window.clearSaved=clearSaved;
 /* ╔══════════════════════════════════════════╗
    ║  궁합 (Compatibility) Feature            ║
    ╚══════════════════════════════════════════╝ */
-
-/* ── 오늘의 럭키 컬러 ── */
-const LUCKY_DATA = {
-  '木':{
-    colors:['#7ED4BC','#6ABF8E','#4CAF7D','#88D8B0','#52C09A'],
-    colorNames:{ko:['민트 그린','에메랄드','새싹 초록','세이지 그린','청록'],ja:['ミントグリーン','エメラルド','新緑グリーン','セージグリーン','青緑'],en:['Mint Green','Emerald','Sprout Green','Sage Green','Teal'],zh:['薄荷綠','翡翠綠','嫩草綠','鼠尾草綠','青綠']},
-    items:{ko:['식물 키우기','숲길 산책','친환경 제품','나무 소품','허브티'],ja:['植物を育てる','森の散歩','エコ製品','木製小物','ハーブティー'],en:['Grow a plant','Forest walk','Eco products','Wood accessories','Herbal tea'],zh:['種植植物','森林散步','環保產品','木製小物','花草茶']}
-  },
-  '火':{
-    colors:['#FF8FAB','#FF6B8A','#FFB5C8','#FF7C7C','#FF5E8A'],
-    colorNames:{ko:['코랄 핑크','딥 로즈','베이비 핑크','레드 오렌지','핫 핑크'],ja:['コーラルピンク','ディープローズ','ベイビーピンク','レッドオレンジ','ホットピンク'],en:['Coral Pink','Deep Rose','Baby Pink','Red Orange','Hot Pink'],zh:['珊瑚粉','玫瑰紅','嬰兒粉','橘紅','亮粉']},
-    items:{ko:['빨간 음식 먹기','캔들 명상','열정적인 대화','새 도전 시작','운동하기'],ja:['赤い食べ物','キャンドル瞑想','情熱的な会話','新しい挑戦','運動する'],en:['Red foods','Candle meditation','Passionate chat','Start something new','Exercise'],zh:['吃紅色食物','蠟燭冥想','熱情對話','開始新挑戰','運動']}
-  },
-  '土':{
-    colors:['#FFD166','#E8B84B','#F5C842','#D4A843','#FFCC44'],
-    colorNames:{ko:['골드 옐로','허니 옐로','선샤인 옐로','앰버 골드','레몬 옐로'],ja:['ゴールドイエロー','ハニーイエロー','サンシャインイエロー','アンバーゴールド','レモンイエロー'],en:['Gold Yellow','Honey Yellow','Sunshine Yellow','Amber Gold','Lemon Yellow'],zh:['金黃色','蜂蜜黃','陽光黃','琥珀金','檸檬黃']},
-    items:{ko:['노란 과일 먹기','새 노트 정리','집 청소하기','따뜻한 차 마시기','감사 일기'],ja:['黄色い果物','ノート整理','部屋の掃除','温かいお茶','感謝日記'],en:['Yellow fruits','Organize notes','Clean your space','Warm tea','Gratitude journal'],zh:['吃黃色水果','整理筆記','打掃房間','喝溫茶','感恩日記']}
-  },
-  '金':{
-    colors:['#C0C8D4','#A8B4C4','#D4DCE8','#B8C4D4','#9BA8BA'],
-    colorNames:{ko:['실버 그레이','스틸 블루','아이스 화이트','페일 블루','문라이트'],ja:['シルバーグレー','スティールブルー','アイスホワイト','ペールブルー','ムーンライト'],en:['Silver Gray','Steel Blue','Ice White','Pale Blue','Moonlight'],zh:['銀灰色','鋼鐵藍','冰白色','淡藍色','月光色']},
-    items:{ko:['금속 소품 착용','조용한 독서','깨끗한 물 마시기','명상하기','정리 정돈'],ja:['金属アクセ','静かな読書','きれいな水','瞑想する','整理整頓'],en:['Metal accessories','Quiet reading','Pure water','Meditate','Declutter'],zh:['佩戴金屬飾品','安靜閱讀','喝純淨水','冥想','整理物品']}
-  },
-  '水':{
-    colors:['#7EB8E8','#5FA3D4','#93C9F0','#4A8AC4','#6DB8E8'],
-    colorNames:{ko:['스카이 블루','오션 블루','아쿠아 블루','딥 블루','세룰리안'],ja:['スカイブルー','オーシャンブルー','アクアブルー','ディープブルー','セルリアン'],en:['Sky Blue','Ocean Blue','Aqua Blue','Deep Blue','Cerulean'],zh:['天空藍','海洋藍','水藍色','深藍色','蔚藍']},
-    items:{ko:['물 많이 마시기','목욕 또는 수영','음악 감상','흘러가는 대로 살기','직관 따르기'],ja:['水をたくさん飲む','お風呂か水泳','音楽を聴く','流れに身を任せる','直感に従う'],en:['Drink lots of water','Bath or swim','Listen to music','Go with the flow','Trust your gut'],zh:['多喝水','泡澡或游泳','聆聽音樂','順其自然','跟隨直覺']}
-  }
-};
-
-const LUCKY_BOOKMARK = {
-  ko:'⭐ 이 페이지를 즐겨찾기 해두고 매일 아침 나의 럭키 기운을 확인하세요!',
-  ja:'⭐ このページをブックマークして、毎朝あなたのラッキーエネルギーを確認しよう！',
-  en:'⭐ Bookmark this page and check your daily lucky energy every morning!',
-  'zh-TW':'⭐ 收藏此頁面，每天早上查看你的幸運能量！',
-  'zh-CN':'⭐ 收藏此页面，每天早上查看你的幸运能量！'
-};
-const LUCKY_TITLE = {
-  ko:'✨ 오늘의 럭키 컬러',ja:'✨ 今日のラッキーカラー',en:'✨ Today\'s Lucky Color',
-  'zh-TW':'✨ 今日幸運色','zh-CN':'✨ 今日幸运色'
-};
-const LUCKY_ITEM_PREFIX = {
-  ko:'🍀 추천 아이템:',ja:'🍀 おすすめアイテム:',en:'🍀 Lucky items:',
-  'zh-TW':'🍀 推薦物品:','zh-CN':'🍀 推荐物品:'
-};
 
 /* ── 오늘의 일운 (日運) ── */
 // 오행별 메시지 (천간 기준)
@@ -2448,8 +2397,8 @@ const STEM_ELEM={'甲':'木','乙':'木','丙':'火','丁':'火','戊':'土','�
 const BRANCH_ELEM={'子':'水','丑':'土','寅':'木','卯':'木','辰':'土','巳':'火','午':'火','未':'土','申':'金','酉':'金','戌':'土','亥':'水'};
 
 function getTodayPillar(){
-  // 갑자(甲子) 기준일: 1900-01-31 = JD 2415080
-  const JD_BASE=2415080, STEM_BASE=0, BRANCH_BASE=0;
+  // 갑자(甲子) 기준일: 1899-12-22 = JD 2415011 (getNatal 기준: 1900-01-01 = 甲戌 = position 10)
+  const JD_BASE=2415011, STEM_BASE=0, BRANCH_BASE=0;
   const now=new Date();
   const y=now.getFullYear(),m=now.getMonth()+1,d=now.getDate();
   const a=Math.floor((14-m)/12), yr=y+4800-a, mn=m+12*a-3;
@@ -2548,60 +2497,33 @@ function installPWA(){
 }
 window.installPWA=installPWA;
 
-function renderLuckyColor(elements,targetId='r-lucky'){
-  const el=document.getElementById(targetId);
-  if(!el)return;
-  const dom=_getDomElem(elements);
-  const ld=LUCKY_DATA[dom];
-  if(!ld){el.style.display='none';return;}
-  const now=new Date();
-  const dayIdx=(now.getFullYear()*366+now.getMonth()*31+now.getDate())%5;
-  const lKey=LANG.startsWith('ja')?'ja':LANG.startsWith('zh')?'zh':LANG.startsWith('ko')?'ko':'en';
-  const lKeyFull=LANG;
-  const color=ld.colors[dayIdx]||ELEM_COLOR[dom];
-  const colorName=(ld.colorNames[lKey]||ld.colorNames['ko'])[dayIdx];
-  const items=ld.items[lKey]||ld.items['ko'];
-  const itemStr=items.slice(0,3).join(' · ');
-  const dateStr=`${now.getMonth()+1}/${now.getDate()}`;
-  const title=LUCKY_TITLE[lKeyFull]||LUCKY_TITLE['ko'];
-  const itemPfx=LUCKY_ITEM_PREFIX[lKeyFull]||LUCKY_ITEM_PREFIX['ko'];
-  const bookmark=LUCKY_BOOKMARK[lKeyFull]||LUCKY_BOOKMARK['ko'];
-  el.style.display='block';
-  el.innerHTML=`<div class="lucky-card" style="--lucky-color:${color};border-color:${color}44;background:${color}0D">
-    <div class="lucky-date">${title} (${dateStr})</div>
-    <div class="lucky-main">
-      <div class="lucky-swatch" style="background:${color}"></div>
-      <div class="lucky-text">
-        <div class="lucky-headline">${ELEM_EMOJI[dom]} ${colorName}</div>
-        <div class="lucky-items">${itemPfx} ${itemStr}</div>
-      </div>
-    </div>
-    <div class="lucky-bookmark">${bookmark}</div>
-  </div>`;
-}
-
 const GG_TXT = {
-  ko:{title:'생일 에너지 궁합',sub:'두 사람의 사주 기운이 얼마나 맞을까? 🌟',aLabel:'나 (생일MBTI 분석 결과)',bLabel:'상대방 정보',bBirth:'🎂 생년월일 6자리',bGender:'🌟 성별',btnStart:'💑 궁합 분석하기',
+  ko:{title:'생일 에너지 궁합',topTitle:'생일 궁합',sub:'두 사람의 사주 기운이 얼마나 맞을까? 🌟',aLabel:'나 (생일MBTI 분석 결과)',bLabel:'상대방 정보',bBirth:'🎂 생년월일 6자리',bGender:'🌟 성별',btnStart:'💑 궁합 분석하기',
+    genderM:'♂ 남자',genderF:'♀ 여자',errMsg:'⚠️ 상대방 생년월일 6자리와 성별을 입력해 주세요',scoreLabel:'궁합',resetBtn:'🔄 다른 사람 분석',mbtiLabel:'MBTI 궁합',elemLabel:'오행 궁합',
     lvl:['천생연분 💕','최강 케미 💫','잘 맞는 궁합 ✨','무난한 궁합 🌟','도전적 궁합 💪','불꽃 케미 🔥'],
     mbti_good:'MBTI 에너지가 완벽하게 보완돼요',mbti_care:'MBTI 에너지 차이가 있지만 서로 배울 수 있어요',mbti_neutral:'MBTI 에너지가 무난하게 어울려요',
     elem_same:'같은 오행 기운으로 서로 깊이 이해해요',elem_saeng:'오행 상생으로 서로의 기운을 북돋아줘요',elem_geuk:'오행 상극이지만 강한 케미가 생겨요',elem_neutral:'서로 다른 오행이 균형을 이뤄요',
     intro_hi:'🐱 냥별이가 두 분의 기운을 분석했어요!\n\n',outro:'✨ 어떤 궁합도 서로를 이해하려는 마음이 가장 중요해요!'},
-  ja:{title:'誕生日エネルギー相性',sub:'二人の四柱の気はどれだけ合う？🌟',aLabel:'自分（誕生日MBTI結果）',bLabel:'相手の情報',bBirth:'🎂 生年月日 6桁',bGender:'🌟 性別',btnStart:'💑 相性を分析する',
+  ja:{title:'誕生日エネルギー相性',topTitle:'誕生日相性',sub:'二人の四柱の気はどれだけ合う？🌟',aLabel:'自分（誕生日MBTI結果）',bLabel:'相手の情報',bBirth:'🎂 生年月日 6桁',bGender:'🌟 性別',btnStart:'💑 相性を分析する',
+    genderM:'♂ 男性',genderF:'♀ 女性',errMsg:'⚠️ 相手の生年月日6桁と性別を入力してください',scoreLabel:'相性',resetBtn:'🔄 別の人を分析',mbtiLabel:'MBTI 相性',elemLabel:'五行 相性',
     lvl:['天生縁分 💕','最強ケミ 💫','相性ピッタリ ✨','まあまあな相性 🌟','チャレンジな相性 💪','情熱ケミ 🔥'],
     mbti_good:'MBTIエネルギーが完璧に補い合います',mbti_care:'MBTIエネルギーに差がありますが互いに学べます',mbti_neutral:'MBTIエネルギーが無難に合います',
     elem_same:'同じ五行の気で深く理解し合えます',elem_saeng:'五行相生で互いの気を高め合います',elem_geuk:'五行相克ですが強いケミが生まれます',elem_neutral:'異なる五行がバランスを保ちます',
     intro_hi:'🐱 ニャンビョリが二人のエネルギーを分析しました！\n\n',outro:'✨ どんな相性も、理解しようとする心が一番大切です！'},
-  en:{title:'Birthday Energy Compatibility',sub:'How well do your birth energies match? 🌟',aLabel:'Me (Birthday MBTI Result)',bLabel:"Partner's Info",bBirth:'🎂 Birthdate (6 digits)',bGender:'🌟 Gender',btnStart:'💑 Analyze Compatibility',
+  en:{title:'Birthday Energy Compatibility',topTitle:'Compatibility',sub:'How well do your birth energies match? 🌟',aLabel:'Me (Birthday MBTI Result)',bLabel:"Partner's Info",bBirth:'🎂 Birthdate (6 digits)',bGender:'🌟 Gender',btnStart:'💑 Analyze Compatibility',
+    genderM:'♂ Male',genderF:'♀ Female',errMsg:"⚠️ Please enter your partner's 6-digit birthdate and gender",scoreLabel:'Match',resetBtn:'🔄 Try Another Person',mbtiLabel:'MBTI Match',elemLabel:'Element Match',
     lvl:['Soulmates 💕','Ultimate Chemistry 💫','Great Match ✨','Compatible 🌟','Challenging Chemistry 💪','Electric Chemistry 🔥'],
     mbti_good:'Your MBTI energies perfectly complement each other',mbti_care:'Your MBTI energies differ but you can learn from each other',mbti_neutral:'Your MBTI energies blend together naturally',
     elem_same:'Sharing the same element means deep mutual understanding',elem_saeng:'Your elements nourish each other (Sang-saeng)',elem_geuk:'Your elements clash but create powerful chemistry',elem_neutral:'Different elements balance each other out',
     intro_hi:"🐱 Nyangbyeoli analyzed both of your energies!\n\n",outro:'✨ Understanding and effort matter more than any compatibility score!'},
-  'zh-TW':{title:'生日能量合婚',sub:'兩人的命格氣場有多契合？🌟',aLabel:'我（生日MBTI分析結果）',bLabel:'對方資訊',bBirth:'🎂 出生日期（6位數）',bGender:'🌟 性別',btnStart:'💑 分析合婚',
+  'zh-TW':{title:'生日能量合婚',topTitle:'生日合婚',sub:'兩人的命格氣場有多契合？🌟',aLabel:'我（生日MBTI分析結果）',bLabel:'對方資訊',bBirth:'🎂 出生日期（6位數）',bGender:'🌟 性別',btnStart:'💑 分析合婚',
+    genderM:'♂ 男',genderF:'♀ 女',errMsg:'⚠️ 請輸入對方的6位出生日期及性別',scoreLabel:'合婚',resetBtn:'🔄 分析其他人',mbtiLabel:'MBTI 配對',elemLabel:'五行 合婚',
     lvl:['天生緣分 💕','最強契合 💫','相性絕佳 ✨','普通合婚 🌟','充滿挑戰 💪','電力十足 🔥'],
     mbti_good:'MBTI能量完美互補',mbti_care:'MBTI能量有差異，但可以互相學習',mbti_neutral:'MBTI能量自然融合',
     elem_same:'同一五行氣場，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相剋，但產生強烈化學反應',elem_neutral:'不同五行取得平衡',
     intro_hi:'🐱 冥星喵分析了兩位的能量！\n\n',outro:'✨ 無論何種合婚，理解對方的心最重要！'},
-  'zh-CN':{title:'生日能量合婚',sub:'两人的命格气场有多契合？🌟',aLabel:'我（生日MBTI分析结果）',bLabel:'对方信息',bBirth:'🎂 出生日期（6位数）',bGender:'🌟 性别',btnStart:'💑 分析合婚',
+  'zh-CN':{title:'生日能量合婚',topTitle:'生日合婚',sub:'两人的命格气场有多契合？🌟',aLabel:'我（生日MBTI分析结果）',bLabel:'对方信息',bBirth:'🎂 出生日期（6位数）',bGender:'🌟 性别',btnStart:'💑 分析合婚',
+    genderM:'♂ 男',genderF:'♀ 女',errMsg:'⚠️ 请输入对方的6位出生日期及性别',scoreLabel:'合婚',resetBtn:'🔄 分析其他人',mbtiLabel:'MBTI 匹配',elemLabel:'五行 合婚',
     lvl:['天生缘分 💕','最强契合 💫','相性绝佳 ✨','普通合婚 🌟','充满挑战 💪','电力十足 🔥'],
     mbti_good:'MBTI能量完美互补',mbti_care:'MBTI能量有差异，但可以互相学习',mbti_neutral:'MBTI能量自然融合',
     elem_same:'同一五行气场，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相克，但产生强烈化学反应',elem_neutral:'不同五行取得平衡',
@@ -2673,12 +2595,18 @@ function calcGunghap(typeA, elemA, typeB, elemB){
 function showGunghap(){
   if(!curMType){return;}
   const lang=GG_TXT[LANG]||GG_TXT['ko'];
+  document.getElementById('gg-topbar-title').textContent=lang.topTitle;
   document.getElementById('gg-title').textContent=lang.title;
   document.getElementById('gg-sub').textContent=lang.sub;
   document.getElementById('gg-a-label').textContent=lang.aLabel;
   document.getElementById('gg-b-label').textContent=lang.bLabel;
   document.getElementById('gg-b-birth-label').textContent=lang.bBirth;
   document.getElementById('gg-b-gender-label').textContent=lang.bGender;
+  document.getElementById('gg-btn-m').textContent=lang.genderM;
+  document.getElementById('gg-btn-f').textContent=lang.genderF;
+  document.getElementById('gg-err').textContent=lang.errMsg;
+  document.getElementById('gg-score-label').textContent=lang.scoreLabel;
+  document.getElementById('gg-reset-btn').textContent=lang.resetBtn;
   document.getElementById('gg-btn-label').textContent=lang.btnStart;
   // Person A 미리보기
   _renderPersonCardFull(document.getElementById('gg-a-box'),curMType,curBirth,curGender,curElements);
@@ -2739,8 +2667,8 @@ function renderGunghap(bBirth,bGender,bType,bElements){
   const elemDesc=lang[elemKey];
   document.getElementById('gg-analysis').innerHTML=
     `<p>${lang.intro_hi}<strong>${curMType} ${nameA}</strong> × <strong>${bType} ${nameB}</strong></p>`+
-    `<p style="margin-top:10px">🔮 <strong>MBTI 궁합:</strong> ${mbtiDesc}</p>`+
-    `<p style="margin-top:6px">${domAem}${domBem} <strong>오행 궁합:</strong> ${elemDesc}</p>`+
+    `<p style="margin-top:10px">🔮 <strong>${lang.mbtiLabel}:</strong> ${mbtiDesc}</p>`+
+    `<p style="margin-top:6px">${domAem}${domBem} <strong>${lang.elemLabel}:</strong> ${elemDesc}</p>`+
     `<p style="margin-top:10px;font-size:11px;color:var(--g2)">${lang.outro}</p>`;
 
   document.getElementById('gg-result').style.display='block';
