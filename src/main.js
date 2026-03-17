@@ -70,6 +70,15 @@ ko:{
   disc3:'이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!',
   btnAgain:'← 다시 분석하기',btnGunghap:'💑 궁합 보기',copied:'🔗 링크가 복사됐어요!',
   pwaTitle:'홈 화면에 추가하기',pwaSub:'앱처럼 빠르게 열어봐요!',pwaBtn:'추가',addToHome:'📲 바탕화면에 앱 등록',
+  igOk:'확인',
+  igAlreadyTitle:'✅ 이미 앱으로 설치되어 있어요!',igAlreadyMsg:'앱 아이콘으로 접속하면 더 빠르게 이용할 수 있어요.',
+  igInAppTitle:'인앱 브라우저에서는 설치가 안 돼요',
+  igInAppAndroidMsg:'화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"다른 브라우저로 열기" 또는\n"Chrome으로 열기"를 선택해 주세요.\n\nChrome에서 다시 버튼을 눌러 주세요!',
+  igInAppIOSMsg:'화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"Safari로 열기"를 선택해 주세요.\n\nSafari 하단 공유버튼(□↑) →\n"홈 화면에 추가"를 탭해 주세요!',
+  igIOSTitle:'iPhone / iPad 홈 화면에 추가',igIOSMsg:'Safari 하단 공유버튼(□↑) 탭\n→ "홈 화면에 추가" 선택\n→ 우측 상단 "추가" 탭\n\n(Safari 브라우저에서만 가능해요)',
+  igAndroidTitle:'Android 홈 화면에 추가',igAndroidMsg:'Chrome 주소창 오른쪽\n설치 아이콘(⊕)을 탭하거나\n\nChrome 메뉴(⋮) →\n"앱 설치" 또는 "홈 화면에 추가"를 탭해 주세요.',
+  igPCTitle:'PC 바탕화면에 바로가기 추가',igPCMsg:'Chrome 주소창 오른쪽 끝\n설치 아이콘(🖥️ 또는 ⊕)을 클릭하거나\n\nChrome 메뉴(⋮) →\n"생일MBTI 설치..." 또는\n"바로가기 만들기"를 클릭해 주세요.',
+  igMacExtra:'\n\n(Safari: 파일 메뉴 → 홈 화면에 추가)',
   flAbout:'서비스 소개',flTerms:'이용약관',flPrivacy:'개인정보처리방침',flContact:'문의',
   settingsTitle:'⚙️ 설정',settingsApiDesc:'키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)',settingsSave:'저장',settingsClose:'닫기',
   privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
@@ -158,6 +167,15 @@ ja:{
   disc3:'これはエンターテイメントと自己探索の目的です 🌟 運命は決まっていません！',
   btnAgain:'← もう一度分析する',btnGunghap:'💑 相性を見る',copied:'🔗 リンクがコピーされました！',
   pwaTitle:'ホーム画面に追加する',pwaSub:'アプリみたいにすぐ開ける！',pwaBtn:'追加',addToHome:'📲 ホーム画面に追加する',
+  igOk:'確認',
+  igAlreadyTitle:'✅ すでにアプリとしてインストール済みです！',igAlreadyMsg:'アプリアイコンからアクセスすると\nより速く利用できます。',
+  igInAppTitle:'アプリ内ブラウザではインストールできません',
+  igInAppAndroidMsg:'画面右下の ⋮ メニューをタップして\n"他のブラウザで開く" または\n"Chromeで開く" を選択してください。\n\nChromeで再度ボタンを押してください！',
+  igInAppIOSMsg:'画面右下の ⋮ メニューをタップして\n"Safariで開く" を選択してください。\n\nSafari下部の共有ボタン(□↑) →\n"ホーム画面に追加" をタップしてください！',
+  igIOSTitle:'iPhone / iPad ホーム画面に追加',igIOSMsg:'Safari下部の共有ボタン(□↑)をタップ\n→ "ホーム画面に追加" を選択\n→ 右上の "追加" をタップ\n\n(Safariブラウザのみ対応)',
+  igAndroidTitle:'Androidホーム画面に追加',igAndroidMsg:'Chromeアドレスバー右側の\nインストールアイコン(⊕)をタップするか\n\nChromeメニュー(⋮) →\n"アプリをインストール" または\n"ホーム画面に追加" をタップ。',
+  igPCTitle:'PCデスクトップにショートカット追加',igPCMsg:'Chromeアドレスバー右端の\nインストールアイコン(🖥️ または ⊕)をクリックするか\n\nChromeメニュー(⋮) →\n"生日MBTIをインストール..." または\n"ショートカットを作成..." をクリック。',
+  igMacExtra:'\n\n(Safari: ファイルメニュー → ホーム画面に追加)',
   flAbout:'サービス紹介',flTerms:'利用規約',flPrivacy:'プライバシーポリシー',flContact:'お問い合わせ',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'キーを入力するとAI分析が追加されます！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'閉じる',
   privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
@@ -244,6 +262,15 @@ en:{
   disc3:'This is for fun and self-discovery 🌟 Destiny is not fixed!',
   btnAgain:'← Analyze Again',btnGunghap:'💑 Check Compatibility',copied:'🔗 Link copied!',
   pwaTitle:'Add to Home Screen',pwaSub:'Open it like an app, instantly!',pwaBtn:'Add',addToHome:'📲 Add to Home Screen',
+  igOk:'OK',
+  igAlreadyTitle:'✅ Already installed as an app!',igAlreadyMsg:'Open via the app icon\nfor the fastest experience.',
+  igInAppTitle:'Cannot install from in-app browser',
+  igInAppAndroidMsg:'Tap the ⋮ menu at the bottom right,\nthen select "Open in another browser"\nor "Open in Chrome".\n\nThen tap the button again in Chrome!',
+  igInAppIOSMsg:'Tap the ⋮ menu at the bottom right,\nthen select "Open in Safari".\n\nIn Safari, tap the share button (□↑)\n→ "Add to Home Screen"!',
+  igIOSTitle:'Add to iPhone / iPad Home Screen',igIOSMsg:'Tap the share button (□↑) in Safari\n→ Select "Add to Home Screen"\n→ Tap "Add" at the top right\n\n(Only available in Safari)',
+  igAndroidTitle:'Add to Android Home Screen',igAndroidMsg:'Tap the install icon (⊕)\nin Chrome\'s address bar, or\n\nChrome menu (⋮) →\n"Install app" or\n"Add to Home screen".',
+  igPCTitle:'Add Shortcut to Desktop',igPCMsg:'Click the install icon (🖥️ or ⊕)\nat the right end of Chrome\'s address bar, or\n\nChrome menu (⋮) →\n"Install Birthday MBTI..." or\n"Create shortcut...".',
+  igMacExtra:'\n\n(Safari: File menu → Add to Home Screen)',
   flAbout:'About',flTerms:'Terms of Service',flPrivacy:'Privacy Policy',flContact:'Contact',
   settingsTitle:'⚙️ Settings',settingsApiDesc:'Enter your key to enable AI analysis! 🌙 (Gemini 1.5 Flash)',settingsSave:'Save',settingsClose:'Close',
   privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
@@ -330,6 +357,15 @@ en:{
   disc3:'這是為了趣味和自我探索 🌟 命運不是注定的！',
   btnAgain:'← 重新分析',btnGunghap:'💑 查看合盤',copied:'🔗 連結已複製！',
   pwaTitle:'加到主畫面',pwaSub:'像App一樣快速開啟！',pwaBtn:'加入',addToHome:'📲 加到主畫面',
+  igOk:'確認',
+  igAlreadyTitle:'✅ 已安裝為應用程式！',igAlreadyMsg:'透過應用程式圖示開啟\n可獲得最快速的體驗。',
+  igInAppTitle:'無法從應用程式內瀏覽器安裝',
+  igInAppAndroidMsg:'點擊右下角 ⋮ 選單\n選擇「以其他瀏覽器開啟」\n或「以 Chrome 開啟」。\n\n在 Chrome 中再次點擊按鈕！',
+  igInAppIOSMsg:'點擊右下角 ⋮ 選單\n選擇「以 Safari 開啟」。\n\n在 Safari 中點擊分享按鈕(□↑)\n→「加入主畫面」！',
+  igIOSTitle:'加入 iPhone / iPad 主畫面',igIOSMsg:'點擊 Safari 底部分享按鈕(□↑)\n→ 選擇「加入主畫面」\n→ 點擊右上角「新增」\n\n(僅限 Safari 瀏覽器)',
+  igAndroidTitle:'加入 Android 主畫面',igAndroidMsg:'點擊 Chrome 網址列右側\n安裝圖示(⊕)，或\n\nChrome 選單(⋮) →\n「安裝應用程式」或\n「新增至主畫面」。',
+  igPCTitle:'新增捷徑到桌面',igPCMsg:'點擊 Chrome 網址列右端\n安裝圖示(🖥️ 或 ⊕)，或\n\nChrome 選單(⋮) →\n「安裝生日MBTI...」或\n「建立捷徑...」。',
+  igMacExtra:'\n\n(Safari: 檔案選單 → 加入主畫面)',
   flAbout:'服務介紹',flTerms:'使用條款',flPrivacy:'隱私權政策',flContact:'聯絡我們',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'輸入金鑰即可啟用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'儲存',settingsClose:'關閉',
   privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
@@ -415,6 +451,15 @@ en:{
   disc3:'这是为了趣味和自我探索 🌟 命运不是注定的！',
   btnAgain:'← 重新分析',btnGunghap:'💑 查看合盘',copied:'🔗 链接已复制！',
   pwaTitle:'添加到主屏幕',pwaSub:'像App一样快速打开！',pwaBtn:'添加',addToHome:'📲 添加到主屏幕',
+  igOk:'确认',
+  igAlreadyTitle:'✅ 已安装为应用程序！',igAlreadyMsg:'通过应用图标打开\n可获得最快速的体验。',
+  igInAppTitle:'无法从应用内浏览器安装',
+  igInAppAndroidMsg:'点击右下角 ⋮ 菜单\n选择「用其他浏览器打开」\n或「用 Chrome 打开」。\n\n在 Chrome 中再次点击按钮！',
+  igInAppIOSMsg:'点击右下角 ⋮ 菜单\n选择「用 Safari 打开」。\n\n在 Safari 中点击分享按钮(□↑)\n→「添加到主屏幕」！',
+  igIOSTitle:'添加到 iPhone / iPad 主屏幕',igIOSMsg:'点击 Safari 底部分享按钮(□↑)\n→ 选择「添加到主屏幕」\n→ 点击右上角「添加」\n\n(仅限 Safari 浏览器)',
+  igAndroidTitle:'添加到 Android 主屏幕',igAndroidMsg:'点击 Chrome 地址栏右侧\n安装图标(⊕)，或\n\nChrome 菜单(⋮) →\n「安装应用」或\n「添加到主屏幕」。',
+  igPCTitle:'添加快捷方式到桌面',igPCMsg:'点击 Chrome 地址栏右端\n安装图标(🖥️ 或 ⊕)，或\n\nChrome 菜单(⋮) →\n「安装生日MBTI...」或\n「创建快捷方式...」。',
+  igMacExtra:'\n\n(Safari: 文件菜单 → 添加到主屏幕)',
   flAbout:'服务介绍',flTerms:'使用条款',flPrivacy:'隐私政策',flContact:'联系我们',
   settingsTitle:'⚙️ 设置',settingsApiDesc:'输入密钥即可启用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'关闭',
   privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
@@ -501,6 +546,15 @@ vi:{
   disc3:'Đây là để vui và khám phá bản thân 🌟 Số phận không cố định!',
   btnAgain:'← Phân Tích Lại',btnGunghap:'💑 Kiểm Tra Hợp Tuổi',copied:'🔗 Đã sao chép link!',
   pwaTitle:'Thêm Vào Màn Hình Chính',pwaSub:'Mở nhanh như ứng dụng!',pwaBtn:'Thêm',addToHome:'📲 Thêm Vào Màn Hình Chính',
+  igOk:'Xác nhận',
+  igAlreadyTitle:'✅ Đã cài đặt như một ứng dụng!',igAlreadyMsg:'Mở qua biểu tượng ứng dụng\nđể có trải nghiệm nhanh nhất.',
+  igInAppTitle:'Không thể cài đặt từ trình duyệt trong ứng dụng',
+  igInAppAndroidMsg:'Nhấn menu ⋮ ở góc dưới bên phải,\nchọn "Mở bằng trình duyệt khác"\nhoặc "Mở bằng Chrome".\n\nNhấn nút lại trong Chrome!',
+  igInAppIOSMsg:'Nhấn menu ⋮ ở góc dưới bên phải,\nchọn "Mở bằng Safari".\n\nTrong Safari, nhấn nút chia sẻ (□↑)\n→ "Thêm vào Màn hình chính"!',
+  igIOSTitle:'Thêm vào Màn hình chính iPhone / iPad',igIOSMsg:'Nhấn nút chia sẻ (□↑) ở cuối Safari\n→ Chọn "Thêm vào Màn hình chính"\n→ Nhấn "Thêm" ở góc trên phải\n\n(Chỉ dùng được trên Safari)',
+  igAndroidTitle:'Thêm vào Màn hình chính Android',igAndroidMsg:'Nhấn biểu tượng cài đặt (⊕)\nở phải thanh địa chỉ Chrome, hoặc\n\nMenu Chrome (⋮) →\n"Cài đặt ứng dụng" hoặc\n"Thêm vào Màn hình chính".',
+  igPCTitle:'Thêm Lối tắt vào Màn hình nền',igPCMsg:'Nhấn biểu tượng cài đặt (🖥️ hoặc ⊕)\nở cuối thanh địa chỉ Chrome, hoặc\n\nMenu Chrome (⋮) →\n"Cài đặt Birthday MBTI..." hoặc\n"Tạo lối tắt...".',
+  igMacExtra:'\n\n(Safari: Menu Tệp → Thêm vào Màn hình chính)',
   flAbout:'Giới Thiệu',flTerms:'Điều Khoản Dịch Vụ',flPrivacy:'Chính Sách Bảo Mật',flContact:'Liên Hệ',
   settingsTitle:'⚙️ Cài Đặt',settingsApiDesc:'Nhập key để bật phân tích AI! 🌙 (Gemini 1.5 Flash)',settingsSave:'Lưu',settingsClose:'Đóng',
   privacyNotice:'🔒 Ngày sinh và giới tính của bạn không bao giờ được lưu trên bất kỳ máy chủ nào. Tất cả phân tích chạy cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng AI, dữ liệu được gửi đến Google Gemini API.',
@@ -2849,43 +2903,27 @@ function installPWA(){
   const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
 
   if(isStandalone){
-    _showInstallGuide('✅ 이미 앱으로 설치되어 있어요!','앱 아이콘을 통해 접속하면\n더 빠르게 이용할 수 있어요.');
+    _showInstallGuide(t('igAlreadyTitle'),t('igAlreadyMsg'));
     return;
   }
   if(isInApp&&isAndroid){
-    _showInstallGuide(
-      '인앱 브라우저에서는 설치가 안 돼요',
-      '화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"다른 브라우저로 열기" 또는\n"Chrome으로 열기"를 선택해 주세요.\n\nChrome에서 다시 버튼을 눌러 주세요!'
-    );
+    _showInstallGuide(t('igInAppTitle'),t('igInAppAndroidMsg'));
     return;
   }
   if(isInApp&&isIOS){
-    _showInstallGuide(
-      '인앱 브라우저에서는 설치가 안 돼요',
-      '화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"Safari로 열기"를 선택해 주세요.\n\nSafari 하단 공유버튼(□↑) →\n"홈 화면에 추가"를 탭해 주세요!'
-    );
+    _showInstallGuide(t('igInAppTitle'),t('igInAppIOSMsg'));
     return;
   }
   if(isIOS){
-    _showInstallGuide(
-      'iPhone / iPad 홈 화면에 추가',
-      'Safari 하단 공유버튼(□↑) 탭\n→ "홈 화면에 추가" 선택\n→ 우측 상단 "추가" 탭\n\n(Safari 브라우저에서만 가능해요)'
-    );
+    _showInstallGuide(t('igIOSTitle'),t('igIOSMsg'));
     return;
   }
   if(isAndroid){
-    _showInstallGuide(
-      'Android 홈 화면에 추가',
-      'Chrome 주소창 오른쪽\n설치 아이콘(⊕)을 탭하거나\n\nChrome 메뉴(⋮) →\n"앱 설치" 또는 "홈 화면에 추가"를\n탭해 주세요.'
-    );
+    _showInstallGuide(t('igAndroidTitle'),t('igAndroidMsg'));
     return;
   }
   // PC (Windows / Mac)
-  _showInstallGuide(
-    'PC 바탕화면에 바로가기 추가',
-    'Chrome 주소창 오른쪽 끝\n설치 아이콘(🖥️ 또는 ⊕)을 클릭하거나\n\nChrome 메뉴(⋮) →\n"생일MBTI 설치..." 또는\n"바로가기 만들기"를 클릭해 주세요.'
-    +(isMac?'\n\n(Safari: 파일 메뉴 → 홈 화면에 추가)':'')
-  );
+  _showInstallGuide(t('igPCTitle'),t('igPCMsg')+(isMac?t('igMacExtra'):''));
 }
 
 function _showInstallGuide(title,msg){
@@ -2899,12 +2937,13 @@ function _showInstallGuide(title,msg){
       +'<div style="font-size:36px;margin-bottom:12px">📲</div>'
       +'<div id="_ig-title" style="font-size:16px;font-weight:700;color:var(--ink,#f0e6ff);margin-bottom:10px"></div>'
       +'<div id="_ig-msg" style="font-size:13px;line-height:1.8;color:var(--g1,#c0aee8);white-space:pre-line"></div>'
-      +'<button onclick="document.getElementById(\'_install-guide\').style.display=\'none\'" style="margin-top:20px;width:100%;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lav,#B68FE8),var(--rose,#FF8FAB));color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">확인</button>'
+      +'<button id="_ig-ok" onclick="document.getElementById(\'_install-guide\').style.display=\'none\'" style="margin-top:20px;width:100%;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lav,#B68FE8),var(--rose,#FF8FAB));color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit"></button>'
       +'</div>';
     document.body.appendChild(el);
   }
   document.getElementById('_ig-title').textContent=title;
   document.getElementById('_ig-msg').textContent=msg;
+  document.getElementById('_ig-ok').textContent=t('igOk');
   el.style.display='flex';
 }
 window.installPWA=installPWA;
