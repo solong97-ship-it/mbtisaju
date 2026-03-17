@@ -69,7 +69,7 @@ ko:{
   disc2:'일반 MBTI와 다를 수 있어요 — 환경이 아닌 태어날 때부터의 나를 보여주거든요!',
   disc3:'이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!',
   btnAgain:'← 다시 분석하기',btnGunghap:'💑 궁합 보기',copied:'🔗 링크가 복사됐어요!',
-  pwaTitle:'홈 화면에 추가하기',pwaSub:'앱처럼 빠르게 열어봐요!',pwaBtn:'추가',
+  pwaTitle:'홈 화면에 추가하기',pwaSub:'앱처럼 빠르게 열어봐요!',pwaBtn:'추가',addToHome:'📲 바탕화면에 앱 등록',
   flAbout:'서비스 소개',flTerms:'이용약관',flPrivacy:'개인정보처리방침',flContact:'문의',
   settingsTitle:'⚙️ 설정',settingsApiDesc:'키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)',settingsSave:'저장',settingsClose:'닫기',
   privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
@@ -157,7 +157,7 @@ ja:{
   disc2:'一般MBTIと異なる場合があります — 環境ではなく生まれた時からの自分を見せます！',
   disc3:'これはエンターテイメントと自己探索の目的です 🌟 運命は決まっていません！',
   btnAgain:'← もう一度分析する',btnGunghap:'💑 相性を見る',copied:'🔗 リンクがコピーされました！',
-  pwaTitle:'ホーム画面に追加する',pwaSub:'アプリみたいにすぐ開ける！',pwaBtn:'追加',
+  pwaTitle:'ホーム画面に追加する',pwaSub:'アプリみたいにすぐ開ける！',pwaBtn:'追加',addToHome:'📲 ホーム画面に追加する',
   flAbout:'サービス紹介',flTerms:'利用規約',flPrivacy:'プライバシーポリシー',flContact:'お問い合わせ',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'キーを入力するとAI分析が追加されます！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'閉じる',
   privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
@@ -243,7 +243,7 @@ en:{
   disc2:'It may differ from regular MBTI — it shows the you from birth, not from environment!',
   disc3:'This is for fun and self-discovery 🌟 Destiny is not fixed!',
   btnAgain:'← Analyze Again',btnGunghap:'💑 Check Compatibility',copied:'🔗 Link copied!',
-  pwaTitle:'Add to Home Screen',pwaSub:'Open it like an app, instantly!',pwaBtn:'Add',
+  pwaTitle:'Add to Home Screen',pwaSub:'Open it like an app, instantly!',pwaBtn:'Add',addToHome:'📲 Add to Home Screen',
   flAbout:'About',flTerms:'Terms of Service',flPrivacy:'Privacy Policy',flContact:'Contact',
   settingsTitle:'⚙️ Settings',settingsApiDesc:'Enter your key to enable AI analysis! 🌙 (Gemini 1.5 Flash)',settingsSave:'Save',settingsClose:'Close',
   privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
@@ -329,7 +329,7 @@ en:{
   disc2:'可能與一般MBTI不同 — 顯示的是從出生就有的你！',
   disc3:'這是為了趣味和自我探索 🌟 命運不是注定的！',
   btnAgain:'← 重新分析',btnGunghap:'💑 查看合盤',copied:'🔗 連結已複製！',
-  pwaTitle:'加到主畫面',pwaSub:'像App一樣快速開啟！',pwaBtn:'加入',
+  pwaTitle:'加到主畫面',pwaSub:'像App一樣快速開啟！',pwaBtn:'加入',addToHome:'📲 加到主畫面',
   flAbout:'服務介紹',flTerms:'使用條款',flPrivacy:'隱私權政策',flContact:'聯絡我們',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'輸入金鑰即可啟用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'儲存',settingsClose:'關閉',
   privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
@@ -414,7 +414,7 @@ en:{
   disc2:'可能与一般MBTI不同 — 显示的是从出生就有的你！',
   disc3:'这是为了趣味和自我探索 🌟 命运不是注定的！',
   btnAgain:'← 重新分析',btnGunghap:'💑 查看合盘',copied:'🔗 链接已复制！',
-  pwaTitle:'添加到主屏幕',pwaSub:'像App一样快速打开！',pwaBtn:'添加',
+  pwaTitle:'添加到主屏幕',pwaSub:'像App一样快速打开！',pwaBtn:'添加',addToHome:'📲 添加到主屏幕',
   flAbout:'服务介绍',flTerms:'使用条款',flPrivacy:'隐私政策',flContact:'联系我们',
   settingsTitle:'⚙️ 设置',settingsApiDesc:'输入密钥即可启用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'关闭',
   privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
@@ -500,7 +500,7 @@ vi:{
   disc2:'Có thể khác với MBTI thông thường — nó cho thấy bạn từ khi sinh ra, không phải từ môi trường!',
   disc3:'Đây là để vui và khám phá bản thân 🌟 Số phận không cố định!',
   btnAgain:'← Phân Tích Lại',btnGunghap:'💑 Kiểm Tra Hợp Tuổi',copied:'🔗 Đã sao chép link!',
-  pwaTitle:'Thêm Vào Màn Hình Chính',pwaSub:'Mở nhanh như ứng dụng!',pwaBtn:'Thêm',
+  pwaTitle:'Thêm Vào Màn Hình Chính',pwaSub:'Mở nhanh như ứng dụng!',pwaBtn:'Thêm',addToHome:'📲 Thêm Vào Màn Hình Chính',
   flAbout:'Giới Thiệu',flTerms:'Điều Khoản Dịch Vụ',flPrivacy:'Chính Sách Bảo Mật',flContact:'Liên Hệ',
   settingsTitle:'⚙️ Cài Đặt',settingsApiDesc:'Nhập key để bật phân tích AI! 🌙 (Gemini 1.5 Flash)',settingsSave:'Lưu',settingsClose:'Đóng',
   privacyNotice:'🔒 Ngày sinh và giới tính của bạn không bao giờ được lưu trên bất kỳ máy chủ nào. Tất cả phân tích chạy cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng AI, dữ liệu được gửi đến Google Gemini API.',
@@ -820,6 +820,7 @@ function applyLang(){
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
   if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
   if(s('#btn-share-app')) s('#btn-share-app').textContent=t('shareApp');
+  if(s('#btn-install-home')) s('#btn-install-home').textContent=t('addToHome');
   // 푸터 링크 번역
   if(si('fl-about')) si('fl-about').textContent=t('flAbout');
   if(si('fl-terms')) si('fl-terms').textContent=t('flTerms');
@@ -2802,16 +2803,24 @@ window.addEventListener('beforeinstallprompt',e=>{
   e.preventDefault();_deferredInstall=e;
   const banner=document.getElementById('pwa-banner');
   if(banner) banner.style.display='block';
+  const installBtn=document.getElementById('btn-install-home');
+  if(installBtn) installBtn.style.display='flex';
 });
 window.addEventListener('appinstalled',()=>{
   const banner=document.getElementById('pwa-banner');
   if(banner) banner.style.display='none';
+  const installBtn=document.getElementById('btn-install-home');
+  if(installBtn) installBtn.style.display='none';
   _deferredInstall=null;
 });
 function installPWA(){
   if(!_deferredInstall)return;
   _deferredInstall.prompt();
-  _deferredInstall.userChoice.then(()=>{_deferredInstall=null;});
+  _deferredInstall.userChoice.then(()=>{
+    _deferredInstall=null;
+    const installBtn=document.getElementById('btn-install-home');
+    if(installBtn) installBtn.style.display='none';
+  });
 }
 window.installPWA=installPWA;
 
