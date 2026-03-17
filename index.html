@@ -49,6 +49,13 @@
   }
   window.IS_APP_MODE = sessionStorage.getItem('platform') === 'app';
 
+  // beforeinstallprompt는 ES 모듈보다 먼저 발생하므로 인라인에서 미리 포획
+  window._deferredInstall = null;
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    window._deferredInstall = e;
+  });
+
   /**
    * 광고 <ins> 태그를 컨테이너에 삽입하는 헬퍼.
    * 앱 모드일 때는 아무것도 하지 않으므로 main.js 어디서든 안전하게 호출 가능.

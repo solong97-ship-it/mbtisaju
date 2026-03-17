@@ -2794,7 +2794,7 @@ function renderBookmark(){
 }
 
 /* ── PWA 설치 ── */
-let _deferredInstall=null;
+// window._deferredInstall은 index.html 인라인 스크립트에서 이미 포획됨
 (function(){
   // 이미 스탠드얼론(앱)으로 실행 중이거나 IS_APP_MODE면 버튼 숨김
   const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
@@ -2803,19 +2803,16 @@ let _deferredInstall=null;
     if(installBtn) installBtn.style.display='flex';
   }
 })();
-window.addEventListener('beforeinstallprompt',e=>{
-  e.preventDefault();_deferredInstall=e;
-});
 window.addEventListener('appinstalled',()=>{
   const installBtn=document.getElementById('btn-install-home');
   if(installBtn) installBtn.style.display='none';
-  _deferredInstall=null;
+  window._deferredInstall=null;
 });
 function installPWA(){
-  if(_deferredInstall){
-    _deferredInstall.prompt();
-    _deferredInstall.userChoice.then(()=>{
-      _deferredInstall=null;
+  if(window._deferredInstall){
+    window._deferredInstall.prompt();
+    window._deferredInstall.userChoice.then(()=>{
+      window._deferredInstall=null;
       const installBtn=document.getElementById('btn-install-home');
       if(installBtn) installBtn.style.display='none';
     });
