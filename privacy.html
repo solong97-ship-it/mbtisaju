@@ -69,6 +69,7 @@ a:hover{text-decoration:underline}
       <button class="lbtn" onclick="setLang('en')">🇺🇸 EN</button>
       <button class="lbtn" onclick="setLang('zh-TW')">🇹🇼 繁</button>
       <button class="lbtn" onclick="setLang('zh-CN')">🇨🇳 简</button>
+      <button class="lbtn" onclick="setLang('vi')">🇻🇳 VI</button>
     </div>
     <a href="/" class="back-btn" id="back-btn">← 홈으로</a>
   </div>
@@ -334,19 +335,71 @@ a:hover{text-decoration:underline}
 </div>
 </div>
 
+<!-- ══ Tiếng Việt ══ -->
+<div data-sec="vi">
+<h1>Chính sách quyền riêng tư</h1>
+<p class="subtitle">Cập nhật lần cuối: 14 tháng 3 năm 2026 <span class="badge">v1.0</span></p>
+<div class="card"><p>Birthday MBTI ("Dịch vụ") coi trọng quyền riêng tư của bạn và tuân thủ các luật bảo vệ dữ liệu hiện hành. Chính sách này giải thích chúng tôi thu thập thông tin gì, cách sử dụng và bảo vệ thông tin đó.</p></div>
+<h2>1. Thông tin chúng tôi thu thập</h2>
+<h3>Thông tin bạn cung cấp</h3>
+<ul>
+  <li><strong>Ngày sinh (6 chữ số)</strong> — Dùng để phân tích khí chất Tứ Trụ</li>
+  <li><strong>Giới tính</strong> — Dùng để phân tích xu hướng khí chất</li>
+  <li><strong>Câu trả lời bài kiểm tra (tùy chọn)</strong> — Dùng để tinh chỉnh kết quả</li>
+  <li><strong>Khóa API Gemini (tùy chọn)</strong> — Bạn tự nhập để kích hoạt phân tích AI</li>
+</ul>
+<div class="hl">⚠️ Ngày sinh, giới tính và câu trả lời bài kiểm tra của bạn <strong>không bao giờ được gửi đến hay lưu trữ trên bất kỳ máy chủ nào.</strong> Toàn bộ phân tích chạy cục bộ trong trình duyệt của bạn.</div>
+<h3>Thông tin thu thập tự động</h3>
+<ul>
+  <li><strong>Tùy chọn ngôn ngữ</strong> — Chỉ lưu trong localStorage của trình duyệt</li>
+  <li><strong>Khóa API Gemini</strong> — Chỉ lưu trong localStorage của trình duyệt; xóa bất cứ lúc nào trong cài đặt trình duyệt</li>
+  <li><strong>Nhật ký truy cập</strong> — Máy chủ Firebase Hosting có thể thu thập nhật ký truy cập tiêu chuẩn (IP, thời điểm)</li>
+</ul>
+<h2>2. Dịch vụ bên thứ ba</h2>
+<div class="card">
+  <h3>Google Gemini API (Tùy chọn)</h3>
+  <p>Nếu bạn sử dụng tính năng phân tích AI, ngày sinh và giới tính của bạn sẽ được gửi đến Gemini API của Google. Chỉ kích hoạt khi bạn nhập khóa API của mình. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a></p>
+  <h3 style="margin-top:16px">Firebase Hosting</h3>
+  <p>Dịch vụ được lưu trữ trên Google Firebase Hosting. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Quyền riêng tư &amp; Bảo mật Firebase</a></p>
+  <h3 style="margin-top:16px">Google AdSense</h3>
+  <p>Dịch vụ hiển thị quảng cáo qua Google AdSense. AdSense có thể sử dụng cookie để phục vụ quảng cáo được cá nhân hóa. Bạn có thể quản lý tùy chọn tại <a href="https://adssettings.google.com" target="_blank" rel="noopener">Cài đặt quảng cáo Google</a>. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Chính sách quảng cáo Google</a></p>
+  <h3 style="margin-top:16px">Google Fonts</h3>
+  <p>Chúng tôi sử dụng Google Fonts để cải thiện khả năng đọc, điều này có thể dẫn đến các yêu cầu đến máy chủ Google.</p>
+</div>
+<h2>3. Cookie &amp; Bộ nhớ cục bộ</h2>
+<ul>
+  <li><strong>Bộ nhớ cục bộ (Local Storage)</strong> — Lưu ngôn ngữ và khóa API cục bộ. Không gửi ra ngoài. Xóa bất cứ lúc nào trong cài đặt trình duyệt.</li>
+  <li><strong>Cookie quảng cáo (Google AdSense)</strong> — Do Google đặt. Quản lý tại <a href="https://adssettings.google.com" target="_blank" rel="noopener">Cài đặt quảng cáo Google</a>.</li>
+</ul>
+<h2>4. Cách chúng tôi sử dụng thông tin</h2>
+<ul><li>Cung cấp kết quả phân tích khí chất MBTI dựa trên ngày sinh</li><li>Ghi nhớ tùy chọn ngôn ngữ</li><li>Kích hoạt phân tích AI (chỉ khi bạn cung cấp khóa API)</li><li>Duy trì độ tin cậy của dịch vụ</li></ul>
+<h2>5. Lưu giữ &amp; Xóa dữ liệu</h2>
+<p>Dữ liệu do Dịch vụ lưu trữ chỉ tồn tại trong bộ nhớ cục bộ của trình duyệt bạn. Không có dữ liệu cá nhân nào được lưu trữ trên máy chủ của chúng tôi. Bạn có thể xóa tất cả dữ liệu đã lưu bằng cách xóa localStorage của trình duyệt.</p>
+<h2>6. Quyền riêng tư của trẻ em</h2>
+<p>Dịch vụ này không dành cho trẻ em dưới 14 tuổi.</p>
+<h2>7. Thay đổi Chính sách này</h2>
+<p>Nếu chúng tôi cập nhật chính sách này, chúng tôi sẽ đăng các thay đổi tại đây cùng với ngày mới.</p>
+<h2>8. Liên hệ chúng tôi</h2>
+<div class="card"><p>📧 <a href="mailto:solong97@gmail.com">solong97@gmail.com</a></p></div>
+<div class="footer-note">
+  <p>© 2026 Birthday MBTI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/">Trang chủ</a> · <a href="/about.html">Giới thiệu</a> · <a href="/terms.html">Điều khoản dịch vụ</a> · <a href="/privacy.html">Chính sách quyền riêng tư</a></p>
+</div>
+</div>
+
 <script>
-const BACK={ko:'← 홈으로',ja:'← ホームへ',en:'← Home','zh-TW':'← 返回首頁','zh-CN':'← 返回首页'};
+const BACK={ko:'← 홈으로',ja:'← ホームへ',en:'← Home','zh-TW':'← 返回首頁','zh-CN':'← 返回首页',vi:'← Quay về trang chủ'};
 function setLang(l){
   try{localStorage.setItem('saju_lang',l)}catch(e){}
   document.querySelectorAll('[data-sec]').forEach(el=>el.classList.toggle('show',el.dataset.sec===l));
-  document.querySelectorAll('.lbtn').forEach(btn=>btn.classList.toggle('active',btn.textContent.includes({ko:'KO',ja:'JA',en:'EN','zh-TW':'繁','zh-CN':'简'}[l])));
+  document.querySelectorAll('.lbtn').forEach(btn=>btn.classList.toggle('active',btn.textContent.includes({ko:'KO',ja:'JA',en:'EN','zh-TW':'繁','zh-CN':'简',vi:'VI'}[l])));
   document.getElementById('back-btn').textContent=BACK[l]||BACK.ko;
   document.documentElement.lang=l==='zh-TW'?'zh-Hant':l==='zh-CN'?'zh-Hans':l;
 }
 (function(){
   let l='ko';
   try{l=localStorage.getItem('saju_lang')||'ko'}catch(e){}
-  if(!['ko','ja','en','zh-TW','zh-CN'].includes(l))l='ko';
+  if(!['ko','ja','en','zh-TW','zh-CN','vi'].includes(l))l='ko';
   setLang(l);
 })();
 </script>
