@@ -15,8 +15,8 @@ export default defineConfig({
         background_color: '#FBF7FF',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
-        scope: '/',
+        start_url: 'https://sajumbti-app.web.app/',
+        scope: 'https://sajumbti-app.web.app/',
         lang: 'ko',
         icons: [
           { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
