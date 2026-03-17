@@ -2,11 +2,11 @@
    ║  i18n — 다국어 지원 시스템                ║
    ╚══════════════════════════════════════════╝ */
 var LANG='ko';
-const LANG_FLAG={ko:'🇰🇷 한국어',ja:'🇯🇵 日本語',en:'🇺🇸 English','zh-TW':'🇹🇼 繁體中文','zh-CN':'🇨🇳 简体中文'};
+const LANG_FLAG={ko:'🇰🇷 한국어',ja:'🇯🇵 日本語',en:'🇺🇸 English','zh-TW':'🇹🇼 繁體中文','zh-CN':'🇨🇳 简体中文',vi:'🇻🇳 Tiếng Việt'};
 
 /* ── 한국어 읽기 (SH/BH) 다국어 ── */
-const SH_I18N={ko:['갑','을','병','정','무','기','경','신','임','계'],ja:['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'],en:['Jia','Yi','Bing','Ding','Wu','Ji','Geng','Xin','Ren','Gui'],'zh-TW':['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'],'zh-CN':['甲','乙','丙','丁','戊','己','庚','辛','壬','癸']};
-const BH_I18N={ko:['자','축','인','묘','진','사','오','미','신','유','술','해'],ja:['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'],en:['Zi','Chou','Yin','Mao','Chen','Si','Wu','Wei','Shen','You','Xu','Hai'],'zh-TW':['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'],'zh-CN':['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥']};
+const SH_I18N={ko:['갑','을','병','정','무','기','경','신','임','계'],ja:['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'],en:['Jia','Yi','Bing','Ding','Wu','Ji','Geng','Xin','Ren','Gui'],'zh-TW':['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'],'zh-CN':['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'],vi:['Giáp','Ất','Bính','Đinh','Mậu','Kỷ','Canh','Tân','Nhâm','Quý']};
+const BH_I18N={ko:['자','축','인','묘','진','사','오','미','신','유','술','해'],ja:['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'],en:['Zi','Chou','Yin','Mao','Chen','Si','Wu','Wei','Shen','You','Xu','Hai'],'zh-TW':['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'],'zh-CN':['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'],vi:['Tý','Sửu','Dần','Mão','Thìn','Tỵ','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi']};
 
 const I={
 ko:{
@@ -423,6 +423,88 @@ en:{
   rCharJoin:' + ',rCharSuffix:'的能量与世界相遇的人',
   structTitle:'🧬 MBTI算出结构',structIlju:'日柱（天生本质）',structMonth:'月柱格局（环境）',structDom:'最强能量（行动武器）',
   disc4:'本结果仅供自我了解参考，并非科学诊断。命运并未注定，每个选择都掌握在你手中。把它当作更了解自己的有趣工具吧！',
+},
+vi:{
+  title:'Birth MBTI',heroH:'Khám Phá<br><em>Con Người Thật</em> Ẩn Trong Ngày Sinh',
+  heroP:'Không phải MBTI do môi trường tạo ra,<br>mà là <strong style="color:var(--lav)">khí chất bẩm sinh</strong> được ghi từ khi bạn chào đời 🌙',
+  infoTitle:'🌙 Birth MBTI là gì?',
+  infoP1:'Bạn có từng nhận kết quả MBTI khác nhau mỗi lần test?<br>Đó là vì <strong style="color:var(--lav)">môi trường và tâm trạng</strong> tự nhiên ảnh hưởng đến kết quả.',
+  infoP2:'Birth MBTI khác biệt. Nó đọc khí chất bẩm sinh được mã hóa trong <strong style="color:var(--lav)">Tứ Trụ bát tự</strong> và biểu đạt dưới dạng MBTI. Không phải mặt nạ do môi trường tạo ra, mà là <em style="font-style:normal;color:var(--rose)">tính cách cốt lõi bạn sinh ra đã có</em>.',
+  diffNormal:'MBTI Thông Thường',diffBirth:'Birth MBTI',
+  diffNormalT:'Có thể thay đổi theo môi trường, kinh nghiệm & tâm trạng',diffBirthT:'Khí chất bẩm sinh từ khi sinh — không thay đổi!',
+  diffNote:'💡 Cả hai đều là bạn thật sự. Khung bẩm sinh + các lớp môi trường bồi đắp!',
+  lblBirth:'🎂 Ngày sinh (6 số: YYMMDD)',lblGender:'🌟 Giới tính',
+  btnM:'♂ Nam',btnF:'♀ Nữ',
+  qTitle:'🎲 Kiểm Tra Nhanh Của Nyangbyeol!',qSub:'Hãy theo bản năng! Bỏ qua cũng không sao 🐱',
+  q1L:'Q1. Một con gà rán vừa giao đến! Điều gì khiến bạn vui hơn?',
+  q1aT:'Chia sẻ với bạn bè, ồn ào vui vẻ!',q1aH:'Ăn cùng nhau mới ngon!',
+  q1bT:'Một mình độc chiếm + xem Netflix',q1bH:'Đây mới là healing thực sự...',
+  q2L:'Q2. Bạn phát hiện một máy bán hàng tự động bí ẩn! Không biết sẽ ra gì 👀',
+  q2aT:'Bỏ xu vào ngay. Cuộc đời là phiêu lưu!',q2aH:'Dù ra gì cũng sẽ vui',
+  q2bT:'Đọc hướng dẫn ở phía sau trước đã',q2bH:'Cần biết trước mới yên tâm',
+  q3L:'Q3. Bạn bè khoe quần áo mới: "Trông thế nào?" …thật ra không đẹp lắm 🫠',
+  q3aT:'"Ừm, kiểu trước của bạn hợp hơn thật"',q3aH:'Thành thật mới là bạn bè tốt',
+  q3bT:'"Ồ đẹp nhỉ! Mua ở đâu vậy?"',q3bH:'Cảm xúc của họ quan trọng hơn',
+  q4L:'Q4. Vé concert idol yêu thích mở bán sau 30 ngày! 🎤',
+  q4aT:'Đã đặt báo thức. Đã thuộc sơ đồ ghế',q4aH:'Chuẩn bị kỹ là chìa khóa thành công',
+  q4bT:'"Đến lúc đó tính sau~"',q4bH:'May mắn thuộc về người không lo lắng',
+  err:'⚠️ Vui lòng nhập ngày sinh 6 số và giới tính',
+  btnStart:'Bắt đầu đọc năng lượng của Nyangbyeol 🔮',
+  footP:'Bát tự của bạn × MBTI — quên đi người mà cuộc đời tạo ra,<br>gặp gỡ <strong style="color:var(--g2)">con người luôn ở đó ngay từ đầu</strong> 🌸',
+  ldTitle:'Nyangbyeol đang phân tích meow ✨',ld1:'🪐 Tính toán mẫu bát tự',ld2:'🔮 Phân tích năng lượng Nguyệt Trụ',ld3:'✨ Đối chiếu khí chất Nhật Trụ',
+  share:'🔗 Chia sẻ',shareApp:'🔗 Chia sẻ ứng dụng',shareText:'Tôi vừa thử MBTI theo ngày sinh và nó chính xác đến đáng sợ 😭 Bạn phải thử cái này! 🌙✨ #BirthMBTI',saveImg:'📷 Lưu ảnh',imgSaved:'Đã lưu ảnh! 📷',
+  pcTitle:'📷 Thẻ Ảnh Cá Nhân',pcSub:'Tạo thẻ vibe của bạn cho MXH ✨',pcNick:'Biệt danh',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'Lời nhắn',pcMsgLimit:'tối đa 20 ký tự',pcMsgPh:'e.g. Born to shine ✨',pcDate:'Ngày',pcColor:'Màu Cá Nhân',pcElem:'Màu năng lượng {0}',pcCancel:'Hủy',pcGen:'✨ Tạo thẻ + Sao chép link',pcGenerating:'Đang tạo...',pcToast:'📷 Đã lưu thẻ + 🔗 Đã sao chép link!',
+  tagBorn:'🌙 Khí Chất Bẩm Sinh',tagPre:'🌙 Khí chất bạn sinh ra đã có — ',
+  sipBadge:'Thập Thần Nguyệt Trụ',sipRank:'Yếu tố MBTI #1',sipWhy:'💡 Ảnh hưởng MBTI: ',
+  flowDw:'🌊 Giai Đoạn Hiện Tại',flowSw:'☀️ Năng Lượng 2026',flowSwSub:'Năm Bính Ngọ',
+  swStemL:'Bính (Hỏa)',swBranchL:'Ngọ (Ngựa)',
+  secIlju:'Khí Chất Nhật Trụ Của Tôi',secIljuDiffNote:'💡 <strong style="color:var(--lav)">Có thể khác với MBTI thông thường!</strong><br>MBTI thông thường thay đổi theo môi trường, nhưng Birth MBTI cho thấy <strong>khí chất bẩm sinh</strong> từ bát tự của bạn.',
+  secIljuL:'Lý Thuyết Nhật Trụ Lục Thập Hoa Giáp',secStem:'Thiên Can',secBranch:'Địa Chi',
+  secCorrNote:'🎲 Kiểm tra vibe đã giúp xác định trục {0}',
+  secMe:'Tôi Là Ai',secMeSub:'Tính cách cốt lõi + Bản thân hiện tại',secBase:'Tính Cách Cốt Lõi',secNow:'Bản Thân Hiện Tại',
+  secMap:'Bản Đồ Tính Cách',secMapSub:'Phân tích 4 trục MBTI',
+  secStr:'Điểm Mạnh Của Tôi',secStrSub:'Điểm mạnh cốt lõi từ Thiên Can',
+  secKw:'Từ Khóa Tính Cách',secKwSub:'Những từ mô tả tôi',
+  secCompat:'Kiểu Tương Thích',secCompatSub:'Phân tích tương hợp',compatGood:'💚 Cặp Đôi Hoàn Hảo',compatCare:'🔥 Cặp Đôi Phát Triển',
+  compatGoodR:'Năng lượng của hai bạn bổ sung cho nhau hoàn hảo — đội mạnh nhất! ✨',
+  compatCareR:'Năng lượng khác nhau tạo ra hóa học thú vị — hiểu nhau giúp cả hai trở nên bất khả chiến bại! 💪',
+  secFig:'Người Giống Bạn',secFigSub:'Những người nổi tiếng có năng lượng tương tự',
+  secCareer:'Nghề Nghiệp Phù Hợp Nhất',secCareerSub:'Hướng dẫn phát triển trong kỷ nguyên AGI',
+  secSynTitle:'✨ Sức Mạnh Tổng Hợp Năng Lượng Sinh Nhật',
+  secDist:'Bản Đồ Tính Cách Thế Giới',secDistSub:'Phân phối 16 kiểu',
+  secSaju:'Mã Năng Lượng Sinh',secSajuSub:'Tứ Trụ (Năm·Tháng·Ngày)',
+  sajuInfo:'Các ký tự ngày sinh ghi lại năng lượng vũ trụ lúc bạn chào đời. Những năng lượng này hòa quyện tạo ra bản đồ năng lượng độc đáo của bạn! 🗺️',
+  sajuNote:'Mẫu năng lượng năm, tháng & ngày sinh · Truyền thống phương Đông',
+  yrP:'Năm',moP:'Tháng',dyP:'Ngày',
+  disc1:'🌙 Birth MBTI biểu đạt <strong style="color:var(--g1)">khí chất bẩm sinh</strong> của bạn từ Tứ Trụ bát tự dưới dạng MBTI',
+  disc2:'Có thể khác với MBTI thông thường — nó cho thấy bạn từ khi sinh ra, không phải từ môi trường!',
+  disc3:'Đây là để vui và khám phá bản thân 🌟 Số phận không cố định!',
+  btnAgain:'← Phân Tích Lại',btnGunghap:'💑 Kiểm Tra Hợp Tuổi',copied:'🔗 Đã sao chép link!',
+  pwaTitle:'Thêm Vào Màn Hình Chính',pwaSub:'Mở nhanh như ứng dụng!',pwaBtn:'Thêm',
+  flAbout:'Giới Thiệu',flTerms:'Điều Khoản Dịch Vụ',flPrivacy:'Chính Sách Bảo Mật',flContact:'Liên Hệ',
+  settingsTitle:'⚙️ Cài Đặt',settingsApiDesc:'Nhập key để bật phân tích AI! 🌙 (Gemini 1.5 Flash)',settingsSave:'Lưu',settingsClose:'Đóng',
+  privacyNotice:'🔒 Ngày sinh và giới tính của bạn không bao giờ được lưu trên bất kỳ máy chủ nào. Tất cả phân tích chạy cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng AI, dữ liệu được gửi đến Google Gemini API.',
+  segYY:'YY',segMM:'MM',segDD:'DD',
+  exDesc1:'Nam 01.01.12',exDesc2:'Nữ 03.02.15',exDesc3:'Nữ 99.12.25',
+  age:'tuổi',male:'♂ Nam',female:'♀ Nữ',
+  ss_비견:'Chiến Binh Độc Lập',ss_겁재:'Thách Thức Can Đảm',ss_식신:'Người Sáng Tạo Cảm Xúc',ss_상관:'Thiên Tài Phá Cách',
+  ss_편재:'Nghệ Sĩ Đa Năng',ss_정재:'Người Phát Triển Bền Vững',ss_편관:'Lãnh Đạo Cuốn Hút',ss_정관:'Người Gìn Giữ Nguyên Tắc',
+  ss_편인:'Nhà Thám Hiểm Huyền Bí',ss_정인:'Người Ôm Trọn Thông Thái',
+  stemMeta:['cây lớn','dây leo linh hoạt','mặt trời rực rỡ','ngọn nến dịu nhẹ','núi lớn','đất mềm','sắt vững chắc','ngọc sáng bóng','sông rộng','mưa nhẹ êm'],
+  elemMeta:{'木':'sự phát triển của mộc','火':'đam mê của hỏa','土':'sự ổn định của thổ','金':'sức mạnh của kim','水':'dòng chảy của thủy'},
+  rDimTpl:'① Năng lượng {dir} {mg} ({mgT}) (50%) + ② Nhật trụ {ilju} bản chất {stem} (30%) + ③ Năng lượng {dom} (20%) kết hợp tạo nên điều này.',
+  rDimOut:'hướng ngoại',rDimIn:'hướng nội',
+  rStory:'{desc} Với năng lượng {mg}, bạn gặp gỡ thế giới như một {title}. Ở tuổi {age}, bạn đang trong một trong những chương rực rỡ nhất ✨',
+  rDesc1:'Bạn sinh ra với khí chất của một {title}. {desc} Năng lượng {mg} ({mgT}) xếp chồng lên trên, và {dom} ({domT}) là siêu năng lực hành động của bạn, tạo nên tính cách đặc biệt cuốn hút.',
+  rDesc2:'Ngay lúc này, dòng chảy {stem} đang kích hoạt năng lượng {elemM} xung quanh bạn. Năm 2026, năng lượng Bính Hỏa và Ngọ Mã mang đến những cơn gió thay đổi và cơ hội mới.',
+  rDw:'Dòng chảy {stem} hiện tại đang hướng dẫn khí chất {myStem} của bạn đến những chân trời mới. ',rDwLate:'Bạn đang ở nửa sau — thời gian thu hoạch kết quả.',rDwEarly:'Vẫn còn sớm — thời gian gieo hạt cho tương lai.',
+  rSw:'Năm 2026 tràn đầy năng lượng Bính Hỏa + Ngọ Mã. Với khí chất {stem} của bạn, năng lượng này ',
+  rSwFire:'khuếch đại ngọn lửa tự nhiên của bạn — mong đợi động lực mạnh mẽ.',rSwWater:'tạo ra sự cân bằng thú vị giữa thủy và hỏa.',rSwOther:'mang đến kích thích mới và sự thay đổi thú vị.',
+  rSeasonSkew:{'木':'🌡️ Năng lượng mùa xuân của bạn rất mạnh — tràn đầy cảm giác phát triển và mở rộng.','火':'🌡️ Năng lượng mùa hè của bạn rất mãnh liệt — đam mê và biểu đạt đang bùng cháy.','土':'🌡️ Năng lượng chuyển tiếp của bạn mạnh mẽ — sức mạnh ổn định và tập trung là neo đậu của bạn.','金':'🌡️ Năng lượng mùa thu của bạn sắc bén — sự rõ ràng và hành động quyết đoán đến tự nhiên.','水':'🌡️ Năng lượng mùa đông của bạn chạy sâu — trí tuệ và trực giác đặc biệt mạnh.'},
+  rNoGwan:'🕊️ Không có năng lượng kiểm soát, mặt tự do và cảm xúc của bạn tỏa sáng rực rỡ hơn. ',rNoSik:'🔒 Với ít năng lượng biểu đạt hơn, logic nội tâm và tư duy có hệ thống trở thành sức mạnh của bạn. ',
+  rCharJoin:' + ',rCharSuffix:' năng lượng gặp gỡ thế giới',
+  structTitle:'🧬 Tính Toán MBTI',structIlju:'Nhật Trụ (Cốt Lõi Bẩm Sinh)',structMonth:'Năng Lượng Tháng (Môi Trường)',structDom:'Năng Lượng Mạnh Nhất (Phong Cách Hành Động)',
+  disc4:'Đây là công cụ tham khảo để tự hiểu bản thân, không phải chẩn đoán khoa học. Số phận của bạn không cố định — mọi lựa chọn đều là của bạn. Hãy dùng điều này như một cách vui để hiểu thêm về bản thân!',
 }
 };
 function t(k){return (I[LANG]&&I[LANG][k])||I.ko[k]||k}
@@ -475,6 +557,18 @@ en:{
   정관:{sub:'责任与体系的能量 — 值得信赖、遵循正道的气质',why:'强责任感与纪律 → 逻辑体系中心判断，计划性执行'},
   편인:{sub:'直觉与独创的能量 — 拥有独特视角的气质',why:'强直觉与独创性 → 内在探索型能量，灵感驱动的灵活行动'},
   정인:{sub:'学习与包容的能量 — 知性且温暖的气质',why:'学术性且包容 → 内在专注型能量，直觉与判断的平衡'},
+},
+vi:{
+  비견:{sub:'Năng lượng giống bạn — khí chất độc lập và tự tin',why:'Tự khẳng định rõ ràng & độc lập → hơi hướng ngoại, thiên về phán đoán logic'},
+  겁재:{sub:'Năng lượng cạnh tranh & xã hội — khí chất chủ động và thân thiện',why:'Xã hội và năng động → hướng ngoại mạnh, thích hành động ngẫu hứng'},
+  식신:{sub:'Năng lượng sáng tạo & thư thái — đầy cảm thụ nghệ thuật',why:'Cảm xúc sáng tạo & trực giác → phán đoán ấm áp dựa trên cảm xúc, thích dòng chảy tự do'},
+  상관:{sub:'Năng lượng biểu đạt & nổi loạn — khí chất độc đáo và phi thường',why:'Tư duy phi thường & biểu đạt mạnh → trực giác chiếm ưu thế, tính ngẫu hứng tối đa'},
+  편재:{sub:'Năng lượng hoạt động & đa năng — xã hội tốt với cảm quan thực tế mạnh',why:'Xã hội cao & nhận thức thực tế → hướng ngoại mạnh, phán đoán cảm giác-thực tế'},
+  정재:{sub:'Năng lượng ổn định & lập kế hoạch — khí chất cần cù và đáng tin cậy',why:'Lập kế hoạch tỉ mỉ & hướng đến ổn định → dựa trên dữ liệu, phán đoán có hệ thống'},
+  편관:{sub:'Năng lượng thách thức & quyết đoán — khí chất lãnh đạo mạnh mẽ',why:'Quyết đoán mạnh & nguyên tắc → phán đoán logic lạnh lùng, thực thi có hệ thống'},
+  정관:{sub:'Năng lượng trách nhiệm & cấu trúc — khí chất đáng tin cậy, chính trực',why:'Trách nhiệm mạnh & kỷ luật → phán đoán trung tâm logic-hệ thống, thực thi có kế hoạch'},
+  편인:{sub:'Năng lượng trực giác & độc đáo — khí chất có quan điểm riêng',why:'Trực giác mạnh & độc đáo → năng lượng khám phá nội tâm, hành động linh hoạt dựa trên cảm hứng'},
+  정인:{sub:'Năng lượng học hỏi & bao dung — khí chất trí tuệ và ấm áp',why:'Học thuật và bao dung → năng lượng tập trung nội tâm, cân bằng trực giác & phán đoán'},
 }};
 /* ── 본질 × 계절 분석 다국어 ── */
 const ESSENCE_SEASON_I18N = {
@@ -537,6 +631,18 @@ const ESSENCE_SEASON_I18N = {
     7: ["闪耀的原石：自爱满满, 敏感但有闪耀的点子", "火中的宝石：对压力脆弱, 完美主义且敏感", "橱窗里的钻石：最高价值, 自尊心高且审美洗练", "水洗的宝石：冰冷但清晰的智慧, 优秀的口才与头脑"],
     8: ["孕育生命的生命之水：创意爆发, 帮助万物的灵活思维", "夏日的绿洲：人气爆发, 问题解决者, 性格豪爽", "深邃清澈的湖泊：深不可测的深度, 卓越的信息收集力", "冰封的大海：想法太多, 哲学且深邃的智慧"],
     9: ["春日的甘霖：灵活敏捷, 在任何地方都是不可或缺的角色", "旱地的阵雨：爆发性的创意, 懂得时机的胜负师", "秋天的露水：湿润的感性, 安静但有强大的影响力", "冬日的暴风雪：神秘, 点子多但需要执行力"]
+  },
+  vi: {
+    0: ["Tăng Trưởng Vô Hạn: Chủ nhân tò mò, năng lượng bắt đầu mạnh mẽ", "Người Làm Việc Bùng Nổ: Hiệu suất đỉnh cao, cẩn thận kiệt sức", "Gỗ Vững Chắc: Chuyên gia lành nghề vượt qua thử thách, hướng kết quả", "Cây Đại Thụ Bén Rễ: Kiên nhẫn tối thượng, người lập kế hoạch chờ đợi mùa xuân"],
+    1: ["Hoa Dại Nở Rộ: Nổi tiếng, kỹ năng xã hội đỉnh cao, tỏa sáng", "Khu Vườn Rực Rỡ: Biểu đạt bùng nổ, cẩn thận thay đổi tâm trạng", "Cúc Mùa Thu: Thích nghi tốt nhất, người sống sót bền bỉ bên trong", "Cây Trong Nhà Kính: Kích thích bản năng bảo vệ, cần người hỗ trợ ấm áp"],
+    2: ["Ánh Nắng Mùa Xuân Ấm Áp: Tốt bụng, tinh thần nuôi dưỡng ấm áp", "Mùa Hè Nóng Bỏng: Đam mê bùng nổ, lãnh đạo mạnh nhất, bản tính bốc lửa", "Ánh Sáng Chiếu Rọi Sự Phong Phú: Khả năng kết trái, cảm quan thẩm mỹ tuyệt vời", "Lò Sưởi Được Chào Đón: Được chào đón ở khắp nơi, tinh thần hy sinh"],
+    3: ["Tia Lửa Trong Gió Xuân: Trực giác, bộ não sáng ý tưởng", "Lò Nung Dữ Dội: Cạnh tranh mạnh, tập trung đáng sợ vào mục tiêu", "Ngọn Hải Đăng Trong Bóng Tối: Mắt nhìn thấy giá trị, lãnh đạo cô đơn", "Lửa Làm Tan Băng Giá: Ấm áp, chuyên gia tư vấn chữa lành tâm hồn"],
+    4: ["Núi Ôm Ấp Mầm Non: Bao dung, người cố vấn nuôi dưỡng người khác", "Núi Lửa Khô Cạn: Quy mô lớn, bướng bỉnh và độc lập", "Núi Mùa Thu Phong Phú: Thư thái, biểu tượng của sự giàu có và thu hoạch", "Núi Đông Tuyết Phủ: Chiều sâu huyền bí, tư duy triết học sâu sắc"],
+    5: ["Vườn Rau Xanh Tươi: Thực tế, cần cù tự trồng trọt", "Đất Đai Sống Động: Nuôi dưỡng và đầy tình cảm, làm phong phú môi trường xung quanh", "Đất Sẵn Sàng Thu Hoạch: Tính toán nhanh, thực dụng và tiết kiệm", "Đất Đóng Băng Nghỉ Ngơi: Trí tuệ chờ đợi, khả năng tiết kiệm và tích lũy"],
+    6: ["Đá Đang Được Mài Giũa: Phát triển qua thay đổi, tiềm năng sắp bùng nổ", "Thép Được Rèn Luyện: Chuyên gia thực sự được tôi rèn qua huấn luyện khắc nghiệt", "Sương Mùa Thu/Lưỡi Dao: Bậc thầy ranh giới, sức cuốn hút và quyết đoán hàng đầu", "Đá Trong Băng: Lý trí lạnh lùng, niềm tin vững chắc không lay chuyển"],
+    7: ["Đá Thô Sáng Bóng: Tràn đầy tự yêu, nhạy cảm nhưng ý tưởng rực rỡ", "Đá Quý Trong Lửa: Dễ bị căng thẳng, hoàn hảo chủ nghĩa và nhạy cảm", "Kim Cương Trong Tủ Kính: Giá trị tối thượng, tự hào cao và gu thẩm mỹ tinh tế", "Đá Quý Rửa Bằng Nước: Trí tuệ lạnh nhưng trong sáng, lời nói và bộ não xuất sắc"],
+    8: ["Nước Nuôi Sống: Sáng tạo bùng nổ, tư duy linh hoạt giúp đỡ tất cả", "Ốc Đảo Mùa Hè: Nổi tiếng bùng nổ, người giải quyết vấn đề, tính cách sảng khoái", "Hồ Sâu Trong Xanh: Chiều sâu huyền bí, thu thập thông tin xuất sắc", "Biển Đóng Băng: Suy nghĩ quá nhiều, triết học và trí tuệ sâu sắc"],
+    9: ["Mưa Xuân Mát Lành: Bậc thầy cảm nhận, hiện diện thiết yếu ở mọi nơi", "Mưa Rào Trong Hạn Hán: Ý tưởng bùng nổ, đối thủ biết thời cơ", "Sương Thu: Cảm xúc ẩm ướt, yên lặng nhưng ảnh hưởng mạnh mẽ", "Bão Tuyết Mùa Đông: Bí ẩn, nhiều ý tưởng nhưng cần sức mạnh thực thi"]
   }
 };
 
@@ -576,6 +682,13 @@ const ELEM_QUANT_I18N = {
     '土': { key: '安定 & 信任', best: '可靠的定海神针', too: '注意固执！极度拒绝改变', need: '难以安顿，心态容易动摇' },
     '金': { key: '决断 & 原则', best: '干净利落的收尾者', too: '注意毒舌！用锐利的话语伤人', need: '不懂拒绝的便利贴女孩/男孩，收尾模糊' },
     '水': { key: '智慧 & 适应', best: '机敏且灵活', too: '注意胡思乱想！过度忧虑导致情绪低落', need: '缺乏弹性，急需补充情感能量' }
+  },
+  vi: {
+    '木': { key: 'Kế Hoạch & Thúc Đẩy', best: 'Người hành động với động lực mạnh', too: 'Cẩn thận bỏ cuộc! Bắt đầu quá nhiều mà không hoàn thành', need: 'Khó khởi đầu, thiếu động lực' },
+    '火': { key: 'Đam Mê & Biểu Đạt', best: 'Người cuốn hút thành thật và tự tin', too: 'Cẩn thận nóng tính! Cảm xúc lên xuống như tàu lượn', need: 'Thiếu phản ứng, sức hiện diện có thể yếu' },
+    '土': { key: 'Ổn Định & Tin Cậy', best: 'Điểm tựa đáng tin cậy', too: 'Cẩn thận bị mắc kẹt! Từ chối thay đổi cực đoan', need: 'Khó ổn định, tinh thần dễ lung lay' },
+    '金': { key: 'Quyết Đoán & Nguyên Tắc', best: 'Người hoàn thành sạch sẽ', too: 'Cẩn thận lời nói sắc bén! Làm tổn thương người khác bằng sự thật', need: 'Không thể từ chối, kết thúc mờ nhạt' },
+    '水': { key: 'Trí Tuệ & Thích Nghi', best: 'Nhanh nhạy và linh hoạt', too: 'Cẩn thận suy nghĩ quá nhiều! Lo lắng quá dẫn đến u sầu', need: 'Thiếu linh hoạt, cần nạp lại năng lượng cảm xúc' }
   }
 };
 
@@ -737,11 +850,25 @@ function applyLang(){
     featEl.innerHTML=`<p style="font-size:13px;font-weight:700;color:var(--g1);margin-bottom:14px;text-align:center">${fd.h}</p><div style="display:grid;gap:10px">${fd.f.map(r=>`<div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:18px;flex-shrink:0">${r.e}</span><div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">${r.t}</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">${r.d}</p></div></div>`).join('')}</div>`;
   }
 }
-// 초기 언어 로드 (URL ?lang= 우선, 그 다음 localStorage)
+// 초기 언어 로드 (URL ?lang= > localStorage > 브라우저 언어 자동 감지 순)
 try{
   const urlLang=new URLSearchParams(location.search).get('lang');
-  if(urlLang&&LANG_FLAG[urlLang]){LANG=urlLang;try{localStorage.setItem('saju_lang',urlLang)}catch(e){}}
-  else{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}
+  if(urlLang&&LANG_FLAG[urlLang]){
+    LANG=urlLang;try{localStorage.setItem('saju_lang',urlLang)}catch(e){}
+  } else {
+    const saved=localStorage.getItem('saju_lang');
+    if(saved&&LANG_FLAG[saved]){
+      LANG=saved;
+    } else {
+      // 저장된 설정이 없을 때만 브라우저 언어 감지
+      const bl=(navigator.language||navigator.userLanguage||'').toLowerCase();
+      if(bl.startsWith('vi')){LANG='vi';}
+      else if(bl.startsWith('ja')){LANG='ja';}
+      else if(bl.startsWith('zh-tw')||bl==='zh-hant'){LANG='zh-TW';}
+      else if(bl.startsWith('zh')){LANG='zh-CN';}
+      else if(bl.startsWith('en')){LANG='en';}
+    }
+  }
 }catch(e){}
 const _initApp=()=>{
   if(LANG!=='ko')setLang(LANG);
