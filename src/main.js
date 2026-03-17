@@ -74,7 +74,7 @@ ko:{
   settingsTitle:'⚙️ 설정',settingsApiDesc:'키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)',settingsSave:'저장',settingsClose:'닫기',
   privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
   segYY:'YY 년',segMM:'MM 월',segDD:'DD 일',
-  exDesc1:'남 01.01.12',exDesc2:'여 03.02.15',exDesc3:'여 99.12.25',
+  exDesc1:'여 78.07.27',exDesc2:'여 07.01.09',exDesc3:'여 13.09.06',
   age:'세',male:'♂ 남성',female:'♀ 여성',
   // 십성 이름
   ss_비견:'독립 전사(비견)',ss_겁재:'도전하는 승부사(겁재)',ss_식신:'감성 크리에이터(식신)',ss_상관:'규칙을 깨는 천재(상관)',
@@ -94,7 +94,11 @@ ko:{
   rSeasonSkew:{'木':'🌡️ 봄 에너지가 매우 강해서 성장과 확장의 기운이 넘쳐.','火':'🌡️ 여름 에너지가 매우 강해서 열정과 표현의 기운이 뜨거워.','土':'🌡️ 환절기 에너지가 강해서 안정과 중심을 잡는 힘이 있어.','金':'🌡️ 가을 에너지가 강해서 정리와 결단의 기운이 날카로워.','水':'🌡️ 겨울 에너지가 강해서 지혜와 직관의 깊이가 남달라.'},
   rNoGwan:'🕊️ 통제 에너지가 없어서 자유롭고 감성적인 면이 더 강해. ',rNoSik:'🔒 표현 에너지가 적어서 내면에서 논리와 체계로 힘을 발휘해. ',
   rCharJoin:' + ',rCharSuffix:' 에너지로 세상과 만나는 사람',
-  structTitle:'🧬 MBTI 산출 구조',structIlju:'일주 (타고난 본질)',structMonth:'월지 격국 (환경)',structDom:'최강 에너지 (행동 무기)',
+  structTitle:'🧬 MBTI 산출 논리 (사주를 통해 나를 이해하기)',structIlju:'일주 (타고난 본질)',structMonth:'월지 격국 (환경)',structDom:'최강 에너지 (행동 무기)',
+  flowDwNote:'명리학의 대운 · 10년 단위로 변화',
+  flowSwNote:'명리학의 세운 · 매년 변화',
+  secMapNote:'💡 각 항목별로 40~60%는 환경 변화에 따라 달라질 수 있어서, MBTI 검사 때마다 결과가 달라지는 원인이 될 수 있어요.',
+  secStrNote:'💡 일주(日柱)는 내가 태어난 날이에요. 일주 천간의 에너지가 나의 핵심 강점으로 나타나요.',
   disc4:'이 결과는 자기 이해를 위한 참고 자료이며, 과학적 진단이 아닙니다. 운명은 정해져 있지 않으며, 모든 선택은 여러분의 것입니다.',
 },
 ja:{
@@ -129,7 +133,7 @@ ja:{
   pcTitle:'📷 パーソナルフォトカード',pcSub:'SNSシェア用の感性カード ✨',pcNick:'英語ニックネーム',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性メッセージ',pcMsgLimit:'20文字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日付',pcColor:'パーソナルカラー',pcElem:'{0} エネルギーカラー',pcCancel:'キャンセル',pcGen:'✨ カード生成 + リンクコピー',pcGenerating:'生成中...',pcToast:'📷 カード保存 + 🔗 リンクコピー完了！',
   tagBorn:'🌙 生まれつきの気質',tagPre:'🌙 生まれた時から持っている気質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTIへの影響: ',
-  flowDw:'🌊 今の流れ',flowSw:'☀️ 2026年のエネルギー',flowSwSub:'丙午年',
+  flowDw:'🌊 今の流れ',flowSw:'☀️ {0}年のエネルギー',flowSwSub:'{0}年 {1}',
   swStemL:'丙(火)',swBranchL:'午(馬)',
   secIlju:'私の日柱気質',secIljuDiffNote:'💡 <strong style="color:var(--lav)">一般MBTIと異なる場合があります！</strong><br>一般MBTIは環境で変わりますが、誕生日MBTIは四柱命式に刻まれた<strong>生まれつきの気質</strong>です。',
   secIljuL:'六十甲子日柱論',secStem:'天干',secBranch:'地支',
@@ -158,7 +162,7 @@ ja:{
   settingsTitle:'⚙️ 設定',settingsApiDesc:'キーを入力するとAI分析が追加されます！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'閉じる',
   privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
-  exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
+  exDesc1:'女 78.07.27',exDesc2:'女 07.01.09',exDesc3:'女 13.09.06',
   age:'歳',male:'♂ 男性',female:'♀ 女性',
   ss_비견:'独立戦士',ss_겁재:'挑戦する勝負師',ss_식신:'感性クリエイター',ss_상관:'ルールを破る天才',
   ss_편재:'万能エンターテイナー',ss_정재:'着実な成長者',ss_편관:'カリスマリーダー',ss_정관:'原則の守護者',
@@ -176,7 +180,11 @@ ja:{
   rSeasonSkew:{'木':'🌡️ 春のエネルギーがとても強く、成長と拡大の気運に溢れている。','火':'🌡️ 夏のエネルギーがとても強く、情熱と表現の気運が熱い。','土':'🌡️ 季節の変わり目のエネルギーが強く、安定と軸を保つ力がある。','金':'🌡️ 秋のエネルギーが強く、整理と決断の気運が鋭い。','水':'🌡️ 冬のエネルギーが強く、知恵と直感の深さが格別。'},
   rNoGwan:'🕊️ コントロールのエネルギーがないため、自由で感性的な面がより強い。',rNoSik:'🔒 表現のエネルギーが少ないため、内面で論理と体系の力を発揮する。',
   rCharJoin:' + ',rCharSuffix:'のエネルギーで世界と出会う人',
-  structTitle:'🧬 MBTI算出ロジック',structIlju:'日柱（生まれつきの本質）',structMonth:'月柱格局（環境）',structDom:'最強エネルギー（行動の武器）',
+  structTitle:'🧬 MBTI算出ロジック (四柱で自分を理解する)',structIlju:'日柱（生まれつきの本質）',structMonth:'月柱格局（環境）',structDom:'最強エネルギー（行動の武器）',
+  flowDwNote:'命理学の大運 · 10年単位で変化',
+  flowSwNote:'命理学の歳運 · 毎年変わる',
+  secMapNote:'💡 各項目の40~60%は環境の変化によって変わる可能性があります。MBTIの検査結果が毎回変わる原因になることもあります。',
+  secStrNote:'💡 日柱とは生まれた日のことです。日柱の天干のエネルギーが、あなたの核心的な強みとして現れます。',
   disc4:'この結果は自己理解のための参考資料であり、科学的な診断ではありません。運命は決まっておらず、すべての選択はあなた自身のものです。楽しみながら自分をもっと知るきっかけにしてね。',
 },
 en:{
@@ -211,7 +219,7 @@ en:{
   pcTitle:'📷 Personal Photo Card',pcSub:'Create your vibe card for SNS ✨',pcNick:'Your Nickname',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'Vibe Message',pcMsgLimit:'max 20 chars',pcMsgPh:'e.g. Born to shine ✨',pcDate:'Date',pcColor:'Personal Color',pcElem:'{0} Energy Color',pcCancel:'Cancel',pcGen:'✨ Create Card + Copy Link',pcGenerating:'Creating...',pcToast:'📷 Card saved + 🔗 Link copied!',
   tagBorn:'🌙 Innate Type',tagPre:'🌙 The temperament you were born with — ',
   sipBadge:'Month Pillar Star',sipRank:'MBTI Factor #1',sipWhy:'💡 MBTI Impact: ',
-  flowDw:'🌊 Current Life Phase',flowSw:'☀️ 2026 Energy',flowSwSub:'Fire-Horse Year',
+  flowDw:'🌊 Current Life Phase',flowSw:'☀️ {0} Energy',flowSwSub:'{0} · {1}',
   swStemL:'Bing (Fire)',swBranchL:'Wu (Horse)',
   secIlju:'My Day Pillar Temperament',secIljuDiffNote:'💡 <strong style="color:var(--lav)">May differ from regular MBTI!</strong><br>Regular MBTI changes with environment, but Birth MBTI shows your <strong>innate temperament</strong> from your birth chart.',
   secIljuL:'60 Jiazi Day Pillar Theory',secStem:'Heavenly Stem',secBranch:'Earthly Branch',
@@ -240,7 +248,7 @@ en:{
   settingsTitle:'⚙️ Settings',settingsApiDesc:'Enter your key to enable AI analysis! 🌙 (Gemini 1.5 Flash)',settingsSave:'Save',settingsClose:'Close',
   privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
   segYY:'YY',segMM:'MM',segDD:'DD',
-  exDesc1:'M 01.01.12',exDesc2:'F 03.02.15',exDesc3:'F 99.12.25',
+  exDesc1:'F 78.07.27',exDesc2:'F 07.01.09',exDesc3:'F 13.09.06',
   age:'yrs',male:'♂ Male',female:'♀ Female',
   ss_비견:'Independent Warrior',ss_겁재:'Bold Challenger',ss_식신:'Sensory Creator',ss_상관:'Rule-Breaking Genius',
   ss_편재:'Versatile Entertainer',ss_정재:'Steady Grower',ss_편관:'Charismatic Leader',ss_정관:'Guardian of Principles',
@@ -258,7 +266,11 @@ en:{
   rSeasonSkew:{'木':'🌡️ Your spring energy is very strong — growth and expansion vibes are overflowing.','火':'🌡️ Your summer energy is intense — passion and expression are on fire.','土':'🌡️ Your transitional energy is strong — stability and centering power is your anchor.','金':'🌡️ Your autumn energy is sharp — clarity and decisive action come naturally.','水':'🌡️ Your winter energy runs deep — wisdom and intuition are exceptionally strong.'},
   rNoGwan:'🕊️ Without controlling energy, your free-spirited and emotional side shines even brighter. ',rNoSik:'🔒 With less expressive energy, your inner logic and systematic thinking become your power. ',
   rCharJoin:' + ',rCharSuffix:' energy meeting the world',
-  structTitle:'🧬 MBTI Calculation',structIlju:'Day Pillar (Innate Core)',structMonth:'Month Energy (Environment)',structDom:'Strongest Energy (Action Style)',
+  structTitle:'🧬 MBTI Logic (Understanding Yourself Through Saju)',structIlju:'Day Pillar (Innate Core)',structMonth:'Month Energy (Environment)',structDom:'Strongest Energy (Action Style)',
+  flowDwNote:'Daewoon (大運) · Changes every 10 years',
+  flowSwNote:'Seun (歲運) · Changes every year',
+  secMapNote:'💡 40-60% of each trait can shift with environment — that\'s why your MBTI results may vary between tests.',
+  secStrNote:'💡 The Day Pillar is your birth day. Its Heavenly Stem energy reveals your core strengths.',
   disc4:'This is a reference tool for self-understanding, not a scientific diagnosis. Your destiny is not fixed — every choice is yours. Use this as a fun way to learn a bit more about yourself!',
 },
 'zh-TW':{
@@ -293,7 +305,7 @@ en:{
   pcTitle:'📷 個人照片卡',pcSub:'為SNS分享創建感性卡片 ✨',pcNick:'英文暱稱',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以內',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'個人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 複製連結',pcGenerating:'生成中...',pcToast:'📷 卡片已儲存 + 🔗 連結已複製！',
   tagBorn:'🌙 天生氣質',tagPre:'🌙 與生俱來的氣質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTI影響：',
-  flowDw:'🌊 目前的運勢',flowSw:'☀️ 2026年能量',flowSwSub:'丙午年',
+  flowDw:'🌊 目前的運勢',flowSw:'☀️ {0}年能量',flowSwSub:'{0}年 {1}',
   swStemL:'丙（火）',swBranchL:'午（馬）',
   secIlju:'我的日柱氣質',secIljuDiffNote:'💡 <strong style="color:var(--lav)">可能與一般MBTI不同！</strong><br>一般MBTI會隨環境改變，但生日MBTI是四柱命盤中的<strong>先天氣質</strong>。',
   secIljuL:'六十甲子日柱論',secStem:'天干',secBranch:'地支',
@@ -322,7 +334,7 @@ en:{
   settingsTitle:'⚙️ 設定',settingsApiDesc:'輸入金鑰即可啟用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'儲存',settingsClose:'關閉',
   privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
-  exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
+  exDesc1:'女 78.07.27',exDesc2:'女 07.01.09',exDesc3:'女 13.09.06',
   age:'歲',male:'♂ 男',female:'♀ 女',
   ss_비견:'獨立戰士',ss_겁재:'挑戰勝負師',ss_식신:'感性創作者',ss_상관:'打破規則的天才',
   ss_편재:'萬能娛樂家',ss_정재:'穩健成長者',ss_편관:'魅力領袖',ss_정관:'原則守護者',
@@ -340,7 +352,11 @@ en:{
   rSeasonSkew:{'木':'🌡️ 春天的能量非常強大，成長與擴展的氣勢滿溢。','火':'🌡️ 夏天的能量非常強烈，熱情與表達的火焰正旺。','土':'🌡️ 轉換期的能量很強，穩定與重心的力量是你的錨。','金':'🌡️ 秋天的能量很銳利，整理與決斷的氣場特別鮮明。','水':'🌡️ 冬天的能量很深沉，智慧與直覺的深度格外出眾。'},
   rNoGwan:'🕊️ 沒有管控能量，自由感性的一面更加突出。',rNoSik:'🔒 表達能量較少，內在的邏輯與體系成為你的力量。',
   rCharJoin:' + ',rCharSuffix:'的能量與世界相遇的人',
-  structTitle:'🧬 MBTI算出結構',structIlju:'日柱（天生本質）',structMonth:'月柱格局（環境）',structDom:'最強能量（行動武器）',
+  structTitle:'🧬 MBTI算出邏輯 (透過四柱了解自己)',structIlju:'日柱（天生本質）',structMonth:'月柱格局（環境）',structDom:'最強能量（行動武器）',
+  flowDwNote:'命理學大運 · 每10年變化',
+  flowSwNote:'命理學歲運 · 每年變化',
+  secMapNote:'💡 每個項目的40~60%可能隨環境改變，這也是每次MBTI測試結果可能不同的原因。',
+  secStrNote:'💡 日柱就是你出生那天。日柱天干的能量體現為你的核心優勢。',
   disc4:'本結果僅供自我了解參考，並非科學診斷。命運並未註定，每個選擇都掌握在你手中。把它當作更了解自己的有趣工具吧！',
 },
 'zh-CN':{
@@ -375,7 +391,7 @@ en:{
   pcTitle:'📷 个人照片卡',pcSub:'为SNS分享创建感性卡片 ✨',pcNick:'英文昵称',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'个人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 复制链接',pcGenerating:'生成中...',pcToast:'📷 卡片已保存 + 🔗 链接已复制！',
   tagBorn:'🌙 天生气质',tagPre:'🌙 与生俱来的气质 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1优先',sipWhy:'💡 MBTI影响：',
-  flowDw:'🌊 目前的运势',flowSw:'☀️ 2026年能量',flowSwSub:'丙午年',
+  flowDw:'🌊 目前的运势',flowSw:'☀️ {0}年能量',flowSwSub:'{0}年 {1}',
   swStemL:'丙（火）',swBranchL:'午（马）',
   secIlju:'我的日柱气质',secIljuDiffNote:'💡 <strong style="color:var(--lav)">可能与一般MBTI不同！</strong><br>一般MBTI会随环境改变，但生日MBTI是四柱命盘中的<strong>先天气质</strong>。',
   secIljuL:'六十甲子日柱论',secStem:'天干',secBranch:'地支',
@@ -403,7 +419,7 @@ en:{
   settingsTitle:'⚙️ 设置',settingsApiDesc:'输入密钥即可启用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'关闭',
   privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
   segYY:'YY 年',segMM:'MM 月',segDD:'DD 日',
-  exDesc1:'男 01.01.12',exDesc2:'女 03.02.15',exDesc3:'女 99.12.25',
+  exDesc1:'女 78.07.27',exDesc2:'女 07.01.09',exDesc3:'女 13.09.06',
   age:'岁',male:'♂ 男',female:'♀ 女',
   ss_비견:'独立战士',ss_겁재:'挑战胜负师',ss_식신:'感性创作者',ss_상관:'打破规则的天才',
   ss_편재:'万能娱乐家',ss_정재:'稳健成长者',ss_편관:'魅力领袖',ss_정관:'原则守护者',
@@ -421,7 +437,11 @@ en:{
   rSeasonSkew:{'木':'🌡️ 春天的能量非常强大，成长与扩展的气势满溢。','火':'🌡️ 夏天的能量非常强烈，热情与表达的火焰正旺。','土':'🌡️ 转换期的能量很强，稳定与重心的力量是你的锚。','金':'🌡️ 秋天的能量很锐利，整理与决断的气场特别鲜明。','水':'🌡️ 冬天的能量很深沉，智慧与直觉的深度格外出众。'},
   rNoGwan:'🕊️ 没有管控能量，自由感性的一面更加突出。',rNoSik:'🔒 表达能量较少，内在的逻辑与体系成为你的力量。',
   rCharJoin:' + ',rCharSuffix:'的能量与世界相遇的人',
-  structTitle:'🧬 MBTI算出结构',structIlju:'日柱（天生本质）',structMonth:'月柱格局（环境）',structDom:'最强能量（行动武器）',
+  structTitle:'🧬 MBTI算出逻辑 (通过四柱了解自己)',structIlju:'日柱（天生本质）',structMonth:'月柱格局（环境）',structDom:'最强能量（行动武器）',
+  flowDwNote:'命理学大运 · 每10年变化',
+  flowSwNote:'命理学岁运 · 每年变化',
+  secMapNote:'💡 每个项目的40~60%可能随环境改变，这也是每次MBTI测试结果可能不同的原因。',
+  secStrNote:'💡 日柱就是你出生那天。日柱天干的能量体现为你的核心优势。',
   disc4:'本结果仅供自我了解参考，并非科学诊断。命运并未注定，每个选择都掌握在你手中。把它当作更了解自己的有趣工具吧！',
 },
 vi:{
@@ -456,7 +476,7 @@ vi:{
   pcTitle:'📷 Thẻ Ảnh Cá Nhân',pcSub:'Tạo thẻ vibe của bạn cho MXH ✨',pcNick:'Biệt danh',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'Lời nhắn',pcMsgLimit:'tối đa 20 ký tự',pcMsgPh:'e.g. Born to shine ✨',pcDate:'Ngày',pcColor:'Màu Cá Nhân',pcElem:'Màu năng lượng {0}',pcCancel:'Hủy',pcGen:'✨ Tạo thẻ + Sao chép link',pcGenerating:'Đang tạo...',pcToast:'📷 Đã lưu thẻ + 🔗 Đã sao chép link!',
   tagBorn:'🌙 Khí Chất Bẩm Sinh',tagPre:'🌙 Khí chất bạn sinh ra đã có — ',
   sipBadge:'Thập Thần Nguyệt Trụ',sipRank:'Yếu tố MBTI #1',sipWhy:'💡 Ảnh hưởng MBTI: ',
-  flowDw:'🌊 Giai Đoạn Hiện Tại',flowSw:'☀️ Năng Lượng 2026',flowSwSub:'Năm Bính Ngọ',
+  flowDw:'🌊 Giai Đoạn Hiện Tại',flowSw:'☀️ Năng Lượng {0}',flowSwSub:'Năm {0} · {1}',
   swStemL:'Bính (Hỏa)',swBranchL:'Ngọ (Ngựa)',
   secIlju:'Khí Chất Nhật Trụ Của Tôi',secIljuDiffNote:'💡 <strong style="color:var(--lav)">Có thể khác với MBTI thông thường!</strong><br>MBTI thông thường thay đổi theo môi trường, nhưng Birth MBTI cho thấy <strong>khí chất bẩm sinh</strong> từ bát tự của bạn.',
   secIljuL:'Lý Thuyết Nhật Trụ Lục Thập Hoa Giáp',secStem:'Thiên Can',secBranch:'Địa Chi',
@@ -485,7 +505,7 @@ vi:{
   settingsTitle:'⚙️ Cài Đặt',settingsApiDesc:'Nhập key để bật phân tích AI! 🌙 (Gemini 1.5 Flash)',settingsSave:'Lưu',settingsClose:'Đóng',
   privacyNotice:'🔒 Ngày sinh và giới tính của bạn không bao giờ được lưu trên bất kỳ máy chủ nào. Tất cả phân tích chạy cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng AI, dữ liệu được gửi đến Google Gemini API.',
   segYY:'YY',segMM:'MM',segDD:'DD',
-  exDesc1:'Nam 01.01.12',exDesc2:'Nữ 03.02.15',exDesc3:'Nữ 99.12.25',
+  exDesc1:'Nữ 78.07.27',exDesc2:'Nữ 07.01.09',exDesc3:'Nữ 13.09.06',
   age:'tuổi',male:'♂ Nam',female:'♀ Nữ',
   ss_비견:'Chiến Binh Độc Lập',ss_겁재:'Thách Thức Can Đảm',ss_식신:'Người Sáng Tạo Cảm Xúc',ss_상관:'Thiên Tài Phá Cách',
   ss_편재:'Nghệ Sĩ Đa Năng',ss_정재:'Người Phát Triển Bền Vững',ss_편관:'Lãnh Đạo Cuốn Hút',ss_정관:'Người Gìn Giữ Nguyên Tắc',
@@ -503,7 +523,11 @@ vi:{
   rSeasonSkew:{'木':'🌡️ Năng lượng mùa xuân của bạn rất mạnh — tràn đầy cảm giác phát triển và mở rộng.','火':'🌡️ Năng lượng mùa hè của bạn rất mãnh liệt — đam mê và biểu đạt đang bùng cháy.','土':'🌡️ Năng lượng chuyển tiếp của bạn mạnh mẽ — sức mạnh ổn định và tập trung là neo đậu của bạn.','金':'🌡️ Năng lượng mùa thu của bạn sắc bén — sự rõ ràng và hành động quyết đoán đến tự nhiên.','水':'🌡️ Năng lượng mùa đông của bạn chạy sâu — trí tuệ và trực giác đặc biệt mạnh.'},
   rNoGwan:'🕊️ Không có năng lượng kiểm soát, mặt tự do và cảm xúc của bạn tỏa sáng rực rỡ hơn. ',rNoSik:'🔒 Với ít năng lượng biểu đạt hơn, logic nội tâm và tư duy có hệ thống trở thành sức mạnh của bạn. ',
   rCharJoin:' + ',rCharSuffix:' năng lượng gặp gỡ thế giới',
-  structTitle:'🧬 Tính Toán MBTI',structIlju:'Nhật Trụ (Cốt Lõi Bẩm Sinh)',structMonth:'Năng Lượng Tháng (Môi Trường)',structDom:'Năng Lượng Mạnh Nhất (Phong Cách Hành Động)',
+  structTitle:'🧬 Logic MBTI (Hiểu Bản Thân Qua Tứ Trụ)',structIlju:'Nhật Trụ (Cốt Lõi Bẩm Sinh)',structMonth:'Năng Lượng Tháng (Môi Trường)',structDom:'Năng Lượng Mạnh Nhất (Phong Cách Hành Động)',
+  flowDwNote:'Đại Vận (大運) · Thay đổi mỗi 10 năm',
+  flowSwNote:'Thái Tuế (歲運) · Thay đổi hàng năm',
+  secMapNote:'💡 40-60% mỗi đặc điểm có thể thay đổi theo môi trường — đó là lý do kết quả MBTI của bạn có thể khác nhau mỗi lần test.',
+  secStrNote:'💡 Nhật Trụ là ngày bạn sinh ra. Năng lượng Thiên Can của Nhật Trụ thể hiện thành điểm mạnh cốt lõi của bạn.',
   disc4:'Đây là công cụ tham khảo để tự hiểu bản thân, không phải chẩn đoán khoa học. Số phận của bạn không cố định — mọi lựa chọn đều là của bạn. Hãy dùng điều này như một cách vui để hiểu thêm về bản thân!',
 }
 };
@@ -1919,9 +1943,10 @@ function renderResult(val,gender,dw,ai,aiInsight){
 
   // ── 대운 카드 ──
   document.getElementById('r-dw-card').innerHTML=
-    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">'+
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'+
     '<div class="flow-badge gold">'+t('flowDw')+'</div>'+
     '<span style="font-size:11px;color:rgba(255,255,255,.4)">'+dw.startAge+'~'+dw.endAge+t('age')+'</span></div>'+
+    '<div style="font-size:10px;color:rgba(255,255,255,.35);margin-bottom:8px">'+t('flowDwNote')+'</div>'+
     '<div class="flow-body">'+
     '<div class="flow-chars"><div class="flow-stem">'+dw.stemCh+'</div><div class="flow-branch">'+dw.branchCh+'</div>'+
     '<div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:3px">'+_sh[dw.stemIdx]+_bh[dw.branchIdx]+'</div></div>'+
@@ -1931,9 +1956,10 @@ function renderResult(val,gender,dw,ai,aiInsight){
   // ── 세운 카드 ──
   const swSname = _sh[ai.swS], swBname = _bh[ai.swB];
   document.getElementById('r-sw-card').innerHTML=
-    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">'+
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'+
     '<div class="flow-badge blue">'+t('flowSw').replace('{0}', ai.nowYear)+'</div>'+
     '<span style="font-size:11px;color:rgba(255,255,255,.4)">'+t('flowSwSub').replace('{0}', ai.nowYear).replace('{1}', ai.swHan)+'</span></div>'+
+    '<div style="font-size:10px;color:rgba(255,255,255,.35);margin-bottom:8px">'+t('flowSwNote')+'</div>'+
     '<div class="flow-body">'+
     '<div class="flow-chars"><div class="flow-stem">'+SE[ai.swS]+'</div><div class="flow-branch">'+BE[ai.swB]+'</div>'+
     '<div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:3px">'+swSname+' '+swBname+'</div></div>'+
@@ -1959,7 +1985,7 @@ function renderResult(val,gender,dw,ai,aiInsight){
     '<div class="detail-label mt-10">'+t('secNow')+'</div><div class="detail-txt">'+ai.desc2+'</div>');
 
   // 3) 성격 지도 (4축)
-  let dimHtml='';
+  let dimHtml='<div style="padding:8px 12px;border-radius:10px;background:rgba(126,212,188,.06);border:1px solid rgba(126,212,188,.15);font-size:11px;color:var(--g1);line-height:1.6;margin-bottom:12px">'+t('secMapNote')+'</div>';
   (ai.dims||[]).forEach(d=>{
     const pct=d.pct,isL=d.chosen===d.left;
     dimHtml+='<div class="dim-item"><div class="dim-top"><div class="dim-letters"><span style="color:'+(isL?'var(--ink)':'var(--g3)')+';font-weight:800">'+d.left+'</span><span style="color:var(--g3);margin:0 3px">/</span><span style="color:'+(!isL?'var(--ink)':'var(--g3)')+';font-weight:800">'+d.right+'</span></div><div class="dim-pct">'+d.chosen+' '+pct+'%</div></div><div class="dim-bar-bg"><div class="dim-bar-fill" data-w="'+pct+'" style="width:0%"></div></div></div>';
@@ -1967,7 +1993,7 @@ function renderResult(val,gender,dw,ai,aiInsight){
   html+=makeSection('sky','📊',t('secMap'),t('secMapSub'),dimHtml);
 
   // 4) 강점
-  let strHtml='';
+  let strHtml='<div style="padding:8px 12px;border-radius:10px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);font-size:11px;color:var(--g1);line-height:1.6;margin-bottom:12px">'+t('secStrNote')+'</div>';
   (ai.strengths||[]).forEach(s=>{
     strHtml+='<div class="str-item"><div class="str-icon">'+s.icon+'</div><div><div class="str-title">'+s.title+'</div><div class="str-desc">'+s.desc+'</div></div></div>';
   });
@@ -2718,7 +2744,7 @@ function renderIlun(natal,targetId='r-ilun'){
   const studyMsg=L.study?.[rel]||L.study?.same||'';
   const workMsg=L.work?.[rel]||L.work?.same||'';
   el.innerHTML=`<div class="ilun-card">
-    <div class="ilun-date">${L.title} · ${L.today} ${dateStr}</div>
+    <div class="ilun-date">${L.title} · ${L.today} <span style="font-size:1.9em;font-weight:900;letter-spacing:0.02em">${dateStr}</span></div>
     <div class="ilun-stems">
       <div class="ilun-stem-box">
         <div class="ilun-stem-label">${L.myday}</div>
@@ -2795,37 +2821,43 @@ const GG_TXT = {
     lvl:['천생연분 💕','최강 케미 💫','잘 맞는 궁합 ✨','무난한 궁합 🌟','도전적 궁합 💪','불꽃 케미 🔥'],
     mbti_good:'MBTI 에너지가 완벽하게 보완돼요',mbti_care:'MBTI 에너지 차이가 있지만 서로 배울 수 있어요',mbti_neutral:'MBTI 에너지가 무난하게 어울려요',
     elem_same:'같은 오행 기운으로 서로 깊이 이해해요',elem_saeng:'오행 상생으로 서로의 기운을 북돋아줘요',elem_geuk:'오행 상극이지만 강한 케미가 생겨요',elem_neutral:'서로 다른 오행이 균형을 이뤄요',
-    intro_hi:'🐱 냥별이가 두 분의 기운을 분석했어요!\n\n',outro:'✨ 어떤 궁합도 서로를 이해하려는 마음이 가장 중요해요!'},
+    intro_hi:'🐱 냥별이가 두 분의 기운을 분석했어요!\n\n',outro:'✨ 어떤 궁합도 서로를 이해하려는 마음이 가장 중요해요!',
+    elemSaengDetail:'{0}이 {1}의 에너지를 키워줘요 (상생 관계)',elemGeukDetail:'{0}이 {1}에게 강한 영향을 미쳐요 (상극 관계)',understBtn:'상대방 좀 더 이해해 보기 →'},
   ja:{title:'誕生日エネルギー相性',topTitle:'誕生日相性',sub:'二人の四柱の気はどれだけ合う？🌟',aLabel:'自分（誕生日MBTI結果）',bLabel:'相手の情報',bBirth:'🎂 生年月日 6桁',bGender:'🌟 性別',btnStart:'💑 相性を分析する',
     genderM:'♂ 男性',genderF:'♀ 女性',errMsg:'⚠️ 相手の生年月日6桁と性別を入力してください',scoreLabel:'相性',resetBtn:'🔄 別の人を分析',mbtiLabel:'MBTI 相性',elemLabel:'五行 相性',
     lvl:['天生縁分 💕','最強ケミ 💫','相性ピッタリ ✨','まあまあな相性 🌟','チャレンジな相性 💪','情熱ケミ 🔥'],
     mbti_good:'MBTIエネルギーが完璧に補い合います',mbti_care:'MBTIエネルギーに差がありますが互いに学べます',mbti_neutral:'MBTIエネルギーが無難に合います',
     elem_same:'同じ五行の気で深く理解し合えます',elem_saeng:'五行相生で互いの気を高め合います',elem_geuk:'五行相克ですが強いケミが生まれます',elem_neutral:'異なる五行がバランスを保ちます',
-    intro_hi:'🐱 ニャンビョリが二人のエネルギーを分析しました！\n\n',outro:'✨ どんな相性も、理解しようとする心が一番大切です！'},
+    intro_hi:'🐱 ニャンビョリが二人のエネルギーを分析しました！\n\n',outro:'✨ どんな相性も、理解しようとする心が一番大切です！',
+    elemSaengDetail:'{0}が{1}のエネルギーを育みます（相生）',elemGeukDetail:'{0}が{1}に強い影響を与えます（相克）',understBtn:'相手をもっと理解する →'},
   en:{title:'Birthday Energy Compatibility',topTitle:'Compatibility',sub:'How well do your birth energies match? 🌟',aLabel:'Me (Birthday MBTI Result)',bLabel:"Partner's Info",bBirth:'🎂 Birthdate (6 digits)',bGender:'🌟 Gender',btnStart:'💑 Analyze Compatibility',
     genderM:'♂ Male',genderF:'♀ Female',errMsg:"⚠️ Please enter your partner's 6-digit birthdate and gender",scoreLabel:'Match',resetBtn:'🔄 Try Another Person',mbtiLabel:'MBTI Match',elemLabel:'Element Match',
     lvl:['Soulmates 💕','Ultimate Chemistry 💫','Great Match ✨','Compatible 🌟','Challenging Chemistry 💪','Electric Chemistry 🔥'],
     mbti_good:'Your MBTI energies perfectly complement each other',mbti_care:'Your MBTI energies differ but you can learn from each other',mbti_neutral:'Your MBTI energies blend together naturally',
     elem_same:'Sharing the same element means deep mutual understanding',elem_saeng:'Your elements nourish each other (Sang-saeng)',elem_geuk:'Your elements clash but create powerful chemistry',elem_neutral:'Different elements balance each other out',
-    intro_hi:"🐱 Nyangbyeoli analyzed both of your energies!\n\n",outro:'✨ Understanding and effort matter more than any compatibility score!'},
+    intro_hi:"🐱 Nyangbyeoli analyzed both of your energies!\n\n",outro:'✨ Understanding and effort matter more than any compatibility score!',
+    elemSaengDetail:'{0} nurtures the energy of {1} (Sang-saeng)',elemGeukDetail:'{0} strongly influences {1} (Sang-geuk)',understBtn:'Understand Your Partner Better →'},
   'zh-TW':{title:'生日能量合婚',topTitle:'生日合婚',sub:'兩人的命格氣場有多契合？🌟',aLabel:'我（生日MBTI分析結果）',bLabel:'對方資訊',bBirth:'🎂 出生日期（6位數）',bGender:'🌟 性別',btnStart:'💑 分析合婚',
     genderM:'♂ 男',genderF:'♀ 女',errMsg:'⚠️ 請輸入對方的6位出生日期及性別',scoreLabel:'合婚',resetBtn:'🔄 分析其他人',mbtiLabel:'MBTI 配對',elemLabel:'五行 合婚',
     lvl:['天生緣分 💕','最強契合 💫','相性絕佳 ✨','普通合婚 🌟','充滿挑戰 💪','電力十足 🔥'],
     mbti_good:'MBTI能量完美互補',mbti_care:'MBTI能量有差異，但可以互相學習',mbti_neutral:'MBTI能量自然融合',
     elem_same:'同一五行氣場，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相剋，但產生強烈化學反應',elem_neutral:'不同五行取得平衡',
-    intro_hi:'🐱 冥星喵分析了兩位的能量！\n\n',outro:'✨ 無論何種合婚，理解對方的心最重要！'},
+    intro_hi:'🐱 冥星喵分析了兩位的能量！\n\n',outro:'✨ 無論何種合婚，理解對方的心最重要！',
+    elemSaengDetail:'{0}滋養{1}的能量（相生）',elemGeukDetail:'{0}對{1}產生強烈影響（相剋）',understBtn:'更深入了解對方 →'},
   'zh-CN':{title:'生日能量合婚',topTitle:'生日合婚',sub:'两人的命格气场有多契合？🌟',aLabel:'我（生日MBTI分析结果）',bLabel:'对方信息',bBirth:'🎂 出生日期（6位数）',bGender:'🌟 性别',btnStart:'💑 分析合婚',
     genderM:'♂ 男',genderF:'♀ 女',errMsg:'⚠️ 请输入对方的6位出生日期及性别',scoreLabel:'合婚',resetBtn:'🔄 分析其他人',mbtiLabel:'MBTI 匹配',elemLabel:'五行 合婚',
     lvl:['天生缘分 💕','最强契合 💫','相性绝佳 ✨','普通合婚 🌟','充满挑战 💪','电力十足 🔥'],
     mbti_good:'MBTI能量完美互补',mbti_care:'MBTI能量有差异，但可以互相学习',mbti_neutral:'MBTI能量自然融合',
     elem_same:'同一五行气场，能深度理解彼此',elem_saeng:'五行相生，互相提升能量',elem_geuk:'五行相克，但产生强烈化学反应',elem_neutral:'不同五行取得平衡',
-    intro_hi:'🐱 冥星喵分析了两位的能量！\n\n',outro:'✨ 无论何种合婚，理解对方的心最重要！'},
+    intro_hi:'🐱 冥星喵分析了两位的能量！\n\n',outro:'✨ 无论何种合婚，理解对方的心最重要！',
+    elemSaengDetail:'{0}滋养{1}的能量（相生）',elemGeukDetail:'{0}对{1}产生强烈影响（相克）',understBtn:'更深入了解对方 →'},
   vi:{title:'Hợp Tuổi Năng Lượng Sinh Nhật',topTitle:'Xem Hợp Tuổi',sub:'Năng lượng sinh của hai người hòa hợp đến đâu? 🌟',aLabel:'Tôi (Kết quả Birth MBTI)',bLabel:'Thông tin đối phương',bBirth:'🎂 Ngày sinh (6 số)',bGender:'🌟 Giới tính',btnStart:'💑 Phân tích hợp tuổi',
     genderM:'♂ Nam',genderF:'♀ Nữ',errMsg:'⚠️ Vui lòng nhập ngày sinh 6 số và giới tính của đối phương',scoreLabel:'Hợp tuổi',resetBtn:'🔄 Phân tích người khác',mbtiLabel:'Hợp MBTI',elemLabel:'Hợp Ngũ Hành',
     lvl:['Thiên Duyên 💕','Kết Hợp Đỉnh Cao 💫','Hòa Hợp Tuyệt Vời ✨','Tương Hợp Tốt 🌟','Thử Thách Hóa Học 💪','Kết Hợp Điện Lực 🔥'],
     mbti_good:'Năng lượng MBTI của hai bạn bổ sung hoàn hảo cho nhau',mbti_care:'Năng lượng MBTI có sự khác biệt nhưng hai bạn có thể học hỏi từ nhau',mbti_neutral:'Năng lượng MBTI hòa hợp tự nhiên',
     elem_same:'Cùng ngũ hành giúp hai người hiểu nhau sâu sắc',elem_saeng:'Ngũ hành tương sinh nuôi dưỡng năng lượng cho nhau',elem_geuk:'Ngũ hành tương khắc nhưng tạo ra hóa học mạnh mẽ',elem_neutral:'Ngũ hành khác nhau tạo nên sự cân bằng',
-    intro_hi:'🐱 Nyangbyeoli đã phân tích năng lượng của cả hai!\n\n',outro:'✨ Dù hợp tuổi như thế nào, tấm lòng muốn hiểu nhau mới là điều quan trọng nhất!'}
+    intro_hi:'🐱 Nyangbyeoli đã phân tích năng lượng của cả hai!\n\n',outro:'✨ Dù hợp tuổi như thế nào, tấm lòng muốn hiểu nhau mới là điều quan trọng nhất!',
+    elemSaengDetail:'{0} nuôi dưỡng năng lượng của {1} (Tương sinh)',elemGeukDetail:'{0} ảnh hưởng mạnh mẽ đến {1} (Tương khắc)',understBtn:'Hiểu Đối Phương Hơn →'}
 };
 
 // 오행 색상: 기존 ELEM_COLOR 상수 재사용 (위에서 선언됨)
@@ -2963,15 +2995,48 @@ function renderGunghap(bBirth,bGender,bType,bElements){
   const nameB=mB.name?.[lKey]||mB.name?.ko||bType;
   const mbtiDesc=lang[mbtiKey];
   const elemDesc=lang[elemKey];
+
+  // 오행 방향 상세 설명
+  let elemDetailHtml='';
+  if(domA!==domB){
+    const labelA=`${domAem}${curMType}`,labelB=`${domBem}${bType}`;
+    if(SANG_SAENG[domA]===domB){
+      const txt=(lang.elemSaengDetail||'{0}이 {1}의 에너지를 키워줘요').replace('{0}',labelA).replace('{1}',labelB);
+      elemDetailHtml=`<p style="margin-top:6px;font-size:12px;color:var(--mint)">↗ ${txt}</p>`;
+    } else if(SANG_SAENG[domB]===domA){
+      const txt=(lang.elemSaengDetail||'{0}이 {1}의 에너지를 키워줘요').replace('{0}',labelB).replace('{1}',labelA);
+      elemDetailHtml=`<p style="margin-top:6px;font-size:12px;color:var(--mint)">↗ ${txt}</p>`;
+    } else if(SANG_GEUK[domA]===domB){
+      const txt=(lang.elemGeukDetail||'{0}이 {1}에게 강한 영향을 미쳐요').replace('{0}',labelA).replace('{1}',labelB);
+      elemDetailHtml=`<p style="margin-top:6px;font-size:12px;color:var(--rose)">⚡ ${txt}</p>`;
+    } else if(SANG_GEUK[domB]===domA){
+      const txt=(lang.elemGeukDetail||'{0}이 {1}에게 강한 영향을 미쳐요').replace('{0}',labelB).replace('{1}',labelA);
+      elemDetailHtml=`<p style="margin-top:6px;font-size:12px;color:var(--rose)">⚡ ${txt}</p>`;
+    }
+  }
+
+  const understBtnLabel=lang.understBtn||'상대방 좀 더 이해해 보기 →';
+  const bBirthSafe=bBirth.replace(/[^0-9]/g,'');
+  const bGenderSafe=bGender==='m'?'m':'f';
   document.getElementById('gg-analysis').innerHTML=
     `<p>${lang.intro_hi}<strong>${curMType} ${nameA}</strong> × <strong>${bType} ${nameB}</strong></p>`+
     `<p style="margin-top:10px">🔮 <strong>${lang.mbtiLabel}:</strong> ${mbtiDesc}</p>`+
     `<p style="margin-top:6px">${domAem}${domBem} <strong>${lang.elemLabel}:</strong> ${elemDesc}</p>`+
-    `<p style="margin-top:10px;font-size:11px;color:var(--g2)">${lang.outro}</p>`;
+    elemDetailHtml+
+    `<p style="margin-top:10px;font-size:11px;color:var(--g2)">${lang.outro}</p>`+
+    `<button onclick="analyzePartner('${bBirthSafe}','${bGenderSafe}')" style="margin-top:14px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--mint);background:rgba(126,212,188,.08);color:var(--mint);font-size:14px;font-weight:600;cursor:pointer">${understBtnLabel}</button>`;
 
   document.getElementById('gg-result').style.display='block';
   document.getElementById('gg-result').scrollIntoView({behavior:'smooth',block:'start'});
 }
+
+function analyzePartner(birth,gender){
+  showPage('pg-input');
+  document.getElementById('bi').value=birth;
+  curBirth=birth;
+  setGender(gender);
+}
+window.analyzePartner=analyzePartner;
 
 /* 입력 이벤트 */
 document.getElementById('bi').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,6);document.getElementById('err-msg').style.display='none';});

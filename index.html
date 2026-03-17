@@ -248,9 +248,9 @@ if (!window.IS_APP_MODE) {
     </div>
 
     <div class="ex-row">
-      <div class="ex-chip" onclick="setEx('010112','m')"><div class="ex-date">010112</div><div class="ex-desc" id="ex-desc-1">남 01.01.12</div></div>
-      <div class="ex-chip" onclick="setEx('030215','f')"><div class="ex-date">030215</div><div class="ex-desc" id="ex-desc-2">여 03.02.15</div></div>
-      <div class="ex-chip" onclick="setEx('991225','f')"><div class="ex-date">991225</div><div class="ex-desc" id="ex-desc-3">여 99.12.25</div></div>
+      <div class="ex-chip" onclick="setEx('780727','f')"><div class="ex-date">780727</div><div class="ex-desc" id="ex-desc-1">여 78.07.27</div></div>
+      <div class="ex-chip" onclick="setEx('070109','f')"><div class="ex-date">070109</div><div class="ex-desc" id="ex-desc-2">여 07.01.09</div></div>
+      <div class="ex-chip" onclick="setEx('130906','f')"><div class="ex-date">130906</div><div class="ex-desc" id="ex-desc-3">여 13.09.06</div></div>
     </div>
     <div class="err-msg" id="err-msg">⚠️ 생년월일 6자리와 성별을 입력해 주세요</div>
     <button class="btn-primary" style="width:100%;margin:14px 0 0" onclick="startAnalysis()"><span>냥별이의 에너지 분석 시작</span> <span>🔮</span></button>
@@ -351,6 +351,9 @@ if (!window.IS_APP_MODE) {
   <!-- 이미지 저장 -->
   <button class="btn-img" id="btn-save-img" onclick="saveImage()">📷 이미지 저장</button>
 
+  <!-- 궁합 보기 버튼 (히어로 이미지 저장 바로 아래) -->
+  <button class="btn-gunghap" id="btn-gunghap" onclick="showGunghap()">💑 궁합 보기</button>
+
   <!-- 오늘의 일운 -->
   <div id="r-ilun" style="margin:10px 16px 0;display:none"></div>
 
@@ -391,7 +394,6 @@ if (!window.IS_APP_MODE) {
     </div>
   </div>
 
-  <button class="btn-gunghap" id="btn-gunghap" onclick="showGunghap()">💑 궁합 보기</button>
   <button class="btn-secondary" onclick="reset()">← 다시 분석하기</button>
   <div style="height:32px"></div>
 </div>
@@ -399,7 +401,7 @@ if (!window.IS_APP_MODE) {
 <!-- ═══ PAGE 4: GUNGHAP ═══ -->
 <div class="page" id="pg-gunghap">
   <div class="res-topbar">
-    <div class="btn-back" onclick="showPage('pg-result')">←</div>
+    <div class="btn-back" onclick="reset()">←</div>
     <span class="logo" style="font-size:16px" id="gg-topbar-title">생일 궁합</span>
     <span style="width:60px"></span>
   </div>
