@@ -383,17 +383,6 @@ if (!window.IS_APP_MODE) {
   <!-- 북마크 유도 -->
   <div id="r-bookmark" style="margin:12px 16px 0;display:none"></div>
 
-  <!-- PWA 설치 배너 -->
-  <div id="pwa-banner" style="display:none;margin:12px 16px 0;background:linear-gradient(135deg,rgba(182,143,232,.12),rgba(255,143,171,.08));border:1.5px solid rgba(182,143,232,.3);border-radius:var(--r-lg);padding:14px 16px;display:none">
-    <div style="display:flex;align-items:center;gap:12px">
-      <span style="font-size:28px">📲</span>
-      <div style="flex:1">
-        <div id="pwa-title" style="font-size:13px;font-weight:700;color:var(--ink)">홈 화면에 추가하기</div>
-        <div id="pwa-sub" style="font-size:11px;color:var(--g2);margin-top:2px">앱처럼 빠르게 열어봐요!</div>
-      </div>
-      <button id="pwa-install-btn" onclick="installPWA()" style="background:linear-gradient(135deg,var(--lav),var(--rose));color:#fff;border:none;border-radius:20px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit">추가</button>
-    </div>
-  </div>
 
   <button class="btn-secondary" onclick="reset()">← 다시 분석하기</button>
   <div style="height:32px"></div>

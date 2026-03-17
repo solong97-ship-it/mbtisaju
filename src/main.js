@@ -812,10 +812,6 @@ function applyLang(){
   if(discPs[3]) discPs[3].textContent=t('disc4');
   document.querySelectorAll('.btn-secondary[onclick="reset()"]').forEach(el=>el.textContent=t('btnAgain'));
   if(si('btn-gunghap')) si('btn-gunghap').textContent=t('btnGunghap');
-  // PWA 설치 배너
-  if(si('pwa-title')) si('pwa-title').textContent=t('pwaTitle');
-  if(si('pwa-sub')) si('pwa-sub').textContent=t('pwaSub');
-  if(si('pwa-install-btn')) si('pwa-install-btn').textContent=t('pwaBtn');
   // 결과 상단
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
   if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
@@ -2799,28 +2795,36 @@ function renderBookmark(){
 
 /* ── PWA 설치 ── */
 let _deferredInstall=null;
+(function(){
+  // 이미 스탠드얼론(앱)으로 실행 중이거나 IS_APP_MODE면 버튼 숨김
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  if(!window.IS_APP_MODE&&!isStandalone){
+    const installBtn=document.getElementById('btn-install-home');
+    if(installBtn) installBtn.style.display='flex';
+  }
+})();
 window.addEventListener('beforeinstallprompt',e=>{
   e.preventDefault();_deferredInstall=e;
-  const banner=document.getElementById('pwa-banner');
-  if(banner) banner.style.display='block';
-  const installBtn=document.getElementById('btn-install-home');
-  if(installBtn&&!window.IS_APP_MODE) installBtn.style.display='flex';
 });
 window.addEventListener('appinstalled',()=>{
-  const banner=document.getElementById('pwa-banner');
-  if(banner) banner.style.display='none';
   const installBtn=document.getElementById('btn-install-home');
   if(installBtn) installBtn.style.display='none';
   _deferredInstall=null;
 });
 function installPWA(){
-  if(!_deferredInstall)return;
-  _deferredInstall.prompt();
-  _deferredInstall.userChoice.then(()=>{
-    _deferredInstall=null;
-    const installBtn=document.getElementById('btn-install-home');
-    if(installBtn) installBtn.style.display='none';
-  });
+  if(_deferredInstall){
+    _deferredInstall.prompt();
+    _deferredInstall.userChoice.then(()=>{
+      _deferredInstall=null;
+      const installBtn=document.getElementById('btn-install-home');
+      if(installBtn) installBtn.style.display='none';
+    });
+    return;
+  }
+  // iOS Safari: 브라우저 install prompt 미지원 → 안내 토스트
+  const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  if(isIOS){showToast('Safari 공유버튼(□↑) → "홈 화면에 추가"를 탭하세요');return;}
+  showToast(t('pwaTitle'));
 }
 window.installPWA=installPWA;
 
