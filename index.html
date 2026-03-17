@@ -41,9 +41,48 @@
   gtag('js', new Date());
   gtag('config', 'G-X5127NJB52');
 </script>
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6072555491491642"
-     crossorigin="anonymous"></script>
+<!-- 앱 모드 감지: ?platform=app 파라미터 → sessionStorage 저장 → window.IS_APP_MODE 플래그 설정 -->
+<script>
+(function () {
+  if (new URLSearchParams(location.search).get('platform') === 'app') {
+    sessionStorage.setItem('platform', 'app');
+  }
+  window.IS_APP_MODE = sessionStorage.getItem('platform') === 'app';
+
+  /**
+   * 광고 <ins> 태그를 컨테이너에 삽입하는 헬퍼.
+   * 앱 모드일 때는 아무것도 하지 않으므로 main.js 어디서든 안전하게 호출 가능.
+   *
+   * @param {string} containerId  광고를 넣을 부모 요소의 id
+   * @param {string} adSlot       애드센스 data-ad-slot 값
+   * @param {string} [adFormat]   'auto'(기본) | 'fluid' | 'rectangle' 등
+   */
+  window.renderAdUnit = function (containerId, adSlot, adFormat) {
+    if (window.IS_APP_MODE) return;
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    ins.dataset.adClient = 'ca-pub-6072555491491642';
+    ins.dataset.adSlot = adSlot;
+    ins.dataset.adFormat = adFormat || 'auto';
+    ins.dataset.fullWidthResponsive = 'true';
+    el.appendChild(ins);
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+  };
+})();
+</script>
+<!-- Google AdSense: 앱 모드일 때는 스크립트 자체를 로드하지 않음 -->
+<script>
+if (!window.IS_APP_MODE) {
+  var _as = document.createElement('script');
+  _as.async = true;
+  _as.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6072555491491642';
+  _as.crossOrigin = 'anonymous';
+  document.head.appendChild(_as);
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/style.css">
 </head>
@@ -113,7 +152,7 @@
 <!-- ═══ PAGE 0: WELCOME (재방문자) ═══ -->
 <div class="page" id="pg-welcome">
   <div class="topbar">
-    <span class="logo">생일MBTI<span class="ver-tag">v3.2.0</span></span>
+    <span class="logo" id="logo-welcome">생일MBTI<span class="ver-tag">v3.2.0</span></span>
     <div style="display:flex;gap:10px;align-items:center">
       <div class="lang-sel">
         <button class="lang-btn" onclick="toggleLang()" id="wc-lang-btn">🇰🇷 한국어</button>
@@ -148,7 +187,7 @@
 <!-- ═══ PAGE 1: INPUT ═══ -->
 <div class="page active" id="pg-input">
   <div class="topbar">
-    <span class="logo">생일MBTI<span class="ver-tag">v3.2.0</span></span>
+    <span class="logo" id="logo-input">생일MBTI<span class="ver-tag">v3.2.0</span></span>
     <div style="display:flex;gap:10px;align-items:center">
       <button class="lang-btn" onclick="toggleSettings()" id="settings-btn">⚙️</button>
       <div class="lang-sel">
@@ -206,6 +245,15 @@
       <button class="gbtn" id="btn-f" onclick="setGender('f')">♀ 여자</button>
     </div>
 
+    <div class="ex-row">
+      <div class="ex-chip" onclick="setEx('010112','m')"><div class="ex-date">010112</div><div class="ex-desc" id="ex-desc-1">남 01.01.12</div></div>
+      <div class="ex-chip" onclick="setEx('030215','f')"><div class="ex-date">030215</div><div class="ex-desc" id="ex-desc-2">여 03.02.15</div></div>
+      <div class="ex-chip" onclick="setEx('991225','f')"><div class="ex-date">991225</div><div class="ex-desc" id="ex-desc-3">여 99.12.25</div></div>
+    </div>
+    <div class="err-msg" id="err-msg">⚠️ 생년월일 6자리와 성별을 입력해 주세요</div>
+    <button class="btn-primary" style="width:100%;margin:14px 0 0" onclick="startAnalysis()"><span>냥별이의 에너지 분석 시작</span> <span>🔮</span></button>
+    <button class="btn-secondary" id="btn-share-app" style="width:100%;margin:10px 0 0;gap:7px" onclick="shareApp()">🔗 친구에게 앱 공유</button>
+
     <!-- 보정 질문 4개 -->
     <div class="q-section">
       <div class="q-title">🎲 냥별이의 순간 테스트!</div>
@@ -251,17 +299,7 @@
         <div><div class="q-txt">"그날 되면 어떻게든 되겠지~"</div><div class="q-hint">복은 걱정 안 하는 자에게 온다</div></div>
       </div>
     </div>
-
-    <div class="ex-row">
-      <div class="ex-chip" onclick="setEx('010112','m')"><div class="ex-date">010112</div><div class="ex-desc" id="ex-desc-1">남 01.01.12</div></div>
-      <div class="ex-chip" onclick="setEx('030215','f')"><div class="ex-date">030215</div><div class="ex-desc" id="ex-desc-2">여 03.02.15</div></div>
-      <div class="ex-chip" onclick="setEx('991225','f')"><div class="ex-date">991225</div><div class="ex-desc" id="ex-desc-3">여 99.12.25</div></div>
-    </div>
-    <div class="err-msg" id="err-msg">⚠️ 생년월일 6자리와 성별을 입력해 주세요</div>
   </div>
-
-  <button class="btn-primary" onclick="startAnalysis()"><span>냥별이의 에너지 분석 시작</span> <span>🔮</span></button>
-  <button class="btn-secondary" id="btn-share-app" onclick="shareApp()" style="gap:7px">🔗 친구에게 앱 공유</button>
 
   <!-- 서비스 특징 — 크롤러 및 사용자 모두를 위한 정적 콘텐츠 -->
   <div id="feat-section" style="margin:24px 16px 0;padding:20px;background:rgba(182,143,232,.06);border-radius:18px;border:1.5px solid rgba(182,143,232,.15)"></div>
@@ -290,7 +328,7 @@
 <div class="page" id="pg-result">
   <div class="res-topbar">
     <div class="btn-back" onclick="reset()">←</div>
-    <span class="logo" style="font-size:16px">생일MBTI</span>
+    <span class="logo" id="logo-result" style="font-size:16px">생일MBTI</span>
     <button class="btn-share" onclick="share()">🔗 공유</button>
   </div>
 
@@ -351,7 +389,7 @@
     </div>
   </div>
 
-  <button class="btn-gunghap" onclick="showGunghap()">💑 궁합 보기</button>
+  <button class="btn-gunghap" id="btn-gunghap" onclick="showGunghap()">💑 궁합 보기</button>
   <button class="btn-secondary" onclick="reset()">← 다시 분석하기</button>
   <div style="height:32px"></div>
 </div>

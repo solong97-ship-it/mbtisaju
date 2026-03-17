@@ -16,6 +16,7 @@
     "vite-plugin-pwa": "^1.2.0"
   },
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.96"
+    "@napi-rs/canvas": "^0.1.96",
+    "firebase": "^12.10.0"
   }
 }

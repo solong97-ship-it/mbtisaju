@@ -41,7 +41,7 @@ ko:{
   // 로딩
   ldTitle:'냥별이가 분석 중이다냥 ✨',ld1:'🪐 사주 패턴 계산 중',ld2:'🔮 월주 십성 분석 중',ld3:'✨ 일주 기질 매칭 중',
   // 결과
-  share:'🔗 공유',shareApp:'🔗 친구에게 앱 공유',saveImg:'📷 이미지 저장',imgSaved:'이미지 저장 완료 📷',
+  share:'🔗 공유',shareApp:'🔗 친구에게 앱 공유',shareText:'생일MBTI로 내 타고난 MBTI 알아봤어! 너도 해봐 🌙✨',saveImg:'📷 이미지 저장',imgSaved:'이미지 저장 완료 📷',
   pcTitle:'📷 퍼스널 포토카드',pcSub:'SNS 인증샷용 감성 카드 ✨',pcNick:'영문 닉네임',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'감성 메시지',pcMsgLimit:'20자 이내',pcMsgPh:'e.g. Born to shine ✨',pcDate:'날짜',pcColor:'퍼스널 컬러',pcElem:'{0} 기운 퍼스널컬러',pcCancel:'취소',pcGen:'✨ 카드 생성 + 링크 복사',pcGenerating:'생성 중...',pcToast:'📷 카드 저장 + 🔗 링크 복사 완료!',
   tagBorn:'🌙 타고난 기질',tagPre:'🌙 태어날 때부터 품고 온 기질 — ',
   sipBadge:'월주 십성',sipRank:'MBTI 산출 1순위',sipWhy:'💡 MBTI 영향: ',
@@ -68,7 +68,8 @@ ko:{
   disc1:'🌙 생일MBTI는 태어난 날의 사주 원국에서 읽히는 <strong style="color:var(--g1)">타고난 기질</strong>을 MBTI로 표현한 거예요',
   disc2:'일반 MBTI와 다를 수 있어요 — 환경이 아닌 태어날 때부터의 나를 보여주거든요!',
   disc3:'이건 재미와 자기 탐색 목적이에요 🌟 운명은 정해진 게 아니에요!',
-  btnAgain:'← 다시 분석하기',copied:'🔗 링크가 복사됐어요!',
+  btnAgain:'← 다시 분석하기',btnGunghap:'💑 궁합 보기',copied:'🔗 링크가 복사됐어요!',
+  pwaTitle:'홈 화면에 추가하기',pwaSub:'앱처럼 빠르게 열어봐요!',pwaBtn:'추가',
   flAbout:'서비스 소개',flTerms:'이용약관',flPrivacy:'개인정보처리방침',flContact:'문의',
   settingsTitle:'⚙️ 설정',settingsApiDesc:'키를 입력하면 AI 분석이 추가돼요! 🌙 (Gemini 1.5 Flash)',settingsSave:'저장',settingsClose:'닫기',
   privacyNotice:'🔒 입력하신 생년월일·성별은 서버에 저장되지 않습니다. 모든 분석은 기기 내에서만 처리됩니다. AI 분석 기능 사용 시 Google Gemini API로 데이터가 전송됩니다.',
@@ -122,9 +123,9 @@ ja:{
   q4bT:'「その日になったらなんとかなるでしょ〜」',q4bH:'心配しない人に福が来る',
   err:'⚠️ 生年月日6桁と性別を入力してください',
   btnStart:'にゃんぼしのエネルギー分析開始 🔮',
-  footP:'四柱推命に刻まれた生まれながらの気質 × MBTI<br>環境がつくった自分じゃなく、<strong style="color:var(--g2)">生まれた瞬間からの「素の自分」</strong>に出会おう 🌸',
+  footP:'生まれた日に刻まれた「素の自分」× MBTI<br>環境に染まる前の、<strong style="color:var(--g2)">ずっとそこにいた本当の私</strong>に会いに行こう 🌸',
   ldTitle:'にゃんぼしが分析中だにゃん ✨',ld1:'🪐 四柱パターン計算中',ld2:'🔮 月柱十神分析中',ld3:'✨ 日柱気質マッチング中',
-  share:'🔗 共有',shareApp:'🔗 友達にシェア',saveImg:'📷 画像を保存',imgSaved:'画像を保存しました 📷',
+  share:'🔗 共有',shareApp:'🔗 友達にシェア',shareText:'誕生日MBTIで生まれながらの自分がわかった！当たりすぎてちょっと怖い…👁️ あなたも試してみて ✨ #誕生日MBTI #MBTI診断',saveImg:'📷 画像を保存',imgSaved:'画像を保存しました 📷',
   pcTitle:'📷 パーソナルフォトカード',pcSub:'SNSシェア用の感性カード ✨',pcNick:'英語ニックネーム',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性メッセージ',pcMsgLimit:'20文字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日付',pcColor:'パーソナルカラー',pcElem:'{0} エネルギーカラー',pcCancel:'キャンセル',pcGen:'✨ カード生成 + リンクコピー',pcGenerating:'生成中...',pcToast:'📷 カード保存 + 🔗 リンクコピー完了！',
   tagBorn:'🌙 生まれつきの気質',tagPre:'🌙 生まれた時から持っている気質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTIへの影響: ',
@@ -151,7 +152,8 @@ ja:{
   disc1:'🌙 誕生日MBTIは四柱命式から読み取った<strong style="color:var(--g1)">生まれつきの気質</strong>をMBTIで表現したものです',
   disc2:'一般MBTIと異なる場合があります — 環境ではなく生まれた時からの自分を見せます！',
   disc3:'これはエンターテイメントと自己探索の目的です 🌟 運命は決まっていません！',
-  btnAgain:'← もう一度分析する',copied:'🔗 リンクがコピーされました！',
+  btnAgain:'← もう一度分析する',btnGunghap:'💑 相性を見る',copied:'🔗 リンクがコピーされました！',
+  pwaTitle:'ホーム画面に追加する',pwaSub:'アプリみたいにすぐ開ける！',pwaBtn:'追加',
   flAbout:'サービス紹介',flTerms:'利用規約',flPrivacy:'プライバシーポリシー',flContact:'お問い合わせ',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'キーを入力するとAI分析が追加されます！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'閉じる',
   privacyNotice:'🔒 入力した生年月日・性別はサーバーに保存されません。すべての分析はデバイス内でのみ処理されます。AI分析機能使用時はGoogle Gemini APIにデータが送信されます。',
@@ -203,9 +205,9 @@ en:{
   q4bT:'"I\'ll figure it out when the day comes~"',q4bH:'Fortune favors the carefree',
   err:'⚠️ Please enter 6-digit birth date and gender',
   btnStart:'Start Nyangbyeol\'s Energy Reading 🔮',
-  footP:'Born temperament × MBTI — not who life made you,<br>but <strong style="color:var(--g2)">who you already were on day one</strong> 🌸',
+  footP:'your birth chart × MBTI — forget who life made you,<br>meet <strong style="color:var(--g2)">the you that was always there from the start</strong> 🌸',
   ldTitle:'Nyangbyeol is analyzing meow ✨',ld1:'🪐 Calculating birth patterns',ld2:'🔮 Analyzing month pillar energy',ld3:'✨ Matching day pillar temperament',
-  share:'🔗 Share',shareApp:'🔗 Share this app',saveImg:'📷 Save Image',imgSaved:'Image saved! 📷',
+  share:'🔗 Share',shareApp:'🔗 Share this app',shareText:'i took a birth chart MBTI test and it\'s actually scary accurate 😭 you have to try this 🌙✨ #BirthMBTI',saveImg:'📷 Save Image',imgSaved:'Image saved! 📷',
   pcTitle:'📷 Personal Photo Card',pcSub:'Create your vibe card for SNS ✨',pcNick:'Your Nickname',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'Vibe Message',pcMsgLimit:'max 20 chars',pcMsgPh:'e.g. Born to shine ✨',pcDate:'Date',pcColor:'Personal Color',pcElem:'{0} Energy Color',pcCancel:'Cancel',pcGen:'✨ Create Card + Copy Link',pcGenerating:'Creating...',pcToast:'📷 Card saved + 🔗 Link copied!',
   tagBorn:'🌙 Innate Type',tagPre:'🌙 The temperament you were born with — ',
   sipBadge:'Month Pillar Star',sipRank:'MBTI Factor #1',sipWhy:'💡 MBTI Impact: ',
@@ -232,7 +234,8 @@ en:{
   disc1:'🌙 Birth MBTI expresses your <strong style="color:var(--g1)">innate temperament</strong> from your Four Pillars birth chart as MBTI',
   disc2:'It may differ from regular MBTI — it shows the you from birth, not from environment!',
   disc3:'This is for fun and self-discovery 🌟 Destiny is not fixed!',
-  btnAgain:'← Analyze Again',copied:'🔗 Link copied!',
+  btnAgain:'← Analyze Again',btnGunghap:'💑 Check Compatibility',copied:'🔗 Link copied!',
+  pwaTitle:'Add to Home Screen',pwaSub:'Open it like an app, instantly!',pwaBtn:'Add',
   flAbout:'About',flTerms:'Terms of Service',flPrivacy:'Privacy Policy',flContact:'Contact',
   settingsTitle:'⚙️ Settings',settingsApiDesc:'Enter your key to enable AI analysis! 🌙 (Gemini 1.5 Flash)',settingsSave:'Save',settingsClose:'Close',
   privacyNotice:'🔒 Your date of birth and gender are never stored on any server. All analysis runs locally on your device. If you use the AI feature, data is sent to Google Gemini API.',
@@ -284,9 +287,9 @@ en:{
   q4bT:'「到時候再說吧～」',q4bH:'好運屬於不擔心的人',
   err:'⚠️ 請輸入6位出生日期和性別',
   btnStart:'喵星的能量分析開始 🔮',
-  footP:'四柱命盤的先天氣質 × MBTI<br>不是被環境塑造的你，而是<strong style="color:var(--g2)">出生那一刻就已存在的你</strong> 🌸',
+  footP:'四柱命盤×MBTI — 看的不是後天的你，<br>而是<strong style="color:var(--g2)">那個從出生就一直在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 計算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱氣質',
-  share:'🔗 分享',shareApp:'🔗 分享給朋友',saveImg:'📷 儲存圖片',imgSaved:'圖片已儲存 📷',
+  share:'🔗 分享',shareApp:'🔗 分享給朋友',shareText:'用生日算出天生MBTI超準啦！看到結果當場愣住😳 快來測測你的 🌙✨ #生日MBTI #MBTI測驗',saveImg:'📷 儲存圖片',imgSaved:'圖片已儲存 📷',
   pcTitle:'📷 個人照片卡',pcSub:'為SNS分享創建感性卡片 ✨',pcNick:'英文暱稱',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以內',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'個人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 複製連結',pcGenerating:'生成中...',pcToast:'📷 卡片已儲存 + 🔗 連結已複製！',
   tagBorn:'🌙 天生氣質',tagPre:'🌙 與生俱來的氣質 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1優先',sipWhy:'💡 MBTI影響：',
@@ -313,7 +316,8 @@ en:{
   disc1:'🌙 生日MBTI是將四柱命盤中的<strong style="color:var(--g1)">先天氣質</strong>以MBTI表達',
   disc2:'可能與一般MBTI不同 — 顯示的是從出生就有的你！',
   disc3:'這是為了趣味和自我探索 🌟 命運不是注定的！',
-  btnAgain:'← 重新分析',copied:'🔗 連結已複製！',
+  btnAgain:'← 重新分析',btnGunghap:'💑 查看合盤',copied:'🔗 連結已複製！',
+  pwaTitle:'加到主畫面',pwaSub:'像App一樣快速開啟！',pwaBtn:'加入',
   flAbout:'服務介紹',flTerms:'使用條款',flPrivacy:'隱私權政策',flContact:'聯絡我們',
   settingsTitle:'⚙️ 設定',settingsApiDesc:'輸入金鑰即可啟用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'儲存',settingsClose:'關閉',
   privacyNotice:'🔒 您輸入的出生日期及性別不會儲存於任何伺服器。所有分析僅在您的裝置上進行。使用AI分析功能時，資料將傳送至Google Gemini API。',
@@ -365,9 +369,9 @@ en:{
   q4bT:'"到时候再说吧～"',q4bH:'好运属于不担心的人',
   err:'⚠️ 请输入6位出生日期和性别',
   btnStart:'喵星的能量分析开始 🔮',
-  footP:'四柱命盘的先天气质 × MBTI<br>不是被环境塑造的你，而是<strong style="color:var(--g2)">出生那一刻就已存在的你</strong> 🌸',
+  footP:'四柱命盘×MBTI — 不是后天造就的你，<br>而是<strong style="color:var(--g2)">那个从一出生就存在的你</strong> 🌸',
   ldTitle:'喵星正在分析喵 ✨',ld1:'🪐 计算四柱',ld2:'🔮 分析月柱十神',ld3:'✨ 匹配日柱气质',
-  share:'🔗 分享',shareApp:'🔗 分享给朋友',saveImg:'📷 保存图片',imgSaved:'图片已保存 📷',
+  share:'🔗 分享',shareApp:'🔗 分享给朋友',shareText:'用生日测出了天生MBTI，准到让我震惊了😱 快来测测你的！🌙✨ #生日MBTI #MBTI测试',saveImg:'📷 保存图片',imgSaved:'图片已保存 📷',
   pcTitle:'📷 个人照片卡',pcSub:'为SNS分享创建感性卡片 ✨',pcNick:'英文昵称',pcNickPh:'e.g. LUNA · STAR · MISO',pcMsg:'感性留言',pcMsgLimit:'20字以内',pcMsgPh:'e.g. Born to shine ✨',pcDate:'日期',pcColor:'个人色彩',pcElem:'{0} 能量色彩',pcCancel:'取消',pcGen:'✨ 生成卡片 + 复制链接',pcGenerating:'生成中...',pcToast:'📷 卡片已保存 + 🔗 链接已复制！',
   tagBorn:'🌙 天生气质',tagPre:'🌙 与生俱来的气质 — ',
   sipBadge:'月柱十神',sipRank:'MBTI算出第1优先',sipWhy:'💡 MBTI影响：',
@@ -393,7 +397,8 @@ en:{
   disc1:'🌙 生日MBTI是将四柱命盘中的<strong style="color:var(--g1)">先天气质</strong>以MBTI表达',
   disc2:'可能与一般MBTI不同 — 显示的是从出生就有的你！',
   disc3:'这是为了趣味和自我探索 🌟 命运不是注定的！',
-  btnAgain:'← 重新分析',copied:'🔗 链接已复制！',
+  btnAgain:'← 重新分析',btnGunghap:'💑 查看合盘',copied:'🔗 链接已复制！',
+  pwaTitle:'添加到主屏幕',pwaSub:'像App一样快速打开！',pwaBtn:'添加',
   flAbout:'服务介绍',flTerms:'使用条款',flPrivacy:'隐私政策',flContact:'联系我们',
   settingsTitle:'⚙️ 设置',settingsApiDesc:'输入密钥即可启用AI分析！🌙 (Gemini 1.5 Flash)',settingsSave:'保存',settingsClose:'关闭',
   privacyNotice:'🔒 您输入的出生日期及性别不会存储于任何服务器。所有分析仅在您的设备上进行。使用AI分析功能时，数据将发送至Google Gemini API。',
@@ -618,6 +623,11 @@ function applyLang(){
   // 입력 페이지 정적 텍스트 갱신
   const s=sel=>document.querySelector(sel);
   const si=id=>document.getElementById(id);
+  // 로고 번역
+  const logoTitle=t('title');
+  if(si('logo-welcome')) si('logo-welcome').innerHTML=logoTitle+'<span class="ver-tag">v3.2.0</span>';
+  if(si('logo-input'))   si('logo-input').innerHTML=logoTitle+'<span class="ver-tag">v3.2.0</span>';
+  if(si('logo-result'))  si('logo-result').textContent=logoTitle;
   if(s('.hero h1')) s('.hero h1').innerHTML=t('heroH');
   if(s('.hero p')) s('.hero p').innerHTML=t('heroP');
   if(s('.info-card-title')) s('.info-card-title').textContent=t('infoTitle');
@@ -664,6 +674,11 @@ function applyLang(){
   if(discPs[2]) discPs[2].textContent=t('disc3');
   if(discPs[3]) discPs[3].textContent=t('disc4');
   document.querySelectorAll('.btn-secondary[onclick="reset()"]').forEach(el=>el.textContent=t('btnAgain'));
+  if(si('btn-gunghap')) si('btn-gunghap').textContent=t('btnGunghap');
+  // PWA 설치 배너
+  if(si('pwa-title')) si('pwa-title').textContent=t('pwaTitle');
+  if(si('pwa-sub')) si('pwa-sub').textContent=t('pwaSub');
+  if(si('pwa-install-btn')) si('pwa-install-btn').textContent=t('pwaBtn');
   // 결과 상단
   if(s('#pg-result .btn-share')) s('#pg-result .btn-share').textContent=t('share');
   if(s('#btn-save-img')) s('#btn-save-img').textContent=t('saveImg');
@@ -722,13 +737,23 @@ function applyLang(){
     featEl.innerHTML=`<p style="font-size:13px;font-weight:700;color:var(--g1);margin-bottom:14px;text-align:center">${fd.h}</p><div style="display:grid;gap:10px">${fd.f.map(r=>`<div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:18px;flex-shrink:0">${r.e}</span><div><p style="font-size:12px;font-weight:700;color:var(--ink);margin:0 0 2px">${r.t}</p><p style="font-size:11px;color:var(--g2);margin:0;line-height:1.6">${r.d}</p></div></div>`).join('')}</div>`;
   }
 }
-// 초기 언어 로드
-try{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}catch(e){}
-document.addEventListener('DOMContentLoaded',()=>{
+// 초기 언어 로드 (URL ?lang= 우선, 그 다음 localStorage)
+try{
+  const urlLang=new URLSearchParams(location.search).get('lang');
+  if(urlLang&&LANG_FLAG[urlLang]){LANG=urlLang;try{localStorage.setItem('saju_lang',urlLang)}catch(e){}}
+  else{const saved=localStorage.getItem('saju_lang');if(saved&&LANG_FLAG[saved]){LANG=saved;}}
+}catch(e){}
+const _initApp=()=>{
   if(LANG!=='ko')setLang(LANG);
   document.addEventListener('click',e=>{if(!e.target.closest('.lang-sel'))document.getElementById('lang-drop')?.classList.remove('open')});
   checkReturningUser();
-});
+};
+// module 스크립트는 deferred라 DOMContentLoaded 이후에 실행될 수 있으므로 readyState로 분기
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',_initApp);
+}else{
+  _initApp();
+}
 
 /* ╔══════════════════════════════════════════╗
    ║  사주 계산 엔진 (천간·지지·절기)         ║
@@ -2140,7 +2165,7 @@ async function _generatePhotoCard(){
   ctx.beginPath();ctx.moveTo(22,374);ctx.lineTo(S-22,374);ctx.stroke();ctx.restore();
 
   // ── 하단 좌: 닉네임 + 메시지 + 날짜 ──
-  const siteUrl='https://mbtisaju.pages.dev';
+  const siteUrl='https://sajumbti-app.web.app/';
   const rightEdge=S-22;
   // 닉네임
   ctx.save();ctx.font='900 24px Nunito,sans-serif';ctx.textAlign='left';
@@ -2194,14 +2219,21 @@ async function _generatePhotoCard(){
 }
 
 /* 공유 */
+function getSiteUrl(){
+  const base='https://sajumbti-app.web.app';
+  return LANG!=='ko'?base+'?lang='+LANG:base;
+}
 function shareApp(){
-  const url='https://sajumbti-app.web.app';
-  if(navigator.share){navigator.share({title:t('title'),text:t('shareApp'),url}).catch(()=>copyUrl(url));}
+  const url=getSiteUrl();
+  if(navigator.share){navigator.share({title:t('title'),text:t('shareText')||t('shareApp'),url}).catch(()=>copyUrl(url));}
   else{copyUrl(url);}
 }
 function share(){
-  const url=location.href.split('#')[0]+'#birth='+curBirth+'&g='+curGender;
-  if(navigator.share){navigator.share({title:t('title'),text:t('title')+' 🌙✨ '+url,url}).catch(()=>copyUrl(url));}
+  const base=location.href.split('#')[0].split('?')[0];
+  const langParam=LANG!=='ko'?'?lang='+LANG:'';
+  const url=base+langParam+'#birth='+curBirth+'&g='+curGender;
+  const text=(t('shareText')||t('title')+' 🌙✨')+' '+url;
+  if(navigator.share){navigator.share({title:t('title'),text,url}).catch(()=>copyUrl(url));}
   else{copyUrl(url);}
 }
 function copyUrl(url){
