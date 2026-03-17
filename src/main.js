@@ -2804,7 +2804,7 @@ window.addEventListener('beforeinstallprompt',e=>{
   const banner=document.getElementById('pwa-banner');
   if(banner) banner.style.display='block';
   const installBtn=document.getElementById('btn-install-home');
-  if(installBtn) installBtn.style.display='flex';
+  if(installBtn&&!window.IS_APP_MODE) installBtn.style.display='flex';
 });
 window.addEventListener('appinstalled',()=>{
   const banner=document.getElementById('pwa-banner');
