@@ -2818,10 +2818,43 @@ function installPWA(){
     });
     return;
   }
-  // iOS Safari: 브라우저 install prompt 미지원 → 안내 토스트
-  const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
-  if(isIOS){showToast('Safari 공유버튼(□↑) → "홈 화면에 추가"를 탭하세요');return;}
-  showToast(t('pwaTitle'));
+  // _deferredInstall 없음 → 환경 감지 후 안내
+  const ua=navigator.userAgent;
+  const isKakao=/KAKAOTALK/i.test(ua);
+  const isInApp=/KAKAOTALK|Line\/|Instagram|FBAN|FBAV|Twitter|Snapchat|NaverApp|DaumApp/i.test(ua);
+  const isIOS=/iphone|ipad|ipod/i.test(ua);
+  const isAndroid=/android/i.test(ua);
+
+  if(isKakao||isInApp){
+    // 인앱 브라우저: Chrome으로 열기 안내 모달
+    const msg=isAndroid
+      ? '카카오톡 인앱 브라우저에서는 설치가 안 돼요.\n\n우측 하단 ⋮ 메뉴 → "다른 브라우저로 열기" 또는 "Chrome으로 열기" 를 탭한 뒤 버튼을 다시 눌러 주세요.'
+      : '카카오톡 인앱 브라우저에서는 설치가 안 돼요.\n\n우측 하단 ⋮ 메뉴 → "Safari로 열기" 를 탭한 뒤 버튼을 다시 눌러 주세요.';
+    _showInstallGuide(msg);
+    return;
+  }
+  if(isIOS){
+    _showInstallGuide('Safari 하단 공유버튼(□↑)을 탭한 뒤\n"홈 화면에 추가"를 선택해 주세요.');
+    return;
+  }
+  // Chrome/Edge PC·Android: prompt가 아직 준비 안 된 경우
+  _showInstallGuide('주소창 오른쪽 끝 설치 아이콘(⊕)을 클릭하거나\n잠시 후 다시 시도해 주세요.');
+}
+function _showInstallGuide(msg){
+  let el=document.getElementById('_install-guide');
+  if(!el){
+    el=document.createElement('div');
+    el.id='_install-guide';
+    el.style.cssText='position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);padding:24px';
+    el.innerHTML='<div style="background:var(--surface,#fff);border-radius:16px;padding:24px 20px;max-width:320px;width:100%;text-align:center">'
+      +'<div style="font-size:28px;margin-bottom:12px">📲</div>'
+      +'<div id="_install-guide-msg" style="font-size:14px;line-height:1.7;color:var(--ink,#1a1a2e);white-space:pre-line"></div>'
+      +'<button onclick="document.getElementById(\'_install-guide\').style.display=\'none\'" style="margin-top:18px;width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lav,#B68FE8),var(--rose,#FF8FAB));color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">확인</button>'
+      +'</div>';
+    document.body.appendChild(el);
+  }
+  document.getElementById('_install-guide-msg').textContent=msg;
+  el.style.display='flex';
 }
 window.installPWA=installPWA;
 
