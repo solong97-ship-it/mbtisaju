@@ -2794,66 +2794,117 @@ function renderBookmark(){
 }
 
 /* ── PWA 설치 ── */
-// window._deferredInstall은 index.html 인라인 스크립트에서 이미 포획됨
+// window._deferredInstall: index.html 인라인 스크립트에서 먼저 포획,
+// main.js 로드 후에 발생하는 이벤트도 여기서 백업 포획
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  window._deferredInstall=e;
+  // 이벤트 도착 시 버튼이 숨겨져 있으면 다시 노출
+  if(!window.IS_APP_MODE){
+    const btn=document.getElementById('btn-install-home');
+    if(btn) btn.style.display='flex';
+  }
+});
+
 (function(){
-  // 이미 스탠드얼론(앱)으로 실행 중이거나 IS_APP_MODE면 버튼 숨김
   const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
-  if(!window.IS_APP_MODE&&!isStandalone){
-    const installBtn=document.getElementById('btn-install-home');
-    if(installBtn) installBtn.style.display='flex';
+  if(window.IS_APP_MODE||isStandalone) return;
+  const btn=document.getElementById('btn-install-home');
+  if(btn) btn.style.display='flex';
+
+  // 이미 설치된 앱인지 비동기 확인 후 숨김
+  if('getInstalledRelatedApps' in navigator){
+    navigator.getInstalledRelatedApps().then(apps=>{
+      if(apps.length>0&&btn) btn.style.display='none';
+    }).catch(()=>{});
   }
 })();
+
 window.addEventListener('appinstalled',()=>{
-  const installBtn=document.getElementById('btn-install-home');
-  if(installBtn) installBtn.style.display='none';
+  const btn=document.getElementById('btn-install-home');
+  if(btn) btn.style.display='none';
   window._deferredInstall=null;
 });
+
 function installPWA(){
+  // 1) 브라우저 네이티브 프롬프트 사용 (가장 확실한 방법)
   if(window._deferredInstall){
     window._deferredInstall.prompt();
-    window._deferredInstall.userChoice.then(()=>{
-      window._deferredInstall=null;
-      const installBtn=document.getElementById('btn-install-home');
-      if(installBtn) installBtn.style.display='none';
+    window._deferredInstall.userChoice.then(r=>{
+      if(r.outcome==='accepted'){
+        window._deferredInstall=null;
+        const btn=document.getElementById('btn-install-home');
+        if(btn) btn.style.display='none';
+      }
     });
     return;
   }
-  // _deferredInstall 없음 → 환경 감지 후 안내
+
+  // 2) 프롬프트 없음 → 환경별 안내 모달
   const ua=navigator.userAgent;
-  const isKakao=/KAKAOTALK/i.test(ua);
   const isInApp=/KAKAOTALK|Line\/|Instagram|FBAN|FBAV|Twitter|Snapchat|NaverApp|DaumApp/i.test(ua);
   const isIOS=/iphone|ipad|ipod/i.test(ua);
   const isAndroid=/android/i.test(ua);
+  const isMac=/macintosh|mac os x/i.test(ua)&&!isIOS;
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
 
-  if(isKakao||isInApp){
-    // 인앱 브라우저: Chrome으로 열기 안내 모달
-    const msg=isAndroid
-      ? '카카오톡 인앱 브라우저에서는 설치가 안 돼요.\n\n우측 하단 ⋮ 메뉴 → "다른 브라우저로 열기" 또는 "Chrome으로 열기" 를 탭한 뒤 버튼을 다시 눌러 주세요.'
-      : '카카오톡 인앱 브라우저에서는 설치가 안 돼요.\n\n우측 하단 ⋮ 메뉴 → "Safari로 열기" 를 탭한 뒤 버튼을 다시 눌러 주세요.';
-    _showInstallGuide(msg);
+  if(isStandalone){
+    _showInstallGuide('✅ 이미 앱으로 설치되어 있어요!','앱 아이콘을 통해 접속하면\n더 빠르게 이용할 수 있어요.');
+    return;
+  }
+  if(isInApp&&isAndroid){
+    _showInstallGuide(
+      '인앱 브라우저에서는 설치가 안 돼요',
+      '화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"다른 브라우저로 열기" 또는\n"Chrome으로 열기"를 선택해 주세요.\n\nChrome에서 다시 버튼을 눌러 주세요!'
+    );
+    return;
+  }
+  if(isInApp&&isIOS){
+    _showInstallGuide(
+      '인앱 브라우저에서는 설치가 안 돼요',
+      '화면 우측 하단 ⋮ 메뉴를 탭한 뒤\n"Safari로 열기"를 선택해 주세요.\n\nSafari 하단 공유버튼(□↑) →\n"홈 화면에 추가"를 탭해 주세요!'
+    );
     return;
   }
   if(isIOS){
-    _showInstallGuide('Safari 하단 공유버튼(□↑)을 탭한 뒤\n"홈 화면에 추가"를 선택해 주세요.');
+    _showInstallGuide(
+      'iPhone / iPad 홈 화면에 추가',
+      'Safari 하단 공유버튼(□↑) 탭\n→ "홈 화면에 추가" 선택\n→ 우측 상단 "추가" 탭\n\n(Safari 브라우저에서만 가능해요)'
+    );
     return;
   }
-  // Chrome/Edge PC·Android: prompt가 아직 준비 안 된 경우
-  _showInstallGuide('주소창 오른쪽 끝 설치 아이콘(⊕)을 클릭하거나\n잠시 후 다시 시도해 주세요.');
+  if(isAndroid){
+    _showInstallGuide(
+      'Android 홈 화면에 추가',
+      'Chrome 주소창 오른쪽\n설치 아이콘(⊕)을 탭하거나\n\nChrome 메뉴(⋮) →\n"앱 설치" 또는 "홈 화면에 추가"를\n탭해 주세요.'
+    );
+    return;
+  }
+  // PC (Windows / Mac)
+  _showInstallGuide(
+    'PC 바탕화면에 바로가기 추가',
+    'Chrome 주소창 오른쪽 끝\n설치 아이콘(🖥️ 또는 ⊕)을 클릭하거나\n\nChrome 메뉴(⋮) →\n"생일MBTI 설치..." 또는\n"바로가기 만들기"를 클릭해 주세요.'
+    +(isMac?'\n\n(Safari: 파일 메뉴 → 홈 화면에 추가)':'')
+  );
 }
-function _showInstallGuide(msg){
+
+function _showInstallGuide(title,msg){
   let el=document.getElementById('_install-guide');
   if(!el){
     el=document.createElement('div');
     el.id='_install-guide';
-    el.style.cssText='position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);padding:24px';
-    el.innerHTML='<div style="background:var(--surface,#fff);border-radius:16px;padding:24px 20px;max-width:320px;width:100%;text-align:center">'
-      +'<div style="font-size:28px;margin-bottom:12px">📲</div>'
-      +'<div id="_install-guide-msg" style="font-size:14px;line-height:1.7;color:var(--ink,#1a1a2e);white-space:pre-line"></div>'
-      +'<button onclick="document.getElementById(\'_install-guide\').style.display=\'none\'" style="margin-top:18px;width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lav,#B68FE8),var(--rose,#FF8FAB));color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">확인</button>'
+    el.style.cssText='position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:24px';
+    el.innerHTML=
+      '<div style="background:var(--surface,#1e1340);border-radius:20px;padding:28px 22px;max-width:320px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)">'
+      +'<div style="font-size:36px;margin-bottom:12px">📲</div>'
+      +'<div id="_ig-title" style="font-size:16px;font-weight:700;color:var(--ink,#f0e6ff);margin-bottom:10px"></div>'
+      +'<div id="_ig-msg" style="font-size:13px;line-height:1.8;color:var(--g1,#c0aee8);white-space:pre-line"></div>'
+      +'<button onclick="document.getElementById(\'_install-guide\').style.display=\'none\'" style="margin-top:20px;width:100%;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lav,#B68FE8),var(--rose,#FF8FAB));color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">확인</button>'
       +'</div>';
     document.body.appendChild(el);
   }
-  document.getElementById('_install-guide-msg').textContent=msg;
+  document.getElementById('_ig-title').textContent=title;
+  document.getElementById('_ig-msg').textContent=msg;
   el.style.display='flex';
 }
 window.installPWA=installPWA;
