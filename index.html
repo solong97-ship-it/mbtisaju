@@ -10,6 +10,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- ═══ 인앱 브라우저 감지: 최상단 실행 ═══ -->
+<script>
+(function(){
+  var ua=navigator.userAgent;
+  if(!/KAKAOTALK/i.test(ua)) return;
+
+  var isAndroid=/android/i.test(ua);
+  var isIOS=/iphone|ipad|ipod/i.test(ua);
+
+  if(isAndroid){
+    // intent 스킴으로 외부 브라우저(Chrome 등) 강제 실행
+    // from_inapp=1 파라미터 → 진입 후 배너 즉시 표시용
+    var qs=location.search?(location.search+'&from_inapp=1'):'?from_inapp=1';
+    var target='https://'+location.host+location.pathname+qs+location.hash;
+    var intent='intent://'+location.host+location.pathname+qs+location.hash
+      +'#Intent;scheme=https;action=android.intent.action.VIEW;'
+      +'category=android.intent.category.BROWSABLE;'
+      +'S.browser_fallback_url='+encodeURIComponent(target)+';end';
+    location.replace(intent);
+    return;
+  }
+
+  if(isIOS){
+    // iOS는 강제 리다이렉트 불가 → 전체화면 안내 오버레이 플래그 설정
+    window._KAKAO_IOS_GUIDE=true;
+  }
+})();
+</script>
 <title>생일MBTI — 내 생일로 알아보는 진짜 나</title>
 <meta name="description" content="생년월일로 알아보는 타고난 MBTI! 사주 원국의 일주·월주 기질을 MBTI로 분석합니다. 환경이 아닌 태어날 때부터의 나를 찾아보세요.">
 <meta name="keywords" content="생일MBTI,사주MBTI,타고난성격,MBTI,사주,일주,월주,성격유형,생년월일">
@@ -531,6 +559,43 @@ function setCookieConsent(choice){
 }
 </script>
 
+<!-- ═══ 카카오톡 iOS 전체화면 가이드 ═══ -->
+<div id="kakao-ios-guide" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(15,8,35,.97);flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;text-align:center">
+  <!-- 앱 아이콘 -->
+  <div style="width:72px;height:72px;background:linear-gradient(135deg,#B68FE8,#FF8FAB);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:38px;margin-bottom:20px;box-shadow:0 8px 32px rgba(182,143,232,.4)">🌙</div>
+  <div style="font-size:20px;font-weight:800;color:#f0e6ff;margin-bottom:8px;font-family:'Jua',sans-serif">생일MBTI 앱 설치하기</div>
+  <div style="font-size:13px;color:rgba(192,174,232,.75);margin-bottom:36px;line-height:1.7">카카오톡 브라우저에서는 앱 설치가 어려워요.<br>아래 방법으로 Safari에서 열어주세요!</div>
+
+  <!-- Step 1 -->
+  <div style="width:100%;max-width:320px;background:rgba(182,143,232,.1);border:1.5px solid rgba(182,143,232,.25);border-radius:16px;padding:18px 20px;margin-bottom:12px;display:flex;align-items:center;gap:16px;text-align:left">
+    <div style="width:40px;height:40px;background:rgba(182,143,232,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">•••</div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#f0e6ff;margin-bottom:3px">STEP 1</div>
+      <div style="font-size:12px;color:rgba(192,174,232,.85);line-height:1.5">화면 <strong style="color:#B68FE8">우측 상단 ···</strong> 버튼을 탭하세요</div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div style="width:100%;max-width:320px;background:rgba(182,143,232,.1);border:1.5px solid rgba(182,143,232,.25);border-radius:16px;padding:18px 20px;margin-bottom:28px;display:flex;align-items:center;gap:16px;text-align:left">
+    <div style="width:40px;height:40px;background:rgba(182,143,232,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">🧭</div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#f0e6ff;margin-bottom:3px">STEP 2</div>
+      <div style="font-size:12px;color:rgba(192,174,232,.85);line-height:1.5"><strong style="color:#B68FE8">Safari로 열기</strong>를 선택하면<br>홈 화면 추가가 가능해요 ✨</div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('kakao-ios-guide').style.display='none'" style="padding:10px 28px;border-radius:20px;border:1px solid rgba(182,143,232,.35);background:transparent;color:rgba(192,174,232,.6);font-size:13px;cursor:pointer;font-family:inherit">닫고 계속 보기</button>
+</div>
+<script>
+if(window._KAKAO_IOS_GUIDE){
+  var _g=document.getElementById('kakao-ios-guide');
+  if(_g){_g.style.display='flex';document.body.style.overflow='hidden';}
+  document.getElementById('kakao-ios-guide').querySelector('button').addEventListener('click',function(){
+    document.body.style.overflow='';
+  });
+}
+</script>
+
 <!-- ═══ PWA 설치 플로팅 배너 ═══ -->
 <div id="pwa-float-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:0 0 env(safe-area-inset-bottom,0)">
   <div style="background:linear-gradient(135deg,#2D1B4E,#1e1340);border-top:1.5px solid rgba(182,143,232,0.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:14px 16px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 -4px 24px rgba(45,27,78,.5)">
@@ -563,6 +628,9 @@ function setCookieConsent(choice){
   var ua=navigator.userAgent;
   var isIOS=/iphone|ipad|ipod/i.test(ua)&&!window.MSStream;
   var isInApp=/KAKAOTALK|Line\/|Instagram|FBAN|FBAV|Twitter|Snapchat|NaverApp|DaumApp/i.test(ua);
+  // 카카오 인앱에서 외부 브라우저로 넘어온 경우 → 배너 1초 후 즉시 노출
+  var fromInApp=new URLSearchParams(location.search).get('from_inapp')==='1';
+  var FAST=fromInApp?1000:3000;
   var banner=document.getElementById('pwa-float-banner');
   var iosArrow=document.getElementById('pwa-ios-arrow');
   var bannerBtn=document.getElementById('pwa-banner-btn');
@@ -580,19 +648,19 @@ function setCookieConsent(choice){
   }
 
   if(isIOS&&!isInApp){
-    // iOS Safari: 5초 후 배너 + 공유 버튼 안내 화살표 표시
+    // iOS Safari: 배너 + 공유 버튼 안내 화살표 표시 (인앱 경유 시 1초, 일반 5초)
     bannerBtn.textContent='설치 방법';
     iosArrow.style.display='block';
-    setTimeout(showBanner, 5000);
+    setTimeout(showBanner, fromInApp?1000:5000);
   } else if(!isIOS){
     // Android/Chrome/PC: beforeinstallprompt 이벤트 대기
     function onPrompt(e){
       e.preventDefault();
       window._deferredInstall=e;
-      setTimeout(showBanner, 3000);
+      setTimeout(showBanner, FAST);
     }
     if(window._deferredInstall){
-      setTimeout(showBanner, 3000);
+      setTimeout(showBanner, FAST);
     } else {
       window.addEventListener('beforeinstallprompt', onPrompt, {once:true});
     }
