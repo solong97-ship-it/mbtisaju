@@ -530,5 +530,100 @@ function setCookieConsent(choice){
   if(choice==='declined'){window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=1;}
 }
 </script>
+
+<!-- ═══ PWA 설치 플로팅 배너 ═══ -->
+<div id="pwa-float-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:0 0 env(safe-area-inset-bottom,0)">
+  <div style="background:linear-gradient(135deg,#2D1B4E,#1e1340);border-top:1.5px solid rgba(182,143,232,0.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:14px 16px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 -4px 24px rgba(45,27,78,.5)">
+    <div style="width:44px;height:44px;background:linear-gradient(135deg,#B68FE8,#FF8FAB);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">🌙</div>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:13px;font-weight:700;color:#f0e6ff;line-height:1.3" id="pwa-banner-title">생일MBTI 앱 설치</div>
+      <div style="font-size:11px;color:rgba(192,174,232,.8);margin-top:2px;line-height:1.4" id="pwa-banner-desc">홈 화면에 추가하면 더 빠르게 실행돼요 ✨</div>
+    </div>
+    <button id="pwa-banner-btn" onclick="pwaBannerInstall()" style="flex-shrink:0;padding:9px 16px;border-radius:20px;border:none;background:linear-gradient(135deg,#B68FE8,#FF8FAB);color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">설치</button>
+    <button onclick="pwaBannerDismiss()" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;border:none;background:rgba(182,143,232,.15);color:rgba(192,174,232,.7);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1">✕</button>
+  </div>
+  <!-- iOS 전용: 공유 버튼 안내 화살표 -->
+  <div id="pwa-ios-arrow" style="display:none;background:rgba(45,27,78,.97);border-top:1px solid rgba(182,143,232,.2);padding:10px 16px;font-size:12px;color:rgba(192,174,232,.9);text-align:center;line-height:1.6">
+    아래 <strong style="color:#B68FE8">공유 버튼</strong>(<span style="font-size:15px">⬆️</span>)을 탭한 뒤 &nbsp;<strong style="color:#B68FE8">홈 화면에 추가</strong>를 선택하세요
+  </div>
+</div>
+
+<style>
+#pwa-float-banner{transition:transform .35s cubic-bezier(.4,0,.2,1)}
+#pwa-float-banner.hide{transform:translateY(110%)}
+</style>
+
+<script>
+(function(){
+  var DISMISS_KEY='pwa_banner_dismissed_v2';
+  var isStandalone=window.matchMedia('(display-mode:standalone)').matches||window.navigator.standalone===true;
+  if(window.IS_APP_MODE||isStandalone) return;
+  if(localStorage.getItem(DISMISS_KEY)) return;
+
+  var ua=navigator.userAgent;
+  var isIOS=/iphone|ipad|ipod/i.test(ua)&&!window.MSStream;
+  var isInApp=/KAKAOTALK|Line\/|Instagram|FBAN|FBAV|Twitter|Snapchat|NaverApp|DaumApp/i.test(ua);
+  var banner=document.getElementById('pwa-float-banner');
+  var iosArrow=document.getElementById('pwa-ios-arrow');
+  var bannerBtn=document.getElementById('pwa-banner-btn');
+
+  function showBanner(){
+    if(!banner) return;
+    banner.style.display='block';
+    // cookie-banner가 열려 있으면 살짝 위에 배치
+    setTimeout(function(){
+      var cb=document.getElementById('cookie-banner');
+      if(cb&&cb.style.display!=='none'){
+        banner.style.bottom=(cb.offsetHeight+4)+'px';
+      }
+    },100);
+  }
+
+  if(isIOS&&!isInApp){
+    // iOS Safari: 5초 후 배너 + 공유 버튼 안내 화살표 표시
+    bannerBtn.textContent='설치 방법';
+    iosArrow.style.display='block';
+    setTimeout(showBanner, 5000);
+  } else if(!isIOS){
+    // Android/Chrome/PC: beforeinstallprompt 이벤트 대기
+    function onPrompt(e){
+      e.preventDefault();
+      window._deferredInstall=e;
+      setTimeout(showBanner, 3000);
+    }
+    if(window._deferredInstall){
+      setTimeout(showBanner, 3000);
+    } else {
+      window.addEventListener('beforeinstallprompt', onPrompt, {once:true});
+    }
+  }
+
+  window.pwaBannerInstall=function(){
+    if(window._deferredInstall){
+      window._deferredInstall.prompt();
+      window._deferredInstall.userChoice.then(function(r){
+        if(r.outcome==='accepted'){
+          window._deferredInstall=null;
+          pwaBannerDismiss();
+        }
+      });
+    } else {
+      // iOS → installPWA() 가이드 모달 사용
+      if(typeof installPWA==='function') installPWA();
+    }
+  };
+
+  window.pwaBannerDismiss=function(){
+    if(!banner) return;
+    banner.classList.add('hide');
+    setTimeout(function(){ banner.style.display='none'; }, 350);
+    localStorage.setItem(DISMISS_KEY, '1');
+  };
+
+  window.addEventListener('appinstalled',function(){
+    pwaBannerDismiss();
+  });
+})();
+</script>
 </body>
 </html>
